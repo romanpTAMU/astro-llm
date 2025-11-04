@@ -36,12 +36,13 @@ def chat_json(
         }
     
     try:
-        resp = client.chat.completions.create(**kwargs)
+        # Add timeout to prevent hanging (httpx timeout in seconds)
+        resp = client.chat.completions.create(**kwargs, timeout=120.0)  # 2 minute timeout
     except Exception as e:
         # If web_search_options not supported, retry without it
         if use_web_search and "web_search_options" in str(e).lower():
             kwargs.pop("web_search_options", None)
-            resp = client.chat.completions.create(**kwargs)
+            resp = client.chat.completions.create(**kwargs, timeout=120.0)
         else:
             raise
     

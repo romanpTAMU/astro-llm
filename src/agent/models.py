@@ -53,6 +53,9 @@ class Fundamentals(BaseModel):
 class AnalystRecommendation(BaseModel):
     ticker: str
     consensus: Optional[str] = Field(None, description="Consensus rating (Buy/Hold/Sell)")
+    buy_count: Optional[int] = Field(None, description="Number of Buy recommendations")
+    hold_count: Optional[int] = Field(None, description="Number of Hold recommendations")
+    sell_count: Optional[int] = Field(None, description="Number of Sell recommendations")
     price_target: Optional[float] = Field(None, description="Average price target")
     price_target_high: Optional[float] = Field(None, description="High price target")
     price_target_low: Optional[float] = Field(None, description="Low price target")

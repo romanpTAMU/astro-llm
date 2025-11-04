@@ -47,7 +47,7 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None) -> Optional
         # Get current quote - use history as it's more reliable than info
         hist = stock.history(period="5d")
         if hist is None or hist.empty:
-            typer.echo(f"  ⚠️  No price data available for {ticker}")
+            typer.echo(f"  [WARN] No price data available for {ticker}")
             return None
         
         latest = hist.iloc[-1]
@@ -82,7 +82,7 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None) -> Optional
             as_of=datetime.now(),
         )
     except Exception as e:
-        typer.echo(f"  ⚠️  Error fetching price data for {ticker}: {e}")
+        typer.echo(f"  [ERROR] Error fetching price data for {ticker}: {e}")
         return None
 
 
@@ -293,7 +293,16 @@ def fetch(
         time.sleep(delay)
         
         # Fetch fundamentals (using FMP API)
-        fundamentals = fetch_fundamentals(ticker, cfg.fmp_api_key)
+        if cfg.fmp_api_key:
+            typer.echo(f"  -> Fetching fundamentals from FMP API...")
+            fundamentals = fetch_fundamentals(ticker, cfg.fmp_api_key)
+            if fundamentals:
+                typer.echo(f"  [OK] Fundamentals fetched")
+            else:
+                typer.echo(f"  [WARN] Fundamentals not available (API returned no data)")
+        else:
+            typer.echo(f"  [WARN] Skipping fundamentals (FMP_API_KEY not set)")
+            fundamentals = None
         time.sleep(delay)
         
         # Fetch analyst recommendations (tiered: Finnhub -> LLM web search)

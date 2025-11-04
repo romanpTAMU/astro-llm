@@ -146,19 +146,34 @@ def calculate_stability_score(price_data) -> Optional[float]:
 
 
 def calculate_revisions_score(analyst_recs) -> Optional[float]:
-    """Calculate revisions factor score from analyst changes."""
+    """Calculate revisions factor score from analyst changes.
+    
+    Uses weighted score based on buy/hold/sell counts to account for analyst bias.
+    """
     if not analyst_recs:
         return None
     
     score = 0.0
     
-    # Positive consensus = higher score
-    if analyst_recs.consensus == "Buy":
-        score += 0.5
-    elif analyst_recs.consensus == "Hold":
-        score += 0.0
-    elif analyst_recs.consensus == "Sell":
-        score -= 0.5
+    # Use raw counts if available for more nuanced scoring
+    if analyst_recs.buy_count is not None and analyst_recs.hold_count is not None and analyst_recs.sell_count is not None:
+        total = analyst_recs.buy_count + analyst_recs.hold_count + analyst_recs.sell_count
+        if total > 0:
+            # Weighted score: Buy = +1, Hold = 0, Sell = -1
+            # Normalize to [-1, 1] range
+            buy_pct = analyst_recs.buy_count / total
+            sell_pct = analyst_recs.sell_count / total
+            score = buy_pct - sell_pct  # Range: [-1, 1]
+        else:
+            score = 0.0
+    else:
+        # Fallback to consensus if counts not available
+        if analyst_recs.consensus == "Buy":
+            score += 0.5
+        elif analyst_recs.consensus == "Hold":
+            score += 0.0
+        elif analyst_recs.consensus == "Sell":
+            score -= 0.5
     
     # Recent upgrades/downgrades
     if analyst_recs.recent_changes:
@@ -187,10 +202,21 @@ def synthesize_sentiment(
 ) -> SentimentAnalysis:
     """Synthesize sentiment from analyst recs and news using LLM."""
     
+    typer.echo(f"    [DEBUG] Starting sentiment synthesis for {ticker}")
+    typer.echo(f"    [DEBUG] Analyst recs available: {analyst_recs is not None}")
+    typer.echo(f"    [DEBUG] News items count: {len(news_items)}")
+    
     # Build context
     analyst_info = []
     if analyst_recs:
         analyst_info.append(f"Consensus: {analyst_recs.consensus}")
+        if analyst_recs.buy_count is not None and analyst_recs.hold_count is not None and analyst_recs.sell_count is not None:
+            total_recs = analyst_recs.buy_count + analyst_recs.hold_count + analyst_recs.sell_count
+            if total_recs > 0:
+                buy_pct = (analyst_recs.buy_count / total_recs) * 100
+                hold_pct = (analyst_recs.hold_count / total_recs) * 100
+                sell_pct = (analyst_recs.sell_count / total_recs) * 100
+                analyst_info.append(f"Recommendations: Buy {analyst_recs.buy_count} ({buy_pct:.1f}%), Hold {analyst_recs.hold_count} ({hold_pct:.1f}%), Sell {analyst_recs.sell_count} ({sell_pct:.1f}%)")
         if analyst_recs.price_target:
             analyst_info.append(f"Price Target: ${analyst_recs.price_target:.2f}")
         if analyst_recs.recent_changes:
@@ -251,7 +277,9 @@ Output JSON:
 }}"""
     
     try:
+        typer.echo(f"    [DEBUG] Calling LLM ({model}) for sentiment synthesis...")
         result = chat_json(client, model, system, user)
+        typer.echo(f"    [DEBUG] LLM call completed, parsing result...")
         
         # Calculate price target upside if we have both
         price_target_upside = None
@@ -272,7 +300,7 @@ Output JSON:
             price_target_upside=price_target_upside if price_target_upside is not None else result.get("price_target_upside"),
         )
     except Exception as e:
-        typer.echo(f"  ⚠️  Error synthesizing sentiment for {ticker}: {e}")
+        typer.echo(f"  [WARN] Error synthesizing sentiment for {ticker}: {e}")
         # Return neutral sentiment as fallback
         return SentimentAnalysis(
             overall_sentiment="neutral",
@@ -446,7 +474,7 @@ def score(
                 candidates_resp = CandidateResponse.model_validate(candidates_json)
                 candidates_map = {c.ticker: c for c in candidates_resp.candidates}
             except Exception as e:
-                typer.echo(f"  ⚠️  Warning: Could not load candidates file: {e}")
+                typer.echo(f"  [WARN] Could not load candidates file: {e}")
                 typer.echo("  Continuing without sector/theme info...")
     
     client = get_client()
@@ -454,16 +482,22 @@ def score(
     
     typer.echo(f"Scoring {len(stock_data_resp.data)} stocks...")
     
+    import time
+    start_time = time.time()
+    
     for i, stock_data in enumerate(stock_data_resp.data):
         ticker = stock_data.ticker
+        ticker_start = time.time()
         typer.echo(f"[{i+1}/{len(stock_data_resp.data)}] Scoring {ticker}...")
         
         # Get sector/theme from candidates
+        typer.echo(f"  -> Getting sector/theme info...")
         candidate = candidates_map.get(ticker)
         sector = candidate.sector if candidate else None
         theme = candidate.theme if candidate else None
         
         # Calculate factor scores
+        typer.echo(f"  -> Calculating factor scores...")
         factor_scores = FactorScores(
             value=calculate_value_score(stock_data.fundamentals),
             quality=calculate_quality_score(stock_data.fundamentals),
@@ -471,8 +505,13 @@ def score(
             stability=calculate_stability_score(stock_data.price_data),
             revisions=calculate_revisions_score(stock_data.analyst_recommendations),
         )
+        typer.echo(f"  [OK] Factor scores: value={factor_scores.value:.2f if factor_scores.value else 'N/A'}, "
+                   f"quality={factor_scores.quality:.2f if factor_scores.quality else 'N/A'}, "
+                   f"growth={factor_scores.growth:.2f if factor_scores.growth else 'N/A'}")
         
         # Synthesize sentiment
+        typer.echo(f"  -> Synthesizing sentiment (LLM call - this may take a moment)...")
+        sentiment_start = time.time()
         sentiment = synthesize_sentiment(
             ticker,
             stock_data.analyst_recommendations,
@@ -481,12 +520,19 @@ def score(
             client,
             chosen_model,
         )
+        sentiment_elapsed = time.time() - sentiment_start
+        typer.echo(f"  [OK] Sentiment: {sentiment.overall_sentiment} (score={sentiment.sentiment_score:.2f}, took {sentiment_elapsed:.1f}s)")
         
         # Apply risk screens
+        typer.echo(f"  -> Applying risk screens...")
         risk_flags = apply_risk_screens(ticker, stock_data.price_data, cfg)
+        typer.echo(f"  [OK] Risk checks: {'PASSED' if risk_flags.passed_all_checks else 'FAILED'} "
+                   f"{'(' + ', '.join(risk_flags.failed_checks) + ')' if risk_flags.failed_checks else ''}")
         
         # Calculate composite score
+        typer.echo(f"  -> Calculating composite score...")
         composite_score = calculate_composite_score(factor_scores, sentiment, risk_flags)
+        typer.echo(f"  [OK] Composite score: {composite_score:.3f}")
         
         scored_stock = ScoredStock(
             ticker=ticker,
@@ -501,6 +547,9 @@ def score(
         )
         
         scored_stocks.append(scored_stock)
+        
+        ticker_elapsed = time.time() - ticker_start
+        typer.echo(f"  [OK] Completed {ticker} in {ticker_elapsed:.1f}s")
     
     # Sort by composite score (descending)
     scored_stocks.sort(key=lambda x: x.composite_score, reverse=True)
@@ -520,8 +569,8 @@ def score(
     out.write_text(response.model_dump_json(indent=2), encoding='utf-8')
     
     typer.echo(f"Scored {len(scored_stocks)} stocks -> {out}")
-    typer.echo(f"  ✓ {len(passed)} passed risk screens")
-    typer.echo(f"  ✓ Top 5 scores: {[f'{s.ticker}: {s.composite_score:.2f}' for s in scored_stocks[:5]]}")
+    typer.echo(f"  [OK] {len(passed)} passed risk screens")
+    typer.echo(f"  [OK] Top 5 scores: {[f'{s.ticker}: {s.composite_score:.2f}' for s in scored_stocks[:5]]}")
 
 
 def main():

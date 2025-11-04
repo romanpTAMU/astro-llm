@@ -39,31 +39,47 @@ def fetch_analyst_recommendations_finnhub(
         if total == 0:
             return None
         
-        # Determine consensus
-        if buy > hold and buy > sell:
+        # Determine consensus with stronger thresholds to account for analyst bias
+        # Require at least 40% for Buy, 30% for Sell (to avoid weak consensus)
+        buy_pct = buy / total
+        hold_pct = hold / total
+        sell_pct = sell / total
+        
+        if buy_pct >= 0.40 and buy > hold and buy > sell:
             consensus = "Buy"
-        elif sell > buy and sell > hold:
+        elif sell_pct >= 0.30 and sell > buy and sell > hold:
             consensus = "Sell"
-        else:
+        elif hold_pct >= 0.50 or (hold > buy and hold > sell):
             consensus = "Hold"
+        elif buy_pct > sell_pct:
+            consensus = "Buy"  # Weak buy if buy > sell but below threshold
+        else:
+            consensus = "Hold"  # Default to hold for unclear cases
         
         # Get price targets from another endpoint
-        targets_url = "https://finnhub.io/api/v1/stock/price-target"
-        targets_response = requests.get(targets_url, params={"symbol": ticker, "token": api_key}, timeout=10)
         price_target = None
         price_target_high = None
         price_target_low = None
         
-        if targets_response.status_code == 200:
+        try:
+            targets_url = "https://finnhub.io/api/v1/stock/price-target"
+            targets_response = requests.get(targets_url, params={"symbol": ticker, "token": api_key}, timeout=10)
+            targets_response.raise_for_status()
             targets_data = targets_response.json()
-            if targets_data:
+            if targets_data and isinstance(targets_data, dict):
                 price_target = targets_data.get("targetMean")
                 price_target_high = targets_data.get("targetHigh")
                 price_target_low = targets_data.get("targetLow")
+        except Exception as e:
+            # Price targets are optional, so just log and continue
+            typer.echo(f"  [WARN] Could not fetch price targets for {ticker}: {e}")
         
         return AnalystRecommendation(
             ticker=ticker,
             consensus=consensus,
+            buy_count=buy,
+            hold_count=hold,
+            sell_count=sell,
             price_target=price_target,
             price_target_high=price_target_high,
             price_target_low=price_target_low,
@@ -256,7 +272,13 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         income_response.raise_for_status()
         income_data = income_response.json()
         
+        # Check for API errors
+        if isinstance(income_data, dict) and "Error Message" in income_data:
+            typer.echo(f"  [WARN] FMP API error for {ticker}: {income_data.get('Error Message')}")
+            return None
+        
         if not income_data or not isinstance(income_data, list) or len(income_data) == 0:
+            typer.echo(f"  [WARN] No income statement data available for {ticker}")
             return None
         
         latest_income = income_data[0]
@@ -272,11 +294,15 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         ratios_params = {"apikey": api_key, "limit": 1}
         
         ratios_response = requests.get(ratios_url, params=ratios_params, timeout=10)
+        ratios_response.raise_for_status()
         ratios_data = None
         if ratios_response.status_code == 200:
-            ratios_data = ratios_response.json()
-            if ratios_data and isinstance(ratios_data, list) and len(ratios_data) > 0:
-                ratios_data = ratios_data[0]
+            ratios_json = ratios_response.json()
+            # /api/v3/ratios/ returns a list
+            if ratios_json and isinstance(ratios_json, list) and len(ratios_json) > 0:
+                ratios_data = ratios_json[0]
+            elif ratios_json and isinstance(ratios_json, dict):
+                ratios_data = ratios_json
         
         # Extract revenue
         revenue_ttm = latest_income.get("revenue")
@@ -336,7 +362,15 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
             ev_ebitda=float(ev_ebitda) if ev_ebitda else None,
             as_of=date.today(),
         )
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 401:
+            typer.echo(f"  [ERROR] FMP API authentication error for {ticker} (check API key)")
+        elif e.response.status_code == 429:
+            typer.echo(f"  [ERROR] FMP API rate limit exceeded for {ticker}")
+        else:
+            typer.echo(f"  [ERROR] FMP API HTTP error for {ticker}: {e}")
+        return None
     except Exception as e:
-        typer.echo(f"FMP API error for {ticker}: {e}")
+        typer.echo(f"  [ERROR] FMP API error for {ticker}: {e}")
         return None
 
