@@ -14,6 +14,7 @@ from agent.scoring import app as scoring_app
 from agent.analyze_recommendations import app as analyze_app
 from agent.portfolio import app as portfolio_app
 from agent.momentum_analysis import app as momentum_app
+from agent.portfolio_report import app as report_app
 
 # Create main app with subcommands
 main_app = typer.Typer()
@@ -24,6 +25,7 @@ main_app.add_typer(scoring_app, name="score", help="Score candidates with factor
 main_app.add_typer(analyze_app, name="analyze", help="Analyze analyst recommendation distribution")
 main_app.add_typer(portfolio_app, name="portfolio", help="Construct final portfolio from scored candidates")
 main_app.add_typer(momentum_app, name="momentum", help="Analyze portfolio momentum tilt")
+main_app.add_typer(report_app, name="report", help="Generate human-readable portfolio report")
 
 if __name__ == "__main__":
     main_app()
