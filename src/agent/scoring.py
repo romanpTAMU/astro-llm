@@ -227,7 +227,7 @@ def synthesize_sentiment(
     bearish_count = 0
     neutral_count = 0
     
-    for news in news_items[:10]:  # Top 10 news items
+    for news in news_items[:5]:  # Top 5 news items (reduced for cost efficiency)
         sentiment = news.sentiment or "neutral"
         if sentiment == "bullish":
             bullish_count += 1
@@ -432,11 +432,12 @@ def score(
     out: Path = typer.Option(
         Path("data/scored_candidates.json"), help="Output JSON path"
     ),
-    model: Optional[str] = typer.Option(None, help="OpenAI model override"),
+    model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
 ):
     """Score candidates using factor analysis, sentiment synthesis, and risk screens."""
     cfg = load_config()
-    chosen_model = model or cfg.openai_model
+    # Use cheap model by default for sentiment synthesis (high volume, doesn't need complex reasoning)
+    chosen_model = model or cfg.cheap_model
     
     if not stock_data_file.exists():
         typer.echo(f"Stock data file not found: {stock_data_file}")
@@ -505,9 +506,10 @@ def score(
             stability=calculate_stability_score(stock_data.price_data),
             revisions=calculate_revisions_score(stock_data.analyst_recommendations),
         )
-        typer.echo(f"  [OK] Factor scores: value={factor_scores.value:.2f if factor_scores.value else 'N/A'}, "
-                   f"quality={factor_scores.quality:.2f if factor_scores.quality else 'N/A'}, "
-                   f"growth={factor_scores.growth:.2f if factor_scores.growth else 'N/A'}")
+        value_str = f"{factor_scores.value:.2f}" if factor_scores.value is not None else 'N/A'
+        quality_str = f"{factor_scores.quality:.2f}" if factor_scores.quality is not None else 'N/A'
+        growth_str = f"{factor_scores.growth:.2f}" if factor_scores.growth is not None else 'N/A'
+        typer.echo(f"  [OK] Factor scores: value={value_str}, quality={quality_str}, growth={growth_str}")
         
         # Synthesize sentiment
         typer.echo(f"  -> Synthesizing sentiment (LLM call - this may take a moment)...")

@@ -3,302 +3,506 @@
     {
       "ticker": "AAPL",
       "sector": "Information Technology",
-      "rationale": "iPhone cycle strength; services mix growth."
+      "rationale": "Ecosystem and services growth drive recurring cash flow.",
+      "theme": null
     },
     {
       "ticker": "MSFT",
       "sector": "Information Technology",
-      "rationale": "Azure and AI copilots driving cloud consumption."
+      "rationale": "Net-cash balance sheet, recurring revenue, and pricing power drive strong free cash flow; low capital intensity and disciplined capital returns fit a higher cost of capital environment.",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
     },
     {
       "ticker": "NVDA",
       "sector": "Information Technology",
-      "rationale": "GPU leadership underpinning AI infrastructure demand."
+      "rationale": "Leader in AI accelerators for training and inference; demand for its compute drives parallel investments in power and cooling at hyperscale data centers.",
+      "theme": "AI Compute and Power Bottleneck"
     },
     {
       "ticker": "AVGO",
       "sector": "Information Technology",
-      "rationale": "AI networking and VMware integration support FCF."
+      "rationale": "Diversified semis and infrastructure software with cash returns.",
+      "theme": null
     },
     {
       "ticker": "AMD",
       "sector": "Information Technology",
-      "rationale": "Share gains in data center CPUs/GPUs; AI ramp."
-    },
-    {
-      "ticker": "CRM",
-      "sector": "Information Technology",
-      "rationale": "Margin expansion and AI-enabled upsell across cloud suites."
+      "rationale": "CPU/GPU share gains across data center and PC.",
+      "theme": null
     },
     {
       "ticker": "ORCL",
       "sector": "Information Technology",
-      "rationale": "Cloud infrastructure traction with AI workloads."
+      "rationale": "Cloud transition and installed base support recurring revenue.",
+      "theme": null
     },
     {
-      "ticker": "ADBE",
+      "ticker": "CRM",
       "sector": "Information Technology",
-      "rationale": "Generative AI features bolster Creative Cloud retention."
-    },
-    {
-      "ticker": "INTU",
-      "sector": "Information Technology",
-      "rationale": "SMB ecosystem scale; AI-driven assistance across products."
-    },
-    {
-      "ticker": "CSCO",
-      "sector": "Information Technology",
-      "rationale": "Networking refresh and AI data center spend."
-    },
-    {
-      "ticker": "QCOM",
-      "sector": "Information Technology",
-      "rationale": "On-device AI and RF leadership in premium handsets."
+      "rationale": "Enterprise SaaS leader with margin and cash flow discipline.",
+      "theme": null
     },
     {
       "ticker": "TXN",
       "sector": "Information Technology",
-      "rationale": "Analog breadth and capital discipline across cycles."
+      "rationale": "Analog semis with durable free cash flow and dividends.",
+      "theme": null
+    },
+    {
+      "ticker": "QCOM",
+      "sector": "Information Technology",
+      "rationale": "On-device AI enablement via NPUs in smartphone platforms drives edge AI adoption and refresh cycles across Android OEMs.",
+      "theme": "Edge AI and Automation Diffusion"
     },
     {
       "ticker": "NOW",
       "sector": "Information Technology",
-      "rationale": "Workflow digitization tailwinds; strong net retention."
+      "rationale": "Workflow automation platform with large enterprise footprint.",
+      "theme": null
     },
     {
       "ticker": "GOOGL",
       "sector": "Communication Services",
-      "rationale": "Search and YouTube scale; AI improves monetization."
+      "rationale": "Search and YouTube scale with an expanding cloud business.",
+      "theme": null
     },
     {
       "ticker": "META",
       "sector": "Communication Services",
-      "rationale": "Ad demand recovery and efficiency; Reels monetization."
+      "rationale": "Large audience monetization and improving operating efficiency.",
+      "theme": null
     },
     {
       "ticker": "NFLX",
       "sector": "Communication Services",
-      "rationale": "Paid sharing and ad tier expand ARPU and reach."
-    },
-    {
-      "ticker": "TMUS",
-      "sector": "Communication Services",
-      "rationale": "Share gains and synergies drive FCF and buybacks."
+      "rationale": "Global streaming scale and disciplined content spending.",
+      "theme": null
     },
     {
       "ticker": "DIS",
       "sector": "Communication Services",
-      "rationale": "Content/IP strength; DTC path to profitability."
+      "rationale": "Content libraries and parks assets with multiple monetization levers.",
+      "theme": null
+    },
+    {
+      "ticker": "TMUS",
+      "sector": "Communication Services",
+      "rationale": "Wireless share gains and cost synergies support cash generation.",
+      "theme": null
     },
     {
       "ticker": "AMZN",
       "sector": "Consumer Discretionary",
-      "rationale": "Retail efficiency and AWS reacceleration with AI."
+      "rationale": "Retail media business provides high-ROI, closed-loop attribution for advertisers; Prime Video ads extend reach into CTV; marketplace breadth captures both value trade-down and premium demand.",
+      "theme": "Consumer Barbell and Ad Spend Shift to Retail Media and CTV: Higher living costs and tighter credit drive trade-down at the low end while premium categories and experiences remain resilient, benefiting value retailers, club formats, off-price, and luxury; advertising dollars consolidate with platforms offering high ROI and closed-loop measurement, accelerating retail media networks, performance social, and connected TV, with positive spillovers to ad-tech and payments. (through May 2026)"
     },
     {
       "ticker": "TSLA",
       "sector": "Consumer Discretionary",
-      "rationale": "EV scale with software and energy optionality."
+      "rationale": "EV scale with integrated software and manufacturing.",
+      "theme": null
     },
     {
       "ticker": "HD",
       "sector": "Consumer Discretionary",
-      "rationale": "Pro demand and repair/remodel resilience."
-    },
-    {
-      "ticker": "MCD",
-      "sector": "Consumer Discretionary",
-      "rationale": "Global brand, pricing power, and digital drive-thru."
+      "rationale": "Home improvement leader with scale and execution.",
+      "theme": null
     },
     {
       "ticker": "NKE",
       "sector": "Consumer Discretionary",
-      "rationale": "Product pipeline and DTC mix support margins."
-    },
-    {
-      "ticker": "BKNG",
-      "sector": "Consumer Discretionary",
-      "rationale": "Global travel demand; strong take-rate and buybacks."
+      "rationale": "Global brand with innovation and direct-to-consumer initiatives.",
+      "theme": null
     },
     {
       "ticker": "SBUX",
       "sector": "Consumer Discretionary",
-      "rationale": "Store growth and loyalty flywheel drive traffic."
+      "rationale": "Global footprint and loyalty-driven traffic.",
+      "theme": null
     },
     {
-      "ticker": "COST",
-      "sector": "Consumer Staples",
-      "rationale": "Membership model and traffic momentum."
+      "ticker": "TJX",
+      "sector": "Consumer Discretionary",
+      "rationale": "Leader in off-price retail with steady branded closeout supply; offers compelling value as consumers trade down while still seeking brands, supporting traffic and share gains in a barbell consumer environment.",
+      "theme": "Consumer Barbell and Ad Spend Shift to Retail Media and CTV: Higher living costs and tighter credit drive trade-down at the low end while premium categories and experiences remain resilient, benefiting value retailers, club formats, off-price, and luxury; advertising dollars consolidate with platforms offering high ROI and closed-loop measurement, accelerating retail media networks, performance social, and connected TV, with positive spillovers to ad-tech and payments. (through May 2026)"
+    },
+    {
+      "ticker": "BKNG",
+      "sector": "Consumer Discretionary",
+      "rationale": "Online travel scale with strong take rates and cash generation.",
+      "theme": null
     },
     {
       "ticker": "WMT",
       "sector": "Consumer Staples",
-      "rationale": "Scale, ecommerce, and grocery mix defensiveness."
+      "rationale": "Value-led grocery and essentials mix draws trade-down shoppers; Walmart Connect offers closed-loop retail media with high ROI, positioning it to capture consolidating ad spend alongside resilient traffic.",
+      "theme": "Consumer Barbell and Ad Spend Shift to Retail Media and CTV: Higher living costs and tighter credit drive trade-down at the low end while premium categories and experiences remain resilient, benefiting value retailers, club formats, off-price, and luxury; advertising dollars consolidate with platforms offering high ROI and closed-loop measurement, accelerating retail media networks, performance social, and connected TV, with positive spillovers to ad-tech and payments. (through May 2026)"
+    },
+    {
+      "ticker": "COST",
+      "sector": "Consumer Staples",
+      "rationale": "Club format delivers sharp price-per-unit value and strong member loyalty; benefits from trade-down into bulk/value while premium â€˜treasure-huntâ€™ and private label stay resilient, supporting steady traffic.",
+      "theme": "Consumer Barbell and Ad Spend Shift to Retail Media and CTV: Higher living costs and tighter credit drive trade-down at the low end while premium categories and experiences remain resilient, benefiting value retailers, club formats, off-price, and luxury; advertising dollars consolidate with platforms offering high ROI and closed-loop measurement, accelerating retail media networks, performance social, and connected TV, with positive spillovers to ad-tech and payments. (through May 2026)"
     },
     {
       "ticker": "PG",
       "sector": "Consumer Staples",
-      "rationale": "Brand strength and productivity sustain margins."
+      "rationale": "Household brands and consistent cash generation.",
+      "theme": null
     },
     {
       "ticker": "KO",
       "sector": "Consumer Staples",
-      "rationale": "Global distribution and pricing power."
+      "rationale": "Global beverage portfolio and steady dividends.",
+      "theme": null
     },
     {
       "ticker": "PEP",
       "sector": "Consumer Staples",
-      "rationale": "Snacks/beverages portfolio resilience and innovation."
+      "rationale": "Snacks and beverages mix supports stable growth.",
+      "theme": null
+    },
+    {
+      "ticker": "MDLZ",
+      "sector": "Consumer Staples",
+      "rationale": "Global snacking leader with broad distribution.",
+      "theme": null
     },
     {
       "ticker": "UNH",
       "sector": "Health Care",
-      "rationale": "Diversified payer platform; Optum growth."
+      "rationale": "Diversified payer/provider model with scale advantages.",
+      "theme": null
     },
     {
       "ticker": "JNJ",
       "sector": "Health Care",
-      "rationale": "Pharma and MedTech breadth; balance sheet strength."
-    },
-    {
-      "ticker": "MRK",
-      "sector": "Health Care",
-      "rationale": "Key oncology franchise and pipeline optionality."
-    },
-    {
-      "ticker": "ABBV",
-      "sector": "Health Care",
-      "rationale": "Immunology breadth offsets LOE; pipeline progress."
+      "rationale": "Diversified healthcare exposure and strong balance sheet.",
+      "theme": null
     },
     {
       "ticker": "LLY",
       "sector": "Health Care",
-      "rationale": "Incretin leadership in obesity and diabetes."
+      "rationale": "Leader in GLP-1â€“based diabetes and obesity therapies with ongoing scale-up and lifecycle expansion driving category growth.",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
+    },
+    {
+      "ticker": "MRK",
+      "sector": "Health Care",
+      "rationale": "Oncology and vaccines portfolio drives cash flow.",
+      "theme": null
+    },
+    {
+      "ticker": "ABBV",
+      "sector": "Health Care",
+      "rationale": "Immunology and aesthetics breadth with cash returns.",
+      "theme": null
     },
     {
       "ticker": "TMO",
       "sector": "Health Care",
-      "rationale": "Tools/instruments scale; recurring revenue mix."
+      "rationale": "Life sciences tools and services supporting bioproduction, fill-finish, and supply-chain needs as GLP-1 manufacturing scales.",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
     },
     {
       "ticker": "DHR",
       "sector": "Health Care",
-      "rationale": "Life science tools leadership; margin discipline."
+      "rationale": "Life sciences platform with disciplined capital allocation.",
+      "theme": null
     },
     {
-      "ticker": "CAT",
-      "sector": "Industrials",
-      "rationale": "Equipment cycle and services mix expand margins."
-    },
-    {
-      "ticker": "DE",
-      "sector": "Industrials",
-      "rationale": "Precision ag and construction equipment demand."
-    },
-    {
-      "ticker": "GE",
-      "sector": "Industrials",
-      "rationale": "Aerospace strength and portfolio focus."
-    },
-    {
-      "ticker": "LMT",
-      "sector": "Industrials",
-      "rationale": "Defense backlog and program longevity."
-    },
-    {
-      "ticker": "UPS",
-      "sector": "Industrials",
-      "rationale": "Network efficiency and pricing discipline."
-    },
-    {
-      "ticker": "ETN",
-      "sector": "Industrials",
-      "rationale": "Electrification and data center power demand."
-    },
-    {
-      "ticker": "HON",
-      "sector": "Industrials",
-      "rationale": "Aerospace and automation exposure; FCF conversion."
-    },
-    {
-      "ticker": "JPM",
-      "sector": "Financials",
-      "rationale": "Best-in-class scale and diversified earnings."
-    },
-    {
-      "ticker": "BAC",
-      "sector": "Financials",
-      "rationale": "Operating leverage and deposit scale."
-    },
-    {
-      "ticker": "WFC",
-      "sector": "Financials",
-      "rationale": "Efficiency improvements and capital return."
-    },
-    {
-      "ticker": "GS",
-      "sector": "Financials",
-      "rationale": "IB recovery and asset/wealth management growth."
-    },
-    {
-      "ticker": "MS",
-      "sector": "Financials",
-      "rationale": "Wealth/asset management scale and stability."
-    },
-    {
-      "ticker": "BLK",
-      "sector": "Financials",
-      "rationale": "Indexing/ETF leadership and advisory scale drive flows."
-    },
-    {
-      "ticker": "AXP",
-      "sector": "Financials",
-      "rationale": "Premium customer base and travel spend tailwinds."
+      "ticker": "ISRG",
+      "sector": "Health Care",
+      "rationale": "Minimally invasive surgery leader with recurring instruments.",
+      "theme": null
     },
     {
       "ticker": "BRK.B",
       "sector": "Financials",
-      "rationale": "Diversified holdings and disciplined capital allocation."
+      "rationale": "Cash-rich conglomerate with large insurance float that benefits from higher short-term rates; disciplined capital allocation and conservative leverage align with balance-sheet discipline.",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "JPM",
+      "sector": "Financials",
+      "rationale": "Scale bank with stable, diversified deposits and substantial fee businesses; strong capital and risk management support returns of capital while navigating higher-for-longer rates.",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "BAC",
+      "sector": "Financials",
+      "rationale": "Retail and commercial banking scale with efficiency focus.",
+      "theme": null
+    },
+    {
+      "ticker": "WFC",
+      "sector": "Financials",
+      "rationale": "Large deposit base with operational improvement potential.",
+      "theme": null
+    },
+    {
+      "ticker": "MS",
+      "sector": "Financials",
+      "rationale": "Wealth and investment banking mix at global scale.",
+      "theme": null
+    },
+    {
+      "ticker": "GS",
+      "sector": "Financials",
+      "rationale": "Global investment bank with strong advisory and trading.",
+      "theme": null
+    },
+    {
+      "ticker": "BLK",
+      "sector": "Financials",
+      "rationale": "Asset management scale and index product leadership.",
+      "theme": null
+    },
+    {
+      "ticker": "CAT",
+      "sector": "Industrials",
+      "rationale": "Heavy equipment leader leveraged to infrastructure and mining.",
+      "theme": null
+    },
+    {
+      "ticker": "DE",
+      "sector": "Industrials",
+      "rationale": "Precision agriculture and equipment with high-margin parts.",
+      "theme": null
+    },
+    {
+      "ticker": "UNP",
+      "sector": "Industrials",
+      "rationale": "Freight rail network transporting construction materials, equipment, and components tied to infrastructure and manufacturing investments.",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "UPS",
+      "sector": "Industrials",
+      "rationale": "Parcel network scale and yield management.",
+      "theme": null
+    },
+    {
+      "ticker": "LMT",
+      "sector": "Industrials",
+      "rationale": "Prime contractor across air and missile defense, munitions, and C4ISR platforms aligned with elevated defense budgets.",
+      "theme": "Global Rearmament and Cybersecurity Spend"
+    },
+    {
+      "ticker": "HON",
+      "sector": "Industrials",
+      "rationale": "Industrial technology portfolio with margin discipline.",
+      "theme": null
     },
     {
       "ticker": "XOM",
       "sector": "Energy",
-      "rationale": "Project pipeline and capital discipline; cash returns."
+      "rationale": "Integrated energy scale and capital discipline.",
+      "theme": null
     },
     {
       "ticker": "CVX",
       "sector": "Energy",
-      "rationale": "Scale, shale exposure, and shareholder returns."
+      "rationale": "Upstream strength with robust shareholder returns.",
+      "theme": null
     },
     {
       "ticker": "COP",
       "sector": "Energy",
-      "rationale": "Low-cost shale portfolio and FCF focus."
+      "rationale": "Independent E&P with low-cost resource base.",
+      "theme": null
     },
     {
-      "ticker": "LIN",
-      "sector": "Materials",
-      "rationale": "Industrial gases oligopoly and long-term contracts."
+      "ticker": "SLB",
+      "sector": "Energy",
+      "rationale": "Oilfield services leader leveraged to global capex.",
+      "theme": null
     },
     {
       "ticker": "FCX",
       "sector": "Materials",
-      "rationale": "Copper leverage to electrification demand."
+      "rationale": "Copper exposure to electrification with disciplined balance sheet.",
+      "theme": null
+    },
+    {
+      "ticker": "SHW",
+      "sector": "Materials",
+      "rationale": "Coatings leader with strong pro contractor channel.",
+      "theme": null
+    },
+    {
+      "ticker": "APD",
+      "sector": "Materials",
+      "rationale": "Industrial gases with long-term contracts and steady cash flow.",
+      "theme": null
     },
     {
       "ticker": "NEE",
       "sector": "Utilities",
-      "rationale": "Renewables leadership and regulated growth."
+      "rationale": "Scale renewables platform and regulated utility growth.",
+      "theme": null
     },
     {
-      "ticker": "AMT",
-      "sector": "Real Estate",
-      "rationale": "Tower assets leveraged to 5G and data growth."
+      "ticker": "SO",
+      "sector": "Utilities",
+      "rationale": "Regulated utility with dividend support and grid investment.",
+      "theme": null
     },
     {
       "ticker": "PLD",
       "sector": "Real Estate",
-      "rationale": "Logistics REIT with scale and embedded rent growth."
+      "rationale": "Logistics REIT with scale near key distribution hubs.",
+      "theme": null
+    },
+    {
+      "ticker": "AMT",
+      "sector": "Real Estate",
+      "rationale": "Tower REIT with long-term lease growth from mobile data demand.",
+      "theme": null
+    },
+    {
+      "ticker": "MU",
+      "sector": "Information Technology",
+      "rationale": "High-bandwidth memory supplier; AI server builds require HBM stacks, positioning the company to benefit from sustained AI compute deployments.",
+      "theme": "AI Compute and Power Bottleneck"
+    },
+    {
+      "ticker": "VRT",
+      "sector": "Industrials",
+      "rationale": "Provides power systems, UPS, and liquid cooling for data centers; directly levered to power and thermal bottlenecks in AI infrastructure.",
+      "theme": "AI Compute and Power Bottleneck"
+    },
+    {
+      "ticker": "ETN",
+      "sector": "Industrials",
+      "rationale": "Electrical equipment leader in switchgear, breakers, and power management benefiting from utility and data center grid upgrades and electrification demand.",
+      "theme": "Grid Modernization and Electrification Capex"
+    },
+    {
+      "ticker": "PWR",
+      "sector": "Industrials",
+      "rationale": "Premier EPC contractor for transmission and distribution buildouts, interconnections, and grid hardening tied to rising load and renewables.",
+      "theme": "Grid Modernization and Electrification Capex"
+    },
+    {
+      "ticker": "INTC",
+      "sector": "Information Technology",
+      "rationale": "AI PC cycle catalyst with integrated NPUs and edge inference acceleration; benefits from corporate and consumer refresh.",
+      "theme": "Edge AI and Automation Diffusion"
+    },
+    {
+      "ticker": "ON",
+      "sector": "Information Technology",
+      "rationale": "Automotive and industrial semis used in ADAS, power management, and sensing; levered to vehicle content growth and factory automation.",
+      "theme": "Edge AI and Automation Diffusion"
+    },
+    {
+      "ticker": "ROK",
+      "sector": "Industrials",
+      "rationale": "Industrial automation hardware and software platform; enables AI-driven control, motion, and edge analytics in manufacturing.",
+      "theme": "Edge AI and Automation Diffusion"
+    },
+    {
+      "ticker": "TER",
+      "sector": "Information Technology",
+      "rationale": "Semiconductor test for AI/edge chips and collaborative robotics portfolio; benefits from rising device complexity and factory automation.",
+      "theme": "Edge AI and Automation Diffusion"
+    },
+    {
+      "ticker": "AMAT",
+      "sector": "Information Technology",
+      "rationale": "Semiconductor capital equipment vendor positioned for CHIPS Act-driven US fab construction and tool installations.",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "EME",
+      "sector": "Industrials",
+      "rationale": "Specialty contractor for electrical/mechanical systems in industrial facilities, fabs, and data centers; levered to reshoring projects.",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "HUBB",
+      "sector": "Industrials",
+      "rationale": "Key supplier of T&D components, connectors, and grid hardware with exposure to resiliency, storm hardening, and substation modernization.",
+      "theme": "Grid Modernization and Electrification Capex"
+    },
+    {
+      "ticker": "FSLR",
+      "sector": "Information Technology",
+      "rationale": "US solar module manufacturer benefiting from IRA manufacturing incentives and utility-scale project demand.",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "GEV",
+      "sector": "Industrials",
+      "rationale": "Provides grid solutions, high-voltage equipment, and services aligned with utility capex cycles and integration of distributed energy resources.",
+      "theme": "Grid Modernization and Electrification Capex"
+    },
+    {
+      "ticker": "ITRI",
+      "sector": "Information Technology",
+      "rationale": "Smart meter and AMI/DER orchestration provider leveraged to utility digitalization, demand response, and grid visibility.",
+      "theme": "Grid Modernization and Electrification Capex"
+    },
+    {
+      "ticker": "WST",
+      "sector": "Health Care",
+      "rationale": "Critical supplier of injectable containment and delivery components used in GLP-1 products; benefits from sustained demand and fill-finish needs.",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
+    },
+    {
+      "ticker": "BDX",
+      "sector": "Health Care",
+      "rationale": "Drug delivery systems and injection devices positioned for broader GLP-1 adoption and potential transitions in delivery formats.",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
+    },
+    {
+      "ticker": "MCK",
+      "sector": "Health Care",
+      "rationale": "Large pharmaceutical distributor positioned to benefit from higher GLP-1 volumes across specialty and retail channels.",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
+    },
+    {
+      "ticker": "RTX",
+      "sector": "Industrials",
+      "rationale": "Strong exposure to air defense, sensors, and secure communications; benefits from replenishment and modernization priorities.",
+      "theme": "Global Rearmament and Cybersecurity Spend"
+    },
+    {
+      "ticker": "LHX",
+      "sector": "Industrials",
+      "rationale": "Leader in tactical communications, electronic warfare, and space payloads central to C4ISR and contested-domain operations.",
+      "theme": "Global Rearmament and Cybersecurity Spend"
+    },
+    {
+      "ticker": "PANW",
+      "sector": "Information Technology",
+      "rationale": "Broad platform spanning network, cloud, and AI-driven threat detection aligned with rising cyber spend across public sector and enterprises.",
+      "theme": "Global Rearmament and Cybersecurity Spend"
+    },
+    {
+      "ticker": "CRWD",
+      "sector": "Information Technology",
+      "rationale": "Endpoint, identity, and cloud security leader with AI-native detection expanding in federal and critical infrastructure accounts.",
+      "theme": "Global Rearmament and Cybersecurity Spend"
+    },
+    {
+      "ticker": "TTD",
+      "sector": "Communication Services",
+      "rationale": "Independent ad-tech DSP with leadership in connected TV; partnerships with retailers enable closed-loop measurement, positioning it to benefit as ad dollars shift to CTV and retail media.",
+      "theme": "Consumer Barbell and Ad Spend Shift to Retail Media and CTV: Higher living costs and tighter credit drive trade-down at the low end while premium categories and experiences remain resilient, benefiting value retailers, club formats, off-price, and luxury; advertising dollars consolidate with platforms offering high ROI and closed-loop measurement, accelerating retail media networks, performance social, and connected TV, with positive spillovers to ad-tech and payments. (through May 2026)"
+    },
+    {
+      "ticker": "CB",
+      "sector": "Financials",
+      "rationale": "P&C insurer with underwriting discipline and pricing power in a hard market; higher yields lift investment income, and conservative leverage aligns with a higher-for-longer cost of capital.",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "MMC",
+      "sector": "Financials",
+      "rationale": "Capital-light insurance broker with fee-based revenue that benefits from elevated premium rates; resilient cash generation and limited balance-sheet risk suit a higher cost-of-capital regime.",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
     }
   ]
 }

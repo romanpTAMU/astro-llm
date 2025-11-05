@@ -10,6 +10,28 @@ import typer
 from .models import AnalystRecommendation, NewsItem, PriceData, Fundamentals
 
 
+def fetch_price_targets_fmp(ticker: str, api_key: str) -> tuple[Optional[float], Optional[float], Optional[float]]:
+    """Fetch price target consensus from FMP.
+    Returns (target_mean, target_high, target_low).
+    Uses price-target-consensus; falls back gracefully.
+    """
+    try:
+        url = "https://financialmodelingprep.com/stable/price-target-consensus"
+        params = {"symbol": ticker, "apikey": api_key}
+        resp = requests.get(url, params=params, timeout=10)
+        if resp.status_code != 200:
+            return (None, None, None)
+        data = resp.json()
+        if isinstance(data, list) and len(data) > 0 and isinstance(data[0], dict):
+            target_mean = data[0].get("targetConsensus")
+            target_high = data[0].get("targetHigh")
+            target_low = data[0].get("targetLow")
+            return (target_mean, target_high, target_low)
+        return (None, None, None)
+    except Exception:
+        return (None, None, None)
+
+
 def fetch_analyst_recommendations_finnhub(
     ticker: str, api_key: str
 ) -> Optional[AnalystRecommendation]:
@@ -56,23 +78,10 @@ def fetch_analyst_recommendations_finnhub(
         else:
             consensus = "Hold"  # Default to hold for unclear cases
         
-        # Get price targets from another endpoint
+        # Price targets will be optionally enriched via FMP in the tiered fetcher
         price_target = None
         price_target_high = None
         price_target_low = None
-        
-        try:
-            targets_url = "https://finnhub.io/api/v1/stock/price-target"
-            targets_response = requests.get(targets_url, params={"symbol": ticker, "token": api_key}, timeout=10)
-            targets_response.raise_for_status()
-            targets_data = targets_response.json()
-            if targets_data and isinstance(targets_data, dict):
-                price_target = targets_data.get("targetMean")
-                price_target_high = targets_data.get("targetHigh")
-                price_target_low = targets_data.get("targetLow")
-        except Exception as e:
-            # Price targets are optional, so just log and continue
-            typer.echo(f"  [WARN] Could not fetch price targets for {ticker}: {e}")
         
         return AnalystRecommendation(
             ticker=ticker,
@@ -253,19 +262,76 @@ def fetch_price_data_finnhub(ticker: str, api_key: str) -> Optional[PriceData]:
         return None
 
 
+def fetch_price_data_fmp(ticker: str, api_key: str) -> Optional[PriceData]:
+    """Fetch price, volume, market cap from FMP quote API.
+    Also calculates avg_volume_30d from historical data."""
+    try:
+        url = "https://financialmodelingprep.com/api/v3/quote/{}".format(ticker)
+        params = {"apikey": api_key}
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        if not data or not isinstance(data, list) or len(data) == 0:
+            return None
+        q = data[0]
+        price = q.get("price")
+        volume = q.get("volume")
+        market_cap = q.get("marketCap")
+        prev_close = q.get("previousClose")
+        price_change_pct = None
+        if price is not None and prev_close:
+            try:
+                price_change_pct = ((float(price) - float(prev_close)) / float(prev_close)) * 100
+            except Exception:
+                price_change_pct = None
+        
+        # Calculate avg_volume_30d from historical data
+        avg_volume_30d = None
+        try:
+            to_date = date.today()
+            from_date = to_date - timedelta(days=30)
+            hist_url = f"https://financialmodelingprep.com/api/v3/historical-price-full/{ticker}"
+            hist_params = {"apikey": api_key, "from": from_date.strftime("%Y-%m-%d"), "to": to_date.strftime("%Y-%m-%d")}
+            hist_resp = requests.get(hist_url, params=hist_params, timeout=10)
+            if hist_resp.status_code == 200:
+                hist_data = hist_resp.json()
+                if isinstance(hist_data, dict) and "historical" in hist_data:
+                    volumes = [day.get("volume", 0) for day in hist_data["historical"] if day.get("volume")]
+                    if volumes:
+                        avg_volume_30d = int(sum(volumes) / len(volumes))
+        except Exception:
+            pass  # avg_volume_30d is optional
+        
+        return PriceData(
+            ticker=ticker,
+            price=float(price) if price is not None else None,
+            volume=int(volume) if volume else 0,
+            avg_volume_30d=avg_volume_30d,
+            market_cap=float(market_cap) if market_cap else None,
+            price_change_pct=price_change_pct,
+            as_of=datetime.now(),
+        )
+    except Exception:
+        return None
+
 def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
     """Fetch fundamental data from Financial Modeling Prep API.
     
     Rate limit: 300 calls/min = 5 calls/sec = 200ms per call minimum.
     We use 250ms between calls to stay safely under the limit.
+    
+    Note: Some tickers use dots (BRK.B) which FMP may require as dashes (BRK-B).
     """
+    # Handle ticker notation: FMP may use BRK-B instead of BRK.B
+    fmp_ticker = ticker.replace(".", "-") if "." in ticker else ticker
+    
     # FMP rate limit: 300 calls/min = 200ms per call minimum
     # Use 250ms to be safe
     FMP_RATE_LIMIT_DELAY = 0.25  # seconds
     
     try:
         # Get income statement (most recent)
-        income_url = f"https://financialmodelingprep.com/api/v3/income-statement/{ticker}"
+        income_url = f"https://financialmodelingprep.com/api/v3/income-statement/{fmp_ticker}"
         income_params = {"apikey": api_key, "limit": 2}  # Get 2 periods for YoY growth
         
         income_response = requests.get(income_url, params=income_params, timeout=10)
@@ -290,7 +356,7 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         time.sleep(FMP_RATE_LIMIT_DELAY)
         
         # Get financial ratios
-        ratios_url = f"https://financialmodelingprep.com/api/v3/ratios/{ticker}"
+        ratios_url = f"https://financialmodelingprep.com/api/v3/ratios/{fmp_ticker}"
         ratios_params = {"apikey": api_key, "limit": 1}
         
         ratios_response = requests.get(ratios_url, params=ratios_params, timeout=10)
@@ -326,7 +392,7 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         # Get FCF margin (from cash flow statement)
         fcf_margin = None
         try:
-            cf_url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{ticker}"
+            cf_url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{fmp_ticker}"
             cf_params = {"apikey": api_key, "limit": 1}
             cf_response = requests.get(cf_url, params=cf_params, timeout=10)
             if cf_response.status_code == 200:
@@ -341,14 +407,34 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         # Get ratios from ratios endpoint
         pe_ratio = ratios_data.get("priceEarningsRatio") if ratios_data else None
         ev_ebitda = ratios_data.get("enterpriseValueMultiple") if ratios_data else None
-        roic = ratios_data.get("returnOnInvestedCapital") if ratios_data else None
-        if roic:
-            roic = roic * 100  # Convert to percentage
         
-        # Get net debt to EBITDA
+        # Rate limit: wait before next API call
+        time.sleep(FMP_RATE_LIMIT_DELAY)
+        
+        # Get ROIC and net_debt_to_ebitda from key-metrics-ttm endpoint
+        roic = None
         net_debt_to_ebitda = None
-        if ratios_data:
-            net_debt_to_ebitda = ratios_data.get("netDebtToEBITDA")
+        try:
+            km_url = f"https://financialmodelingprep.com/api/v3/key-metrics-ttm/{fmp_ticker}"
+            km_params = {"apikey": api_key}
+            km_resp = requests.get(km_url, params=km_params, timeout=10)
+            if km_resp.status_code == 200:
+                km_json = km_resp.json()
+                if isinstance(km_json, list) and len(km_json) > 0:
+                    km_data = km_json[0]
+                    # roicTTM is already a decimal (0.5569 = 55.69%), convert to percentage
+                    roic_ttm = km_data.get("roicTTM")
+                    if roic_ttm is not None:
+                        roic = roic_ttm * 100
+                    # netDebtToEBITDATTM is already a ratio
+                    net_debt_to_ebitda = km_data.get("netDebtToEBITDATTM")
+                elif isinstance(km_json, dict):
+                    roic_ttm = km_json.get("roicTTM")
+                    if roic_ttm is not None:
+                        roic = roic_ttm * 100
+                    net_debt_to_ebitda = km_json.get("netDebtToEBITDATTM")
+        except Exception:
+            pass  # These are optional metrics
         
         return Fundamentals(
             ticker=ticker,

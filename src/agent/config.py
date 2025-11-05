@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 class AppConfig(BaseModel):
     openai_api_key: str = Field(..., alias="OPENAI_API_KEY")
     openai_model: str = Field("gpt-5", alias="OPENAI_MODEL")
+    cheap_model: str = Field("gpt-4o-mini", alias="CHEAP_MODEL", description="Cheaper model for high-volume tasks")
 
     # API keys for data sources
     finnhub_api_key: Optional[str] = Field(None, alias="FINNHUB_API_KEY")

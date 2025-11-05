@@ -137,7 +137,8 @@ def user_theme_candidates(
         
         Task:
         For each theme above, propose 3-5 US-listed common stock candidates that are best positioned 
-        to benefit. Include ticker, sector, rationale explaining theme connection, and the theme name.
+        to benefit. Include ticker, sector, rationale explaining theme connection, and the theme name 
+        (ONLY the theme name from the "name" field, not the description or timeframe).
         
         Output JSON strictly as:
         {{
@@ -149,6 +150,103 @@ def user_theme_candidates(
               "theme": "AI Infrastructure Buildout"
             }},
             ... 15-40 total candidates (3-5 per theme) ...
+          ]
+        }}
+        """
+    ).strip()
+
+
+def system_portfolio() -> str:
+    return dedent(
+        """
+        You are a buy-side equity PM constructing a long-only portfolio from scored candidates.
+        Rules:
+        - Select exactly 20 stocks from the scored candidates provided.
+        - Assign weights between 2% and 10% per stock (0.02 to 0.10).
+        - Weights must sum to exactly 100% (1.0).
+        - Diversify across sectors and industries (respect sector_cap and industry_cap constraints).
+        - Prioritize stocks with higher composite scores, but ensure diversification.
+        - Consider sector/industry balance and avoid over-concentration.
+        - Output must be strict JSON.
+        """
+    ).strip()
+
+
+def user_portfolio(
+    scored_candidates: list[dict],
+    remaining_days: int,
+    min_weight: float,
+    max_weight: float,
+    sector_cap: float,
+    industry_cap: float,
+    horizon_end: date,
+) -> str:
+    # Sort candidates by composite score (highest first) and show top 40 for selection
+    sorted_candidates = sorted(scored_candidates, key=lambda x: x.get("composite_score", -999), reverse=True)
+    top_candidates = sorted_candidates[:min(40, len(sorted_candidates))]
+    
+    candidates_text = []
+    for cand in top_candidates:
+        score = cand.get("composite_score", 0)
+        sector = cand.get("sector", "Unknown")
+        theme = cand.get("theme")
+        sentiment = cand.get("sentiment", {}).get("overall_sentiment", "unknown")
+        price = cand.get("price", "N/A")
+        
+        line = f"  {cand['ticker']}: score={score:.3f}, sector={sector}, sentiment={sentiment}, price=${price}"
+        if theme:
+            line += f", theme={theme}"
+        candidates_text.append(line)
+    
+    return dedent(
+        f"""
+        Portfolio Construction Task:
+        
+        Investment Horizon: Today to {horizon_end.strftime("%Y-%m-%d")} ({remaining_days} days remaining)
+        
+        Constraints:
+        - Select EXACTLY 20 stocks
+        - Weight per stock: {min_weight*100:.0f}% to {max_weight*100:.0f}% (0.02 to 0.10)
+        - Total weight must sum to EXACTLY 100% (1.0)
+        - Sector cap: {sector_cap*100:.0f}% (no single sector > {sector_cap*100:.0f}%)
+        - Industry cap: {industry_cap*100:.0f}% (no single industry > {industry_cap*100:.0f}%)
+        - Long-only portfolio (no short positions)
+        
+        Scored Candidates (sorted by composite score, showing top 40):
+        {chr(10).join(candidates_text)}
+        
+        Instructions:
+        1. Select the best 20 stocks considering:
+           - Composite score (higher is better)
+           - Sector diversification (aim for 3-6 sectors, none > {sector_cap*100:.0f}%)
+           - Industry diversification (none > {industry_cap*100:.0f}%)
+           - Sentiment alignment (prefer bullish/neutral over bearish)
+           - Theme exposure (balance themed and non-themed stocks)
+        
+        2. Assign weights:
+           - Higher scores can get higher weights (up to {max_weight*100:.0f}%)
+           - Lower scores should get lower weights (minimum {min_weight*100:.0f}%)
+           - Ensure weights sum to exactly 1.0 (100%)
+        
+        3. Validate:
+           - Exactly 20 holdings
+           - Each weight between {min_weight} and {max_weight}
+           - Total weight = 1.0
+           - No sector exceeds {sector_cap*100:.0f}%
+           - No industry exceeds {industry_cap*100:.0f}%
+        
+        Output JSON strictly as:
+        {{
+          "holdings": [
+            {{
+              "ticker": "AAPL",
+              "weight": 0.08,
+              "sector": "Information Technology",
+              "theme": null,
+              "rationale": "High composite score (0.75), strong sentiment, sector leader",
+              "composite_score": 0.75
+            }},
+            ... exactly 20 holdings ...
           ]
         }}
         """

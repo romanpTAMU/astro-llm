@@ -6,6 +6,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
+import requests
 import typer
 import yfinance as yf
 from openai import OpenAI
@@ -17,6 +18,7 @@ from .data_apis import (
     fetch_news_finnhub,
     fetch_news_alpha_vantage,
     fetch_price_data_finnhub,
+    fetch_price_data_fmp,
     fetch_fundamentals_fmp,
 )
 from .models import (
@@ -32,15 +34,37 @@ from .models import (
 app = typer.Typer(add_completion=False)
 
 
-def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None) -> Optional[PriceData]:
-    """Fetch price and volume data using tiered approach: Finnhub -> yfinance."""
+def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Optional[str] = None) -> Optional[PriceData]:
+    """Fetch price and volume data using tiered approach: Finnhub -> FMP -> yfinance."""
     # Tier 1: Try Finnhub API (free, reliable)
     if finnhub_key:
         result = fetch_price_data_finnhub(ticker, finnhub_key)
         if result:
+            # Enrich with avg_volume_30d from FMP if available
+            if fmp_key and result.avg_volume_30d is None:
+                try:
+                    to_date = date.today()
+                    from_date = to_date - timedelta(days=30)
+                    hist_url = f"https://financialmodelingprep.com/api/v3/historical-price-full/{ticker}"
+                    hist_params = {"apikey": fmp_key, "from": from_date.strftime("%Y-%m-%d"), "to": to_date.strftime("%Y-%m-%d")}
+                    hist_resp = requests.get(hist_url, params=hist_params, timeout=10)
+                    if hist_resp.status_code == 200:
+                        hist_data = hist_resp.json()
+                        if isinstance(hist_data, dict) and "historical" in hist_data:
+                            volumes = [day.get("volume", 0) for day in hist_data["historical"] if day.get("volume")]
+                            if volumes:
+                                result.avg_volume_30d = int(sum(volumes) / len(volumes))
+                except Exception:
+                    pass  # avg_volume_30d is optional
             return result
     
-    # Tier 2: Fallback to yfinance (may be blocked, but try anyway)
+    # Tier 2: Try FMP Quote API
+    if fmp_key:
+        result = fetch_price_data_fmp(ticker, fmp_key)
+        if result:
+            return result
+    
+    # Tier 3: Fallback to yfinance (may be blocked, but try anyway)
     try:
         stock = yf.Ticker(ticker)
         
@@ -96,6 +120,7 @@ def fetch_fundamentals(ticker: str, fmp_key: Optional[str] = None) -> Optional[F
 def fetch_analyst_recommendations_tiered(
     ticker: str,
     finnhub_key: Optional[str],
+    fmp_key: Optional[str],
     client: OpenAI,
     model: str,
 ) -> Optional[AnalystRecommendation]:
@@ -104,6 +129,13 @@ def fetch_analyst_recommendations_tiered(
     if finnhub_key:
         result = fetch_analyst_recommendations_finnhub(ticker, finnhub_key)
         if result:
+            # Enrich price targets via FMP if available
+            if fmp_key:
+                from .data_apis import fetch_price_targets_fmp
+                pt_mean, pt_high, pt_low = fetch_price_targets_fmp(ticker, fmp_key)
+                result.price_target = pt_mean if pt_mean is not None else result.price_target
+                result.price_target_high = pt_high if pt_high is not None else result.price_target_high
+                result.price_target_low = pt_low if pt_low is not None else result.price_target_low
             return result
     
     # Tier 2: LLM with web search
@@ -128,7 +160,7 @@ Output JSON:
 
     try:
         result = chat_json(client, model, system, user, use_web_search=True)
-        return AnalystRecommendation(
+        rec = AnalystRecommendation(
             ticker=ticker,
             consensus=result.get("consensus"),
             price_target=result.get("price_target"),
@@ -138,6 +170,14 @@ Output JSON:
             recent_changes=result.get("recent_changes", []),
             as_of=date.today(),
         )
+        # Enrich price targets via FMP if available
+        if fmp_key:
+            from .data_apis import fetch_price_targets_fmp
+            pt_mean, pt_high, pt_low = fetch_price_targets_fmp(ticker, fmp_key)
+            rec.price_target = pt_mean if pt_mean is not None else rec.price_target
+            rec.price_target_high = pt_high if pt_high is not None else rec.price_target_high
+            rec.price_target_low = pt_low if pt_low is not None else rec.price_target_low
+        return rec
     except Exception as e:
         typer.echo(f"Error fetching analyst recommendations for {ticker}: {e}")
         return None
@@ -259,14 +299,17 @@ def fetch(
     out: Path = typer.Option(
         Path("data/stock_data.json"), help="Output JSON path"
     ),
-    model: Optional[str] = typer.Option(None, help="OpenAI model override"),
+    model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
     skip_news: bool = typer.Option(False, help="Skip news fetching (faster)"),
     skip_analyst: bool = typer.Option(False, help="Skip analyst recommendations"),
     delay: float = typer.Option(0.5, help="Delay between API calls (seconds)"),
+    resume: bool = typer.Option(False, help="Resume mode: only fetch missing tickers from existing output file"),
+    fix_sentiment_only: bool = typer.Option(False, help="Only fix missing news sentiment (don't re-fetch other data)"),
 ):
     """Fetch price, fundamentals, analyst recs, and news for all candidates."""
     cfg = load_config()
-    chosen_model = model or cfg.openai_model
+    # Use cheap model by default for news classification (high volume, simple task)
+    chosen_model = model or cfg.cheap_model
     
     if not candidates_file.exists():
         typer.echo(f"Candidates file not found: {candidates_file}")
@@ -279,17 +322,108 @@ def fetch(
         typer.echo(f"Failed to parse candidates file: {e}")
         raise typer.Exit(code=1)
     
-    client = get_client()
-    stock_data_list = []
+    # Load existing data if resume mode and file exists
+    existing_data_map = {}
+    if resume and out.exists():
+        try:
+            existing_text = out.read_text(encoding='utf-8')
+            if existing_text and existing_text.strip():
+                existing_data = json.loads(existing_text)
+                from .models import StockDataResponse
+                existing_resp = StockDataResponse.model_validate(existing_data)
+                existing_data_map = {item.ticker: item for item in existing_resp.data}
+                typer.echo(f"Resume mode: Found {len(existing_data_map)} existing tickers in {out}")
+        except Exception as e:
+            typer.echo(f"[WARN] Could not load existing data for resume: {e}")
+            typer.echo("Continuing with fresh fetch...")
     
-    typer.echo(f"Fetching data for {len(candidates_resp.candidates)} tickers...")
-    
-    for i, candidate in enumerate(candidates_resp.candidates):
-        ticker = candidate.ticker
-        typer.echo(f"[{i+1}/{len(candidates_resp.candidates)}] Processing {ticker}...")
+    # Determine which tickers need to be fetched
+    all_tickers = {c.ticker for c in candidates_resp.candidates}
+    if fix_sentiment_only:
+        # Only fix sentiment for existing entries
+        tickers_to_fetch = []
+        sentiment_tickers = []
+        for ticker, stock_data in existing_data_map.items():
+            if stock_data.news:
+                news_without_sentiment = [n for n in stock_data.news if not n.sentiment]
+                if len(news_without_sentiment) > 0:
+                    sentiment_tickers.append(ticker)
+        typer.echo(f"Sentiment fix mode: Found {len(sentiment_tickers)} tickers with news missing sentiment")
+        if sentiment_tickers:
+            typer.echo(f"  Tickers needing sentiment: {', '.join(sorted(sentiment_tickers))}")
+    elif resume:
+        # Check for missing tickers
+        missing_tickers = all_tickers - set(existing_data_map.keys())
         
-        # Fetch price data (tiered: Finnhub -> yfinance)
-        price_data = fetch_price_data(ticker, cfg.finnhub_api_key)
+        # Check for incomplete data (missing fundamentals or news without sentiment)
+        incomplete_tickers = set()
+        for ticker, stock_data in existing_data_map.items():
+            is_incomplete = False
+            
+            # Check if fundamentals are missing key metrics
+            if stock_data.fundamentals:
+                fund = stock_data.fundamentals
+                if fund.roic is None or fund.net_debt_to_ebitda is None or fund.pe_ratio is None or fund.ev_ebitda is None:
+                    is_incomplete = True
+            else:
+                # Fundamentals completely missing
+                is_incomplete = True
+            
+            # Check if news items are missing sentiment
+            if stock_data.news:
+                news_without_sentiment = [n for n in stock_data.news if not n.sentiment]
+                if len(news_without_sentiment) > 0:
+                    is_incomplete = True
+            
+            if is_incomplete:
+                incomplete_tickers.add(ticker)
+        
+        # Combine missing and incomplete
+        tickers_to_fetch = [c for c in candidates_resp.candidates 
+                           if c.ticker in missing_tickers or c.ticker in incomplete_tickers]
+        
+        typer.echo(f"Resume mode: {len(missing_tickers)} tickers missing, {len(incomplete_tickers)} tickers incomplete, {len(existing_data_map)} already fetched")
+        if incomplete_tickers:
+            typer.echo(f"  Incomplete tickers: {', '.join(sorted(incomplete_tickers))}")
+    else:
+        tickers_to_fetch = candidates_resp.candidates
+    
+    client = get_client()
+    new_stock_data_list = []  # Only newly fetched data
+    
+    # Handle sentiment-only fix mode
+    if fix_sentiment_only:
+        if not sentiment_tickers:
+            typer.echo("No tickers found with missing sentiment. All news items already have sentiment classified.")
+            return
+        
+        typer.echo(f"Fixing sentiment for {len(sentiment_tickers)} tickers...")
+        for ticker in sentiment_tickers:
+            stock_data = existing_data_map[ticker]
+            if stock_data.news:
+                news_needing_sentiment = [n for n in stock_data.news if not n.sentiment]
+                if news_needing_sentiment:
+                    typer.echo(f"  Classifying sentiment for {ticker} ({len(news_needing_sentiment)} items)...")
+                    classify_news_sentiment(news_needing_sentiment, client, chosen_model)
+                    time.sleep(delay)
+        # Write updated data
+        from .models import StockDataResponse
+        response = StockDataResponse(data=list(existing_data_map.values()))
+        Path(out).parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(response.model_dump_json(indent=2), encoding='utf-8')
+        typer.echo(f"Fixed sentiment for {len(sentiment_tickers)} tickers -> {out}")
+        return
+    
+    typer.echo(f"Fetching data for {len(tickers_to_fetch)} tickers...")
+    
+    for i, candidate in enumerate(tickers_to_fetch):
+        ticker = candidate.ticker
+        total_count = len(candidates_resp.candidates)
+        current_num = len(existing_data_map) + i + 1 if resume else i + 1
+        typer.echo(f"[{current_num}/{total_count}] Processing {ticker}...")
+        
+        # Fetch price data (tiered: Finnhub -> FMP -> yfinance)
+        price_data = fetch_price_data(ticker, cfg.finnhub_api_key, cfg.fmp_api_key)
         time.sleep(delay)
         
         # Fetch fundamentals (using FMP API)
@@ -309,7 +443,7 @@ def fetch(
         analyst_recs = None
         if not skip_analyst:
             analyst_recs = fetch_analyst_recommendations_tiered(
-                ticker, cfg.finnhub_api_key, client, chosen_model
+                ticker, cfg.finnhub_api_key, cfg.fmp_api_key, client, chosen_model
             )
             time.sleep(delay)
         
@@ -338,7 +472,56 @@ def fetch(
             news=news_items,
         )
         
-        stock_data_list.append(stock_data)
+        new_stock_data_list.append(stock_data)
+    
+    # Merge: existing + newly fetched
+    if resume:
+        final_data_map = existing_data_map.copy()
+        for new_data in new_stock_data_list:
+            # If existing entry exists, merge/update it properly
+            if new_data.ticker in final_data_map:
+                existing = final_data_map[new_data.ticker]
+                # Update fundamentals if new ones are better (more complete)
+                if new_data.fundamentals and (not existing.fundamentals or 
+                    (existing.fundamentals and (
+                        existing.fundamentals.roic is None or
+                        existing.fundamentals.net_debt_to_ebitda is None or
+                        existing.fundamentals.pe_ratio is None or
+                        existing.fundamentals.ev_ebitda is None
+                    ))):
+                    # Use new fundamentals if they're more complete
+                    existing.fundamentals = new_data.fundamentals
+                
+                # Update news sentiment for items that were missing it
+                if existing.news:
+                    # Check if any existing news items are missing sentiment
+                    news_needing_sentiment = [n for n in existing.news if not n.sentiment]
+                    if news_needing_sentiment:
+                        # Classify existing news items that don't have sentiment
+                        classify_news_sentiment(news_needing_sentiment, client, chosen_model)
+                        time.sleep(delay)
+                    
+                    # If new data has news, merge by matching headlines/URLs and updating sentiment
+                    if new_data.news:
+                        existing_news_map = {(n.headline, n.url or ""): n for n in existing.news}
+                        for new_news in new_data.news:
+                            key = (new_news.headline, new_news.url or "")
+                            if key in existing_news_map and not existing_news_map[key].sentiment and new_news.sentiment:
+                                existing_news_map[key].sentiment = new_news.sentiment
+                        existing.news = list(existing_news_map.values())
+                elif new_data.news:
+                    existing.news = new_data.news
+                
+                # Update other fields if missing
+                if not existing.price_data and new_data.price_data:
+                    existing.price_data = new_data.price_data
+                if not existing.analyst_recommendations and new_data.analyst_recommendations:
+                    existing.analyst_recommendations = new_data.analyst_recommendations
+            else:
+                final_data_map[new_data.ticker] = new_data  # Add new
+        stock_data_list = list(final_data_map.values())
+    else:
+        stock_data_list = new_stock_data_list
     
     response = StockDataResponse(data=stock_data_list)
     

@@ -22,11 +22,12 @@ app = typer.Typer(add_completion=False)
 @app.command()
 def identify(
     out: Path = typer.Option(Path("data/themes.json"), help="Output JSON path"),
-    model: Optional[str] = typer.Option(None, help="OpenAI model override"),
+    model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
 ):
     """Identify major market themes."""
     cfg = load_config()
-    chosen_model = model or cfg.openai_model
+    # Use cheap model by default (simple identification task)
+    chosen_model = model or cfg.cheap_model
 
     client = get_client()
 
@@ -56,11 +57,13 @@ def generate_candidates(
     out: Path = typer.Option(
         Path("data/theme_candidates.json"), help="Output JSON path"
     ),
-    model: Optional[str] = typer.Option(None, help="OpenAI model override"),
+    model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
+    batch_size: int = typer.Option(3, help="Number of themes to process per batch"),
 ):
     """Generate stock candidates based on identified themes."""
     cfg = load_config()
-    chosen_model = model or cfg.openai_model
+    # Use cheap model by default (simple generation task)
+    chosen_model = model or cfg.cheap_model
 
     if not themes_file.exists():
         typer.echo(f"Themes file not found: {themes_file}")
@@ -75,31 +78,46 @@ def generate_candidates(
         raise typer.Exit(code=1)
 
     themes_list = [t.model_dump() for t in themes_resp.themes]
-
     client = get_client()
-
     system = system_theme_candidates()
-    user = user_theme_candidates(
-        themes=themes_list,
-        remaining_days=cfg.remaining_days,
-        min_weight=cfg.min_weight,
-        max_weight=cfg.max_weight,
-        liquidity_dollar_min=cfg.min_avg_dollar_volume,
-    )
+    
+    # Process themes in batches to avoid timeout
+    all_candidates = []
+    total_themes = len(themes_list)
+    
+    for i in range(0, total_themes, batch_size):
+        batch = themes_list[i:i + batch_size]
+        batch_num = (i // batch_size) + 1
+        total_batches = (total_themes + batch_size - 1) // batch_size
+        
+        typer.echo(f"Processing batch {batch_num}/{total_batches} ({len(batch)} themes)...")
+        
+        user = user_theme_candidates(
+            themes=batch,
+            remaining_days=cfg.remaining_days,
+            min_weight=cfg.min_weight,
+            max_weight=cfg.max_weight,
+            liquidity_dollar_min=cfg.min_avg_dollar_volume,
+        )
 
-    result = chat_json(client, chosen_model, system, user)
+        # Theme candidate generation can take longer due to multiple themes
+        result = chat_json(client, chosen_model, system, user, timeout=300.0)  # 5 minute timeout
 
-    try:
-        parsed = CandidateResponse.model_validate(result)
-    except Exception as e:
-        typer.echo(f"Failed to parse theme candidates JSON: {e}")
-        Path(out).parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(result, indent=2), encoding='utf-8')
-        raise typer.Exit(code=1)
+        try:
+            parsed = CandidateResponse.model_validate(result)
+            all_candidates.extend(parsed.candidates)
+            typer.echo(f"  Generated {len(parsed.candidates)} candidates from batch {batch_num}")
+        except Exception as e:
+            typer.echo(f"Failed to parse theme candidates JSON for batch {batch_num}: {e}")
+            Path(out).parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(json.dumps(result, indent=2), encoding='utf-8')
+            raise typer.Exit(code=1)
 
+    # Merge all batches
+    merged = CandidateResponse(candidates=all_candidates)
     Path(out).parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(parsed.model_dump_json(indent=2), encoding='utf-8')
-    typer.echo(f"Generated {len(parsed.candidates)} theme-based candidates -> {out}")
+    out.write_text(merged.model_dump_json(indent=2), encoding='utf-8')
+    typer.echo(f"Generated {len(merged.candidates)} total theme-based candidates -> {out}")
 
 
 def main():

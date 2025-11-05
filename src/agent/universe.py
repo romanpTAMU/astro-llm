@@ -18,11 +18,12 @@ app = typer.Typer(add_completion=False)
 def generate(
     out: Path = typer.Option(Path("data/candidates.json"), help="Output JSON path"),
     count: Optional[int] = typer.Option(None, help="Candidate count override"),
-    model: Optional[str] = typer.Option(None, help="OpenAI model override"),
+    model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
 ):
     cfg = load_config()
     target_count = count or cfg.candidate_count
-    chosen_model = model or cfg.openai_model
+    # Use cheap model by default (simple generation task)
+    chosen_model = model or cfg.cheap_model
 
     client = get_client()
 
@@ -86,17 +87,42 @@ def merge(
         typer.echo(f"Failed to parse candidates: {e}")
         raise typer.Exit(code=1)
 
+    # Build theme map for assigning themes to regular candidates
+    theme_map = {cand.ticker: cand.theme for cand in themes_resp.candidates if cand.theme}
+    
     if dedupe:
         # Build map of ticker -> candidate, theme candidates take precedence
         seen = {}
         for cand in regular_resp.candidates:
+            # If this regular candidate doesn't have a theme but there's a theme candidate with the same ticker, assign the theme
+            if cand.theme is None and cand.ticker in theme_map:
+                from .models import Candidate
+                cand = Candidate(
+                    ticker=cand.ticker,
+                    sector=cand.sector,
+                    rationale=cand.rationale,
+                    theme=theme_map[cand.ticker]
+                )
             seen[cand.ticker] = cand
         # Theme candidates override regular ones if duplicate
         for cand in themes_resp.candidates:
             seen[cand.ticker] = cand
         merged_candidates = list(seen.values())
     else:
-        merged_candidates = list(regular_resp.candidates)
+        # For regular candidates without themes, assign theme from theme_map if available
+        regular_with_themes = []
+        for cand in regular_resp.candidates:
+            if cand.theme is None and cand.ticker in theme_map:
+                # Create a new candidate with the theme assigned
+                from .models import Candidate
+                cand = Candidate(
+                    ticker=cand.ticker,
+                    sector=cand.sector,
+                    rationale=cand.rationale,
+                    theme=theme_map[cand.ticker]
+                )
+            regular_with_themes.append(cand)
+        merged_candidates = list(regular_with_themes)
         merged_candidates.extend(themes_resp.candidates)
 
     merged = CandidateResponse(candidates=merged_candidates)

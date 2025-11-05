@@ -153,3 +153,25 @@ class ScoredCandidatesResponse(BaseModel):
     candidates: List[ScoredStock] = Field(default_factory=list)
     scored_at: datetime = Field(default_factory=datetime.now)
     stats: Optional[dict] = Field(None, description="Summary statistics")
+
+
+# Phase 4: Portfolio Models
+class PortfolioHolding(BaseModel):
+    """Single portfolio holding"""
+    ticker: str = Field(..., description="Stock ticker")
+    weight: float = Field(..., description="Portfolio weight (0.02 to 0.10, i.e., 2% to 10%)")
+    sector: Optional[str] = Field(None, description="GICS sector")
+    theme: Optional[str] = Field(None, description="Market theme if applicable")
+    rationale: Optional[str] = Field(None, description="Brief rationale for inclusion")
+    composite_score: Optional[float] = Field(None, description="Composite score from Phase 3")
+
+
+class Portfolio(BaseModel):
+    """Final portfolio construction"""
+    holdings: List[PortfolioHolding] = Field(..., description="Exactly 20 holdings")
+    total_weight: float = Field(..., description="Sum of all weights (should be 1.0)")
+    sector_allocation: dict[str, float] = Field(default_factory=dict, description="Sector allocation percentages")
+    industry_allocation: dict[str, float] = Field(default_factory=dict, description="Industry allocation percentages")
+    portfolio_date: date = Field(default_factory=date.today, description="Portfolio construction date")
+    horizon_end: date = Field(..., description="Portfolio horizon end date")
+    constructed_at: datetime = Field(default_factory=datetime.now, description="Construction timestamp")

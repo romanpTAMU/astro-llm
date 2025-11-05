@@ -15,6 +15,7 @@ def chat_json(
     system: str,
     user: str,
     use_web_search: bool = False,
+    timeout: float = 120.0,
 ) -> Dict[str, Any]:
     # gpt-5 only supports default temperature (1), so omit it for that model
     kwargs = {
@@ -37,12 +38,12 @@ def chat_json(
     
     try:
         # Add timeout to prevent hanging (httpx timeout in seconds)
-        resp = client.chat.completions.create(**kwargs, timeout=120.0)  # 2 minute timeout
+        resp = client.chat.completions.create(**kwargs, timeout=timeout)
     except Exception as e:
         # If web_search_options not supported, retry without it
         if use_web_search and "web_search_options" in str(e).lower():
             kwargs.pop("web_search_options", None)
-            resp = client.chat.completions.create(**kwargs, timeout=120.0)
+            resp = client.chat.completions.create(**kwargs, timeout=timeout)
         else:
             raise
     
