@@ -17,7 +17,6 @@ def chat_json(
     use_web_search: bool = False,
     timeout: float = 120.0,
 ) -> Dict[str, Any]:
-    # gpt-5 only supports default temperature (1), so omit it for that model
     kwargs = {
         "model": model,
         "messages": [
@@ -25,10 +24,8 @@ def chat_json(
             {"role": "user", "content": user},
         ],
         "response_format": {"type": "json_object"},
+        "temperature": 0.2,  # Use lower temperature for more deterministic outputs
     }
-    # Only set temperature for models that support it (not gpt-5)
-    if not model.startswith("gpt-5"):
-        kwargs["temperature"] = 0.2
     
     # Enable web search if requested (for models that support it)
     if use_web_search:

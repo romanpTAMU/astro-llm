@@ -94,7 +94,7 @@ def fetch_analyst_recommendations_finnhub(
             price_target_low=price_target_low,
             num_analysts=total,
             recent_changes=[],  # Would need to compare historical data
-            as_of=date.today(),
+            as_of=date.today(),  # Note: Finnhub API returns current recommendations, not historical
         )
     except Exception as e:
         typer.echo(f"Finnhub API error for {ticker}: {e}")
@@ -102,14 +102,22 @@ def fetch_analyst_recommendations_finnhub(
 
 
 def fetch_news_finnhub(
-    ticker: str, api_key: str, max_items: int = 10
+    ticker: str, api_key: str, max_items: int = 10, as_of_date: Optional[date] = None
 ) -> list[NewsItem]:
-    """Fetch news from Finnhub API."""
+    """Fetch news from Finnhub API.
+    
+    Args:
+        ticker: Stock ticker
+        api_key: Finnhub API key
+        max_items: Maximum number of news items to return
+        as_of_date: If provided, only fetch news up to this date (for backtesting)
+    """
     try:
-        # Get company news from past 30 days
+        # Get company news from past 30 days (or up to as_of_date)
         url = "https://finnhub.io/api/v1/company-news"
-        to_date = date.today().strftime("%Y-%m-%d")
-        from_date = (date.today() - timedelta(days=30)).strftime("%Y-%m-%d")
+        effective_date = as_of_date if as_of_date else date.today()
+        to_date = effective_date.strftime("%Y-%m-%d")
+        from_date = (effective_date - timedelta(days=30)).strftime("%Y-%m-%d")
         
         params = {
             "symbol": ticker,
@@ -148,10 +156,150 @@ def fetch_news_finnhub(
         return []
 
 
-def fetch_news_alpha_vantage(
-    ticker: str, api_key: str, max_items: int = 10
+def fetch_news_fmp(
+    ticker: str, api_key: str, max_items: int = 10, as_of_date: Optional[date] = None
 ) -> list[NewsItem]:
-    """Fetch news and sentiment from Alpha Vantage API."""
+    """Fetch news from FMP Stock News API (ticker-specific).
+    
+    Args:
+        ticker: Stock ticker
+        api_key: FMP API key
+        max_items: Maximum number of news items to return (default: 10)
+        as_of_date: If provided, fetch news up to this date (for backtesting)
+    
+    Returns:
+        List of NewsItem objects
+    """
+    try:
+        url = "https://financialmodelingprep.com/stable/news/stock"
+        
+        # Calculate date range (last 30 days or up to as_of_date)
+        effective_date = as_of_date if as_of_date else date.today()
+        to_date = effective_date.strftime("%Y-%m-%d")
+        from_date = (effective_date - timedelta(days=30)).strftime("%Y-%m-%d")
+        
+        params = {
+            "symbols": ticker,
+            "apikey": api_key,
+            "from": from_date,
+            "to": to_date,
+            "page": 0,
+            "limit": min(max_items, 250),  # FMP limit is 250 per request
+        }
+        
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        if not data or not isinstance(data, list):
+            return []
+        
+        news_items = []
+        for item in data[:max_items]:  # Limit to max_items
+            published_at = None
+            if item.get("publishedDate"):
+                try:
+                    # Format: "2025-02-03 21:05:14"
+                    published_at = datetime.strptime(item["publishedDate"], "%Y-%m-%d %H:%M:%S")
+                except (ValueError, TypeError):
+                    pass
+            
+            # Filter by date if in backtest mode
+            if as_of_date and published_at and published_at.date() > as_of_date:
+                continue
+            
+            news_items.append(
+                NewsItem(
+                    ticker=ticker,
+                    headline=item.get("title", ""),
+                    summary=item.get("text"),
+                    source=item.get("publisher", "Unknown"),
+                    url=item.get("url"),
+                    published_at=published_at,
+                )
+            )
+        
+        return news_items
+    except Exception as e:
+        typer.echo(f"FMP Stock News API error for {ticker}: {e}")
+        return []
+
+
+def fetch_general_news_fmp(
+    api_key: str, 
+    max_items: int = 50, 
+    as_of_date: Optional[date] = None
+) -> list[dict]:
+    """Fetch general market news from FMP General News API.
+    
+    Args:
+        api_key: FMP API key
+        max_items: Maximum number of news items to return
+        as_of_date: If provided, fetch news up to this date
+    
+    Returns:
+        List of news item dicts with title, text, publishedDate, publisher, url
+    """
+    try:
+        url = "https://financialmodelingprep.com/stable/news/general-latest"
+        
+        effective_date = as_of_date if as_of_date else date.today()
+        to_date = effective_date.strftime("%Y-%m-%d")
+        from_date = (effective_date - timedelta(days=7)).strftime("%Y-%m-%d")  # Last 7 days
+        
+        params = {
+            "apikey": api_key,
+            "from": from_date,
+            "to": to_date,
+            "page": 0,
+            "limit": min(max_items, 250),
+        }
+        
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        if not data or not isinstance(data, list):
+            return []
+        
+        news_items = []
+        for item in data[:max_items]:
+            published_at = None
+            if item.get("publishedDate"):
+                try:
+                    published_at = datetime.strptime(item["publishedDate"], "%Y-%m-%d %H:%M:%S")
+                except (ValueError, TypeError):
+                    pass
+            
+            # Filter by date if in backtest mode
+            if as_of_date and published_at and published_at.date() > as_of_date:
+                continue
+            
+            news_items.append({
+                "title": item.get("title", ""),
+                "text": item.get("text", ""),
+                "publisher": item.get("publisher", "Unknown"),
+                "url": item.get("url"),
+                "publishedDate": item.get("publishedDate"),
+            })
+        
+        return news_items
+    except Exception as e:
+        typer.echo(f"FMP General News API error: {e}")
+        return []
+
+
+def fetch_news_alpha_vantage(
+    ticker: str, api_key: str, max_items: int = 10, as_of_date: Optional[date] = None
+) -> list[NewsItem]:
+    """Fetch news and sentiment from Alpha Vantage API.
+    
+    Args:
+        ticker: Stock ticker
+        api_key: Alpha Vantage API key
+        max_items: Maximum number of news items to return
+        as_of_date: If provided, filter news by this date (for backtesting)
+    """
     try:
         url = "https://www.alphavantage.co/query"
         params = {
@@ -178,6 +326,10 @@ def fetch_news_alpha_vantage(
                     published_at = datetime.strptime(time_str, "%Y%m%dT%H%M%S")
                 except:
                     pass
+            
+            # Filter by date if in backtest mode
+            if as_of_date and published_at and published_at.date() > as_of_date:
+                continue
             
             # Get sentiment from ticker_sentiment
             sentiment = None
@@ -314,7 +466,7 @@ def fetch_price_data_fmp(ticker: str, api_key: str) -> Optional[PriceData]:
     except Exception:
         return None
 
-def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
+def fetch_fundamentals_fmp(ticker: str, api_key: str, as_of_date: Optional[date] = None) -> Optional[Fundamentals]:
     """Fetch fundamental data from Financial Modeling Prep API.
     
     Rate limit: 300 calls/min = 5 calls/sec = 200ms per call minimum.
@@ -330,9 +482,10 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
     FMP_RATE_LIMIT_DELAY = 0.25  # seconds
     
     try:
-        # Get income statement (most recent)
+        # For historical backtesting, get more statements to find the right one
+        limit = 10 if as_of_date else 2
         income_url = f"https://financialmodelingprep.com/api/v3/income-statement/{fmp_ticker}"
-        income_params = {"apikey": api_key, "limit": 2}  # Get 2 periods for YoY growth
+        income_params = {"apikey": api_key, "limit": limit}
         
         income_response = requests.get(income_url, params=income_params, timeout=10)
         income_response.raise_for_status()
@@ -347,10 +500,35 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
             typer.echo(f"  [WARN] No income statement data available for {ticker}")
             return None
         
-        latest_income = income_data[0]
-        
-        # Get previous period for YoY growth
-        prev_income = income_data[1] if len(income_data) > 1 else None
+        # For backtesting, filter to find the most recent statement before as_of_date
+        if as_of_date:
+            # Income statements have a "date" field (YYYY-MM-DD format)
+            # Find the most recent statement with date <= as_of_date
+            valid_statements = []
+            for stmt in income_data:
+                stmt_date_str = stmt.get("date")
+                if stmt_date_str:
+                    try:
+                        stmt_date = datetime.strptime(stmt_date_str, "%Y-%m-%d").date()
+                        if stmt_date <= as_of_date:
+                            valid_statements.append((stmt_date, stmt))
+                    except (ValueError, TypeError):
+                        continue
+            
+            if not valid_statements:
+                typer.echo(f"  [WARN] No income statements found before {as_of_date} for {ticker}")
+                return None
+            
+            # Sort by date descending and take the most recent
+            valid_statements.sort(key=lambda x: x[0], reverse=True)
+            latest_income = valid_statements[0][1]
+            
+            # Get previous period for YoY growth (next most recent before as_of_date)
+            prev_income = valid_statements[1][1] if len(valid_statements) > 1 else None
+        else:
+            # Normal mode: use most recent
+            latest_income = income_data[0]
+            prev_income = income_data[1] if len(income_data) > 1 else None
         
         # Rate limit: wait before next API call
         time.sleep(FMP_RATE_LIMIT_DELAY)
@@ -390,15 +568,62 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         time.sleep(FMP_RATE_LIMIT_DELAY)
         
         # Get FCF margin (from cash flow statement)
+        # Match to the same period as income statement
         fcf_margin = None
         try:
+            cf_limit = 10 if as_of_date else 1
             cf_url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{fmp_ticker}"
-            cf_params = {"apikey": api_key, "limit": 1}
+            cf_params = {"apikey": api_key, "limit": cf_limit}
             cf_response = requests.get(cf_url, params=cf_params, timeout=10)
             if cf_response.status_code == 200:
                 cf_data = cf_response.json()
                 if cf_data and isinstance(cf_data, list) and len(cf_data) > 0:
-                    free_cash_flow = cf_data[0].get("freeCashFlow")
+                    # For backtesting, find the statement matching the income statement date
+                    if as_of_date:
+                        # Get the date from the income statement we selected
+                        income_date_str = latest_income.get("date")
+                        cash_flow_stmt = None
+                        
+                        if income_date_str:
+                            try:
+                                income_date = datetime.strptime(income_date_str, "%Y-%m-%d").date()
+                                # Find cash flow statement with matching date
+                                for cf in cf_data:
+                                    cf_date_str = cf.get("date")
+                                    if cf_date_str:
+                                        try:
+                                            cf_date = datetime.strptime(cf_date_str, "%Y-%m-%d").date()
+                                            if cf_date == income_date:
+                                                cash_flow_stmt = cf
+                                                break
+                                        except (ValueError, TypeError):
+                                            continue
+                                
+                                # If no exact match, find most recent before as_of_date
+                                if not cash_flow_stmt:
+                                    valid_cf = []
+                                    for cf in cf_data:
+                                        cf_date_str = cf.get("date")
+                                        if cf_date_str:
+                                            try:
+                                                cf_date = datetime.strptime(cf_date_str, "%Y-%m-%d").date()
+                                                if cf_date <= as_of_date:
+                                                    valid_cf.append((cf_date, cf))
+                                            except (ValueError, TypeError):
+                                                continue
+                                    if valid_cf:
+                                        valid_cf.sort(key=lambda x: x[0], reverse=True)
+                                        cash_flow_stmt = valid_cf[0][1]
+                            except (ValueError, TypeError):
+                                pass
+                        
+                        if not cash_flow_stmt:
+                            # Fallback to most recent if no match found
+                            cash_flow_stmt = cf_data[0]
+                    else:
+                        cash_flow_stmt = cf_data[0]
+                    
+                    free_cash_flow = cash_flow_stmt.get("freeCashFlow")
                     if free_cash_flow and revenue_ttm and revenue_ttm != 0:
                         fcf_margin = (free_cash_flow / revenue_ttm) * 100
         except Exception:
@@ -436,6 +661,9 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
         except Exception:
             pass  # These are optional metrics
         
+        # Use as_of_date if provided (for backtesting), otherwise use today
+        effective_as_of = as_of_date if as_of_date else date.today()
+        
         return Fundamentals(
             ticker=ticker,
             revenue_ttm=float(revenue_ttm) if revenue_ttm else None,
@@ -446,7 +674,7 @@ def fetch_fundamentals_fmp(ticker: str, api_key: str) -> Optional[Fundamentals]:
             net_debt_to_ebitda=net_debt_to_ebitda,
             pe_ratio=float(pe_ratio) if pe_ratio else None,
             ev_ebitda=float(ev_ebitda) if ev_ebitda else None,
-            as_of=date.today(),
+            as_of=effective_as_of,
         )
     except requests.exceptions.HTTPError as e:
         if e.response.status_code == 401:

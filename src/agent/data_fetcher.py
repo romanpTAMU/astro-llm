@@ -16,6 +16,7 @@ from .openai_client import get_client, chat_json
 from .data_apis import (
     fetch_analyst_recommendations_finnhub,
     fetch_news_finnhub,
+    fetch_news_fmp,
     fetch_news_alpha_vantage,
     fetch_price_data_finnhub,
     fetch_price_data_fmp,
@@ -34,8 +35,31 @@ from .models import (
 app = typer.Typer(add_completion=False)
 
 
-def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Optional[str] = None) -> Optional[PriceData]:
-    """Fetch price and volume data using tiered approach: Finnhub -> FMP -> yfinance."""
+def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Optional[str] = None, as_of_date: Optional[date] = None) -> Optional[PriceData]:
+    """Fetch price and volume data using tiered approach: Finnhub -> FMP -> yfinance.
+    
+    Args:
+        ticker: Stock ticker
+        finnhub_key: Finnhub API key (optional)
+        fmp_key: FMP API key (optional)
+        as_of_date: If provided, fetch historical price for this date (for backtesting)
+    """
+    # In backtest mode, use historical price from FMP
+    if as_of_date and fmp_key:
+        from .performance_tracker import fetch_historical_price
+        hist_price = fetch_historical_price(ticker, as_of_date, fmp_key)
+        if hist_price:
+            # Create PriceData from historical price
+            return PriceData(
+                ticker=ticker,
+                price=hist_price,
+                volume=0,  # Historical volume not critical
+                avg_volume_30d=None,
+                market_cap=None,
+                price_change_pct=None,
+                as_of=datetime.combine(as_of_date, datetime.min.time()),
+            )
+    
     # Tier 1: Try Finnhub API (free, reliable)
     if finnhub_key:
         result = fetch_price_data_finnhub(ticker, finnhub_key)
@@ -110,10 +134,16 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
         return None
 
 
-def fetch_fundamentals(ticker: str, fmp_key: Optional[str] = None) -> Optional[Fundamentals]:
-    """Fetch fundamental data using FMP API."""
+def fetch_fundamentals(ticker: str, fmp_key: Optional[str] = None, as_of_date: Optional[date] = None) -> Optional[Fundamentals]:
+    """Fetch fundamental data using FMP API.
+    
+    Args:
+        ticker: Stock ticker
+        fmp_key: FMP API key
+        as_of_date: If provided, fetch fundamentals as of this date (for backtesting)
+    """
     if fmp_key:
-        return fetch_fundamentals_fmp(ticker, fmp_key)
+        return fetch_fundamentals_fmp(ticker, fmp_key, as_of_date)
     return None
 
 
@@ -123,8 +153,10 @@ def fetch_analyst_recommendations_tiered(
     fmp_key: Optional[str],
     client: OpenAI,
     model: str,
+    as_of_date: Optional[date] = None,
+    disable_web_search: bool = False,
 ) -> Optional[AnalystRecommendation]:
-    """Tiered approach: Finnhub -> LLM with web search."""
+    """Tiered approach: Finnhub -> LLM with web search (web search disabled in backtest mode)."""
     # Tier 1: Try Finnhub API
     if finnhub_key:
         result = fetch_analyst_recommendations_finnhub(ticker, finnhub_key)
@@ -138,10 +170,15 @@ def fetch_analyst_recommendations_tiered(
                 result.price_target_low = pt_low if pt_low is not None else result.price_target_low
             return result
     
-    # Tier 2: LLM with web search
+    # Tier 2: LLM with web search (disabled in backtest mode)
+    if disable_web_search:
+        # In backtest mode, don't use web search - return None if Finnhub didn't work
+        return None
+    
+    date_context = f" as of {as_of_date.strftime('%Y-%m-%d')}" if as_of_date else ""
     system = """You are a financial data extraction assistant. Search the web for recent analyst recommendations 
     and extract structured data. Only extract information that is explicitly stated in search results."""
-    user = f"""Search for recent analyst recommendations for {ticker}. Find and extract:
+    user = f"""Search for recent analyst recommendations for {ticker}{date_context}. Find and extract:
 - Consensus rating (Buy/Hold/Sell)
 - Average price target
 - High and low price targets
@@ -160,6 +197,9 @@ Output JSON:
 
     try:
         result = chat_json(client, model, system, user, use_web_search=True)
+        # Use as_of_date if provided (for backtesting), otherwise use today
+        effective_as_of = as_of_date if as_of_date else date.today()
+        
         rec = AnalystRecommendation(
             ticker=ticker,
             consensus=result.get("consensus"),
@@ -168,7 +208,7 @@ Output JSON:
             price_target_low=result.get("price_target_low"),
             num_analysts=result.get("num_analysts"),
             recent_changes=result.get("recent_changes", []),
-            as_of=date.today(),
+            as_of=effective_as_of,
         )
         # Enrich price targets via FMP if available
         if fmp_key:
@@ -187,35 +227,69 @@ def fetch_news_tiered(
     ticker: str,
     finnhub_key: Optional[str],
     alpha_vantage_key: Optional[str],
+    fmp_key: Optional[str],
     client: OpenAI,
     model: str,
     max_items: int = 10,
+    as_of_date: Optional[date] = None,
+    disable_web_search: bool = False,
 ) -> list[NewsItem]:
-    """Tiered approach: Finnhub -> Alpha Vantage -> LLM with web search."""
+    """Tiered approach: Finnhub -> FMP -> Alpha Vantage -> LLM with web search."""
     news_items = []
     
     # Tier 1: Try Finnhub API
     if finnhub_key:
-        finnhub_news = fetch_news_finnhub(ticker, finnhub_key, max_items)
+        finnhub_news = fetch_news_finnhub(ticker, finnhub_key, max_items, as_of_date)
+        # Filter by date if in backtest mode
+        if as_of_date:
+            finnhub_news = [
+                n for n in finnhub_news 
+                if n.published_at and n.published_at.date() <= as_of_date
+            ]
         if finnhub_news:
             news_items.extend(finnhub_news)
-            return news_items[:max_items]  # Return early if we got good data
+            news_items = sorted(news_items, key=lambda x: x.published_at or datetime.min, reverse=True)
+            if len(news_items) >= max_items:
+                return news_items[:max_items]  # Return early if we got enough data
     
-    # Tier 2: Try Alpha Vantage (has sentiment built-in)
+    # Tier 2: Try FMP General News API (supports historical dates)
+    if fmp_key and len(news_items) < max_items:
+        fmp_news = fetch_news_fmp(ticker, fmp_key, max_items - len(news_items), as_of_date)
+        # Filter by date if in backtest mode (already done in fetch_news_fmp, but double-check)
+        if as_of_date:
+            fmp_news = [
+                n for n in fmp_news 
+                if n.published_at and n.published_at.date() <= as_of_date
+            ]
+        if fmp_news:
+            news_items.extend(fmp_news)
+            news_items = sorted(news_items, key=lambda x: x.published_at or datetime.min, reverse=True)
+            if len(news_items) >= max_items:
+                return news_items[:max_items]
+    
+    # Tier 3: Try Alpha Vantage (has sentiment built-in)
     if alpha_vantage_key and len(news_items) < max_items:
         alpha_news = fetch_news_alpha_vantage(
-            ticker, alpha_vantage_key, max_items - len(news_items)
+            ticker, alpha_vantage_key, max_items - len(news_items), as_of_date
         )
+        # Filter by date if in backtest mode
+        if as_of_date:
+            alpha_news = [
+                n for n in alpha_news 
+                if n.published_at and n.published_at.date() <= as_of_date
+            ]
         if alpha_news:
             news_items.extend(alpha_news)
-            # Alpha Vantage already includes sentiment, so return
-            return news_items[:max_items]
+            news_items = sorted(news_items, key=lambda x: x.published_at or datetime.min, reverse=True)
+            if len(news_items) >= max_items:
+                return news_items[:max_items]
     
-    # Tier 3: LLM with web search
-    if len(news_items) < max_items:
+    # Tier 4: LLM with web search (disabled in backtest mode)
+    if len(news_items) < max_items and not disable_web_search:
+        date_context = f" up to {as_of_date.strftime('%Y-%m-%d')}" if as_of_date else ""
         system = """You are a financial news extraction assistant. Search the web for recent news articles 
         and extract structured data. Only extract items that are explicitly found in search results."""
-        user = f"""Search for recent news articles (last 30 days) about {ticker}. For each article, extract:
+        user = f"""Search for recent news articles (last 30 days{date_context}) about {ticker}. For each article, extract:
 - headline
 - summary (1-2 sentences)
 - source
@@ -246,6 +320,10 @@ Limit to {max_items - len(news_items)} most relevant articles. If you don't find
                         published_at = datetime.strptime(item["published_at"], "%Y-%m-%d")
                     except:
                         pass
+                
+                # Filter by date in backtest mode
+                if as_of_date and published_at and published_at.date() > as_of_date:
+                    continue
                 
                 news_items.append(
                     NewsItem(
@@ -329,7 +407,6 @@ def fetch(
             existing_text = out.read_text(encoding='utf-8')
             if existing_text and existing_text.strip():
                 existing_data = json.loads(existing_text)
-                from .models import StockDataResponse
                 existing_resp = StockDataResponse.model_validate(existing_data)
                 existing_data_map = {item.ticker: item for item in existing_resp.data}
                 typer.echo(f"Resume mode: Found {len(existing_data_map)} existing tickers in {out}")
@@ -407,7 +484,6 @@ def fetch(
                     classify_news_sentiment(news_needing_sentiment, client, chosen_model)
                     time.sleep(delay)
         # Write updated data
-        from .models import StockDataResponse
         response = StockDataResponse(data=list(existing_data_map.values()))
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         out.write_text(response.model_dump_json(indent=2), encoding='utf-8')
@@ -423,13 +499,19 @@ def fetch(
         typer.echo(f"[{current_num}/{total_count}] Processing {ticker}...")
         
         # Fetch price data (tiered: Finnhub -> FMP -> yfinance)
-        price_data = fetch_price_data(ticker, cfg.finnhub_api_key, cfg.fmp_api_key)
+        # In backtest mode, use historical price
+        price_data = fetch_price_data(
+            ticker, 
+            cfg.finnhub_api_key, 
+            cfg.fmp_api_key,
+            as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
+        )
         time.sleep(delay)
         
         # Fetch fundamentals (using FMP API)
         if cfg.fmp_api_key:
             typer.echo(f"  -> Fetching fundamentals from FMP API...")
-            fundamentals = fetch_fundamentals(ticker, cfg.fmp_api_key)
+            fundamentals = fetch_fundamentals(ticker, cfg.fmp_api_key, as_of_date=cfg.backtest_date if cfg.backtest_mode else None)
             if fundamentals:
                 typer.echo(f"  [OK] Fundamentals fetched")
             else:
@@ -443,19 +525,28 @@ def fetch(
         analyst_recs = None
         if not skip_analyst:
             analyst_recs = fetch_analyst_recommendations_tiered(
-                ticker, cfg.finnhub_api_key, cfg.fmp_api_key, client, chosen_model
+                ticker, 
+                cfg.finnhub_api_key, 
+                cfg.fmp_api_key, 
+                client, 
+                chosen_model,
+                as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
+                disable_web_search=cfg.backtest_mode,
             )
             time.sleep(delay)
         
-        # Fetch news (tiered: Finnhub -> Alpha Vantage -> LLM web search)
+        # Fetch news (tiered: Finnhub -> FMP -> Alpha Vantage -> LLM web search)
         news_items = []
         if not skip_news:
             news_items = fetch_news_tiered(
                 ticker,
                 cfg.finnhub_api_key,
                 cfg.alpha_vantage_api_key,
+                cfg.fmp_api_key,
                 client,
                 chosen_model,
+                as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
+                disable_web_search=cfg.backtest_mode,
             )
             time.sleep(delay)
             # Classify sentiment for items that don't have it (from LLM search)

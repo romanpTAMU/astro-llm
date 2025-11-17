@@ -8,6 +8,7 @@ import typer
 
 from .config import load_config
 from .openai_client import get_client, chat_json
+from .data_apis import fetch_general_news_fmp
 from .prompts import (
     system_themes,
     user_themes,
@@ -24,15 +25,24 @@ def identify(
     out: Path = typer.Option(Path("data/themes.json"), help="Output JSON path"),
     model: Optional[str] = typer.Option(None, help="OpenAI model override (defaults to cheap_model for efficiency)"),
 ):
-    """Identify major market themes."""
+    """Identify major market themes using recent news and market analysis."""
     cfg = load_config()
     # Use cheap model by default (simple identification task)
     chosen_model = model or cfg.cheap_model
 
     client = get_client()
+    
+    # Fetch recent general news to inform theme identification
+    general_news = []
+    if cfg.fmp_api_key:
+        typer.echo("Fetching recent market news to inform theme identification...")
+        general_news = fetch_general_news_fmp(cfg.fmp_api_key, max_items=50)
+        typer.echo(f"  Fetched {len(general_news)} recent news articles")
+    else:
+        typer.echo("[WARN] No FMP API key - theme identification will proceed without news data")
 
     system = system_themes()
-    user = user_themes(cfg.portfolio_horizon_end, cfg.remaining_days)
+    user = user_themes(cfg.portfolio_horizon_end, cfg.remaining_days, general_news)
 
     result = chat_json(client, chosen_model, system, user)
 

@@ -1,0 +1,2581 @@
+{
+  "candidates": [
+    {
+      "ticker": "NVDA",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 1.0,
+        "stability": 0.5,
+        "revisions": 0.9163265306122449
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 83.7% recommending Buy",
+          "Significant price target upside potential",
+          "Positive market outlook for semiconductor industry"
+        ],
+        "key_risks": [
+          "Market volatility impacting stock performance",
+          "Potential supply chain disruptions",
+          "Competition in the semiconductor space"
+        ],
+        "price_target_upside": 32.16069832255352
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.7116326530612245,
+      "price": 190.17,
+      "market_cap": 4621131.01509473,
+      "scored_at": "2025-11-16T17:54:52.073020"
+    },
+    {
+      "ticker": "LRCX",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 1.0,
+        "growth": 1.0,
+        "stability": 0.0,
+        "revisions": 0.7428571428571429
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong buy recommendations from analysts (64.3%)",
+          "No sell recommendations indicating confidence in the stock",
+          "Price target suggests significant upside potential"
+        ],
+        "key_risks": [
+          "Market volatility affecting semiconductor sector",
+          "Potential supply chain disruptions",
+          "Economic downturn impacting demand"
+        ],
+        "price_target_upside": 5.611763118845286
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.7109523809523809,
+      "price": 148.26,
+      "market_cap": 186219.02103915773,
+      "scored_at": "2025-11-16T17:56:53.409016"
+    },
+    {
+      "ticker": "FB",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 1.0,
+        "quality": 1.0,
+        "growth": null,
+        "stability": 0.5,
+        "revisions": 0.6
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Upgrade by Morgan Stanley indicates positive outlook from a major firm",
+          "Consensus rating remains a Buy suggesting confidence among analysts"
+        ],
+        "key_risks": [
+          "Downgrade by Goldman Sachs may indicate potential concerns",
+          "Current price significantly below price target suggests volatility"
+        ],
+        "price_target_upside": 738.5282152765466
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.7000000000000001,
+      "price": 41.7398,
+      "market_cap": null,
+      "scored_at": "2025-11-16T17:54:46.612981"
+    },
+    {
+      "ticker": "GOOGL",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.8735849056603774
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 77.4% recommending Buy",
+          "Price target indicates significant upside potential",
+          "No sell recommendations indicating overall confidence"
+        ],
+        "key_risks": [
+          "Market volatility affecting tech stocks",
+          "Potential regulatory challenges",
+          "Economic downturn impacting ad revenue"
+        ],
+        "price_target_upside": 7.6191165297926995
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.6740251572327044,
+      "price": 276.41,
+      "market_cap": 3338390.2833108483,
+      "scored_at": "2025-11-16T17:54:43.947545"
+    },
+    {
+      "ticker": "NFLX",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 1.0,
+        "growth": 0.7,
+        "stability": 0.0,
+        "revisions": 0.7585365853658537
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 65.9% recommending a Buy",
+          "Significant price target upside potential",
+          "No sell recommendations indicating confidence in the stock"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential competition in the streaming industry",
+          "Economic factors impacting consumer spending"
+        ],
+        "price_target_upside": 25.839574885134454
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.652520325203252,
+      "price": 1112.17,
+      "market_cap": 471262.37784021714,
+      "scored_at": "2025-11-16T17:55:11.507373"
+    },
+    {
+      "ticker": "NFLX",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 1.0,
+        "growth": 0.7,
+        "stability": 0.0,
+        "revisions": 0.7585365853658537
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 65.9% recommending a buy",
+          "Significant price target indicating potential for growth",
+          "No sell recommendations, indicating confidence in the stock"
+        ],
+        "key_risks": [
+          "Current price is significantly below the price target, which may create volatility",
+          "Market conditions could impact future performance",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 25.839574885134454
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.637520325203252,
+      "price": 1112.17,
+      "market_cap": 471262.37784021714,
+      "scored_at": "2025-11-16T17:55:56.277524"
+    },
+    {
+      "ticker": "MSFT",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.9,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.9,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 90.9% recommending Buy",
+          "Significant price target upside potential from current price",
+          "Positive market outlook for technology sector"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential regulatory challenges in the tech industry",
+          "Economic downturn impacting consumer spending"
+        ],
+        "price_target_upside": 25.351836606687833
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.635,
+      "price": 510.18,
+      "market_cap": 3791850.3874347173,
+      "scored_at": "2025-11-16T17:54:37.482804"
+    },
+    {
+      "ticker": "V",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.8714285714285714
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 77.1% recommending a buy",
+          "Significant price target upside potential",
+          "Stable financial performance indicated by no sell recommendations"
+        ],
+        "key_risks": [
+          "Current price is significantly lower than the price target",
+          "Market volatility could impact stock performance",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 24.91667171686565
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.6071428571428571,
+      "price": 330.02,
+      "market_cap": 631689.6422587866,
+      "scored_at": "2025-11-16T17:55:03.615127"
+    },
+    {
+      "ticker": "MA",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.7944444444444444
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 69.4% recommending 'Buy'",
+          "Significant price target upside potential of 22% from current price",
+          "No sell recommendations indicating strong market confidence"
+        ],
+        "key_risks": [
+          "Potential market volatility affecting stock performance",
+          "Economic factors that could impact consumer spending",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 22.120828981364415
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5994444444444444,
+      "price": 545.73,
+      "market_cap": 490063.27824938647,
+      "scored_at": "2025-11-16T17:55:06.101338"
+    },
+    {
+      "ticker": "AMAT",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 1.0,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.6666666666666666
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 60% Buy recommendations",
+          "Significant price target upside potential",
+          "Stable market position in semiconductor equipment"
+        ],
+        "key_risks": [
+          "Potential market volatility affecting semiconductor sector",
+          "Global supply chain disruptions",
+          "Dependence on customer demand fluctuations"
+        ],
+        "price_target_upside": 8.884562629972132
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5716666666666667,
+      "price": 226.01,
+      "market_cap": 180049.15804643914,
+      "scored_at": "2025-11-16T17:56:56.808749"
+    },
+    {
+      "ticker": "ADBE",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.5848484848484848
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 54.5% Buy recommendations",
+          "Significant price target upside potential from current price",
+          "Stable financial performance indicated by analyst ratings"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential for lower-than-expected earnings growth",
+          "Economic downturn impacting demand for products"
+        ],
+        "price_target_upside": 26.468545196460386
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5634848484848485,
+      "price": 331.11,
+      "market_cap": 138602.65055673264,
+      "scored_at": "2025-11-16T17:55:45.448331"
+    },
+    {
+      "ticker": "MRK",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.8333333333333334,
+        "quality": 1.0,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.5615384615384615
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 2.2384847180370193
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5628205128205128,
+      "price": 92.92,
+      "market_cap": 230629.52782730915,
+      "scored_at": "2025-11-16T17:55:33.344871"
+    },
+    {
+      "ticker": "BLK",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.5,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.8777777777777778
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 77.8% recommending 'Buy'",
+          "Significant price target upside potential",
+          "No sell recommendations indicating confidence in the stock"
+        ],
+        "key_risks": [
+          "Market volatility affecting overall performance",
+          "Potential economic downturn impacting asset management sector",
+          "Lack of recent news may indicate stagnation in investor interest"
+        ],
+        "price_target_upside": 18.603134393254813
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5494444444444444,
+      "price": 1057.94,
+      "market_cap": 172591.1955288092,
+      "scored_at": "2025-11-16T17:56:15.698344"
+    },
+    {
+      "ticker": "CL",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 1.0,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.5782608695652174
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Majority of analysts recommend a Buy rating",
+          "Price target suggests significant upside potential",
+          "Strong historical performance in the sector"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential economic downturn impacting demand",
+          "Single Sell recommendation may indicate some concerns"
+        ],
+        "price_target_upside": 12.107623318385654
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5294927536231884,
+      "price": 78.05,
+      "market_cap": 62913.36940743178,
+      "scored_at": "2025-11-16T17:57:10.749652"
+    },
+    {
+      "ticker": "JPM",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.4,
+        "quality": 0.5,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.6599999999999999
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 60% Buy recommendations",
+          "Significant price target upside potential",
+          "Stable financial performance indicated by current price"
+        ],
+        "key_risks": [
+          "Market volatility affecting financial sector",
+          "Potential regulatory changes impacting operations",
+          "Economic downturn risks"
+        ],
+        "price_target_upside": 4.446493857251078
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.526,
+      "price": 303.61,
+      "market_cap": 826506.0580174532,
+      "scored_at": "2025-11-16T17:54:57.822849"
+    },
+    {
+      "ticker": "NOW",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.2,
+        "growth": 1.0,
+        "stability": 0.5,
+        "revisions": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.9,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 91.4% recommending 'Buy'",
+          "Significant price target upside potential",
+          "No negative news or bearish sentiment reported"
+        ],
+        "key_risks": [
+          "Current price significantly below price target",
+          "Market volatility could impact stock performance",
+          "Potential for changes in market conditions affecting demand"
+        ],
+        "price_target_upside": 40.7252801523935
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.52,
+      "price": 850.43,
+      "market_cap": 176889.44050844238,
+      "scored_at": "2025-11-16T17:56:27.182142"
+    },
+    {
+      "ticker": "TROW",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 1.0,
+        "quality": 1.0,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": -0.2333333333333333
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [
+          "High percentage of Hold recommendations",
+          "Significant number of Sell recommendations"
+        ],
+        "price_target_upside": 12.072355485646876
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5166666666666667,
+      "price": 101.72,
+      "market_cap": 22199.06785183494,
+      "scored_at": "2025-11-16T17:56:17.581273"
+    },
+    {
+      "ticker": "AAPL",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 1.0,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.6
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 54.8% recommending a Buy",
+          "Significant price target upside potential of 4.99%",
+          "Stable performance with no recent negative news"
+        ],
+        "key_risks": [
+          "Market volatility affecting tech stocks",
+          "Potential supply chain issues",
+          "Competition from other tech companies"
+        ],
+        "price_target_upside": 5.0291839506626
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.505,
+      "price": 272.41,
+      "market_cap": 4025226.3751850543,
+      "scored_at": "2025-11-16T17:54:34.970365"
+    },
+    {
+      "ticker": "PG",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.85,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.6357142857142857
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "neutral",
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 53.6% recommending 'Buy'",
+          "No sell recommendations indicating confidence in the stock",
+          "Price target of $168.00 suggests significant upside potential"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Potential economic downturn affecting consumer goods",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 13.767183585020664
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4977380952380952,
+      "price": 147.67,
+      "market_cap": 345065.4366047044,
+      "scored_at": "2025-11-16T17:57:14.895824"
+    },
+    {
+      "ticker": "SPGI",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.5,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.9695652173913043
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 87% recommending 'Buy'",
+          "Significant price target upside potential",
+          "No negative news impacting sentiment"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential economic downturn impacting revenue",
+          "Dependence on market conditions for growth"
+        ],
+        "price_target_upside": 20.591212796112586
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.49195652173913046,
+      "price": 493.9,
+      "market_cap": 149552.9114302026,
+      "scored_at": "2025-11-16T17:56:21.027557"
+    },
+    {
+      "ticker": "KO",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 0.7,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.9461538461538461
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 84.6% recommending 'Buy'",
+          "Price target of $79.00 indicates significant upside potential",
+          "Stable market position and brand recognition"
+        ],
+        "key_risks": [
+          "Potential market volatility affecting consumer goods",
+          "Economic downturn impacting discretionary spending",
+          "Competition in the beverage industry"
+        ],
+        "price_target_upside": 11.017425519955037
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4729487179487179,
+      "price": 71.16,
+      "market_cap": 306102.4870641418,
+      "scored_at": "2025-11-16T17:55:21.503146"
+    },
+    {
+      "ticker": "QCOM",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.7,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.5499999999999999
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 9.207954937349127
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.44666666666666666,
+      "price": 173.98,
+      "market_cap": 186332.58,
+      "scored_at": "2025-11-16T17:57:03.327487"
+    },
+    {
+      "ticker": "AMZN",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.16666666666666666,
+        "quality": 0.4,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 96.4% recommending 'Buy'",
+          "Significant price target upside potential",
+          "Positive long-term growth outlook for e-commerce and cloud services"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential regulatory challenges",
+          "Competition in e-commerce and cloud sectors"
+        ],
+        "price_target_upside": 27.704631641740164
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.43666666666666665,
+      "price": 234.69,
+      "market_cap": 2508886.77020519,
+      "scored_at": "2025-11-16T17:54:41.220269"
+    },
+    {
+      "ticker": "HON",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.6925925925925925
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 59.3% recommending 'Buy'",
+          "No sell recommendations indicating confidence in the stock",
+          "Price target suggests significant upside potential"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Potential economic downturn affecting industrial sector",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 22.688906752411576
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4225925925925926,
+      "price": 199.04,
+      "market_cap": 126367.94660003883,
+      "scored_at": "2025-11-16T17:56:09.395059"
+    },
+    {
+      "ticker": "PFE",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.6666666666666666,
+        "quality": 0.7,
+        "growth": 0.2,
+        "stability": 0.0,
+        "revisions": 0.475
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 15.722266560255393
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.39583333333333337,
+      "price": 25.06,
+      "market_cap": 142483.83549740366,
+      "scored_at": "2025-11-16T17:55:28.871857"
+    },
+    {
+      "ticker": "DIS",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.8241379310344827
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.75,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.75,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 75.9% recommending Buy",
+          "Significant price target upside from current price",
+          "Positive long-term growth prospects for the company"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential operational challenges in the entertainment sector",
+          "Economic downturn impacting consumer spending"
+        ],
+        "price_target_upside": 32.05103969754254
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.39491379310344826,
+      "price": 105.8,
+      "market_cap": 190221.4011279565,
+      "scored_at": "2025-11-16T17:55:08.296177"
+    },
+    {
+      "ticker": "CSCO",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.7,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.6
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": -1.6025641025641024
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3916666666666666,
+      "price": 78.0,
+      "market_cap": 308349.3567313259,
+      "scored_at": "2025-11-16T17:55:16.226426"
+    },
+    {
+      "ticker": "VZ",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.8333333333333334,
+        "quality": 0.5,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.43333333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 16.90209449585971
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.385,
+      "price": 41.06,
+      "market_cap": 165789.84764649608,
+      "scored_at": "2025-11-16T17:55:40.010543"
+    },
+    {
+      "ticker": "T",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 1.0,
+        "quality": 0.35,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.5583333333333333
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Majority of analysts recommend 'Buy'",
+          "Price target indicates significant upside potential",
+          "Stable performance in the telecommunications sector"
+        ],
+        "key_risks": [
+          "Potential regulatory challenges",
+          "Market competition affecting pricing power",
+          "Economic downturn impacting consumer spending"
+        ],
+        "price_target_upside": 20.007815552950376
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3833333333333333,
+      "price": 25.59,
+      "market_cap": 181419.01800287532,
+      "scored_at": "2025-11-16T17:55:38.279019"
+    },
+    {
+      "ticker": "JNJ",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.7,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.58
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 2.434542949012393
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.383,
+      "price": 195.93,
+      "market_cap": 472053.1540428747,
+      "scored_at": "2025-11-16T17:55:30.831011"
+    },
+    {
+      "ticker": "MCD",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.85,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.49473684210526314
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 5.924502491613215
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.378640350877193,
+      "price": 307.03,
+      "market_cap": 218652.74296324953,
+      "scored_at": "2025-11-16T17:56:48.328151"
+    },
+    {
+      "ticker": "CRM",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.35,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.8045454545454546
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 70.5% recommending Buy",
+          "Significant price target upside potential",
+          "No sell recommendations indicating confidence in the stock"
+        ],
+        "key_risks": [
+          "Current price significantly lower than price target may indicate market skepticism",
+          "Potential market volatility affecting stock performance",
+          "Lack of recent news could indicate stagnation in momentum"
+        ],
+        "price_target_upside": 57.18624312566691
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.37795454545454543,
+      "price": 243.66,
+      "market_cap": 231964.3129333229,
+      "scored_at": "2025-11-16T17:55:52.814668"
+    },
+    {
+      "ticker": "XOM",
+      "sector": "Energy",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.6666666666666666,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.54
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 48% Buy recommendations",
+          "Significant price target upside potential",
+          "Stable performance in the energy sector"
+        ],
+        "key_risks": [
+          "Potential volatility in oil prices",
+          "Regulatory changes affecting the energy sector",
+          "Geopolitical tensions impacting supply"
+        ],
+        "price_target_upside": 14.150389806354246
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3773333333333333,
+      "price": 119.29,
+      "market_cap": 496497.7498454949,
+      "scored_at": "2025-11-16T17:55:24.233159"
+    },
+    {
+      "ticker": "MMM",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.23333333333333334,
+        "quality": 0.7,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.5736842105263158
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 52.6% recommending a Buy",
+          "Current price is below the price target, indicating potential for growth",
+          "Majority of analysts have a positive outlook on the stock"
+        ],
+        "key_risks": [
+          "Only 5.3% of analysts recommend a Sell, indicating some skepticism",
+          "Market volatility could impact stock performance",
+          "Lack of recent news may indicate stagnation in investor interest"
+        ],
+        "price_target_upside": 3.980188566654724
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3340350877192982,
+      "price": 167.58,
+      "market_cap": 89022.68908889532,
+      "scored_at": "2025-11-16T17:56:05.948244"
+    },
+    {
+      "ticker": "PYPL",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.55,
+        "growth": 0.2,
+        "stability": 0.0,
+        "revisions": 0.43333333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 25.282598312370634
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.32083333333333336,
+      "price": 62.81,
+      "market_cap": 58768.29852234166,
+      "scored_at": "2025-11-16T17:55:13.329040"
+    },
+    {
+      "ticker": "KMB",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.85,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.43333333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 30.43311060904676
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.30583333333333335,
+      "price": 104.015,
+      "market_cap": 34518.25030489765,
+      "scored_at": "2025-11-16T17:57:07.686560"
+    },
+    {
+      "ticker": "FISV",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.43333333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 77.95648060548722
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2916666666666667,
+      "price": 63.42,
+      "market_cap": 34110.56480316597,
+      "scored_at": "2025-11-16T17:56:38.966769"
+    },
+    {
+      "ticker": "MS",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.06666666666666667,
+        "quality": 0.09999999999999998,
+        "growth": 0.7,
+        "stability": 0.5,
+        "revisions": 0.4703703703703703
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 6.99987794458684
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2753703703703704,
+      "price": 163.86,
+      "market_cap": 260424.20714357498,
+      "scored_at": "2025-11-16T17:56:13.347189"
+    },
+    {
+      "ticker": "CAT",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.7,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.30833333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 2.160532823132326
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.25583333333333336,
+      "price": 554.03,
+      "market_cap": 259274.72306224192,
+      "scored_at": "2025-11-16T17:56:02.827033"
+    },
+    {
+      "ticker": "CVX",
+      "sector": "Energy",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.6666666666666666,
+        "quality": 0.09999999999999998,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.54
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 48% Buy recommendations",
+          "Price target suggests significant upside potential",
+          "Stable performance in a volatile market"
+        ],
+        "key_risks": [
+          "Potential for market volatility impacting stock performance",
+          "Dependence on oil prices which can be unpredictable",
+          "Regulatory changes affecting the energy sector"
+        ],
+        "price_target_upside": 9.75764496891257
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2523333333333333,
+      "price": 157.62,
+      "market_cap": 317371.2793434963,
+      "scored_at": "2025-11-16T17:55:27.266202"
+    },
+    {
+      "ticker": "DOCU",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.2,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.3916666666666667
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 37.987012987012974
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.24583333333333335,
+      "price": 67.76,
+      "market_cap": 13626.814976848827,
+      "scored_at": "2025-11-16T17:56:36.398050"
+    },
+    {
+      "ticker": "C",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.06666666666666667,
+        "quality": -0.25,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.8272727272727273
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 72.7% recommending 'Buy'",
+          "No sell recommendations indicating confidence in the stock",
+          "Price target suggests significant upside potential"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Economic factors affecting the financial sector",
+          "Potential changes in regulatory environment"
+        ],
+        "price_target_upside": 12.662013958125625
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2435606060606061,
+      "price": 100.3,
+      "market_cap": 179463.38789812653,
+      "scored_at": "2025-11-16T17:57:17.964433"
+    },
+    {
+      "ticker": "WMT",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.43333333333333335,
+        "quality": 0.05000000000000002,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 93.9% recommending 'Buy'",
+          "Significant price target upside potential",
+          "Stable financial performance in a resilient retail sector"
+        ],
+        "key_risks": [
+          "Potential economic downturn affecting consumer spending",
+          "Increased competition in the retail space",
+          "Supply chain disruptions impacting inventory"
+        ],
+        "price_target_upside": 15.495706479313032
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.23583333333333334,
+      "price": 102.48,
+      "market_cap": 815064.5625,
+      "scored_at": "2025-11-16T17:56:44.656055"
+    },
+    {
+      "ticker": "ADP",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.20526315789473684
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 9.941127662096486
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2355263157894737,
+      "price": 253.09,
+      "market_cap": 102361.93716382458,
+      "scored_at": "2025-11-16T17:56:23.967736"
+    },
+    {
+      "ticker": "SYY",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.06666666666666667,
+        "quality": 0.05000000000000002,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.5285714285714286
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 47.6% recommending a Buy",
+          "Significant price target upside potential",
+          "Stable performance indicated by a majority of Hold recommendations"
+        ],
+        "key_risks": [
+          "Single Sell recommendation indicating some bearish sentiment",
+          "Market volatility could impact stock performance",
+          "No recent news may indicate a lack of momentum"
+        ],
+        "price_target_upside": 16.891982331682513
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.23369047619047617,
+      "price": 74.71,
+      "market_cap": 35775.70915945091,
+      "scored_at": "2025-11-16T17:57:06.339739"
+    },
+    {
+      "ticker": "GS",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.06666666666666667,
+        "quality": -0.04999999999999999,
+        "growth": 0.7,
+        "stability": 0.5,
+        "revisions": 0.38
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": -1.8093082651629067
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2288333333333333,
+      "price": 790.91,
+      "market_cap": 237216.44781117837,
+      "scored_at": "2025-11-16T17:56:10.330692"
+    },
+    {
+      "ticker": "UNH",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.16666666666666666,
+        "quality": 0.2,
+        "growth": 0.2,
+        "stability": 0.0,
+        "revisions": 0.6384615384615385
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 61.5% recommending a Buy",
+          "Significant price target upside potential",
+          "Stable financial performance in the healthcare sector"
+        ],
+        "key_risks": [
+          "Potential regulatory changes affecting the healthcare industry",
+          "Economic downturn impacting healthcare spending",
+          "Competition from other healthcare providers"
+        ],
+        "price_target_upside": 18.374448517989183
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2255128205128205,
+      "price": 321.86,
+      "market_cap": 291553.2095813492,
+      "scored_at": "2025-11-16T17:55:35.827502"
+    },
+    {
+      "ticker": "ZM",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.475
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 4.488245072429353
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.21833333333333332,
+      "price": 84.22,
+      "market_cap": 24514.79,
+      "scored_at": "2025-11-16T17:56:28.451026"
+    },
+    {
+      "ticker": "AMD",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.3333333333333333,
+        "quality": -0.25,
+        "growth": 0.5,
+        "stability": 0.5,
+        "revisions": 0.7744186046511627
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 67.4% Buy recommendations",
+          "Significant price target upside potential",
+          "No sell recommendations indicating strong market confidence"
+        ],
+        "key_risks": [
+          "Market volatility affecting tech stocks",
+          "Potential supply chain issues",
+          "Competition in the semiconductor industry"
+        ],
+        "price_target_upside": 18.24075199546209
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.20327519379844963,
+      "price": 246.81,
+      "market_cap": 401816.9344588142,
+      "scored_at": "2025-11-16T17:55:50.709554"
+    },
+    {
+      "ticker": "ADI",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.25,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.6862068965517241
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 58.6% Buy recommendations",
+          "Significant price target upside from current price",
+          "No sell recommendations indicating confidence in the stock"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Potential for economic downturn affecting demand",
+          "Lack of recent news may indicate stagnation in momentum"
+        ],
+        "price_target_upside": 16.543914172591432
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.18612068965517242,
+      "price": 234.89,
+      "market_cap": 115555.41372662302,
+      "scored_at": "2025-11-16T17:56:59.744313"
+    },
+    {
+      "ticker": "SNAP",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.35,
+        "quality": -0.4,
+        "growth": 0.7,
+        "stability": 0.5,
+        "revisions": 0.20638297872340428
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": -3.7339556592765493
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.1806382978723404,
+      "price": 8.57,
+      "market_cap": 14734.903619512821,
+      "scored_at": "2025-11-16T17:56:30.875797"
+    },
+    {
+      "ticker": "PEP",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.3592592592592593
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 3.188207062050055
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.16925925925925928,
+      "price": 145.85,
+      "market_cap": 199426.55769438556,
+      "scored_at": "2025-11-16T17:55:17.998436"
+    },
+    {
+      "ticker": "LMT",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.0,
+        "quality": 0.2,
+        "growth": 0.2,
+        "stability": 0.0,
+        "revisions": 0.3857142857142857
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 15.75026300534599
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.1285714285714286,
+      "price": 465.77,
+      "market_cap": 107778.15318032332,
+      "scored_at": "2025-11-16T17:55:57.931407"
+    },
+    {
+      "ticker": "TXN",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.3333333333333333,
+        "quality": 0.85,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.28421052631578947
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 19.531789367978394
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.12425438596491226,
+      "price": 159.33,
+      "market_cap": 144770.89652145494,
+      "scored_at": "2025-11-16T17:57:01.323086"
+    },
+    {
+      "ticker": "COST",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.43333333333333335,
+        "quality": 0.19999999999999998,
+        "growth": 0.2,
+        "stability": 0.5,
+        "revisions": 0.56875
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 13.072872651628428
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.11020833333333334,
+      "price": 922.98,
+      "market_cap": 409045.5448514477,
+      "scored_at": "2025-11-16T17:56:41.030078"
+    },
+    {
+      "ticker": "BA",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.35,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.7956521739130434
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong buy recommendations from analysts (69.6% Buy)",
+          "Significant price target upside potential",
+          "No negative news impacting sentiment"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential operational challenges in the aerospace sector",
+          "Economic downturn impacting demand for aircraft"
+        ],
+        "price_target_upside": 25.539790252930278
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.10456521739130434,
+      "price": 194.52,
+      "market_cap": 147853.77007303177,
+      "scored_at": "2025-11-16T17:56:01.079216"
+    },
+    {
+      "ticker": "BRK.B",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5666666666666667,
+        "quality": 0.09999999999999998,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": -0.2857142857142857
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [
+          "High percentage of sell recommendations",
+          "Lack of recent positive news",
+          "Market volatility affecting performance"
+        ],
+        "price_target_upside": null
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.059761904761904766,
+      "price": 508.94,
+      "market_cap": 1098139.0235432643,
+      "scored_at": "2025-11-16T17:54:54.739049"
+    },
+    {
+      "ticker": "TGT",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.4,
+        "quality": 0.0,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.23513513513513515
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 9.15461624026695
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.05351351351351353,
+      "price": 89.9,
+      "market_cap": 40850.4866137431,
+      "scored_at": "2025-11-16T17:56:50.270255"
+    },
+    {
+      "ticker": "TSLA",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.43333333333333335,
+        "quality": -0.25,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.33529411764705885
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [
+          "Strong analyst consensus with 43.1% recommending 'Buy'",
+          "Significant price target upside potential of 6.2%",
+          "Positive market perception of Tesla's growth potential"
+        ],
+        "key_risks": [
+          "High percentage of 'Sell' recommendations (19.6%)",
+          "Market volatility affecting stock performance",
+          "Potential supply chain issues impacting production"
+        ],
+        "price_target_upside": 6.227278347965858
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.039362745098039206,
+      "price": 404.35,
+      "market_cap": 1344795.015817138,
+      "scored_at": "2025-11-16T17:54:49.242680"
+    },
+    {
+      "ticker": "SBUX",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.3333333333333333,
+        "quality": 0.0,
+        "growth": 0.0,
+        "stability": 0.5,
+        "revisions": 0.43333333333333335
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 22.670441141778717
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.026666666666666672,
+      "price": 84.78,
+      "market_cap": 96369.4245817691,
+      "scored_at": "2025-11-16T17:56:46.990496"
+    },
+    {
+      "ticker": "NKE",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.16666666666666666,
+        "quality": 0.2,
+        "growth": -0.5,
+        "stability": 0.0,
+        "revisions": 0.48235294117647054
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": 31.681471092410778
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.035098039215686286,
+      "price": 64.17,
+      "market_cap": 94856.19483038028,
+      "scored_at": "2025-11-16T17:55:41.946460"
+    },
+    {
+      "ticker": "INTC",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.4,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": 0.03333333333333334
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [],
+        "price_target_upside": -0.8445945945946064
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.2266666666666667,
+      "price": 35.52,
+      "market_cap": 169430.39927990647,
+      "scored_at": "2025-11-16T17:55:46.857868"
+    },
+    {
+      "ticker": "TWTR",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.4,
+        "quality": -0.25,
+        "growth": 1.0,
+        "stability": null,
+        "revisions": 0.01428571428571429
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": null,
+        "news_score": null,
+        "key_drivers": [],
+        "key_risks": [
+          "Lack of bullish analyst recommendations",
+          "High percentage of hold ratings",
+          "No recent news to drive sentiment"
+        ],
+        "price_target_upside": null
+      },
+      "risk_flags": {
+        "passed_all_checks": false,
+        "failed_checks": [
+          "No price data"
+        ],
+        "liquidity_ok": true,
+        "price_ok": false,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -10.0,
+      "price": 0.0,
+      "market_cap": null,
+      "scored_at": "2025-11-16T17:56:34.256116"
+    }
+  ],
+  "scored_at": "2025-11-16T17:57:17.964686",
+  "stats": {
+    "total_scored": 63,
+    "passed_risk_screens": 62,
+    "avg_composite_score": 0.19105588242667484,
+    "top_10_scores": [
+      0.7116326530612245,
+      0.7109523809523809,
+      0.7000000000000001,
+      0.6740251572327044,
+      0.652520325203252,
+      0.637520325203252,
+      0.635,
+      0.6071428571428571,
+      0.5994444444444444,
+      0.5716666666666667
+    ]
+  }
+}

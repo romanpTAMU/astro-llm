@@ -142,6 +142,9 @@ class ScoredStock(BaseModel):
     # Composite score
     composite_score: float = Field(..., description="Final composite score for ranking")
     
+    # News summary
+    news_summary: Optional[str] = Field(None, description="3-4 sentence summary of recent news articles")
+    
     # Metadata
     price: Optional[float] = None
     market_cap: Optional[float] = None

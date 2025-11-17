@@ -25,7 +25,7 @@ python main.py universe generate --out data/candidates.json
 
 Options:
 - `--count 60` override candidate count
-- `--model gpt-5` override model
+- `--model gpt-4o-mini` override model
 
 Outputs:
 - `data/candidates.json` with JSON schema:
@@ -91,7 +91,7 @@ Options:
 - `--skip-news` - Skip news fetching (faster, reduces API calls)
 - `--skip-analyst` - Skip analyst recommendations
 - `--delay 0.5` - Delay between API calls (seconds, default 0.5)
-- `--model gpt-5` - Override model for analyst/news extraction
+- `--model gpt-4o-mini` - Override model for analyst/news extraction
 
 ### What Gets Fetched
 
@@ -208,7 +208,7 @@ Options:
 - `--stock-data-file` - Input stock data JSON (from Phase 2)
 - `--candidates-file` - Original candidates file (for sector/theme info)
 - `--out` - Output JSON path
-- `--model gpt-5` - Override model for sentiment synthesis
+- `--model gpt-4o-mini` - Override model for sentiment synthesis
 
 ### What Gets Calculated
 

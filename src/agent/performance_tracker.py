@@ -9,11 +9,13 @@ from typing import Optional
 
 import requests
 import typer
+import yfinance as yf
 
 from .config import load_config
 from .data_apis import fetch_price_data_finnhub, fetch_price_data_fmp
 from .data_fetcher import fetch_price_data
 from .models import Portfolio, PortfolioHolding
+from .run_manager import find_all_portfolios
 
 app = typer.Typer()
 
@@ -74,6 +76,48 @@ def fetch_historical_price(ticker: str, target_date: date, fmp_api_key: Optional
     
     except Exception as e:
         typer.echo(f"  [WARN] Error fetching historical price for {ticker}: {e}")
+        return None
+
+
+def fetch_sp500_performance(construction_date: date, current_date: date) -> Optional[dict]:
+    """Fetch S&P 500 performance between two dates using yfinance.
+    
+    Returns dict with:
+        - construction_price: S&P 500 price at construction date
+        - current_price: S&P 500 price at current date
+        - return_pct: Percentage return
+    """
+    try:
+        # Use SPY ETF as proxy for S&P 500 (more reliable than ^GSPC)
+        spy = yf.Ticker("SPY")
+        
+        # Fetch historical data
+        hist = spy.history(start=construction_date, end=current_date + timedelta(days=1))
+        
+        if hist.empty:
+            return None
+        
+        # Get price at construction date (first available date on or after construction)
+        construction_price = None
+        for date_idx in hist.index:
+            if date_idx.date() >= construction_date:
+                construction_price = float(hist.loc[date_idx, "Close"])
+                break
+        
+        # Get current price (last available date)
+        current_price = float(hist.iloc[-1]["Close"])
+        
+        if construction_price and current_price:
+            return_pct = ((current_price - construction_price) / construction_price) * 100
+            return {
+                "construction_price": construction_price,
+                "current_price": current_price,
+                "return_pct": return_pct,
+            }
+        
+        return None
+    except Exception as e:
+        typer.echo(f"  [WARN] Error fetching S&P 500 performance: {e}")
         return None
 
 
@@ -190,6 +234,11 @@ def track_performance(
         sector_returns[sector].append(p["return_pct"])
         sector_contributions[sector] += p["contribution"]
     
+    # Fetch S&P 500 performance for comparison
+    typer.echo("")
+    typer.echo("Fetching S&P 500 performance for comparison...")
+    sp500_perf = fetch_sp500_performance(construction_date, date.today())
+    
     # Print report
     typer.echo("")
     typer.echo("=" * 80)
@@ -205,6 +254,22 @@ def track_performance(
     typer.echo(f"  Min Return: {min(returns_list):+.2f}%")
     typer.echo(f"  Max Return: {max(returns_list):+.2f}%")
     typer.echo("")
+    
+    # S&P 500 comparison
+    if sp500_perf:
+        sp500_return = sp500_perf["return_pct"]
+        outperformance = portfolio_return - sp500_return
+        typer.echo("Benchmark Comparison (S&P 500):")
+        typer.echo(f"  S&P 500 Return: {sp500_return:+.2f}%")
+        typer.echo(f"  Portfolio Outperformance: {outperformance:+.2f}%")
+        if outperformance > 0:
+            typer.echo(f"  Portfolio beat S&P 500 by {outperformance:.2f} percentage points")
+        else:
+            typer.echo(f"  Portfolio underperformed S&P 500 by {abs(outperformance):.2f} percentage points")
+        typer.echo("")
+    else:
+        typer.echo("Benchmark Comparison: S&P 500 data unavailable")
+        typer.echo("")
     typer.echo(f"Winners: {len(winners)}/{len(valid_performances)} ({len(winners)/len(valid_performances)*100:.1f}%)")
     typer.echo(f"Losers: {len(losers)}/{len(valid_performances)} ({len(losers)/len(valid_performances)*100:.1f}%)")
     typer.echo("")
@@ -248,6 +313,7 @@ def track_performance(
                 "losers_count": len(losers),
                 "total_holdings": len(valid_performances),
             },
+            "sp500_comparison": sp500_perf,
             "holdings": performance_data,
             "sector_performance": {
                 sector: {
@@ -259,6 +325,11 @@ def track_performance(
             },
         }
         
+        # Add outperformance calculation if S&P 500 data available
+        if sp500_perf:
+            report["portfolio_metrics"]["sp500_return"] = sp500_perf["return_pct"]
+            report["portfolio_metrics"]["outperformance"] = portfolio_return - sp500_perf["return_pct"]
+        
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(report, indent=2), encoding='utf-8')
         typer.echo(f"\nDetailed report written to {out}")
@@ -266,16 +337,89 @@ def track_performance(
 
 @app.command()
 def track(
-    portfolio_file: Path = typer.Option(
-        Path("data/portfolio.json"), help="Input portfolio JSON path"
+    portfolio_file: Optional[Path] = typer.Option(
+        None, help="Input portfolio JSON path (if not provided, evaluates all portfolios in run folders)"
     ),
     out: Optional[Path] = typer.Option(
-        None, help="Output detailed report JSON path (optional)"
+        None, help="Output detailed report JSON path (optional, only used for single portfolio)"
     ),
     use_stored_prices: bool = typer.Option(
         False, help="Use stored prices from portfolio (if available)"
     ),
+    evaluate_all: bool = typer.Option(
+        True, help="Evaluate all portfolios in run folders (if portfolio_file not provided)"
+    ),
 ):
-    """Track portfolio performance since construction date."""
-    track_performance(portfolio_file, out, use_stored_prices)
+    """Track portfolio performance since construction date.
+    
+    If portfolio_file is not provided and evaluate_all is True, evaluates all portfolios
+    found in data/runs/ folders and saves performance reports for each.
+    """
+    if portfolio_file:
+        # Single portfolio mode
+        track_performance(portfolio_file, out, use_stored_prices)
+    elif evaluate_all:
+        # Multi-portfolio mode: find and evaluate all portfolios
+        typer.echo("=" * 80)
+        typer.echo("EVALUATING ALL PORTFOLIOS")
+        typer.echo("=" * 80)
+        typer.echo("")
+        
+        portfolios = find_all_portfolios()
+        
+        if not portfolios:
+            typer.echo("No portfolios found in run folders.")
+            typer.echo("Run 'python main.py portfolio build' first to create a portfolio.")
+            raise typer.Exit(code=1)
+        
+        typer.echo(f"Found {len(portfolios)} portfolio(s) to evaluate:")
+        for i, (port_path, constructed_at) in enumerate(portfolios, 1):
+            typer.echo(f"  {i}. {port_path.parent.name} (constructed: {constructed_at.strftime('%Y-%m-%d %H:%M:%S')})")
+        typer.echo("")
+        
+        # Evaluate each portfolio
+        results = []
+        for i, (port_path, constructed_at) in enumerate(portfolios, 1):
+            typer.echo("")
+            typer.echo("=" * 80)
+            typer.echo(f"PORTFOLIO {i}/{len(portfolios)}: {port_path.parent.name}")
+            typer.echo("=" * 80)
+            typer.echo("")
+            
+            # Save performance report to the same run folder
+            run_folder = port_path.parent
+            perf_report_path = run_folder / "performance_report.json"
+            
+            try:
+                track_performance(port_path, perf_report_path, use_stored_prices)
+                results.append({
+                    "portfolio": str(port_path),
+                    "run_folder": str(run_folder),
+                    "constructed_at": constructed_at.isoformat(),
+                    "status": "success",
+                    "report": str(perf_report_path),
+                })
+            except Exception as e:
+                typer.echo(f"[ERROR] Failed to evaluate portfolio {port_path}: {e}")
+                results.append({
+                    "portfolio": str(port_path),
+                    "run_folder": str(run_folder),
+                    "constructed_at": constructed_at.isoformat(),
+                    "status": "error",
+                    "error": str(e),
+                })
+        
+        # Print summary
+        typer.echo("")
+        typer.echo("=" * 80)
+        typer.echo("EVALUATION SUMMARY")
+        typer.echo("=" * 80)
+        typer.echo(f"Total portfolios evaluated: {len(portfolios)}")
+        typer.echo(f"Successful: {sum(1 for r in results if r['status'] == 'success')}")
+        typer.echo(f"Failed: {sum(1 for r in results if r['status'] == 'error')}")
+        typer.echo("")
+        typer.echo("Performance reports saved to respective run folders.")
+    else:
+        typer.echo("Either provide --portfolio-file or use --evaluate-all (default)")
+        raise typer.Exit(code=1)
 

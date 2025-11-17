@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 class AppConfig(BaseModel):
     openai_api_key: str = Field(..., alias="OPENAI_API_KEY")
-    openai_model: str = Field("gpt-5", alias="OPENAI_MODEL")
+    openai_model: str = Field("gpt-4o-mini", alias="OPENAI_MODEL")
     cheap_model: str = Field("gpt-4o-mini", alias="CHEAP_MODEL", description="Cheaper model for high-volume tasks")
 
     # API keys for data sources
@@ -29,10 +29,21 @@ class AppConfig(BaseModel):
     beta_min: float = Field(0.5, alias="BETA_MIN")
     beta_max: float = Field(1.5, alias="BETA_MAX")
 
+    # Backtest mode
+    backtest_mode: bool = Field(False, alias="BACKTEST_MODE")
+    backtest_date: Optional[date] = Field(None, alias="BACKTEST_DATE", description="Point-in-time date for backtest (YYYY-MM-DD)")
+    backtest_model_cutoff: Optional[date] = Field(None, alias="BACKTEST_MODEL_CUTOFF", description="Model training cutoff to simulate (YYYY-MM-DD)")
+
     @property
     def remaining_days(self) -> int:
-        today = date.today()
+        # In backtest mode, use backtest_date as "today"
+        today = self.backtest_date if self.backtest_mode and self.backtest_date else date.today()
         return max(0, (self.portfolio_horizon_end - today).days)
+    
+    @property
+    def effective_date(self) -> date:
+        """Get the effective 'today' date (backtest date or actual today)."""
+        return self.backtest_date if self.backtest_mode and self.backtest_date else date.today()
 
 
 def load_config(dotenv: bool = True) -> AppConfig:
@@ -46,4 +57,13 @@ def load_config(dotenv: bool = True) -> AppConfig:
     cfg = AppConfig.model_validate(env)
     if isinstance(cfg.portfolio_horizon_end, str):
         cfg.portfolio_horizon_end = datetime.strptime(cfg.portfolio_horizon_end, "%Y-%m-%d").date()
+    
+    # Parse backtest_date if provided
+    if isinstance(cfg.backtest_date, str):
+        cfg.backtest_date = datetime.strptime(cfg.backtest_date, "%Y-%m-%d").date()
+    
+    # Parse backtest_model_cutoff if provided
+    if isinstance(cfg.backtest_model_cutoff, str):
+        cfg.backtest_model_cutoff = datetime.strptime(cfg.backtest_model_cutoff, "%Y-%m-%d").date()
+    
     return cfg

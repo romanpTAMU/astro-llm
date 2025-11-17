@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "NVDA",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": "AI & Semiconductors",
+      "rationale": "Top composite score (0.712), bullish sentiment; AI semiconductor leader anchoring IT exposure.",
+      "composite_score": 0.7116326530612245
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Semiconductor CapEx",
+      "rationale": "Very high score (0.711), bullish; semi equipment exposure complementary to NVDA and within industry cap.",
+      "composite_score": 0.7109523809523809
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Cloud & AI",
+      "rationale": "High score (0.635), bullish; systems software and cloud scale diversifies IT sleeve.",
+      "composite_score": 0.635
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Digital Payments",
+      "rationale": "Strong score (0.607), bullish; resilient payments rails, industry weight kept <20%.",
+      "composite_score": 0.6071428571428571
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "Software & GenAI",
+      "rationale": "Solid score (0.563), bullish; application software with GenAI tailwinds; app software kept <20%.",
+      "composite_score": 0.5634848484848485
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "Consumer Tech Hardware",
+      "rationale": "Good score (0.505), bullish; hardware ecosystem adds balance to software-heavy IT exposure.",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "Workflow Automation SaaS",
+      "rationale": "Good score (0.520), bullish; workflow automation leader; keeps application software exposure diversified.",
+      "composite_score": 0.52
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.065,
+      "sector": "Communication Services",
+      "theme": "Search/Cloud/AI",
+      "rationale": "Very strong score (0.674), bullish; interactive media leader with AI leverage; within industry cap.",
+      "composite_score": 0.6740251572327044
+    },
+    {
+      "ticker": "FB",
+      "weight": 0.055,
+      "sector": "Communication Services",
+      "theme": "Digital Advertising",
+      "rationale": "High score (0.700), neutral sentiment; ads recovery and efficiency; pairs with GOOGL under 20% industry cap.",
+      "composite_score": 0.7000000000000001
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.055,
+      "sector": "Communication Services",
+      "theme": "Streaming Media",
+      "rationale": "High score (0.653), bullish; streaming scale adds distinct media exposure separate from interactive platforms.",
+      "composite_score": 0.637520325203252
+    },
+    {
+      "ticker": "BLK",
+      "weight": 0.055,
+      "sector": "Financials",
+      "theme": "Asset Management",
+      "rationale": "Strong score (0.549), bullish; diversified fee streams and ETF leadership.",
+      "composite_score": 0.5494444444444444
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": "US Banks",
+      "rationale": "Good score (0.526), bullish; best-in-class diversified bank, balances financials exposure.",
+      "composite_score": 0.526
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Household Staples",
+      "rationale": "Solid score (0.498), bullish; defensive household products with pricing power.",
+      "composite_score": 0.4977380952380952
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.045,
+      "sector": "Consumer Staples",
+      "theme": "Beverages",
+      "rationale": "Good score (0.473), bullish; global beverages and dividends; complements PG while avoiding industry cap breach.",
+      "composite_score": 0.4729487179487179
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": "Pharma",
+      "rationale": "High score (0.563), neutral sentiment; oncology-driven growth; pharma exposure kept <20%.",
+      "composite_score": 0.5628205128205128
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.045,
+      "sector": "Health Care",
+      "theme": "Pharma/MedTech",
+      "rationale": "Moderate score (0.383), neutral; diversified pharma/medtech ballast alongside MRK.",
+      "composite_score": 0.383
+    },
+    {
+      "ticker": "AMZN",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "E-commerce & Cloud",
+      "rationale": "Solid score (0.437), bullish; dual e-commerce and cloud exposure, broadening growth drivers.",
+      "composite_score": 0.43666666666666665
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.045,
+      "sector": "Consumer Discretionary",
+      "theme": "Global QSR",
+      "rationale": "Good score (0.379), neutral sentiment; defensive consumer discretionary with pricing and scale.",
+      "composite_score": 0.378640350877193
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.04,
+      "sector": "Industrials",
+      "theme": "Industrial Automation",
+      "rationale": "Solid score (0.423), bullish; diversified aerospace/automation adds cyclical balance.",
+      "composite_score": 0.4225925925925926
+    },
+    {
+      "ticker": "XOM",
+      "weight": 0.045,
+      "sector": "Energy",
+      "theme": "Integrated Oil & Gas",
+      "rationale": "Good score (0.377), bullish; integrated energy cash returns and inflation hedge.",
+      "composite_score": 0.3773333333333333
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Information Technology": 0.3499999999999999,
+    "Communication Services": 0.175,
+    "Financials": 0.10500000000000001,
+    "Consumer Staples": 0.095,
+    "Health Care": 0.095,
+    "Consumer Discretionary": 0.095,
+    "Industrials": 0.04,
+    "Energy": 0.045
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-16",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-16T18:00:15.605489"
+}

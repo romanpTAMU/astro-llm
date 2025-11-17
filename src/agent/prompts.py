@@ -64,15 +64,31 @@ def system_themes() -> str:
     ).strip()
 
 
-def user_themes(horizon_end: date, remaining_days: int) -> str:
+def user_themes(horizon_end: date, remaining_days: int, general_news: list = None) -> str:
     today_str = date.today().strftime("%Y-%m-%d")
+    
+    news_context = ""
+    if general_news:
+        # Summarize top news articles
+        top_news = general_news[:20]  # Use top 20 most recent
+        news_context = "\n\nRecent Market News (last 7 days):\n"
+        for item in top_news:
+            news_context += f"- {item.get('title', '')} ({item.get('publisher', 'Unknown')})\n"
+            if item.get('text'):
+                # Truncate long text
+                text = item['text']
+                if len(text) > 200:
+                    text = text[:200] + "..."
+                news_context += f"  {text}\n"
+    
     return dedent(
         f"""
         Current date: {today_str}
         Investment horizon ends: {horizon_end.strftime("%Y-%m-%d")} (approximately {remaining_days} days remaining)
+        {news_context}
         
         Task:
-        Identify 5-8 major market themes that are likely to drive US equity performance through 
+        Based on the recent market news above and your knowledge, identify 5-8 major market themes that are likely to drive US equity performance through 
         {horizon_end.strftime("%Y-%m-%d")}. Consider:
         - Technological disruption (AI, automation, cloud, etc.)
         - Demographic shifts
@@ -82,6 +98,7 @@ def user_themes(horizon_end: date, remaining_days: int) -> str:
         - Infrastructure spending
         - Consumer behavior changes
         - Geopolitical developments affecting US markets
+        - Trends evident in recent news
         
         Output JSON strictly as:
         {{
@@ -192,11 +209,16 @@ def user_portfolio(
         theme = cand.get("theme")
         sentiment = cand.get("sentiment", {}).get("overall_sentiment", "unknown")
         price = cand.get("price", "N/A")
+        news_summary = cand.get("news_summary")
         
         line = f"  {cand['ticker']}: score={score:.3f}, sector={sector}, sentiment={sentiment}, price=${price}"
         if theme:
             line += f", theme={theme}"
         candidates_text.append(line)
+        
+        # Add news summary if available
+        if news_summary:
+            candidates_text.append(f"    News: {news_summary}")
     
     return dedent(
         f"""

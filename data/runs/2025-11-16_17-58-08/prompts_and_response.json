@@ -1,0 +1,170 @@
+{
+  "system_prompt": "You are a buy-side equity PM constructing a long-only portfolio from scored candidates.\nRules:\n- Select exactly 20 stocks from the scored candidates provided.\n- Assign weights between 2% and 10% per stock (0.02 to 0.10).\n- Weights must sum to exactly 100% (1.0).\n- Diversify across sectors and industries (respect sector_cap and industry_cap constraints).\n- Prioritize stocks with higher composite scores, but ensure diversification.\n- Consider sector/industry balance and avoid over-concentration.\n- Output must be strict JSON.",
+  "user_prompt": "Portfolio Construction Task:\n\n      Investment Horizon: Today to 2026-05-15 (180 days remaining)\n\n      Constraints:\n      - Select EXACTLY 20 stocks\n      - Weight per stock: 2% to 10% (0.02 to 0.10)\n      - Total weight must sum to EXACTLY 100% (1.0)\n      - Sector cap: 35% (no single sector > 35%)\n      - Industry cap: 20% (no single industry > 20%)\n      - Long-only portfolio (no short positions)\n\n      Scored Candidates (sorted by composite score, showing top 40):\n        NVDA: score=0.712, sector=Information Technology, sentiment=bullish, price=$190.17\nLRCX: score=0.711, sector=Information Technology, sentiment=bullish, price=$148.26\nFB: score=0.700, sector=Communication Services, sentiment=neutral, price=$41.7398\nGOOGL: score=0.674, sector=Communication Services, sentiment=bullish, price=$276.41\nNFLX: score=0.653, sector=Communication Services, sentiment=bullish, price=$1112.17\nNFLX: score=0.638, sector=Communication Services, sentiment=bullish, price=$1112.17\nMSFT: score=0.635, sector=Information Technology, sentiment=bullish, price=$510.18\nV: score=0.607, sector=Information Technology, sentiment=bullish, price=$330.02\nMA: score=0.599, sector=Information Technology, sentiment=bullish, price=$545.73\nAMAT: score=0.572, sector=Information Technology, sentiment=bullish, price=$226.01\nADBE: score=0.563, sector=Information Technology, sentiment=bullish, price=$331.11\nMRK: score=0.563, sector=Health Care, sentiment=neutral, price=$92.92\nBLK: score=0.549, sector=Financials, sentiment=bullish, price=$1057.94\nCL: score=0.529, sector=Consumer Staples, sentiment=bullish, price=$78.05\nJPM: score=0.526, sector=Financials, sentiment=bullish, price=$303.61\nNOW: score=0.520, sector=Information Technology, sentiment=bullish, price=$850.43\nTROW: score=0.517, sector=Financials, sentiment=neutral, price=$101.72\nAAPL: score=0.505, sector=Information Technology, sentiment=bullish, price=$272.41\nPG: score=0.498, sector=Consumer Staples, sentiment=bullish, price=$147.67\nSPGI: score=0.492, sector=Financials, sentiment=bullish, price=$493.9\nKO: score=0.473, sector=Consumer Staples, sentiment=bullish, price=$71.16\nQCOM: score=0.447, sector=Information Technology, sentiment=neutral, price=$173.98\nAMZN: score=0.437, sector=Consumer Discretionary, sentiment=bullish, price=$234.69\nHON: score=0.423, sector=Industrials, sentiment=bullish, price=$199.04\nPFE: score=0.396, sector=Health Care, sentiment=neutral, price=$25.06\nDIS: score=0.395, sector=Communication Services, sentiment=bullish, price=$105.8\nCSCO: score=0.392, sector=Information Technology, sentiment=neutral, price=$78.0\nVZ: score=0.385, sector=Communication Services, sentiment=neutral, price=$41.06\nT: score=0.383, sector=Communication Services, sentiment=bullish, price=$25.59\nJNJ: score=0.383, sector=Health Care, sentiment=neutral, price=$195.93\nMCD: score=0.379, sector=Consumer Discretionary, sentiment=neutral, price=$307.03\nCRM: score=0.378, sector=Information Technology, sentiment=bullish, price=$243.66\nXOM: score=0.377, sector=Energy, sentiment=bullish, price=$119.29\nMMM: score=0.334, sector=Industrials, sentiment=bullish, price=$167.58\nPYPL: score=0.321, sector=Information Technology, sentiment=neutral, price=$62.81\nKMB: score=0.306, sector=Consumer Staples, sentiment=neutral, price=$104.015\nFISV: score=0.292, sector=Information Technology, sentiment=neutral, price=$63.42\nMS: score=0.275, sector=Financials, sentiment=neutral, price=$163.86\nCAT: score=0.256, sector=Industrials, sentiment=neutral, price=$554.03\nCVX: score=0.252, sector=Energy, sentiment=bullish, price=$157.62\n\n      Instructions:\n      1. Select the best 20 stocks considering:\n         - Composite score (higher is better)\n         - Sector diversification (aim for 3-6 sectors, none > 35%)\n         - Industry diversification (none > 20%)\n         - Sentiment alignment (prefer bullish/neutral over bearish)\n         - Theme exposure (balance themed and non-themed stocks)\n\n      2. Assign weights:\n         - Higher scores can get higher weights (up to 10%)\n         - Lower scores should get lower weights (minimum 2%)\n         - Ensure weights sum to exactly 1.0 (100%)\n\n      3. Validate:\n         - Exactly 20 holdings\n         - Each weight between 0.02 and 0.1\n         - Total weight = 1.0\n         - No sector exceeds 35%\n         - No industry exceeds 20%\n\n      Output JSON strictly as:\n      {\n        \"holdings\": [\n          {\n            \"ticker\": \"AAPL\",\n            \"weight\": 0.08,\n            \"sector\": \"Information Technology\",\n            \"theme\": null,\n            \"rationale\": \"High composite score (0.75), strong sentiment, sector leader\",\n            \"composite_score\": 0.75\n          },\n          ... exactly 20 holdings ...\n        ]\n      }",
+  "llm_response": {
+    "holdings": [
+      {
+        "ticker": "NVDA",
+        "weight": 0.07,
+        "sector": "Information Technology",
+        "theme": "AI & Semiconductors",
+        "rationale": "Top composite score (0.712), bullish sentiment; AI semiconductor leader anchoring IT exposure.",
+        "composite_score": 0.712
+      },
+      {
+        "ticker": "LRCX",
+        "weight": 0.05,
+        "sector": "Information Technology",
+        "theme": "Semiconductor CapEx",
+        "rationale": "Very high score (0.711), bullish; semi equipment exposure complementary to NVDA and within industry cap.",
+        "composite_score": 0.711
+      },
+      {
+        "ticker": "MSFT",
+        "weight": 0.06,
+        "sector": "Information Technology",
+        "theme": "Cloud & AI",
+        "rationale": "High score (0.635), bullish; systems software and cloud scale diversifies IT sleeve.",
+        "composite_score": 0.635
+      },
+      {
+        "ticker": "V",
+        "weight": 0.05,
+        "sector": "Information Technology",
+        "theme": "Digital Payments",
+        "rationale": "Strong score (0.607), bullish; resilient payments rails, industry weight kept <20%.",
+        "composite_score": 0.607
+      },
+      {
+        "ticker": "ADBE",
+        "weight": 0.04,
+        "sector": "Information Technology",
+        "theme": "Software & GenAI",
+        "rationale": "Solid score (0.563), bullish; application software with GenAI tailwinds; app software kept <20%.",
+        "composite_score": 0.563
+      },
+      {
+        "ticker": "AAPL",
+        "weight": 0.04,
+        "sector": "Information Technology",
+        "theme": "Consumer Tech Hardware",
+        "rationale": "Good score (0.505), bullish; hardware ecosystem adds balance to software-heavy IT exposure.",
+        "composite_score": 0.505
+      },
+      {
+        "ticker": "NOW",
+        "weight": 0.04,
+        "sector": "Information Technology",
+        "theme": "Workflow Automation SaaS",
+        "rationale": "Good score (0.520), bullish; workflow automation leader; keeps application software exposure diversified.",
+        "composite_score": 0.52
+      },
+      {
+        "ticker": "GOOGL",
+        "weight": 0.065,
+        "sector": "Communication Services",
+        "theme": "Search/Cloud/AI",
+        "rationale": "Very strong score (0.674), bullish; interactive media leader with AI leverage; within industry cap.",
+        "composite_score": 0.674
+      },
+      {
+        "ticker": "FB",
+        "weight": 0.055,
+        "sector": "Communication Services",
+        "theme": "Digital Advertising",
+        "rationale": "High score (0.700), neutral sentiment; ads recovery and efficiency; pairs with GOOGL under 20% industry cap.",
+        "composite_score": 0.7
+      },
+      {
+        "ticker": "NFLX",
+        "weight": 0.055,
+        "sector": "Communication Services",
+        "theme": "Streaming Media",
+        "rationale": "High score (0.653), bullish; streaming scale adds distinct media exposure separate from interactive platforms.",
+        "composite_score": 0.653
+      },
+      {
+        "ticker": "BLK",
+        "weight": 0.055,
+        "sector": "Financials",
+        "theme": "Asset Management",
+        "rationale": "Strong score (0.549), bullish; diversified fee streams and ETF leadership.",
+        "composite_score": 0.549
+      },
+      {
+        "ticker": "JPM",
+        "weight": 0.05,
+        "sector": "Financials",
+        "theme": "US Banks",
+        "rationale": "Good score (0.526), bullish; best-in-class diversified bank, balances financials exposure.",
+        "composite_score": 0.526
+      },
+      {
+        "ticker": "PG",
+        "weight": 0.05,
+        "sector": "Consumer Staples",
+        "theme": "Household Staples",
+        "rationale": "Solid score (0.498), bullish; defensive household products with pricing power.",
+        "composite_score": 0.498
+      },
+      {
+        "ticker": "KO",
+        "weight": 0.045,
+        "sector": "Consumer Staples",
+        "theme": "Beverages",
+        "rationale": "Good score (0.473), bullish; global beverages and dividends; complements PG while avoiding industry cap breach.",
+        "composite_score": 0.473
+      },
+      {
+        "ticker": "MRK",
+        "weight": 0.05,
+        "sector": "Health Care",
+        "theme": "Pharma",
+        "rationale": "High score (0.563), neutral sentiment; oncology-driven growth; pharma exposure kept <20%.",
+        "composite_score": 0.563
+      },
+      {
+        "ticker": "JNJ",
+        "weight": 0.045,
+        "sector": "Health Care",
+        "theme": "Pharma/MedTech",
+        "rationale": "Moderate score (0.383), neutral; diversified pharma/medtech ballast alongside MRK.",
+        "composite_score": 0.383
+      },
+      {
+        "ticker": "AMZN",
+        "weight": 0.05,
+        "sector": "Consumer Discretionary",
+        "theme": "E-commerce & Cloud",
+        "rationale": "Solid score (0.437), bullish; dual e-commerce and cloud exposure, broadening growth drivers.",
+        "composite_score": 0.437
+      },
+      {
+        "ticker": "MCD",
+        "weight": 0.045,
+        "sector": "Consumer Discretionary",
+        "theme": "Global QSR",
+        "rationale": "Good score (0.379), neutral sentiment; defensive consumer discretionary with pricing and scale.",
+        "composite_score": 0.379
+      },
+      {
+        "ticker": "HON",
+        "weight": 0.04,
+        "sector": "Industrials",
+        "theme": "Industrial Automation",
+        "rationale": "Solid score (0.423), bullish; diversified aerospace/automation adds cyclical balance.",
+        "composite_score": 0.423
+      },
+      {
+        "ticker": "XOM",
+        "weight": 0.045,
+        "sector": "Energy",
+        "theme": "Integrated Oil & Gas",
+        "rationale": "Good score (0.377), bullish; integrated energy cash returns and inflation hedge.",
+        "composite_score": 0.377
+      }
+    ]
+  },
+  "model": "gpt-5",
+  "timestamp": "2025-11-16T18:00:15.603722"
+}

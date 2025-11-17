@@ -192,6 +192,74 @@ def calculate_revisions_score(analyst_recs) -> Optional[float]:
     return max(-1.0, min(1.0, score))  # Clamp to [-1, 1]
 
 
+def summarize_news(
+    ticker: str,
+    news_items: list,
+    client: OpenAI,
+    model: str,
+) -> Optional[str]:
+    """Summarize news articles into 3-4 sentences.
+    
+    Args:
+        ticker: Stock ticker
+        news_items: List of NewsItem objects
+        client: OpenAI client
+        model: Model name
+    
+    Returns:
+        News summary string (3-4 sentences) or None if no news
+    """
+    if not news_items:
+        return None
+    
+    # Prepare news data for LLM
+    news_data = []
+    for item in news_items[:10]:  # Use top 10 most recent articles
+        news_data.append({
+            "headline": item.headline,
+            "summary": item.summary or "",
+            "source": item.source,
+            "published_at": item.published_at.strftime("%Y-%m-%d") if item.published_at else None,
+        })
+    
+    system = """You are a financial news summarizer. Create a concise 3-4 sentence summary of recent news articles about a stock.
+Focus on the most important developments, trends, and key information that would be relevant for investment decisions.
+Be factual and objective."""
+    
+    user = f"""Summarize the following recent news articles about {ticker} into 3-4 sentences:
+
+{json.dumps(news_data, indent=2)}
+
+Provide a concise summary that captures:
+- Key developments and events
+- Important trends or patterns
+- Significant business updates
+- Market-relevant information
+
+Output JSON with a "summary" field containing the summary text (3-4 sentences):
+{{
+  "summary": "Your 3-4 sentence summary here..."
+}}"""
+    
+    try:
+        result = chat_json(client, model, system, user, timeout=60.0)
+        summary = result.get("summary")
+        if summary:
+            return str(summary).strip()
+        
+        # Fallback: try other common keys
+        for key in ["text", "content", "news_summary", "news"]:
+            if key in result:
+                value = result[key]
+                if isinstance(value, str):
+                    return value.strip()
+        
+        return None
+    except Exception as e:
+        typer.echo(f"  [WARN] Error summarizing news for {ticker}: {e}")
+        return None
+
+
 def synthesize_sentiment(
     ticker: str,
     analyst_recs,
@@ -199,6 +267,8 @@ def synthesize_sentiment(
     price_data,
     client: OpenAI,
     model: str,
+    as_of_date: Optional[date] = None,
+    model_cutoff: Optional[date] = None,
 ) -> SentimentAnalysis:
     """Synthesize sentiment from analyst recs and news using LLM."""
     
@@ -222,6 +292,13 @@ def synthesize_sentiment(
         if analyst_recs.recent_changes:
             analyst_info.append(f"Recent Changes: {', '.join(analyst_recs.recent_changes)}")
     
+    # Filter news by date in backtest mode
+    if as_of_date:
+        news_items = [
+            n for n in news_items 
+            if n.published_at and n.published_at.date() <= as_of_date
+        ]
+    
     news_summary = []
     bullish_count = 0
     bearish_count = 0
@@ -238,10 +315,23 @@ def synthesize_sentiment(
         
         news_summary.append(f"- {news.headline} ({sentiment})")
     
-    system = """You are a financial sentiment analyst. Synthesize sentiment from analyst recommendations and news.
-    Output JSON only."""
+    # Build date-aware system prompt
+    date_instruction = ""
+    if as_of_date:
+        date_instruction = f"""
+CRITICAL: You are analyzing this stock as of {as_of_date.strftime('%Y-%m-%d')}. 
+You must ONLY use information that would have been available on or before this date.
+Do not use any knowledge of events that occurred after {as_of_date.strftime('%Y-%m-%d')}.
+"""
+        if model_cutoff:
+            date_instruction += f"Your training data cutoff is {model_cutoff.strftime('%Y-%m-%d')}. Act as if you have no knowledge beyond the analysis date."
     
-    user = f"""Ticker: {ticker}
+    system = f"""You are a financial sentiment analyst. Synthesize sentiment from analyst recommendations and news.
+{date_instruction}
+Output JSON only."""
+    
+    date_context = f" (as of {as_of_date.strftime('%Y-%m-%d')})" if as_of_date else ""
+    user = f"""Ticker: {ticker}{date_context}
     
 Analyst Information:
 {chr(10).join(analyst_info) if analyst_info else 'No analyst data available'}
@@ -427,7 +517,7 @@ def score(
         Path("data/stock_data.json"), help="Input stock data JSON path"
     ),
     candidates_file: Path = typer.Option(
-        Path("data/candidates.json"), help="Original candidates file for sector/theme info"
+        None, help="Original candidates file for sector/theme info (defaults to merged_candidates.json, falls back to candidates.json)"
     ),
     out: Path = typer.Option(
         Path("data/scored_candidates.json"), help="Output JSON path"
@@ -464,9 +554,22 @@ def score(
         typer.echo(f"Failed to parse stock data: {e}")
         raise typer.Exit(code=1)
     
+    # Auto-detect candidates file if not provided
+    if candidates_file is None:
+        merged_file = Path("data/merged_candidates.json")
+        regular_file = Path("data/candidates.json")
+        if merged_file.exists():
+            candidates_file = merged_file
+        elif regular_file.exists():
+            candidates_file = regular_file
+            typer.echo(f"  [INFO] Using {regular_file.name} (merged_candidates.json not found)")
+        else:
+            typer.echo(f"  [WARN] Candidates file not found. Continuing without sector/theme info...")
+            candidates_file = None
+    
     # Load candidates for sector/theme info
     candidates_map = {}
-    if candidates_file.exists():
+    if candidates_file and candidates_file.exists():
         candidates_text = candidates_file.read_text(encoding='utf-8')
         if candidates_text and candidates_text.strip():
             try:
@@ -521,6 +624,8 @@ def score(
             stock_data.price_data,
             client,
             chosen_model,
+            as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
+            model_cutoff=cfg.backtest_model_cutoff,
         )
         sentiment_elapsed = time.time() - sentiment_start
         typer.echo(f"  [OK] Sentiment: {sentiment.overall_sentiment} (score={sentiment.sentiment_score:.2f}, took {sentiment_elapsed:.1f}s)")
@@ -536,6 +641,23 @@ def score(
         composite_score = calculate_composite_score(factor_scores, sentiment, risk_flags)
         typer.echo(f"  [OK] Composite score: {composite_score:.3f}")
         
+        # Summarize news articles
+        news_summary = None
+        if stock_data.news:
+            typer.echo(f"  -> Summarizing news articles...")
+            news_summary_start = time.time()
+            news_summary = summarize_news(
+                ticker,
+                stock_data.news,
+                client,
+                chosen_model,
+            )
+            news_summary_elapsed = time.time() - news_summary_start
+            if news_summary:
+                typer.echo(f"  [OK] News summary generated (took {news_summary_elapsed:.1f}s)")
+            else:
+                typer.echo(f"  [WARN] Could not generate news summary")
+        
         scored_stock = ScoredStock(
             ticker=ticker,
             sector=sector,
@@ -544,6 +666,7 @@ def score(
             sentiment=sentiment,
             risk_flags=risk_flags,
             composite_score=composite_score,
+            news_summary=news_summary,
             price=stock_data.price_data.price if stock_data.price_data else None,
             market_cap=stock_data.price_data.market_cap if stock_data.price_data else None,
         )

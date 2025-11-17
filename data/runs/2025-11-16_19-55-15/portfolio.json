@@ -1,0 +1,177 @@
+{
+  "holdings": [
+    {
+      "ticker": "FB",
+      "weight": 0.09056603773584905,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.775), bullish sentiment, strong market position",
+      "composite_score": 0.7750000000000001
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.07245283018867925,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Strong earnings and strategic initiatives, high composite score (0.646)",
+      "composite_score": 0.6457692307692307
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07245283018867925,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Solid growth potential, high composite score (0.644), bullish sentiment",
+      "composite_score": 0.6440251572327044
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.06339622641509435,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong performance and growth potential, high composite score (0.623)",
+      "composite_score": 0.622520325203252
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06339622641509435,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong earnings and consumer spending, high composite score (0.607)",
+      "composite_score": 0.6071428571428571
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.06339622641509435,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "High growth potential in AI, composite score (0.607)",
+      "composite_score": 0.6066326530612245
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06339622641509435,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong market position and growth in AI, composite score (0.605)",
+      "composite_score": 0.605
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.054339622641509426,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong growth potential in emerging markets, composite score (0.599)",
+      "composite_score": 0.5994444444444444
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.054339622641509426,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Positive developments in drug pipeline, composite score (0.569)",
+      "composite_score": 0.5691666666666666
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.054339622641509426,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong growth and AI leverage, composite score (0.563)",
+      "composite_score": 0.5634848484848485
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.045283018867924525,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strategic acquisition and growth potential, composite score (0.563)",
+      "composite_score": 0.5628205128205128
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.045283018867924525,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Positive earnings and growth in pet healthcare, composite score (0.549)",
+      "composite_score": 0.5494444444444445
+    },
+    {
+      "ticker": "PINS",
+      "weight": 0.045283018867924525,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Potential for ad revenue growth, composite score (0.548)",
+      "composite_score": 0.5480882352941177
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.045283018867924525,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive market sentiment and growth in AI, composite score (0.537)",
+      "composite_score": 0.5366666666666666
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.045283018867924525,
+      "sector": "Financials",
+      "theme": "Regulatory and Policy Shifts in Financial Markets",
+      "rationale": "Strong financial performance and AI-driven growth, composite score (0.526)",
+      "composite_score": 0.526
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.027169811320754713,
+      "sector": "Consumer Staples",
+      "theme": "Shift Towards Value and Defensive Stocks",
+      "rationale": "Undervalued with strong management, composite score (0.513)",
+      "composite_score": 0.5127380952380952
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.027169811320754713,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong market position despite recent challenges, composite score (0.505)",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.027169811320754713,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive endorsements and growth potential, composite score (0.505)",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.497)",
+      "composite_score": 0.4966666666666666
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.478)",
+      "composite_score": 0.47827586206896544
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.27169811320754716,
+    "Consumer Discretionary": 0.07245283018867925,
+    "Financials": 0.1630188679245283,
+    "Information Technology": 0.30075471698113204,
+    "Health Care": 0.16490566037735846,
+    "Consumer Staples": 0.027169811320754713
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-16",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-16T19:55:36.358411"
+}

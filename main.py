@@ -16,6 +16,15 @@ from agent.portfolio import app as portfolio_app
 from agent.momentum_analysis import app as momentum_app
 from agent.portfolio_report import app as report_app
 from agent.performance_tracker import app as performance_app
+from agent.email_reports import app as email_app
+
+# Try to import submission app (requires playwright)
+try:
+    from agent.mays_submission import app as submission_app
+    HAS_SUBMISSION = True
+except ImportError:
+    HAS_SUBMISSION = False
+    submission_app = None
 
 # Create main app with subcommands
 main_app = typer.Typer()
@@ -28,6 +37,9 @@ main_app.add_typer(portfolio_app, name="portfolio", help="Construct final portfo
 main_app.add_typer(momentum_app, name="momentum", help="Analyze portfolio momentum tilt")
 main_app.add_typer(report_app, name="report", help="Generate human-readable portfolio report")
 main_app.add_typer(performance_app, name="performance", help="Track portfolio performance since construction")
+if HAS_SUBMISSION:
+    main_app.add_typer(submission_app, name="submit", help="Submit portfolio to MAYS AI competition")
+main_app.add_typer(email_app, name="email", help="Send email reports")
 
 if __name__ == "__main__":
     main_app()

@@ -13,6 +13,7 @@ from .config import load_config
 from .models import Portfolio, PortfolioHolding, ScoredCandidatesResponse
 from .openai_client import chat_json, get_client
 from .prompts import system_portfolio, user_portfolio
+from .run_manager import get_run_folder
 
 app = typer.Typer()
 
@@ -53,10 +54,10 @@ def validate_portfolio(
         if holding.weight > max_weight:
             errors.append(f"{holding.ticker}: weight {holding.weight:.4f} above maximum {max_weight}")
     
-    # Check sector caps
+    # Check sector caps (allow small floating point error)
     sector_allocation = calculate_sector_allocation(portfolio.holdings)
     for sector, weight in sector_allocation.items():
-        if weight > sector_cap:
+        if weight > sector_cap + 0.001:  # Allow small floating point error
             errors.append(f"Sector {sector}: {weight*100:.2f}% exceeds cap of {sector_cap*100:.0f}%")
     
     # Check industry caps (if we had industry data, for now just check we have it)
@@ -106,6 +107,7 @@ def construct_portfolio(
                 "overall_sentiment": cand.sentiment.overall_sentiment,
                 "sentiment_score": cand.sentiment.sentiment_score,
             } if cand.sentiment else {},
+            "news_summary": cand.news_summary,  # Include news summary
         }
         candidates_dict.append(cand_dict)
     
@@ -125,6 +127,20 @@ def construct_portfolio(
     typer.echo("Calling LLM to construct portfolio...")
     result = chat_json(client, chosen_model, system, user, timeout=180.0)
     
+    # Save prompts and response for submission
+    prompts_data = {
+        "system_prompt": system,
+        "user_prompt": user,
+        "llm_response": result,
+        "model": chosen_model,
+        "timestamp": datetime.now().isoformat(),
+    }
+    
+    # Save prompts file next to portfolio file
+    prompts_file = Path(out_json).parent / "prompts_and_response.json"
+    prompts_file.write_text(json.dumps(prompts_data, indent=2), encoding='utf-8')
+    typer.echo(f"Saved prompts and response to {prompts_file}")
+    
     # Parse and validate
     try:
         holdings_data = result.get("holdings", [])
@@ -134,12 +150,14 @@ def construct_portfolio(
         # Create holdings with composite scores from scored data
         holdings_map = {c.ticker: c for c in scored_resp.candidates}
         holdings = []
+        selected_tickers = set()
         for h_data in holdings_data:
             ticker = h_data["ticker"]
             if ticker not in holdings_map:
                 typer.echo(f"[WARN] Ticker {ticker} from LLM not found in scored candidates")
                 continue
             
+            selected_tickers.add(ticker)
             scored_stock = holdings_map[ticker]
             holding = PortfolioHolding(
                 ticker=ticker,
@@ -150,6 +168,85 @@ def construct_portfolio(
                 composite_score=scored_stock.composite_score,
             )
             holdings.append(holding)
+        
+        # If we have fewer than 20 holdings, add the next best candidates
+        if len(holdings) < 20:
+            missing_count = 20 - len(holdings)
+            typer.echo(f"[WARN] Only {len(holdings)} holdings from LLM, adding {missing_count} top remaining candidates")
+            
+            # Calculate current total weight before adding
+            current_total = sum(h.weight for h in holdings)
+            
+            # Sort all candidates by composite score (highest first)
+            remaining_candidates = [
+                c for c in scored_resp.candidates 
+                if c.ticker not in selected_tickers
+            ]
+            remaining_candidates.sort(key=lambda x: x.composite_score or 0, reverse=True)
+            
+            # Calculate weight for new stocks such that after normalization they meet minimum
+            # If we add M stocks with weight w each, total becomes T + M*w
+            # After normalization: w / (T + M*w) >= min_weight
+            # Solving: w >= (min_weight * T) / (1 - min_weight * M)
+            if missing_count > 0 and cfg.min_weight * missing_count < 1.0:
+                added_weight_per_stock = (cfg.min_weight * current_total) / (1.0 - cfg.min_weight * missing_count)
+                # Ensure we don't exceed max_weight
+                added_weight_per_stock = min(added_weight_per_stock, cfg.max_weight)
+            else:
+                # Fallback: use minimum weight
+                added_weight_per_stock = cfg.min_weight
+            
+            # Add the top remaining candidates
+            for i in range(min(missing_count, len(remaining_candidates))):
+                cand = remaining_candidates[i]
+                holding = PortfolioHolding(
+                    ticker=cand.ticker,
+                    weight=added_weight_per_stock,
+                    sector=cand.sector,
+                    theme=cand.theme,
+                    rationale=f"Added as top remaining candidate (composite score: {cand.composite_score:.3f})",
+                    composite_score=cand.composite_score,
+                )
+                holdings.append(holding)
+                typer.echo(f"  Added {cand.ticker} (score: {cand.composite_score:.3f}, weight: {added_weight_per_stock:.4f})")
+            
+            # Normalize weights to sum to 1.0
+            total_weight = sum(h.weight for h in holdings)
+            if abs(total_weight - 1.0) > 0.001:  # Only normalize if significantly off
+                typer.echo(f"[INFO] Normalizing weights from {total_weight:.6f} to 1.0")
+                for holding in holdings:
+                    holding.weight = holding.weight / total_weight
+                
+                # After normalization, ensure all weights meet minimum requirement
+                # If any are below minimum, redistribute from holdings above minimum
+                below_min = [h for h in holdings if h.weight < cfg.min_weight]
+                if below_min:
+                    typer.echo(f"[INFO] Adjusting {len(below_min)} holdings below minimum weight")
+                    # Calculate total deficit
+                    deficit = sum(cfg.min_weight - h.weight for h in below_min)
+                    # Get holdings above minimum that we can reduce
+                    above_min = [h for h in holdings if h.weight > cfg.min_weight]
+                    
+                    if above_min and deficit > 0:
+                        # Calculate total weight we can reduce from above-min holdings
+                        reducible = sum(h.weight - cfg.min_weight for h in above_min)
+                        if reducible >= deficit:
+                            # Reduce proportionally from above-min holdings
+                            for h in below_min:
+                                needed = cfg.min_weight - h.weight
+                                # Reduce proportionally from above-min holdings
+                                for ah in above_min:
+                                    reduction = needed * (ah.weight - cfg.min_weight) / reducible
+                                    ah.weight -= reduction
+                                h.weight = cfg.min_weight
+                            
+                            # Re-normalize to ensure total is exactly 1.0
+                            total_weight = sum(h.weight for h in holdings)
+                            if abs(total_weight - 1.0) > 0.001:
+                                for holding in holdings:
+                                    holding.weight = holding.weight / total_weight
+                        else:
+                            typer.echo(f"[WARN] Cannot meet minimum weight requirement for all holdings (deficit: {deficit:.6f}, reducible: {reducible:.6f})")
         
         if len(holdings) != 20:
             typer.echo(f"[ERROR] Only {len(holdings)} valid holdings after parsing, need 20")
@@ -290,8 +387,8 @@ def build(
     scored_file: Path = typer.Option(
         Path("data/scored_candidates.json"), help="Input scored candidates JSON path"
     ),
-    out_json: Path = typer.Option(
-        Path("data/portfolio.json"), help="Output portfolio JSON path"
+    out_json: Optional[Path] = typer.Option(
+        None, help="Output portfolio JSON path (defaults to run folder)"
     ),
     out_excel: Optional[Path] = typer.Option(
         None, help="Output Excel file path (optional)"
@@ -299,7 +396,42 @@ def build(
     model: Optional[str] = typer.Option(
         None, help="OpenAI model override (defaults to openai_model)"
     ),
+    use_run_folder: bool = typer.Option(
+        True, help="Save to timestamped run folder (data/runs/YYYY-MM-DD_HH-MM-SS/)"
+    ),
 ):
     """Construct final portfolio from scored candidates."""
+    import shutil
+    
+    # Create run folder if enabled
+    if use_run_folder and out_json is None:
+        run_folder = get_run_folder()
+        out_json = run_folder / "portfolio.json"
+        
+        # Copy intermediate files to run folder for reference
+        typer.echo(f"Saving to run folder: {run_folder}")
+        
+        # Copy scored candidates
+        if scored_file.exists():
+            shutil.copy2(scored_file, run_folder / "scored_candidates.json")
+            typer.echo(f"  Copied {scored_file.name} to run folder")
+        
+        # Try to find and copy other intermediate files
+        candidates_file = Path("data/candidates.json")
+        stock_data_file = Path("data/stock_data.json")
+        theme_candidates_file = Path("data/theme_candidates.json")
+        
+        for src_file, dest_name in [
+            (candidates_file, "candidates.json"),
+            (stock_data_file, "stock_data.json"),
+            (theme_candidates_file, "theme_candidates.json"),
+        ]:
+            if src_file.exists():
+                shutil.copy2(src_file, run_folder / dest_name)
+                typer.echo(f"  Copied {dest_name} to run folder")
+    
+    elif out_json is None:
+        out_json = Path("data/portfolio.json")
+    
     construct_portfolio(scored_file, out_json, out_excel, model)
 
