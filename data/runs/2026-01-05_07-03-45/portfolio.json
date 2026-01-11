@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.1,
+      "sector": "Materials",
+      "theme": null,
+      "rationale": "Highest composite score (0.725), bullish sentiment, strong performance in precious metals.",
+      "composite_score": 0.7247957332460339
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.09,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong score (0.635), bullish sentiment, ongoing pipeline developments.",
+      "composite_score": 0.6350970017636685
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Solid score (0.599), bullish sentiment, strong position in AI market.",
+      "composite_score": 0.599346284992
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.07,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Good score (0.598), bullish sentiment, focusing on cost-cutting and unique travel experiences.",
+      "composite_score": 0.5976224057729461
+    },
+    {
+      "ticker": "V",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong score (0.561), bullish sentiment, significant growth potential.",
+      "composite_score": 0.5606182966137592
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Decent score (0.552), bullish sentiment, involved in innovative payment solutions.",
+      "composite_score": 0.551786518962289
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Moderate score (0.517), bullish sentiment, stable dividend outlook.",
+      "composite_score": 0.5173692803204056
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Good score (0.513), bullish sentiment, focus on AI advancements.",
+      "composite_score": 0.5133960188946742
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong score (0.504), bullish sentiment, robust demand in AI and memory sectors.",
+      "composite_score": 0.5037306499117723
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": "Value Investing Renaissance",
+      "rationale": "Decent score (0.489), bullish sentiment, strong performance in banking sector.",
+      "composite_score": 0.4888087593076245
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Good score (0.484), bullish sentiment, strong brand and product pipeline.",
+      "composite_score": 0.48440506353025353
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Good score (0.474), bullish sentiment, strong sales momentum.",
+      "composite_score": 0.4739087458358617
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Moderate score (0.471), neutral sentiment, strong growth estimates.",
+      "composite_score": 0.471278187483721
+    },
+    {
+      "ticker": "LVS",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "rationale": "Decent score (0.471), bullish sentiment, recognized as a leading gaming stock.",
+      "composite_score": 0.4710278561733846
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Good score (0.453), bullish sentiment, strong demand in semiconductor sector.",
+      "composite_score": 0.45326873411611845
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Moderate score (0.445), bullish sentiment, stable dividend growth.",
+      "composite_score": 0.44521051722899824
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.03,
+      "sector": "Consumer Staples",
+      "theme": "Value Investing Renaissance",
+      "rationale": "Moderate score (0.410), bullish sentiment, solid dividend growth stock.",
+      "composite_score": 0.40990327601367393
+    },
+    {
+      "ticker": "GD",
+      "weight": 0.02,
+      "sector": "Industrials",
+      "theme": "Defense Sector Resurgence",
+      "rationale": "Moderate score (0.402), bullish sentiment, recognized for defense technology.",
+      "composite_score": 0.4018406337992892
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Added as top remaining candidate (composite score: 0.479)",
+      "composite_score": 0.4790932619789192
+    },
+    {
+      "ticker": "META",
+      "weight": 0.02,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.422)",
+      "composite_score": 0.421557151060559
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Materials": 0.1,
+    "Health Care": 0.26,
+    "Communication Services": 0.1,
+    "Consumer Discretionary": 0.1,
+    "Information Technology": 0.33999999999999997,
+    "Financials": 0.05,
+    "Consumer Staples": 0.03,
+    "Industrials": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-05",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-05T07:04:14.039562"
+}

@@ -1,0 +1,258 @@
+{
+  "analysis_date": "2026-01-09T06:40:34.384033",
+  "portfolio_file": "data\\runs\\2025-11-24_04-08-20\\portfolio.json",
+  "construction_date": "2025-11-24",
+  "current_date": "2026-01-09",
+  "days_held": 46,
+  "portfolio_metrics": {
+    "weighted_return": 3.4911277469510127,
+    "simple_avg_return": 4.028981324190799,
+    "median_return": 5.195350975113263,
+    "min_return": -15.36879498924932,
+    "max_return": 33.63479186061977,
+    "winners_count": 15,
+    "losers_count": 5,
+    "total_holdings": 20,
+    "sp500_return": 3.4120601322276283,
+    "outperformance": 0.07906761472338442
+  },
+  "sp500_comparison": {
+    "construction_price": 666.759765625,
+    "current_price": 689.510009765625,
+    "return_pct": 3.4120601322276283
+  },
+  "holdings": [
+    {
+      "ticker": "NFLX",
+      "weight": 0.1,
+      "construction_price": 106.97,
+      "current_price": 90.53,
+      "return_pct": -15.36879498924932,
+      "contribution": -1.5368794989249321,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "META",
+      "weight": 0.09,
+      "construction_price": 613.05,
+      "current_price": 646.06,
+      "return_pct": 5.384552646603049,
+      "contribution": 0.4846097381942744,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.09,
+      "construction_price": 259.85,
+      "current_price": 246.26,
+      "return_pct": -5.229940350202051,
+      "contribution": -0.4706946315181846,
+      "sector": "Information Technology",
+      "theme": "Sustainability and Energy Transition"
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.07,
+      "construction_price": 182.55,
+      "current_price": 185.04,
+      "return_pct": 1.3640098603122326,
+      "contribution": 0.09548069022185629,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.07,
+      "construction_price": 150.38,
+      "current_price": 200.96,
+      "return_pct": 33.63479186061977,
+      "contribution": 2.354435430243384,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07,
+      "construction_price": 318.58,
+      "current_price": 325.44,
+      "return_pct": 2.153305292234294,
+      "contribution": 0.15073137045640062,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06,
+      "construction_price": 329.3,
+      "current_price": 352.23,
+      "return_pct": 6.9632553902216845,
+      "contribution": 0.41779532341330106,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06,
+      "construction_price": 474.0,
+      "current_price": 478.11,
+      "return_pct": 0.8670886075949396,
+      "contribution": 0.05202531645569637,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation and Remote Work Trends"
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.05,
+      "construction_price": 100.4,
+      "current_price": 110.99,
+      "return_pct": 10.547808764940228,
+      "contribution": 0.5273904382470115,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.05,
+      "construction_price": 100.45,
+      "current_price": 108.57,
+      "return_pct": 8.083623693379781,
+      "contribution": 0.4041811846689891,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05,
+      "construction_price": 537.85,
+      "current_price": 580.07,
+      "return_pct": 7.84977224133123,
+      "contribution": 0.39248861206656155,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "construction_price": 163.17,
+      "current_price": 146.19,
+      "return_pct": -10.406324692038972,
+      "contribution": -0.4162529876815589,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "BK",
+      "weight": 0.04,
+      "construction_price": 108.07,
+      "current_price": 120.05,
+      "return_pct": 11.085407606181183,
+      "contribution": 0.4434163042472474,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02,
+      "construction_price": 275.92,
+      "current_price": 259.04,
+      "return_pct": -6.117715279791241,
+      "contribution": -0.12235430559582483,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.03,
+      "construction_price": 182.66,
+      "current_price": 184.98,
+      "return_pct": 1.270119347421435,
+      "contribution": 0.03810358042264305,
+      "sector": "Real Estate",
+      "theme": "Interest Rate and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.03,
+      "construction_price": 298.0,
+      "current_price": 329.79,
+      "return_pct": 10.667785234899336,
+      "contribution": 0.32003355704698006,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.02,
+      "construction_price": 127.19,
+      "current_price": 126.18,
+      "return_pct": -0.7940875855019977,
+      "contribution": -0.015881751710039953,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.02,
+      "construction_price": 761.45,
+      "current_price": 801.01,
+      "return_pct": 5.195350975113263,
+      "contribution": 0.10390701950226527,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "NTRS",
+      "weight": 0.02,
+      "construction_price": 128.75,
+      "current_price": 144.36,
+      "return_pct": 12.124271844660205,
+      "contribution": 0.24248543689320412,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.02,
+      "construction_price": 304.9,
+      "current_price": 308.88,
+      "return_pct": 1.3053460150869198,
+      "contribution": 0.026106920301738397,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Communication Services": {
+      "avg_return": -2.6103123501373258,
+      "contribution": -0.9015383902742571,
+      "count": 3
+    },
+    "Information Technology": {
+      "avg_return": 2.3519850010824466,
+      "contribution": 1.4926395121253688,
+      "count": 6
+    },
+    "Financials": {
+      "avg_return": 9.46235266844557,
+      "contribution": 2.2204004183362835,
+      "count": 6
+    },
+    "Health Care": {
+      "avg_return": 4.983024051517165,
+      "contribution": 0.6154157060392369,
+      "count": 3
+    },
+    "Real Estate": {
+      "avg_return": 1.270119347421435,
+      "contribution": 0.03810358042264305,
+      "count": 1
+    },
+    "Consumer Discretionary": {
+      "avg_return": 1.3053460150869198,
+      "contribution": 0.026106920301738397,
+      "count": 1
+    }
+  }
+}

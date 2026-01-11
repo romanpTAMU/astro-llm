@@ -1,0 +1,258 @@
+{
+  "analysis_date": "2026-01-09T06:31:59.744681",
+  "portfolio_file": "data\\runs\\2025-11-16_19-55-15\\portfolio.json",
+  "construction_date": "2025-11-16",
+  "current_date": "2026-01-09",
+  "days_held": 54,
+  "portfolio_metrics": {
+    "weighted_return": 2.572063075426884,
+    "simple_avg_return": 1.695356028537003,
+    "median_return": 4.5350040234509805,
+    "min_return": -18.602769286099623,
+    "max_return": 19.436074042186828,
+    "winners_count": 12,
+    "losers_count": 8,
+    "total_holdings": 20,
+    "sp500_return": 3.8874290120519155,
+    "outperformance": -1.3153659366250317
+  },
+  "sp500_comparison": {
+    "construction_price": 663.7088012695312,
+    "current_price": 689.510009765625,
+    "return_pct": 3.8874290120519155
+  },
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.09056603773584905,
+      "construction_price": 609.46,
+      "current_price": 646.06,
+      "return_pct": 6.005316181537739,
+      "contribution": 0.5438776919128518,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.07245283018867925,
+      "construction_price": 5048.01,
+      "current_price": 5445.0,
+      "return_pct": 7.864287115120608,
+      "contribution": 0.5697898589068516,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07245283018867925,
+      "construction_price": 276.41,
+      "current_price": 325.44,
+      "return_pct": 17.73814261423247,
+      "contribution": 1.2851786346915601,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.06339622641509435,
+      "construction_price": 111.22,
+      "current_price": 90.53,
+      "return_pct": -18.602769286099623,
+      "contribution": -1.1793453736093347,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06339622641509435,
+      "construction_price": 330.02,
+      "current_price": 352.23,
+      "return_pct": 6.729895157869231,
+      "contribution": 0.42664995717812493,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.06339622641509435,
+      "construction_price": 190.17,
+      "current_price": 185.04,
+      "return_pct": -2.6975863700899176,
+      "contribution": -0.17101679629249292,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06339622641509435,
+      "construction_price": 510.18,
+      "current_price": 478.11,
+      "return_pct": -6.286016699988238,
+      "contribution": -0.39850973796151856,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.054339622641509426,
+      "construction_price": 545.73,
+      "current_price": 580.07,
+      "return_pct": 6.292488959742003,
+      "contribution": 0.34193147554824466,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.054339622641509426,
+      "construction_price": 336.74,
+      "current_price": 330.11,
+      "return_pct": -1.9688780661638046,
+      "contribution": -0.10698809114248597,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.054339622641509426,
+      "construction_price": 331.11,
+      "current_price": 339.04,
+      "return_pct": 2.3949744797801356,
+      "contribution": 0.13014200946729793,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.045283018867924525,
+      "construction_price": 92.92,
+      "current_price": 110.98,
+      "return_pct": 19.436074042186828,
+      "contribution": 0.8801241075707242,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.045283018867924525,
+      "construction_price": 120.82,
+      "current_price": 126.85,
+      "return_pct": 4.990895547094853,
+      "contribution": 0.22600281722693671,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PINS",
+      "weight": 0.045283018867924525,
+      "construction_price": 26.62,
+      "current_price": 26.8,
+      "return_pct": 0.676183320811419,
+      "contribution": 0.03061962207447935,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.045283018867924525,
+      "construction_price": 173.98,
+      "current_price": 181.87,
+      "return_pct": 4.5350040234509805,
+      "contribution": 0.20535867276004438,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.045283018867924525,
+      "construction_price": 303.61,
+      "current_price": 329.79,
+      "return_pct": 8.622904383913575,
+      "contribution": 0.39047114191306753,
+      "sector": "Financials",
+      "theme": "Regulatory and Policy Shifts in Financial Markets"
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.027169811320754713,
+      "construction_price": 147.67,
+      "current_price": 141.53,
+      "return_pct": -4.157919685785865,
+      "contribution": -0.11296989334965368,
+      "sector": "Consumer Staples",
+      "theme": "Shift Towards Value and Defensive Stocks"
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.027169811320754713,
+      "construction_price": 272.41,
+      "current_price": 259.04,
+      "return_pct": -4.908043023383871,
+      "contribution": -0.13335060289948628,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.027169811320754713,
+      "construction_price": 170.09,
+      "current_price": 146.19,
+      "return_pct": -14.051384561114707,
+      "contribution": -0.3817734673208524,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.02,
+      "construction_price": 78.0,
+      "current_price": 73.96,
+      "return_pct": -5.179487179487188,
+      "contribution": -0.10358974358974375,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.02,
+      "construction_price": 549.51,
+      "current_price": 585.08,
+      "return_pct": 6.473039617113438,
+      "contribution": 0.12946079234226876,
+      "sector": "Health Care",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Communication Services": {
+      "avg_return": 1.4542182076205012,
+      "contribution": 0.6803305750695566,
+      "count": 4
+    },
+    "Consumer Discretionary": {
+      "avg_return": 7.864287115120608,
+      "contribution": 0.5697898589068516,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": 7.215096167174937,
+      "contribution": 1.1590525746394371,
+      "count": 3
+    },
+    "Information Technology": {
+      "avg_return": -3.7417913329761148,
+      "contribution": -0.8527396658367515,
+      "count": 7
+    },
+    "Health Care": {
+      "avg_return": 7.232782785057829,
+      "contribution": 1.1285996259974438,
+      "count": 4
+    },
+    "Consumer Staples": {
+      "avg_return": -4.157919685785865,
+      "contribution": -0.11296989334965368,
+      "count": 1
+    }
+  }
+}

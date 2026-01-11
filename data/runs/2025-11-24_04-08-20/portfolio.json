@@ -1,0 +1,177 @@
+{
+  "holdings": [
+    {
+      "ticker": "NFLX",
+      "weight": 0.1,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.806), strong growth potential in streaming.",
+      "composite_score": 0.8058536585365853
+    },
+    {
+      "ticker": "META",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong sentiment and significant investment interest.",
+      "composite_score": 0.7750000000000001
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.09,
+      "sector": "Information Technology",
+      "theme": "Sustainability and Energy Transition",
+      "rationale": "High growth in renewable energy sector, strong score.",
+      "composite_score": 0.731111111111111
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong position in AI, high visibility into future growth.",
+      "composite_score": 0.6816326530612244
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Solid growth in semiconductor industry, bullish sentiment.",
+      "composite_score": 0.650952380952381
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong performance and growth potential in AI.",
+      "composite_score": 0.6090251572327043
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Resilient financial performance, bullish sentiment.",
+      "composite_score": 0.6071428571428571
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation and Remote Work Trends",
+      "rationale": "Strong pivot towards AI, solid growth outlook.",
+      "composite_score": 0.605
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong dividend and positive market sentiment.",
+      "composite_score": 0.5728205128205128
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Dynamics",
+      "rationale": "Positive outlook for financial services amid market volatility.",
+      "composite_score": 0.5566666666666666
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong brand and market position, bullish sentiment.",
+      "composite_score": 0.5494444444444444
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Innovative partnerships in AI, potential for recovery.",
+      "composite_score": 0.52
+    },
+    {
+      "ticker": "BK",
+      "weight": 0.04,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Proactive approach to digital assets, strong growth potential.",
+      "composite_score": 0.5152380952380953
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong market presence and innovative capabilities.",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.03,
+      "sector": "Real Estate",
+      "theme": "Interest Rate and Monetary Policy Dynamics",
+      "rationale": "Strategic acquisitions and long-term performance.",
+      "composite_score": 0.5029824561403509
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Dynamics",
+      "rationale": "Strong earnings and strategic growth initiatives.",
+      "composite_score": 0.49600000000000005
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strategic acquisition enhances market position.",
+      "composite_score": 0.4921794871794872
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Positive clinical trial results driving investor interest.",
+      "composite_score": 0.47583333333333333
+    },
+    {
+      "ticker": "NTRS",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.515)",
+      "composite_score": 0.5153070175438597
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Added during sector rebalance (score 0.439)",
+      "composite_score": 0.438640350877193
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.26,
+    "Information Technology": 0.35000000000000003,
+    "Financials": 0.25,
+    "Health Care": 0.09000000000000001,
+    "Real Estate": 0.03,
+    "Consumer Discretionary": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-24",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-24T04:08:48.446975"
+}

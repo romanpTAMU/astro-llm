@@ -3,38 +3,38 @@
     {
       "ticker": "AAPL",
       "sector": "Information Technology",
-      "rationale": "iPhone cycle strength; services mix growth.",
-      "theme": null
+      "rationale": "Apple is adapting to evolving data privacy regulations, enhancing its services and hardware to comply while maintaining customer loyalty.",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
     },
     {
       "ticker": "MSFT",
       "sector": "Information Technology",
-      "rationale": "Strong cloud services and AI software offerings; poised to benefit from enterprise AI investments.",
-      "theme": "AI Infrastructure Buildout"
+      "rationale": "Microsoft's cloud services are well-positioned to comply with data regulations, and its strong market presence allows it to adapt to changes efficiently.",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
     },
     {
       "ticker": "AMZN",
       "sector": "Consumer Discretionary",
-      "rationale": "Significant investments in cloud infrastructure and AI services; benefits from increased enterprise spending.",
-      "theme": "AI Infrastructure Buildout"
+      "rationale": "Amazon's tight labor market dynamics may lead to increased wage costs, but its scale and efficiency can help maintain profitability.",
+      "theme": "Labor Market Dynamics and Wage Growth"
     },
     {
       "ticker": "GOOGL",
       "sector": "Communication Services",
-      "rationale": "Investing heavily in AI and cloud services; expected to benefit from increased demand for AI infrastructure.",
-      "theme": "AI Infrastructure Buildout"
+      "rationale": "Alphabet faces antitrust scrutiny but continues to innovate in AI and cloud services, positioning itself to navigate regulatory challenges effectively.",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
     },
     {
       "ticker": "FB",
       "sector": "Communication Services",
-      "rationale": "Strong user engagement and advertising recovery.",
+      "rationale": "Strong user engagement and advertising growth.",
       "theme": null
     },
     {
       "ticker": "TSLA",
       "sector": "Consumer Discretionary",
-      "rationale": "Leading electric vehicle manufacturer with strong growth in renewable energy solutions and battery technology.",
-      "theme": "Sustainable Energy Transition"
+      "rationale": "Pioneering electric vehicles and energy storage solutions; strong growth potential in sustainable transport.",
+      "theme": "Energy Transition and Sustainability"
     },
     {
       "ticker": "NVDA",
@@ -51,25 +51,97 @@
     {
       "ticker": "JPM",
       "sector": "Financials",
-      "rationale": "Large financial institution well-positioned to adapt to policy shifts; diversified revenue streams.",
-      "theme": "Regulatory and Policy Shifts in Financial Markets"
+      "rationale": "Strong balance sheet and growth in lending.",
+      "theme": null
     },
     {
       "ticker": "V",
       "sector": "Financials",
-      "rationale": "Global payment leader with strong growth prospects.",
-      "theme": null
+      "rationale": "Visa is adapting to new payment regulations and is positioned to benefit from the ongoing digital payment transformation.",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
     },
     {
       "ticker": "MA",
       "sector": "Financials",
-      "rationale": "Robust growth in digital payments and transactions.",
+      "rationale": "Robust growth in digital payments and e-commerce.",
       "theme": null
     },
     {
-      "ticker": "DIS",
-      "sector": "Communication Services",
-      "rationale": "Content strength and recovery in parks.",
+      "ticker": "UNH",
+      "sector": "Health Care",
+      "rationale": "Strong growth in managed care and health services.",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "sector": "Health Care",
+      "rationale": "Diverse product portfolio and strong brand loyalty.",
+      "theme": null
+    },
+    {
+      "ticker": "PFE",
+      "sector": "Health Care",
+      "rationale": "Investing in AI-driven drug discovery and innovative therapies; strong pipeline and market presence.",
+      "theme": "Healthcare Innovation and Biotech Advancements"
+    },
+    {
+      "ticker": "MRK",
+      "sector": "Health Care",
+      "rationale": "Strong pharmaceutical pipeline and vaccine sales.",
+      "theme": null
+    },
+    {
+      "ticker": "XOM",
+      "sector": "Energy",
+      "rationale": "Strong recovery in oil prices and production.",
+      "theme": null
+    },
+    {
+      "ticker": "CVX",
+      "sector": "Energy",
+      "rationale": "Strong cash flow and diversified energy portfolio.",
+      "theme": null
+    },
+    {
+      "ticker": "PG",
+      "sector": "Consumer Staples",
+      "rationale": "Strong brand portfolio and consistent cash flow.",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "sector": "Consumer Staples",
+      "rationale": "Global brand strength and beverage diversification.",
+      "theme": null
+    },
+    {
+      "ticker": "PEP",
+      "sector": "Consumer Staples",
+      "rationale": "Strong portfolio of snacks and beverages.",
+      "theme": null
+    },
+    {
+      "ticker": "WMT",
+      "sector": "Consumer Staples",
+      "rationale": "Walmart's scale allows it to manage labor costs effectively while benefiting from increased consumer spending due to wage growth.",
+      "theme": "Labor Market Dynamics and Wage Growth"
+    },
+    {
+      "ticker": "COST",
+      "sector": "Consumer Staples",
+      "rationale": "Strong membership model and cost leadership.",
+      "theme": null
+    },
+    {
+      "ticker": "HD",
+      "sector": "Consumer Discretionary",
+      "rationale": "Home Depot is positioned to benefit from increased consumer spending on home improvement as wages rise, despite potential labor cost increases.",
+      "theme": "Labor Market Dynamics and Wage Growth"
+    },
+    {
+      "ticker": "LOW",
+      "sector": "Consumer Discretionary",
+      "rationale": "Growth in home improvement and strong execution.",
       "theme": null
     },
     {
@@ -79,58 +151,34 @@
       "theme": null
     },
     {
-      "ticker": "PEP",
-      "sector": "Consumer Staples",
-      "rationale": "PepsiCo's diversified product portfolio and strong brand loyalty provide resilience against economic fluctuations, appealing to value-focused investors.",
-      "theme": "Shift Towards Value and Defensive Stocks"
-    },
-    {
-      "ticker": "KO",
-      "sector": "Consumer Staples",
-      "rationale": "Coca-Cola is considered a defensive stock with stable demand, making it attractive as investors seek value amid rising interest rates and inflation concerns.",
-      "theme": "Shift Towards Value and Defensive Stocks"
-    },
-    {
-      "ticker": "PG",
-      "sector": "Consumer Staples",
-      "rationale": "Procter & Gamble offers essential consumer products, providing stability and defensive characteristics that appeal to investors in volatile markets.",
-      "theme": "Shift Towards Value and Defensive Stocks"
-    },
-    {
-      "ticker": "UNH",
-      "sector": "Health Care",
-      "rationale": "Strong growth in health services and insurance.",
-      "theme": null
-    },
-    {
-      "ticker": "JNJ",
-      "sector": "Health Care",
-      "rationale": "Johnson & Johnson's stable earnings and essential health products make it a defensive stock that can weather economic volatility, attracting value investors.",
-      "theme": "Shift Towards Value and Defensive Stocks"
-    },
-    {
-      "ticker": "MRK",
-      "sector": "Health Care",
-      "rationale": "Strong pharmaceutical pipeline and innovation.",
-      "theme": null
-    },
-    {
-      "ticker": "PFE",
-      "sector": "Health Care",
-      "rationale": "Strong vaccine sales and pipeline growth.",
+      "ticker": "DIS",
+      "sector": "Communication Services",
+      "rationale": "Strong content pipeline and theme park recovery.",
       "theme": null
     },
     {
       "ticker": "VZ",
       "sector": "Communication Services",
-      "rationale": "Stable cash flows and strong dividend yield.",
+      "rationale": "Stable cash flow and 5G expansion.",
       "theme": null
     },
     {
       "ticker": "T",
       "sector": "Communication Services",
-      "rationale": "Focus on 5G and content strategy.",
+      "rationale": "Strong dividend yield and recovery in wireless.",
       "theme": null
+    },
+    {
+      "ticker": "INTC",
+      "sector": "Information Technology",
+      "rationale": "Investing heavily in AI and cloud infrastructure; potential growth in data center market.",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "AMD",
+      "sector": "Information Technology",
+      "rationale": "Strong position in CPUs and GPUs for AI workloads; expanding data center capabilities.",
+      "theme": "AI Infrastructure Buildout"
     },
     {
       "ticker": "CSCO",
@@ -139,9 +187,15 @@
       "theme": null
     },
     {
-      "ticker": "INTC",
+      "ticker": "ORCL",
       "sector": "Information Technology",
-      "rationale": "Recovery in semiconductor demand and innovation.",
+      "rationale": "Strong cloud growth and enterprise software.",
+      "theme": null
+    },
+    {
+      "ticker": "IBM",
+      "sector": "Information Technology",
+      "rationale": "Transformation towards cloud and AI services.",
       "theme": null
     },
     {
@@ -153,109 +207,19 @@
     {
       "ticker": "CRM",
       "sector": "Information Technology",
-      "rationale": "Leadership in CRM and cloud solutions.",
+      "rationale": "Leading position in customer relationship management.",
       "theme": null
     },
     {
-      "ticker": "AMD",
+      "ticker": "NOW",
       "sector": "Information Technology",
-      "rationale": "Key player in semiconductor manufacturing; strong position in AI and data center markets.",
-      "theme": "AI Infrastructure Buildout"
-    },
-    {
-      "ticker": "NKE",
-      "sector": "Consumer Discretionary",
-      "rationale": "Strong brand and growth in direct-to-consumer.",
-      "theme": null
-    },
-    {
-      "ticker": "LMT",
-      "sector": "Aerospace & Defense",
-      "rationale": "Lockheed Martin's defense contracts are likely to see increased demand due to geopolitical tensions, positioning the company for growth in a turbulent environment.",
-      "theme": "Geopolitical Tensions and Supply Chain Resilience"
-    },
-    {
-      "ticker": "BA",
-      "sector": "Industrials",
-      "rationale": "Recovery in aerospace and defense sectors.",
-      "theme": null
-    },
-    {
-      "ticker": "CAT",
-      "sector": "Industrials",
-      "rationale": "Caterpillar is focused on supply chain improvements and local manufacturing, which aligns with the need for resilience in the face of geopolitical challenges.",
-      "theme": "Geopolitical Tensions and Supply Chain Resilience"
-    },
-    {
-      "ticker": "HON",
-      "sector": "Industrials",
-      "rationale": "Honeywell is investing in supply chain resilience through automation and digital transformation solutions, making it well-positioned amid geopolitical tensions.",
-      "theme": "Geopolitical Tensions and Supply Chain Resilience"
-    },
-    {
-      "ticker": "MMM",
-      "sector": "Industrials",
-      "rationale": "Strong product portfolio and innovation focus.",
-      "theme": null
-    },
-    {
-      "ticker": "XOM",
-      "sector": "Energy",
-      "rationale": "ExxonMobil's investments in domestic energy production and supply chain security make it a strong candidate amid geopolitical uncertainties affecting energy markets.",
-      "theme": "Geopolitical Tensions and Supply Chain Resilience"
-    },
-    {
-      "ticker": "CVX",
-      "sector": "Energy",
-      "rationale": "Strong cash flows and focus on renewable energy.",
-      "theme": null
-    },
-    {
-      "ticker": "COP",
-      "sector": "Energy",
-      "rationale": "Strong production growth and cost management.",
-      "theme": null
-    },
-    {
-      "ticker": "WMT",
-      "sector": "Consumer Staples",
-      "rationale": "Walmart's strong market position and focus on value offerings make it a go-to choice for consumers, aligning with the shift towards defensive stocks.",
-      "theme": "Shift Towards Value and Defensive Stocks"
-    },
-    {
-      "ticker": "COST",
-      "sector": "Consumer Staples",
-      "rationale": "Membership-based model with consistent consumer traffic; resilient to economic fluctuations.",
-      "theme": "Consumer Financial Resilience Amid Economic Pessimism"
-    },
-    {
-      "ticker": "TGT",
-      "sector": "Consumer Discretionary",
-      "rationale": "Strong brand loyalty and diverse product offerings; positioned to capture evolving consumer spending habits.",
-      "theme": "Consumer Financial Resilience Amid Economic Pessimism"
-    },
-    {
-      "ticker": "SBUX",
-      "sector": "Consumer Discretionary",
-      "rationale": "Strong brand and international expansion.",
-      "theme": null
-    },
-    {
-      "ticker": "MCD",
-      "sector": "Consumer Discretionary",
-      "rationale": "Stable consumer brand with resilient spending patterns; likely to benefit from consumer financial resilience.",
-      "theme": "Consumer Financial Resilience Amid Economic Pessimism"
-    },
-    {
-      "ticker": "BKNG",
-      "sector": "Consumer Discretionary",
-      "rationale": "Recovery in travel demand and strong platform.",
+      "rationale": "Strong demand for IT service management solutions.",
       "theme": null
     },
     {
       "ticker": "QCOM",
       "sector": "Information Technology",
-      "rationale": "Leadership in mobile chip technology.",
+      "rationale": "Leadership in mobile chipsets and 5G technology.",
       "theme": null
     },
     {
@@ -265,81 +229,99 @@
       "theme": null
     },
     {
-      "ticker": "NOW",
-      "sector": "Information Technology",
-      "rationale": "Strong growth in cloud-based solutions.",
+      "ticker": "LMT",
+      "sector": "Industrials",
+      "rationale": "Lockheed Martin may see increased demand for defense spending, and a tight labor market could drive wage growth, impacting its operational costs.",
+      "theme": "Labor Market Dynamics and Wage Growth"
+    },
+    {
+      "ticker": "BA",
+      "sector": "Industrials",
+      "rationale": "Recovery in commercial aviation and defense.",
       "theme": null
     },
     {
-      "ticker": "ZM",
-      "sector": "Information Technology",
-      "rationale": "Strong position in remote communication solutions.",
+      "ticker": "CAT",
+      "sector": "Industrials",
+      "rationale": "Caterpillar Inc. manufactures heavy machinery and equipment that will see increased demand from infrastructure projects.",
+      "theme": "Infrastructure Spending Surge"
+    },
+    {
+      "ticker": "DE",
+      "sector": "Industrials",
+      "rationale": "Strong agricultural equipment demand.",
       "theme": null
     },
     {
-      "ticker": "SNAP",
-      "sector": "Communication Services",
-      "rationale": "Innovative platform with strong user engagement.",
+      "ticker": "UPS",
+      "sector": "Industrials",
+      "rationale": "United Parcel Service, Inc. is enhancing its logistics capabilities to address supply chain resilience, making it a key player in domestic logistics.",
+      "theme": "Geopolitical Risk and Supply Chain Resilience"
+    },
+    {
+      "ticker": "FDX",
+      "sector": "Industrials",
+      "rationale": "Strong recovery in global shipping and logistics.",
       "theme": null
     },
     {
-      "ticker": "TWTR",
-      "sector": "Communication Services",
-      "rationale": "Strong brand and engagement metrics.",
+      "ticker": "NKE",
+      "sector": "Consumer Discretionary",
+      "rationale": "Nike, Inc. focuses on health-conscious products and has a strong online presence, aligning with post-pandemic consumer preferences.",
+      "theme": "Consumer Behavior Shifts Post-Pandemic"
+    },
+    {
+      "ticker": "LULU",
+      "sector": "Consumer Discretionary",
+      "rationale": "Strong brand loyalty and growth in athleisure.",
       "theme": null
     },
     {
-      "ticker": "PINS",
-      "sector": "Communication Services",
-      "rationale": "Growing user base and advertising potential.",
+      "ticker": "MCD",
+      "sector": "Consumer Discretionary",
+      "rationale": "Strong global brand and recovery in dining.",
       "theme": null
     },
     {
-      "ticker": "DOCU",
-      "sector": "Information Technology",
-      "rationale": "Strong demand for digital document solutions.",
+      "ticker": "SBUX",
+      "sector": "Consumer Discretionary",
+      "rationale": "Strong brand and growth in international markets.",
       "theme": null
     },
     {
-      "ticker": "FISV",
-      "sector": "Information Technology",
-      "rationale": "Strong position in payment processing solutions.",
-      "theme": null
+      "ticker": "TGT",
+      "sector": "Consumer Discretionary",
+      "rationale": "Target is likely to benefit from increased consumer spending driven by wage growth, while also facing labor cost pressures.",
+      "theme": "Labor Market Dynamics and Wage Growth"
     },
     {
-      "ticker": "VRSK",
-      "sector": "Information Technology",
-      "rationale": "Strong growth in risk management solutions.",
-      "theme": null
-    },
-    {
-      "ticker": "RMD",
+      "ticker": "AMGN",
       "sector": "Health Care",
-      "rationale": "Strong growth in medical devices and innovation.",
+      "rationale": "Investing in biotech innovations and personalized medicine; strong pipeline of new therapies.",
+      "theme": "Healthcare Innovation and Biotech Advancements"
+    },
+    {
+      "ticker": "GILD",
+      "sector": "Health Care",
+      "rationale": "Strong antiviral portfolio and pipeline.",
+      "theme": null
+    },
+    {
+      "ticker": "BIIB",
+      "sector": "Health Care",
+      "rationale": "Strong pipeline in neurology and rare diseases.",
+      "theme": null
+    },
+    {
+      "ticker": "VRTX",
+      "sector": "Health Care",
+      "rationale": "Strong growth in rare disease treatments.",
       "theme": null
     },
     {
       "ticker": "ISRG",
       "sector": "Health Care",
-      "rationale": "Leadership in robotic surgery and innovation.",
-      "theme": null
-    },
-    {
-      "ticker": "ALGN",
-      "sector": "Health Care",
-      "rationale": "Strong growth in orthodontic solutions.",
-      "theme": null
-    },
-    {
-      "ticker": "BMY",
-      "sector": "Health Care",
-      "rationale": "Strong pharmaceutical pipeline and growth.",
-      "theme": null
-    },
-    {
-      "ticker": "AMGN",
-      "sector": "Health Care",
-      "rationale": "Strong portfolio of biotechnology products.",
+      "rationale": "Leader in robotic surgical systems.",
       "theme": null
     },
     {
@@ -355,94 +337,94 @@
       "theme": null
     },
     {
-      "ticker": "LOW",
-      "sector": "Consumer Discretionary",
-      "rationale": "Home improvement retailer benefiting from consumer spending on home projects; resilient in economic downturns.",
-      "theme": "Consumer Financial Resilience Amid Economic Pessimism"
+      "ticker": "MDT",
+      "sector": "Health Care",
+      "rationale": "Strong portfolio in medical devices and therapies.",
+      "theme": null
     },
     {
-      "ticker": "WFC",
-      "sector": "Financials",
-      "rationale": "Potential beneficiary of regulatory changes in mortgage reforms; strong retail banking presence.",
-      "theme": "Regulatory and Policy Shifts in Financial Markets"
-    },
-    {
-      "ticker": "BK",
-      "sector": "Financials",
-      "rationale": "Custodial bank that may benefit from changes in fiscal policies affecting investment strategies.",
-      "theme": "Regulatory and Policy Shifts in Financial Markets"
-    },
-    {
-      "ticker": "PHM",
-      "sector": "Consumer Discretionary",
-      "rationale": "Homebuilder positioned to benefit from increased spending on residential infrastructure and housing.",
-      "theme": "Infrastructure Investment Surge"
-    },
-    {
-      "ticker": "LEN",
-      "sector": "Consumer Discretionary",
-      "rationale": "Another key player in homebuilding; positioned to benefit from favorable regulatory changes.",
-      "theme": "Regulatory and Policy Shifts in Financial Markets"
+      "ticker": "DHR",
+      "sector": "Health Care",
+      "rationale": "Diverse portfolio in life sciences and diagnostics.",
+      "theme": null
     },
     {
       "ticker": "ENPH",
       "sector": "Utilities",
-      "rationale": "Key player in solar energy solutions, benefiting from increased adoption of renewable energy sources.",
-      "theme": "Sustainable Energy Transition"
+      "rationale": "Leading provider of solar energy solutions; benefits from increased demand for renewable energy.",
+      "theme": "Energy Transition and Sustainability"
+    },
+    {
+      "ticker": "NIO",
+      "sector": "Consumer Discretionary",
+      "rationale": "Growing electric vehicle manufacturer in China; expanding into global markets with sustainable focus.",
+      "theme": "Energy Transition and Sustainability"
     },
     {
       "ticker": "NEE",
       "sector": "Utilities",
-      "rationale": "Major utility company investing heavily in renewable energy projects and infrastructure.",
-      "theme": "Sustainable Energy Transition"
+      "rationale": "Major player in renewable energy generation; strong commitment to sustainability initiatives.",
+      "theme": "Energy Transition and Sustainability"
     },
     {
       "ticker": "FSLR",
       "sector": "Utilities",
-      "rationale": "Leading provider of solar panels, positioned to benefit from the growing demand for clean energy.",
-      "theme": "Sustainable Energy Transition"
-    },
-    {
-      "ticker": "MRNA",
-      "sector": "Healthcare",
-      "rationale": "Innovative biotech company focused on mRNA technology, with applications in vaccines and therapeutics.",
-      "theme": "Healthcare Innovation and Biotech Advancements"
+      "rationale": "Leading solar panel manufacturer; positioned to benefit from increased solar adoption.",
+      "theme": "Energy Transition and Sustainability"
     },
     {
       "ticker": "REGN",
-      "sector": "Healthcare",
-      "rationale": "Strong pipeline of innovative therapies and a leader in monoclonal antibody treatments.",
+      "sector": "Health Care",
+      "rationale": "Focus on innovative treatments and AI-driven drug discovery; strong growth in biotech sector.",
       "theme": "Healthcare Innovation and Biotech Advancements"
     },
     {
-      "ticker": "VRTX",
-      "sector": "Healthcare",
-      "rationale": "Biotech firm focused on genetic diseases, with a strong portfolio of innovative therapies.",
+      "ticker": "CVS",
+      "sector": "Health Care",
+      "rationale": "Expanding telehealth services and healthcare technology; positioned for growth in healthcare innovation.",
       "theme": "Healthcare Innovation and Biotech Advancements"
     },
     {
       "ticker": "ILMN",
-      "sector": "Healthcare",
-      "rationale": "Leader in genomics and DNA sequencing technology, driving advancements in personalized medicine.",
+      "sector": "Health Care",
+      "rationale": "Leader in genomics and personalized medicine; benefits from advancements in biotech and healthcare technology.",
       "theme": "Healthcare Innovation and Biotech Advancements"
     },
     {
-      "ticker": "DE",
+      "ticker": "FLR",
       "sector": "Industrials",
-      "rationale": "Major player in agricultural and construction equipment, benefiting from increased infrastructure investment.",
-      "theme": "Infrastructure Investment Surge"
+      "rationale": "Fluor Corporation is well-positioned to benefit from increased infrastructure spending due to its extensive experience in engineering and construction services.",
+      "theme": "Infrastructure Spending Surge"
     },
     {
       "ticker": "VMC",
       "sector": "Materials",
-      "rationale": "Leading producer of construction aggregates, benefiting from increased demand for infrastructure materials.",
-      "theme": "Infrastructure Investment Surge"
+      "rationale": "Vulcan Materials Company provides construction aggregates and is likely to benefit from rising demand for materials in infrastructure development.",
+      "theme": "Infrastructure Spending Surge"
     },
     {
-      "ticker": "UPS",
+      "ticker": "CSX",
       "sector": "Industrials",
-      "rationale": "United Parcel Service is enhancing its logistics capabilities to adapt to changing trade policies and supply chain demands, benefiting from increased focus on localization.",
-      "theme": "Geopolitical Tensions and Supply Chain Resilience"
+      "rationale": "CSX Corporation operates a vast rail network that is essential for transporting materials for infrastructure projects, positioning it well for growth.",
+      "theme": "Infrastructure Spending Surge"
+    },
+    {
+      "ticker": "PLNT",
+      "sector": "Consumer Discretionary",
+      "rationale": "Planet Fitness, Inc. is expanding its fitness centers, catering to health-conscious consumers while also focusing on domestic growth.",
+      "theme": "Geopolitical Risk and Supply Chain Resilience"
+    },
+    {
+      "ticker": "HON",
+      "sector": "Industrials",
+      "rationale": "Honeywell International Inc. is investing in domestic manufacturing and automation solutions, enhancing supply chain resilience.",
+      "theme": "Geopolitical Risk and Supply Chain Resilience"
+    },
+    {
+      "ticker": "COIN",
+      "sector": "Financials",
+      "rationale": "Coinbase is directly impacted by cryptocurrency regulations; as regulations stabilize, it could benefit from increased trading volumes and institutional adoption.",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
     }
   ]
 }

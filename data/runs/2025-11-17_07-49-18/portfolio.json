@@ -1,0 +1,176 @@
+{
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.09306930693069307,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.775), bullish sentiment, strong institutional interest",
+      "composite_score": 0.7750000000000001
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.08376237623762375,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong growth potential post-split, high composite score (0.771), bullish sentiment",
+      "composite_score": 0.7708536585365853
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07445544554455445,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Solid endorsement from Berkshire Hathaway, high composite score (0.659), bullish sentiment",
+      "composite_score": 0.6590251572327044
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.07445544554455445,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "High composite score (0.637), bullish sentiment, key player in AI",
+      "composite_score": 0.6366326530612245
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.06514851485148515,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong acquisition news, high composite score (0.623), bullish sentiment",
+      "composite_score": 0.6228205128205129
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06514851485148515,
+      "sector": "Financial Services",
+      "theme": "Financial Sector Transformation",
+      "rationale": "Solid earnings report, high composite score (0.607), bullish sentiment",
+      "composite_score": 0.6071428571428571
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.055841584158415836,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Positive AUM growth, high composite score (0.607), bullish sentiment",
+      "composite_score": 0.6066666666666667
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.055841584158415836,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive momentum and growth potential, high composite score (0.599), bullish sentiment",
+      "composite_score": 0.5994444444444444
+    },
+    {
+      "ticker": "NTRS",
+      "weight": 0.046534653465346534,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong total return, high composite score (0.590), bullish sentiment",
+      "composite_score": 0.5903070175438596
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.046534653465346534,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong market positioning, high composite score (0.575), bullish sentiment",
+      "composite_score": 0.575
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.046534653465346534,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong growth prospects despite recent decline, high composite score (0.548), bullish sentiment",
+      "composite_score": 0.5484848484848485
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.046534653465346534,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive outlook and strong momentum, high composite score (0.537), bullish sentiment",
+      "composite_score": 0.5366666666666666
+    },
+    {
+      "ticker": "BK",
+      "weight": 0.037227722772277226,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Innovative initiatives in digital assets, high composite score (0.530), bullish sentiment",
+      "composite_score": 0.5302380952380953
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.037227722772277226,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong endorsements and growth potential, high composite score (0.520), bullish sentiment",
+      "composite_score": 0.52
+    },
+    {
+      "ticker": "ICE",
+      "weight": 0.037227722772277226,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strategic initiatives in risk management, high composite score (0.519), bullish sentiment",
+      "composite_score": 0.518921568627451
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.037227722772277226,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Positive investor sentiment and market performance, high composite score (0.512), bullish sentiment",
+      "composite_score": 0.5121794871794871
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.037227722772277226,
+      "sector": "Financial Services",
+      "theme": "Financial Sector Transformation",
+      "rationale": "Strong financial performance and upgrades, high composite score (0.511), bullish sentiment",
+      "composite_score": 0.511
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.549)",
+      "composite_score": 0.5486842105263158
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.490)",
+      "composite_score": 0.49
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.486)",
+      "composite_score": 0.48583333333333334
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.2512871287128713,
+    "Information Technology": 0.3271287128712871,
+    "Health Care": 0.12237623762376239,
+    "Financial Services": 0.10237623762376238,
+    "Financials": 0.1968316831683168
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-17",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-17T07:49:50.103966"
+}

@@ -33,7 +33,13 @@ class PriceData(BaseModel):
     volume: int = Field(..., description="Current/latest volume")
     avg_volume_30d: Optional[int] = Field(None, description="30-day average volume")
     market_cap: Optional[float] = Field(None, description="Market capitalization in USD")
-    price_change_pct: Optional[float] = Field(None, description="Price change % (1d, 5d, etc.)")
+    price_change_pct: Optional[float] = Field(None, description="Price change % (1d)")
+    price_change_pct_5d: Optional[float] = Field(None, description="Price change % over ~5 trading days")
+    price_change_pct_20d: Optional[float] = Field(None, description="Price change % over ~20 trading days")
+    beta: Optional[float] = Field(None, description="Beta vs market")
+    sma_20: Optional[float] = Field(None, description="20-day simple moving average")
+    sma_50: Optional[float] = Field(None, description="50-day simple moving average")
+    rsi_14: Optional[float] = Field(None, description="14-day RSI")
     as_of: Optional[datetime] = Field(None, description="Data timestamp")
 
 
@@ -98,6 +104,7 @@ class FactorScores(BaseModel):
     growth: Optional[float] = Field(None, description="Growth factor z-score (revenue/EPS growth)")
     stability: Optional[float] = Field(None, description="Stability factor z-score (volatility, drawdowns)")
     revisions: Optional[float] = Field(None, description="Revisions factor z-score (analyst EPS revisions)")
+    momentum: Optional[float] = Field(None, description="Recent price momentum score")
 
 
 class SentimentAnalysis(BaseModel):

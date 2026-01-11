@@ -38,11 +38,16 @@ def fetch_historical_price(ticker: str, target_date: date, fmp_api_key: Optional
             "to": to_date.strftime("%Y-%m-%d"),
         }
         
-        hist_resp = requests.get(hist_url, params=hist_params, timeout=10)
+        hist_resp = requests.get(hist_url, params=hist_params, timeout=(5, 30))
         if hist_resp.status_code != 200:
             return None
         
-        hist_data = hist_resp.json()
+        try:
+            hist_data = hist_resp.json()
+        except (ValueError, json.JSONDecodeError):
+            typer.echo(f"  [WARN] Invalid JSON response for {ticker} historical price")
+            return None
+        
         if not hist_data or not isinstance(hist_data, dict):
             return None
         
@@ -51,9 +56,12 @@ def fetch_historical_price(ticker: str, target_date: date, fmp_api_key: Optional
             return None
         
         # Historical data is typically sorted newest first
-        # Find the closest date to target_date
+        # Find the closest date on or before target_date (prefer exact match, then closest before)
+        # Only use dates after target_date if no earlier date is available
         best_match = None
-        min_diff = timedelta(days=365)
+        best_match_after = None
+        min_diff_before = timedelta(days=365)
+        min_diff_after = timedelta(days=365)
         
         for day_data in historical:
             day_str = day_data.get("date")
@@ -62,18 +70,67 @@ def fetch_historical_price(ticker: str, target_date: date, fmp_api_key: Optional
             
             try:
                 day_date = datetime.strptime(day_str.split()[0], "%Y-%m-%d").date()
-                diff = abs(day_date - target_date)
-                if diff < min_diff:
-                    min_diff = diff
-                    best_match = day_data
+                
+                if day_date <= target_date:
+                    # Prefer dates on or before target_date
+                    diff = target_date - day_date
+                    if diff < min_diff_before:
+                        min_diff_before = diff
+                        best_match = day_data
+                else:
+                    # Only consider dates after if we don't have a before match
+                    diff = day_date - target_date
+                    if diff < min_diff_after:
+                        min_diff_after = diff
+                        best_match_after = day_data
             except Exception:
                 continue
         
+        # Use best_match (on or before) if available, otherwise fall back to after
+        if best_match is None and best_match_after is not None:
+            best_match = best_match_after
+            # Warn if we had to use a date after target_date
+            if min_diff_after.days > 0:
+                typer.echo(f"  [WARN] No historical data for {ticker} on or before {target_date}, using {target_date + min_diff_after}")
+        
         if best_match:
-            return best_match.get("close")
+            # Check how far the matched date is from target
+            matched_date_str = best_match.get("date", "")
+            if matched_date_str:
+                try:
+                    matched_date = datetime.strptime(matched_date_str.split()[0], "%Y-%m-%d").date()
+                    date_diff = abs((matched_date - target_date).days)
+                    if date_diff > 5:
+                        typer.echo(f"  [WARN] Historical price for {ticker} is {date_diff} days from target date {target_date}")
+                except Exception:
+                    pass
+            
+            price = best_match.get("close")
+            # Validate price is a positive number
+            if price is not None:
+                try:
+                    price_float = float(price)
+                    if price_float > 0:
+                        return price_float
+                except (ValueError, TypeError):
+                    pass
         
         return None
     
+    except requests.exceptions.Timeout:
+        typer.echo(f"  [WARN] Timeout fetching historical price for {ticker}")
+        return None
+    except requests.exceptions.ConnectionError:
+        typer.echo(f"  [WARN] Connection error fetching historical price for {ticker}")
+        return None
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 401:
+            typer.echo(f"  [WARN] Authentication error fetching historical price for {ticker} (check API key)")
+        elif e.response.status_code == 429:
+            typer.echo(f"  [WARN] Rate limit exceeded for {ticker}")
+        else:
+            typer.echo(f"  [WARN] HTTP error fetching historical price for {ticker}: {e.response.status_code}")
+        return None
     except Exception as e:
         typer.echo(f"  [WARN] Error fetching historical price for {ticker}: {e}")
         return None
@@ -119,6 +176,9 @@ def fetch_sp500_performance(construction_date: date, current_date: date) -> Opti
     except Exception as e:
         typer.echo(f"  [WARN] Error fetching S&P 500 performance: {e}")
         return None
+    except ValueError as e:
+        typer.echo(f"  [WARN] Data conversion error fetching S&P 500 performance: {e}")
+        return None
 
 
 def track_performance(
@@ -149,6 +209,11 @@ def track_performance(
     construction_date = constructed_at.date()
     days_held = (date.today() - construction_date).days
     
+    # Validate construction date is not in the future
+    if days_held < 0:
+        typer.echo(f"[ERROR] Construction date {construction_date} is in the future")
+        raise typer.Exit(code=1)
+    
     typer.echo(f"Portfolio Performance Tracking")
     typer.echo(f"Construction Date: {construction_date.strftime('%Y-%m-%d')}")
     typer.echo(f"Days Held: {days_held}")
@@ -162,14 +227,12 @@ def track_performance(
         typer.echo(f"[{i+1}/{len(portfolio.holdings)}] {holding.ticker}...", nl=False)
         
         # Get historical price (construction date)
-        if use_stored_prices and hasattr(holding, 'price') and holding.price:
-            # Try to use stored price if available (would need to add to PortfolioHolding model)
-            construction_price = None
-        else:
-            construction_price = fetch_historical_price(
-                holding.ticker, construction_date, cfg.fmp_api_key
-            )
-            time.sleep(0.25)  # Rate limit
+        # Note: use_stored_prices is not currently implemented as PortfolioHolding model
+        # doesn't store price. This is a placeholder for future enhancement.
+        construction_price = fetch_historical_price(
+            holding.ticker, construction_date, cfg.fmp_api_key
+        )
+        time.sleep(0.25)  # Rate limit
         
         # Get current price
         current_price_data = fetch_price_data(
@@ -177,7 +240,21 @@ def track_performance(
         )
         current_price = current_price_data.price if current_price_data else None
         
+        # Validate prices are positive numbers before calculating returns
         if construction_price and current_price:
+            if construction_price <= 0 or current_price <= 0:
+                typer.echo(f" [WARN - invalid price data]")
+                performance_data.append({
+                    "ticker": holding.ticker,
+                    "weight": holding.weight,
+                    "construction_price": construction_price,
+                    "current_price": current_price,
+                    "return_pct": None,
+                    "contribution": None,
+                    "sector": holding.sector,
+                    "theme": holding.theme,
+                })
+                continue
             return_pct = ((current_price - construction_price) / construction_price) * 100
             contribution = holding.weight * return_pct
             performance_data.append({

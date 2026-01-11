@@ -1,0 +1,177 @@
+{
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.09480283459981213,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.775), bullish sentiment, strong market position.",
+      "composite_score": 0.7750000000000001
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.0853291246768808,
+      "sector": "Communication Services",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "rationale": "Strong growth potential, high composite score (0.756), bullish sentiment.",
+      "composite_score": 0.7558536585365853
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.07585541475394944,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Solid pipeline and investments, composite score (0.653), bullish sentiment.",
+      "composite_score": 0.6528205128205128
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.07585541475394944,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong performance and growth potential, composite score (0.651), bullish sentiment.",
+      "composite_score": 0.6509523809523808
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.0663817048310181,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Innovative company with strong AI focus, composite score (0.644), bullish sentiment.",
+      "composite_score": 0.6440251572327044
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.0663817048310181,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Strong historical returns, high composite score (0.611), bullish sentiment.",
+      "composite_score": 0.6107692307692307
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.0663817048310181,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries",
+      "rationale": "Strong AI integration and growth, composite score (0.605), bullish sentiment.",
+      "composite_score": 0.605
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05690799490808673,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Solid growth and market position, composite score (0.592), bullish sentiment.",
+      "composite_score": 0.5921428571428571
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05690799490808673,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong cybersecurity focus, composite score (0.592), bullish sentiment.",
+      "composite_score": 0.5919444444444444
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.04743428498515538,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries",
+      "rationale": "Focus on AI-driven growth, composite score (0.563), bullish sentiment.",
+      "composite_score": 0.5634848484848485
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.04743428498515538,
+      "sector": "Real Estate",
+      "theme": "Interest Rate and Monetary Policy Adjustments",
+      "rationale": "Stable returns and portfolio expansion, composite score (0.533), bullish sentiment.",
+      "composite_score": 0.5329824561403509
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.04743428498515538,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Expanding product offerings, composite score (0.532), neutral sentiment.",
+      "composite_score": 0.5316666666666667
+    },
+    {
+      "ticker": "SHOP",
+      "weight": 0.04743428498515538,
+      "sector": "Information Technology",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "rationale": "Strong subscription revenue growth, composite score (0.528), bullish sentiment.",
+      "composite_score": 0.5277906976744187
+    },
+    {
+      "ticker": "NTRS",
+      "weight": 0.02848686513929267,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Commitment to growth initiatives, composite score (0.515), neutral sentiment.",
+      "composite_score": 0.5153070175438597
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.02848686513929267,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strategic acquisition enhances market position, composite score (0.512), bullish sentiment.",
+      "composite_score": 0.5121794871794871
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02848686513929267,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Defensive choice with strong brand, composite score (0.505), bullish sentiment.",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Pivotal role in AI sector, composite score (0.497), bearish sentiment.",
+      "composite_score": 0.49663265306122456
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Adjustments",
+      "rationale": "Navigating complex landscape, composite score (0.496), bullish sentiment.",
+      "composite_score": 0.49600000000000005
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Added as top remaining candidate (composite score: 0.491)",
+      "composite_score": 0.49083333333333334
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries",
+      "rationale": "Added as top remaining candidate (composite score: 0.490)",
+      "composite_score": 0.49
+    }
+  ],
+  "total_weight": 1.0000016284523192,
+  "sector_allocation": {
+    "Communication Services": 0.24651366410771103,
+    "Health Care": 0.12434227989324212,
+    "Information Technology": 0.30559255469457103,
+    "Consumer Discretionary": 0.0663817048310181,
+    "Financials": 0.2097371399406215,
+    "Real Estate": 0.04743428498515538
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-21",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-21T08:16:07.346424"
+}

@@ -1,0 +1,177 @@
+{
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.1,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.812), bullish sentiment, strong growth potential.",
+      "composite_score": 0.8125
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.1,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong position in AI, high composite score (0.682), bullish sentiment.",
+      "composite_score": 0.6816326530612244
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Solid growth prospects, high composite score (0.673), bullish sentiment.",
+      "composite_score": 0.672520325203252
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.08,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Strong travel demand, high composite score (0.653), bullish sentiment.",
+      "composite_score": 0.6532692307692307
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.07,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Positive outlook on drug pipeline, high composite score (0.653), bullish sentiment.",
+      "composite_score": 0.6528205128205128
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong growth in Google Cloud, high composite score (0.629), bullish sentiment.",
+      "composite_score": 0.6290251572327044
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries",
+      "rationale": "Strong market position, high composite score (0.605), bullish sentiment.",
+      "composite_score": 0.605
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Positive consumer trends, high composite score (0.584), bullish sentiment.",
+      "composite_score": 0.5844444444444444
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries",
+      "rationale": "Strong market positioning, high composite score (0.578), bullish sentiment.",
+      "composite_score": 0.5784848484848484
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Gaining investor attention, high composite score (0.577), bullish sentiment.",
+      "composite_score": 0.5771428571428571
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.04,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Recent FDA approval boosts outlook, composite score (0.554), bullish sentiment.",
+      "composite_score": 0.5541666666666666
+    },
+    {
+      "ticker": "SHOP",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong recovery and growth potential, composite score (0.543), bullish sentiment.",
+      "composite_score": 0.5427906976744186
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "sector": "Financials",
+      "theme": "Interest Rate Sensitivity and Financial Sector Adaptation",
+      "rationale": "Commitment to growth, composite score (0.541), bullish sentiment.",
+      "composite_score": 0.541
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.03,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Ongoing investor interest, composite score (0.536), bullish sentiment.",
+      "composite_score": 0.5358333333333334
+    },
+    {
+      "ticker": "BLK",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Facing challenges but potential opportunities, composite score (0.534), bullish sentiment.",
+      "composite_score": 0.5344444444444444
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": "Interest Rate Sensitivity and Financial Sector Adaptation",
+      "rationale": "Proactive approach in a challenging market, composite score (0.532), neutral sentiment.",
+      "composite_score": 0.5316666666666667
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.02,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong growth in robotic surgery, composite score (0.528), bullish sentiment.",
+      "composite_score": 0.5282758620689655
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Stability in pharmaceuticals, composite score (0.503), bullish sentiment.",
+      "composite_score": 0.503
+    },
+    {
+      "ticker": "PINS",
+      "weight": 0.02,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.563)",
+      "composite_score": 0.5630882352941177
+    },
+    {
+      "ticker": "LULU",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.492)",
+      "composite_score": 0.49242424242424243
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.27,
+    "Information Technology": 0.25,
+    "Consumer Discretionary": 0.1,
+    "Health Care": 0.09000000000000001,
+    "Financials": 0.2,
+    "Healthcare": 0.09000000000000001
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-28",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-28T06:24:45.978899"
+}

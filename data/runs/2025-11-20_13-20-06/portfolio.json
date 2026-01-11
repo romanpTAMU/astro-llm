@@ -1,0 +1,178 @@
+{
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.08703703703703704,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.775), strong bullish sentiment, significant recent investment activity.",
+      "composite_score": 0.7750000000000001
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.07833333333333332,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong growth potential with MLB broadcast rights, high composite score (0.771).",
+      "composite_score": 0.7708536585365853
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.06962962962962962,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Innovative pipeline and strategic partnerships, solid composite score (0.683).",
+      "composite_score": 0.6828205128205128
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.06962962962962962,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Strong demand for solar technology, high composite score (0.681).",
+      "composite_score": 0.6811111111111111
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.060925925925925925,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong investor confidence and expansion in AI, composite score (0.644).",
+      "composite_score": 0.6440251572327044
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.060925925925925925,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Key player in AI investments, strong growth outlook, composite score (0.602).",
+      "composite_score": 0.6016326530612246
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05222222222222222,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Global scale and valuation advantages, solid performance, composite score (0.600).",
+      "composite_score": 0.5996428571428571
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.05222222222222222,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Strong total shareholder return, potential for long-term growth, composite score (0.596).",
+      "composite_score": 0.5957692307692307
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.05222222222222222,
+      "sector": "Information Technology",
+      "theme": "Regulatory Shifts in Tech and Finance",
+      "rationale": "Cautious optimism in AI investments, strong market position, composite score (0.590).",
+      "composite_score": 0.59
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05222222222222222,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Proactive approach to emerging trends, solid growth strategies, composite score (0.584).",
+      "composite_score": 0.5844444444444444
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.04351851851851852,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Recent FDA approval and strong market position, composite score (0.569).",
+      "composite_score": 0.5691666666666666
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.04351851851851852,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Focus on AI-driven revenue growth, potential for recovery, composite score (0.548).",
+      "composite_score": 0.5484848484848485
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.04351851851851852,
+      "sector": "Health Care",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Strong investor interest and growth potential, composite score (0.528).",
+      "composite_score": 0.5282758620689655
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.04351851851851852,
+      "sector": "Health Care",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Strategic acquisition enhancing market position, composite score (0.527).",
+      "composite_score": 0.5271794871794871
+    },
+    {
+      "ticker": "URI",
+      "weight": 0.04351851851851852,
+      "sector": "Industrials",
+      "theme": "Infrastructure Investment Surge",
+      "rationale": "Positive analyst sentiment and growth trajectory, composite score (0.512).",
+      "composite_score": 0.5123809523809524
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04351851851851852,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Transformative investment opportunities in AI, strong performance, composite score (0.511).",
+      "composite_score": 0.511
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04351851851851852,
+      "sector": "Information Technology",
+      "theme": "Regulatory Shifts in Tech and Finance",
+      "rationale": "Strong market position and growth potential, composite score (0.505).",
+      "composite_score": 0.505
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.490)",
+      "composite_score": 0.49
+    },
+    {
+      "ticker": "COIN",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": "Regulatory Shifts in Tech and Finance",
+      "rationale": "Added as top remaining candidate (composite score: 0.486)",
+      "composite_score": 0.48621212121212126
+    },
+    {
+      "ticker": "SYK",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.483)",
+      "composite_score": 0.48269230769230764
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.22629629629629627,
+    "Health Care": 0.22018518518518515,
+    "Utilities": 0.06962962962962962,
+    "Information Technology": 0.32462962962962966,
+    "Consumer Discretionary": 0.05222222222222222,
+    "Industrials": 0.04351851851851852,
+    "Financials": 0.06351851851851852
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-11-20",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-11-20T13:20:35.153290"
+}

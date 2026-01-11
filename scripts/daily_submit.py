@@ -20,12 +20,17 @@ Designed to run daily before market open (8:30 AM CST).
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 from datetime import datetime, date
 from typing import Optional
 import subprocess
 import json
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -106,7 +111,7 @@ def run_command(cmd: list[str], description: str) -> bool:
 
 
 def main(
-    skip_submission: bool = True,  # Default to not submitting automatically
+    skip_submission: bool = typer.Option(False, "--skip-submission", help="Skip the submission step"),
     force: bool = False,
     portfolio_file: Optional[str] = None,
     send_email: bool = True,  # Default to sending email reports
@@ -115,7 +120,7 @@ def main(
     """Run the daily portfolio generation and submission pipeline.
     
     Args:
-        skip_submission: Skip the submission step (for testing)
+        skip_submission: Skip the submission step (for testing). By default, submission is enabled.
         force: Run even if not a trading day
         portfolio_file: Use existing portfolio file instead of generating new one
     """
@@ -211,8 +216,10 @@ def main(
             print(f"  Using regular candidates only (no theme candidates found)")
     
     # Step 2: Fetch data (use merged candidates)
+    merged_candidates_file = base_dir / "data" / "merged_candidates.json"
     if not run_command(
-        [python_exe, str(base_dir / "main.py"), "data", "fetch"],
+        [python_exe, str(base_dir / "main.py"), "data", "fetch", 
+         "--candidates-file", str(merged_candidates_file)],
         "Fetch Stock Data"
     ):
         return 1
@@ -304,8 +311,24 @@ def main(
         print("="*80)
         try:
             from src.agent.mays_submission import submit_portfolio
+        except ImportError as e:
+            print(f"[ERROR] Failed to import submission module: {e}")
+            print("[ERROR] Make sure playwright is installed: pip install playwright")
+            print("[ERROR] Then install browsers: playwright install chromium")
+            return 1
+        except Exception as e:
+            print(f"[ERROR] Error importing submission module: {e}")
+            import traceback
+            traceback.print_exc()
+            return 1
+        
+        try:
+            team_password = os.getenv("MAYS_PASSWORD")
+            if not team_password:
+                print("[WARN] MAYS_PASSWORD not set. Set it in your environment or .env file.")
             success = submit_portfolio(
                 portfolio_file=portfolio_file,
+                team_password=team_password,
                 headless=True,
             )
             if success:

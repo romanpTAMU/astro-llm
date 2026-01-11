@@ -1,0 +1,263 @@
+{
+  "analysis_date": "2026-01-09T07:06:24.985997",
+  "portfolio_file": "data\\runs\\2025-12-24_05-58-19\\portfolio.json",
+  "construction_date": "2025-12-24",
+  "current_date": "2026-01-09",
+  "days_held": 16,
+  "portfolio_metrics": {
+    "weighted_return": 2.0374817033396235,
+    "simple_avg_return": 1.0389210937333435,
+    "median_return": 0.10699801535939331,
+    "min_return": -5.394251488258274,
+    "max_return": 13.325438448091125,
+    "winners_count": 10,
+    "losers_count": 10,
+    "total_holdings": 20,
+    "sp500_return": -0.12601684739336794,
+    "outperformance": 2.1634985507329914
+  },
+  "sp500_comparison": {
+    "construction_price": 690.3800048828125,
+    "current_price": 689.510009765625,
+    "return_pct": -0.12601684739336794
+  },
+  "holdings": [
+    {
+      "ticker": "LRCX",
+      "weight": 0.1,
+      "construction_price": 177.33,
+      "current_price": 200.96,
+      "return_pct": 13.325438448091125,
+      "contribution": 1.3325438448091127,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.08,
+      "construction_price": 5446.51,
+      "current_price": 5445.0,
+      "return_pct": -0.027724175664787513,
+      "contribution": -0.002217934053183001,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.08,
+      "construction_price": 352.98,
+      "current_price": 339.04,
+      "return_pct": -3.9492322511190427,
+      "contribution": -0.3159385800895234,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Acceleration"
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.08,
+      "construction_price": 106.45,
+      "current_price": 110.99,
+      "return_pct": 4.264913104744004,
+      "contribution": 0.3411930483795203,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PHM",
+      "weight": 0.06,
+      "construction_price": 119.35,
+      "current_price": 123.16,
+      "return_pct": 3.192291579388356,
+      "contribution": 0.19153749476330134,
+      "sector": "Consumer Discretionary",
+      "theme": "Real Estate Recovery"
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.06,
+      "construction_price": 314.09,
+      "current_price": 325.44,
+      "return_pct": 3.613613932312402,
+      "contribution": 0.2168168359387441,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.06,
+      "construction_price": 355.14,
+      "current_price": 352.23,
+      "return_pct": -0.8193951681027111,
+      "contribution": -0.04916371008616266,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.06,
+      "construction_price": 579.45,
+      "current_price": 580.07,
+      "return_pct": 0.10699801535939331,
+      "contribution": 0.006419880921563598,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.05,
+      "construction_price": 188.29,
+      "current_price": 184.98,
+      "return_pct": -1.7579266025811262,
+      "contribution": -0.08789633012905632,
+      "sector": "Real Estate",
+      "theme": "Real Estate Recovery"
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.05,
+      "construction_price": 333.96,
+      "current_price": 330.11,
+      "return_pct": -1.152832674571795,
+      "contribution": -0.05764163372858975,
+      "sector": "Health Care",
+      "theme": "Healthcare and Biotech Innovation"
+    },
+    {
+      "ticker": "AMAT",
+      "weight": 0.05,
+      "construction_price": 260.78,
+      "current_price": 281.64,
+      "return_pct": 7.999079684024854,
+      "contribution": 0.39995398420124273,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.05,
+      "construction_price": 783.71,
+      "current_price": 801.01,
+      "return_pct": 2.2074491840093855,
+      "contribution": 0.11037245920046929,
+      "sector": "Health Care",
+      "theme": "Healthcare and Biotech Innovation"
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "construction_price": 329.17,
+      "current_price": 329.79,
+      "return_pct": 0.18835252301242655,
+      "contribution": 0.007534100920497062,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.04,
+      "construction_price": 104.68,
+      "current_price": 108.57,
+      "return_pct": 3.7160871226595207,
+      "contribution": 0.14864348490638082,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02,
+      "construction_price": 273.81,
+      "current_price": 259.04,
+      "return_pct": -5.394251488258274,
+      "contribution": -0.1078850297651655,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "SPGI",
+      "weight": 0.03,
+      "construction_price": 525.74,
+      "current_price": 541.56,
+      "return_pct": 3.009091946589557,
+      "contribution": 0.09027275839768671,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "META",
+      "weight": 0.03,
+      "construction_price": 667.55,
+      "current_price": 646.06,
+      "return_pct": -3.219234514268596,
+      "contribution": -0.09657703542805787,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.02,
+      "construction_price": 313.33,
+      "current_price": 308.88,
+      "return_pct": -1.4202278747646215,
+      "contribution": -0.028404557495292432,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.02,
+      "construction_price": 70.11,
+      "current_price": 69.37,
+      "return_pct": -1.0554842390529096,
+      "contribution": -0.02110968478105819,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.02,
+      "construction_price": 144.49,
+      "current_price": 141.53,
+      "return_pct": -2.048584677140292,
+      "contribution": -0.04097169354280584,
+      "sector": "Consumer Staples",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Information Technology": {
+      "avg_return": 1.8781062066658907,
+      "contribution": 1.2659303899910677,
+      "count": 6
+    },
+    "Consumer Discretionary": {
+      "avg_return": 0.5814465096529823,
+      "contribution": 0.1609150032148259,
+      "count": 3
+    },
+    "Health Care": {
+      "avg_return": 1.7731765380605313,
+      "contribution": 0.3939238738513998,
+      "count": 3
+    },
+    "Communication Services": {
+      "avg_return": 0.19718970902190303,
+      "contribution": 0.12023980051068622,
+      "count": 2
+    },
+    "Real Estate": {
+      "avg_return": -1.7579266025811262,
+      "contribution": -0.08789633012905632,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": 2.3045105307538347,
+      "contribution": 0.24645034422456458,
+      "count": 3
+    },
+    "Consumer Staples": {
+      "avg_return": -1.5520344580966006,
+      "contribution": -0.062081378323864025,
+      "count": 2
+    }
+  }
+}

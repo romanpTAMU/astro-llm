@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -13,6 +14,7 @@ from openai import OpenAI
 
 from .config import load_config
 from .openai_client import get_client, chat_json
+from .run_manager import get_run_folder
 from .data_apis import (
     fetch_analyst_recommendations_finnhub,
     fetch_news_finnhub,
@@ -35,7 +37,77 @@ from .models import (
 app = typer.Typer(add_completion=False)
 
 
+class TimedLogger:
+    """Logger that tracks timing and writes to both console and file."""
+    
+    def __init__(self, log_file: Optional[Path] = None):
+        self.log_file = log_file
+        self.start_times = {}
+        self.logger = logging.getLogger("data_fetcher")
+        self.logger.setLevel(logging.DEBUG)
+        
+        # Console handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        console_formatter = logging.Formatter('%(message)s')
+        console_handler.setFormatter(console_formatter)
+        self.logger.addHandler(console_handler)
+        
+        # File handler if log file provided
+        if log_file:
+            log_file.parent.mkdir(parents=True, exist_ok=True)
+            file_handler = logging.FileHandler(log_file, encoding='utf-8')
+            file_handler.setLevel(logging.DEBUG)
+            file_formatter = logging.Formatter(
+                '%(asctime)s [%(levelname)s] %(message)s',
+                datefmt='%Y-%m-%d %H:%M:%S'
+            )
+            file_handler.setFormatter(file_formatter)
+            self.logger.addHandler(file_handler)
+    
+    def start_timer(self, operation: str):
+        """Start timing an operation."""
+        self.start_times[operation] = time.time()
+        self.debug(f"⏱️  Started: {operation}")
+    
+    def end_timer(self, operation: str) -> float:
+        """End timing an operation and return elapsed time."""
+        if operation not in self.start_times:
+            return 0.0
+        elapsed = time.time() - self.start_times[operation]
+        del self.start_times[operation]
+        self.debug(f"✅ Completed: {operation} (took {elapsed:.2f}s)")
+        return elapsed
+    
+    def info(self, message: str):
+        """Log info message."""
+        self.logger.info(message)
+    
+    def debug(self, message: str):
+        """Log debug message (only to file if file handler exists)."""
+        self.logger.debug(message)
+    
+    def warning(self, message: str):
+        """Log warning message."""
+        self.logger.warning(message)
+    
+    def error(self, message: str):
+        """Log error message."""
+        self.logger.error(message)
+
+
+TICKER_NORMALIZATION_MAP = {
+    "FB": "META",
+}
+
+
+def normalize_ticker(ticker: str) -> str:
+    return TICKER_NORMALIZATION_MAP.get(ticker, ticker)
+
+
 def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Optional[str] = None, as_of_date: Optional[date] = None) -> Optional[PriceData]:
+    # Map legacy tickers to current (e.g., FB -> META) to avoid stale data
+    ticker = normalize_ticker(ticker)
     """Fetch price and volume data using tiered approach: Finnhub -> FMP -> yfinance.
     
     Args:
@@ -57,6 +129,12 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
                 avg_volume_30d=None,
                 market_cap=None,
                 price_change_pct=None,
+                price_change_pct_5d=None,
+                price_change_pct_20d=None,
+                beta=None,
+                sma_20=None,
+                sma_50=None,
+                rsi_14=None,
                 as_of=datetime.combine(as_of_date, datetime.min.time()),
             )
     
@@ -78,6 +156,19 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
                             volumes = [day.get("volume", 0) for day in hist_data["historical"] if day.get("volume")]
                             if volumes:
                                 result.avg_volume_30d = int(sum(volumes) / len(volumes))
+                    
+                    closes = [day.get("close") for day in hist_data["historical"] if day.get("close") is not None]
+                    if closes:
+                        try:
+                            latest_close = float(closes[0])
+                            if len(closes) > 5 and result.price_change_pct_5d is None:
+                                prev_5 = float(closes[5])
+                                result.price_change_pct_5d = ((latest_close - prev_5) / prev_5) * 100 if prev_5 != 0 else None
+                            if len(closes) > 20 and result.price_change_pct_20d is None:
+                                prev_20 = float(closes[20])
+                                result.price_change_pct_20d = ((latest_close - prev_20) / prev_20) * 100 if prev_20 != 0 else None
+                        except Exception:
+                            pass
                 except Exception:
                     pass  # avg_volume_30d is optional
             return result
@@ -92,8 +183,8 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
     try:
         stock = yf.Ticker(ticker)
         
-        # Get current quote - use history as it's more reliable than info
-        hist = stock.history(period="5d")
+        # Get current quote - use history for returns and volume
+        hist = stock.history(period="90d")
         if hist is None or hist.empty:
             typer.echo(f"  [WARN] No price data available for {ticker}")
             return None
@@ -104,12 +195,47 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
         price = float(latest["Close"])
         volume = int(latest["Volume"])
         
-        # Calculate price change
+        # Calculate price change horizons
+        price_change_pct = None
+        price_change_pct_5d = None
+        price_change_pct_20d = None
+        sma_20 = None
+        sma_50 = None
+        rsi_14 = None
+        
         if len(hist) > 1:
             prev_close = float(hist.iloc[-2]["Close"])
-            price_change_pct = ((price - prev_close) / prev_close) * 100
-        else:
-            price_change_pct = None
+            price_change_pct = ((price - prev_close) / prev_close) * 100 if prev_close != 0 else None
+        
+        try:
+            closes = hist["Close"]
+            if len(closes) > 5:
+                prev_5 = float(closes.iloc[-6])
+                price_change_pct_5d = ((price - prev_5) / prev_5) * 100 if prev_5 != 0 else None
+            if len(closes) > 20:
+                prev_20 = float(closes.iloc[-21])
+                price_change_pct_20d = ((price - prev_20) / prev_20) * 100 if prev_20 != 0 else None
+            
+            # SMAs
+            if len(closes) >= 20:
+                sma_20 = float(closes.rolling(window=20).mean().iloc[-1])
+            if len(closes) >= 50:
+                sma_50 = float(closes.rolling(window=50).mean().iloc[-1])
+            
+            # RSI 14
+            if len(closes) >= 14:
+                delta = closes.diff()
+                gain = delta.where(delta > 0, 0.0)
+                loss = -delta.where(delta < 0, 0.0)
+                avg_gain = gain.rolling(window=14).mean()
+                avg_loss = loss.rolling(window=14).mean()
+                rs = avg_gain / avg_loss
+                rsi = 100 - (100 / (1 + rs))
+                rsi_val = rsi.iloc[-1]
+                if rsi_val == rsi_val:  # check for nan
+                    rsi_14 = float(rsi_val)
+        except Exception:
+            pass
         
         # Try to get market cap from info, but don't fail if unavailable
         market_cap = None
@@ -127,6 +253,12 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
             avg_volume_30d=avg_volume,
             market_cap=float(market_cap) if market_cap else None,
             price_change_pct=price_change_pct,
+            price_change_pct_5d=price_change_pct_5d,
+            price_change_pct_20d=price_change_pct_20d,
+            beta=None,
+            sma_20=sma_20,
+            sma_50=sma_50,
+            rsi_14=rsi_14,
             as_of=datetime.now(),
         )
     except Exception as e:
@@ -142,6 +274,8 @@ def fetch_fundamentals(ticker: str, fmp_key: Optional[str] = None, as_of_date: O
         fmp_key: FMP API key
         as_of_date: If provided, fetch fundamentals as of this date (for backtesting)
     """
+    # Normalize ticker (e.g., FB -> META) to avoid stale data
+    ticker = normalize_ticker(ticker)
     if fmp_key:
         return fetch_fundamentals_fmp(ticker, fmp_key, as_of_date)
     return None
@@ -164,7 +298,9 @@ def fetch_analyst_recommendations_tiered(
             # Enrich price targets via FMP if available
             if fmp_key:
                 from .data_apis import fetch_price_targets_fmp
-                pt_mean, pt_high, pt_low = fetch_price_targets_fmp(ticker, fmp_key)
+                pt_mean, pt_high, pt_low = fetch_price_targets_fmp(
+                    ticker, fmp_key, current_price=None
+                )
                 result.price_target = pt_mean if pt_mean is not None else result.price_target
                 result.price_target_high = pt_high if pt_high is not None else result.price_target_high
                 result.price_target_low = pt_low if pt_low is not None else result.price_target_low
@@ -358,13 +494,15 @@ Output JSON:
 }}"""
     
     try:
-        result = chat_json(client, model, system, user)
+        # Use shorter timeout for sentiment classification (60s should be plenty)
+        result = chat_json(client, model, system, user, timeout=60.0)
         sentiments = result.get("sentiments", [])
         for i, item in enumerate(news_items):
             if i < len(sentiments):
                 item.sentiment = sentiments[i]
     except Exception as e:
         typer.echo(f"Error classifying sentiment: {e}")
+        # Continue without sentiment rather than failing completely
     
     return news_items
 
@@ -383,11 +521,33 @@ def fetch(
     delay: float = typer.Option(0.5, help="Delay between API calls (seconds)"),
     resume: bool = typer.Option(False, help="Resume mode: only fetch missing tickers from existing output file"),
     fix_sentiment_only: bool = typer.Option(False, help="Only fix missing news sentiment (don't re-fetch other data)"),
+    use_run_folder: bool = typer.Option(True, help="Save log to run folder"),
 ):
     """Fetch price, fundamentals, analyst recs, and news for all candidates."""
     cfg = load_config()
     # Use cheap model by default for news classification (high volume, simple task)
     chosen_model = model or cfg.cheap_model
+    
+    # Set up logging to run folder
+    log_file = None
+    if use_run_folder:
+        run_folder = get_run_folder()
+        log_file = run_folder / "data_fetch.log"
+        typer.echo(f"Logging to: {log_file}")
+    
+    logger = TimedLogger(log_file)
+    overall_start = time.time()
+    logger.info("="*80)
+    logger.info("DATA FETCHING STARTED")
+    logger.info("="*80)
+    logger.info(f"Timestamp: {datetime.now().isoformat()}")
+    logger.info(f"Candidates file: {candidates_file}")
+    logger.info(f"Output file: {out}")
+    logger.info(f"Skip news: {skip_news}")
+    logger.info(f"Skip analyst: {skip_analyst}")
+    logger.info(f"Delay: {delay}s")
+    logger.info(f"Resume mode: {resume}")
+    logger.info("")
     
     if not candidates_file.exists():
         typer.echo(f"Candidates file not found: {candidates_file}")
@@ -490,40 +650,56 @@ def fetch(
         typer.echo(f"Fixed sentiment for {len(sentiment_tickers)} tickers -> {out}")
         return
     
+    logger.info(f"Fetching data for {len(tickers_to_fetch)} tickers...")
     typer.echo(f"Fetching data for {len(tickers_to_fetch)} tickers...")
+    
+    ticker_timings = []
     
     for i, candidate in enumerate(tickers_to_fetch):
         ticker = candidate.ticker
         total_count = len(candidates_resp.candidates)
         current_num = len(existing_data_map) + i + 1 if resume else i + 1
+        
+        ticker_start = time.time()
+        logger.info("")
+        logger.info(f"[{current_num}/{total_count}] Processing {ticker}...")
         typer.echo(f"[{current_num}/{total_count}] Processing {ticker}...")
         
         # Fetch price data (tiered: Finnhub -> FMP -> yfinance)
-        # In backtest mode, use historical price
+        logger.start_timer(f"{ticker}:price_data")
         price_data = fetch_price_data(
             ticker, 
             cfg.finnhub_api_key, 
             cfg.fmp_api_key,
             as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
         )
+        price_elapsed = logger.end_timer(f"{ticker}:price_data")
+        logger.debug(f"  Price data: {'✓' if price_data else '✗'} ({price_elapsed:.2f}s)")
         time.sleep(delay)
         
         # Fetch fundamentals (using FMP API)
+        fundamentals = None
         if cfg.fmp_api_key:
+            logger.start_timer(f"{ticker}:fundamentals")
+            logger.debug(f"  -> Fetching fundamentals from FMP API...")
             typer.echo(f"  -> Fetching fundamentals from FMP API...")
             fundamentals = fetch_fundamentals(ticker, cfg.fmp_api_key, as_of_date=cfg.backtest_date if cfg.backtest_mode else None)
+            fund_elapsed = logger.end_timer(f"{ticker}:fundamentals")
             if fundamentals:
+                logger.debug(f"  Fundamentals: ✓ ({fund_elapsed:.2f}s)")
                 typer.echo(f"  [OK] Fundamentals fetched")
             else:
+                logger.warning(f"  Fundamentals: ✗ - API returned no data ({fund_elapsed:.2f}s)")
                 typer.echo(f"  [WARN] Fundamentals not available (API returned no data)")
         else:
+            logger.warning(f"  Skipping fundamentals (FMP_API_KEY not set)")
             typer.echo(f"  [WARN] Skipping fundamentals (FMP_API_KEY not set)")
-            fundamentals = None
         time.sleep(delay)
         
         # Fetch analyst recommendations (tiered: Finnhub -> LLM web search)
         analyst_recs = None
         if not skip_analyst:
+            logger.start_timer(f"{ticker}:analyst")
             analyst_recs = fetch_analyst_recommendations_tiered(
                 ticker, 
                 cfg.finnhub_api_key, 
@@ -533,11 +709,16 @@ def fetch(
                 as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
                 disable_web_search=cfg.backtest_mode,
             )
+            analyst_elapsed = logger.end_timer(f"{ticker}:analyst")
+            logger.debug(f"  Analyst recs: {'✓' if analyst_recs else '✗'} ({analyst_elapsed:.2f}s)")
             time.sleep(delay)
+        else:
+            logger.debug(f"  Analyst recs: skipped")
         
         # Fetch news (tiered: Finnhub -> FMP -> Alpha Vantage -> LLM web search)
         news_items = []
         if not skip_news:
+            logger.start_timer(f"{ticker}:news")
             news_items = fetch_news_tiered(
                 ticker,
                 cfg.finnhub_api_key,
@@ -548,12 +729,24 @@ def fetch(
                 as_of_date=cfg.backtest_date if cfg.backtest_mode else None,
                 disable_web_search=cfg.backtest_mode,
             )
-            time.sleep(delay)
+            news_elapsed = logger.end_timer(f"{ticker}:news")
+            logger.debug(f"  News: {len(news_items)} items ({news_elapsed:.2f}s)")
+            
             # Classify sentiment for items that don't have it (from LLM search)
             items_needing_sentiment = [n for n in news_items if not n.sentiment]
             if items_needing_sentiment:
+                logger.start_timer(f"{ticker}:sentiment")
                 classify_news_sentiment(items_needing_sentiment, client, chosen_model)
+                sentiment_elapsed = logger.end_timer(f"{ticker}:sentiment")
+                logger.debug(f"  Sentiment: {len(items_needing_sentiment)} items classified ({sentiment_elapsed:.2f}s)")
                 time.sleep(delay)
+            time.sleep(delay)
+        else:
+            logger.debug(f"  News: skipped")
+        
+        ticker_elapsed = time.time() - ticker_start
+        ticker_timings.append((ticker, ticker_elapsed))
+        logger.info(f"  Total time for {ticker}: {ticker_elapsed:.2f}s")
         
         stock_data = StockData(
             ticker=ticker,
@@ -564,6 +757,25 @@ def fetch(
         )
         
         new_stock_data_list.append(stock_data)
+    
+    # Summary statistics
+    overall_elapsed = time.time() - overall_start
+    logger.info("")
+    logger.info("="*80)
+    logger.info("DATA FETCHING SUMMARY")
+    logger.info("="*80)
+    logger.info(f"Total tickers processed: {len(tickers_to_fetch)}")
+    logger.info(f"Total time: {overall_elapsed:.2f}s ({overall_elapsed/60:.1f} minutes)")
+    logger.info(f"Average time per ticker: {overall_elapsed/len(tickers_to_fetch):.2f}s")
+    
+    if ticker_timings:
+        logger.info("")
+        logger.info("Slowest tickers:")
+        sorted_timings = sorted(ticker_timings, key=lambda x: x[1], reverse=True)
+        for ticker, elapsed in sorted_timings[:10]:
+            logger.info(f"  {ticker}: {elapsed:.2f}s")
+    
+    logger.info("="*80)
     
     # Merge: existing + newly fetched
     if resume:
@@ -614,12 +826,25 @@ def fetch(
     else:
         stock_data_list = new_stock_data_list
     
+    logger.start_timer("write_output_file")
     response = StockDataResponse(data=stock_data_list)
     
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     # Write with UTF-8 encoding to handle Unicode characters (e.g., in news headlines)
     out.write_text(response.model_dump_json(indent=2), encoding='utf-8')
+    write_elapsed = logger.end_timer("write_output_file")
+    
+    logger.info("")
+    logger.info(f"✓ Fetched data for {len(stock_data_list)} tickers -> {out}")
+    logger.info(f"  File write time: {write_elapsed:.2f}s")
+    logger.info("")
+    logger.info("="*80)
+    logger.info("DATA FETCHING COMPLETED")
+    logger.info("="*80)
+    
     typer.echo(f"Fetched data for {len(stock_data_list)} tickers -> {out}")
+    if log_file:
+        typer.echo(f"Detailed log saved to: {log_file}")
 
 
 def main():

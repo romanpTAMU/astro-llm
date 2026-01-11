@@ -1,0 +1,258 @@
+{
+  "analysis_date": "2026-01-09T06:38:55.845035",
+  "portfolio_file": "data\\runs\\2025-11-21_08-15-38\\portfolio.json",
+  "construction_date": "2025-11-21",
+  "current_date": "2026-01-09",
+  "days_held": 49,
+  "portfolio_metrics": {
+    "weighted_return": 7.9884161497021395,
+    "simple_avg_return": 6.691127759826824,
+    "median_return": 7.393743520946399,
+    "min_return": -13.21062218387499,
+    "max_return": 40.87627059235892,
+    "winners_count": 16,
+    "losers_count": 4,
+    "total_holdings": 20,
+    "sp500_return": 4.934135483166223,
+    "outperformance": 3.0542806665359166
+  },
+  "sp500_comparison": {
+    "construction_price": 657.08837890625,
+    "current_price": 689.510009765625,
+    "return_pct": 4.934135483166223
+  },
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.09480283459981213,
+      "construction_price": 594.25,
+      "current_price": 646.06,
+      "return_pct": 8.71855279764408,
+      "contribution": 0.826543518824781,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.0853291246768808,
+      "construction_price": 104.31,
+      "current_price": 90.53,
+      "return_pct": -13.21062218387499,
+      "contribution": -1.1272508273870363,
+      "sector": "Communication Services",
+      "theme": "Consumer Behavior Shifts Post-Pandemic"
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.07585541475394944,
+      "construction_price": 97.76,
+      "current_price": 110.99,
+      "return_pct": 13.533142389525358,
+      "contribution": 1.0265621288817004,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.07585541475394944,
+      "construction_price": 142.65,
+      "current_price": 200.96,
+      "return_pct": 40.87627059235892,
+      "contribution": 3.1006864593780525,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.0663817048310181,
+      "construction_price": 299.66,
+      "current_price": 325.44,
+      "return_pct": 8.603083494627233,
+      "contribution": 0.5710873491769487,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.0663817048310181,
+      "construction_price": 4768.0,
+      "current_price": 5445.0,
+      "return_pct": 14.198825503355705,
+      "contribution": 0.9425422435108904,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.0663817048310181,
+      "construction_price": 472.12,
+      "current_price": 478.11,
+      "return_pct": 1.2687452342624777,
+      "contribution": 0.0842214716465727,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries"
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05690799490808673,
+      "construction_price": 327.98,
+      "current_price": 352.23,
+      "return_pct": 7.393743520946399,
+      "contribution": 0.4207631186417169,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05690799490808673,
+      "construction_price": 540.4,
+      "current_price": 580.07,
+      "return_pct": 7.340858623242057,
+      "contribution": 0.4177535451524435,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.04743428498515538,
+      "construction_price": 324.19,
+      "current_price": 339.04,
+      "return_pct": 4.5806471513618625,
+      "contribution": 0.21727972239413876,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries"
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.04743428498515538,
+      "construction_price": 183.08,
+      "current_price": 184.98,
+      "return_pct": 1.0377976840725243,
+      "contribution": 0.049227191103230365,
+      "sector": "Real Estate",
+      "theme": "Interest Rate and Monetary Policy Adjustments"
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.04743428498515538,
+      "construction_price": 100.31,
+      "current_price": 108.57,
+      "return_pct": 8.234473133286802,
+      "contribution": 0.3905963453069315,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "SHOP",
+      "weight": 0.04743428498515538,
+      "construction_price": 147.8,
+      "current_price": 168.28,
+      "return_pct": 13.856562922868735,
+      "contribution": 0.6572761545980932,
+      "sector": "Information Technology",
+      "theme": "Consumer Behavior Shifts Post-Pandemic"
+    },
+    {
+      "ticker": "NTRS",
+      "weight": 0.02848686513929267,
+      "construction_price": 127.13,
+      "current_price": 144.36,
+      "return_pct": 13.553055927003868,
+      "contribution": 0.3860840764178504,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "ABT",
+      "weight": 0.02848686513929267,
+      "construction_price": 128.11,
+      "current_price": 126.18,
+      "return_pct": -1.506517836234491,
+      "contribution": -0.042915970430750947,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02848686513929267,
+      "construction_price": 271.49,
+      "current_price": 259.04,
+      "return_pct": -4.585804265350469,
+      "contribution": -0.13063518766223192,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "construction_price": 178.88,
+      "current_price": 185.04,
+      "return_pct": 3.4436493738819305,
+      "contribution": 0.0688729874776386,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.02,
+      "construction_price": 298.02,
+      "current_price": 329.79,
+      "return_pct": 10.660358365210403,
+      "contribution": 0.21320716730420805,
+      "sector": "Financials",
+      "theme": "Interest Rate and Monetary Policy Adjustments"
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.02,
+      "construction_price": 755.9,
+      "current_price": 801.01,
+      "return_pct": 5.967720597962695,
+      "contribution": 0.1193544119592539,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements"
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.02,
+      "construction_price": 162.69,
+      "current_price": 146.19,
+      "return_pct": -10.141987829614605,
+      "contribution": -0.20283975659229211,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Across Industries"
+    }
+  ],
+  "sector_performance": {
+    "Communication Services": {
+      "avg_return": 1.3703380361321074,
+      "contribution": 0.27038004061469345,
+      "count": 3
+    },
+    "Health Care": {
+      "avg_return": 5.998115050417854,
+      "contribution": 1.1030005704102035,
+      "count": 3
+    },
+    "Information Technology": {
+      "avg_return": 7.042583311395551,
+      "contribution": 3.794861851239972,
+      "count": 7
+    },
+    "Consumer Discretionary": {
+      "avg_return": 14.198825503355705,
+      "contribution": 0.9425422435108904,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": 9.436497913937906,
+      "contribution": 1.8284042528231501,
+      "count": 5
+    },
+    "Real Estate": {
+      "avg_return": 1.0377976840725243,
+      "contribution": 0.049227191103230365,
+      "count": 1
+    }
+  }
+}

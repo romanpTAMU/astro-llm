@@ -1,0 +1,268 @@
+{
+  "analysis_date": "2026-01-09T06:29:01.109461",
+  "portfolio_file": "data\\runs\\2025-11-16_16-12-08\\portfolio.json",
+  "construction_date": "2025-11-04",
+  "current_date": "2026-01-09",
+  "days_held": 66,
+  "portfolio_metrics": {
+    "weighted_return": 5.899458299044282,
+    "simple_avg_return": 6.681636169333028,
+    "median_return": 6.641875505254655,
+    "min_return": -17.172918572735586,
+    "max_return": 49.988533688024575,
+    "winners_count": 12,
+    "losers_count": 8,
+    "total_holdings": 20,
+    "sp500_return": 2.4150589934960562,
+    "outperformance": 3.4843993055482256
+  },
+  "sp500_comparison": {
+    "construction_price": 673.2506103515625,
+    "current_price": 689.510009765625,
+    "return_pct": 2.4150589934960562
+  },
+  "holdings": [
+    {
+      "ticker": "FSLR",
+      "weight": 0.08,
+      "construction_price": 262.7,
+      "current_price": 246.26,
+      "return_pct": -6.258089074990483,
+      "contribution": -0.5006471259992387,
+      "sector": "Information Technology",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "META",
+      "weight": 0.09,
+      "construction_price": 627.32,
+      "current_price": 646.06,
+      "return_pct": 2.987311101192357,
+      "contribution": 0.2688579991073121,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.07,
+      "construction_price": 109.3,
+      "current_price": 90.53,
+      "return_pct": -17.172918572735586,
+      "contribution": -1.202104300091491,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.07,
+      "construction_price": 4991.76,
+      "current_price": 5445.0,
+      "return_pct": 9.079763450165869,
+      "contribution": 0.6355834415116108,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07,
+      "construction_price": 277.54,
+      "current_price": 325.44,
+      "return_pct": 17.258773510124655,
+      "contribution": 1.2081141457087259,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.07,
+      "construction_price": 198.69,
+      "current_price": 185.04,
+      "return_pct": -6.869998490110225,
+      "contribution": -0.4808998943077158,
+      "sector": "Information Technology",
+      "theme": "AI Compute and Power Bottleneck"
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.06,
+      "construction_price": 514.33,
+      "current_price": 478.11,
+      "return_pct": -7.0421713685766,
+      "contribution": -0.422530282114596,
+      "sector": "Information Technology",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "MU",
+      "weight": 0.04,
+      "construction_price": 218.03,
+      "current_price": 327.02,
+      "return_pct": 49.988533688024575,
+      "contribution": 1.9995413475209831,
+      "sector": "Information Technology",
+      "theme": "AI Compute and Power Bottleneck"
+    },
+    {
+      "ticker": "AVGO",
+      "weight": 0.03,
+      "construction_price": 351.94,
+      "current_price": 332.48,
+      "return_pct": -5.529351594021702,
+      "contribution": -0.16588054782065106,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "LLY",
+      "weight": 0.08,
+      "construction_price": 906.86,
+      "current_price": 1085.19,
+      "return_pct": 19.66455682244228,
+      "contribution": 1.5731645457953825,
+      "sector": "Health Care",
+      "theme": "Metabolic Health (GLP-1) Adoption and Healthcare Second-Order Effects"
+    },
+    {
+      "ticker": "SLB",
+      "weight": 0.04,
+      "construction_price": 36.12,
+      "current_price": 44.43,
+      "return_pct": 23.006644518272434,
+      "contribution": 0.9202657807308974,
+      "sector": "Energy",
+      "theme": null
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.04,
+      "construction_price": 83.86,
+      "current_price": 110.99,
+      "return_pct": 32.351538278082515,
+      "contribution": 1.2940615311233006,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.03,
+      "construction_price": 538.82,
+      "current_price": 585.08,
+      "return_pct": 8.585427415463418,
+      "contribution": 0.2575628224639025,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.03,
+      "construction_price": 147.17,
+      "current_price": 141.53,
+      "return_pct": -3.8323027790989923,
+      "contribution": -0.11496908337296977,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "UNP",
+      "weight": 0.04,
+      "construction_price": 220.91,
+      "current_price": 229.85,
+      "return_pct": 4.0468969263500965,
+      "contribution": 0.16187587705400386,
+      "sector": "Industrials",
+      "theme": "US Industrial Policy and Reshoring Build-Out"
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "construction_price": 309.25,
+      "current_price": 329.79,
+      "return_pct": 6.641875505254655,
+      "contribution": 0.2656750202101862,
+      "sector": "Financials",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "CB",
+      "weight": 0.03,
+      "construction_price": 285.65,
+      "current_price": 313.0,
+      "return_pct": 9.574654297216883,
+      "contribution": 0.28723962891650645,
+      "sector": "Financials",
+      "theme": "Higher-for-Longer Cost of Capital and Balance-Sheet Discipline: An elevated cost of capital versus the 2010s rewards companies with pricing power, free cash flow, and conservative leverage while pressuring long-duration and capital-intensive models; beneficiaries include insurers and brokers in hard markets, selective banks with stable deposits and fee income, cash-rich tech and industrials, and buyback or dividend growers, while overlevered CRE and rate-sensitive yield proxies remain challenged. (through May 2026)"
+    },
+    {
+      "ticker": "COP",
+      "weight": 0.03,
+      "construction_price": 87.91,
+      "current_price": 98.72,
+      "return_pct": 12.296667045842343,
+      "contribution": 0.3689000113752703,
+      "sector": "Energy",
+      "theme": null
+    },
+    {
+      "ticker": "VRT",
+      "weight": 0.03,
+      "construction_price": 180.82,
+      "current_price": 160.78,
+      "return_pct": -11.082844818051097,
+      "contribution": -0.3324853445415329,
+      "sector": "Industrials",
+      "theme": "AI Compute and Power Bottleneck"
+    },
+    {
+      "ticker": "TMUS",
+      "weight": 0.03,
+      "construction_price": 206.29,
+      "current_price": 197.91,
+      "return_pct": -4.062242474186823,
+      "contribution": -0.12186727422560467,
+      "sector": "Communication Services",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Information Technology": {
+      "avg_return": 4.857784632065113,
+      "contribution": 0.42958349727878153,
+      "count": 5
+    },
+    "Communication Services": {
+      "avg_return": -0.24726910890134912,
+      "contribution": 0.15300057049894228,
+      "count": 4
+    },
+    "Consumer Discretionary": {
+      "avg_return": 9.079763450165869,
+      "contribution": 0.6355834415116108,
+      "count": 1
+    },
+    "Health Care": {
+      "avg_return": 20.2005075053294,
+      "contribution": 3.1247888993825854,
+      "count": 3
+    },
+    "Energy": {
+      "avg_return": 17.65165578205739,
+      "contribution": 1.2891657921061677,
+      "count": 2
+    },
+    "Consumer Staples": {
+      "avg_return": -3.8323027790989923,
+      "contribution": -0.11496908337296977,
+      "count": 1
+    },
+    "Industrials": {
+      "avg_return": -3.5179739458505,
+      "contribution": -0.17060946748752903,
+      "count": 2
+    },
+    "Financials": {
+      "avg_return": 8.108264901235769,
+      "contribution": 0.5529146491266926,
+      "count": 2
+    }
+  }
+}

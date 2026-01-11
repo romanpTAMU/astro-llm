@@ -1,0 +1,178 @@
+{
+  "holdings": [
+    {
+      "ticker": "META",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Highest composite score (0.756), bullish sentiment, strong growth potential.",
+      "composite_score": 0.7562500000000001
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.08,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong position in AI, high composite score (0.681), bullish sentiment.",
+      "composite_score": 0.6808510638297872
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.07,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Solid growth potential, high composite score (0.674), bullish sentiment.",
+      "composite_score": 0.6735185185185185
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong content strategy, high composite score (0.673), bullish sentiment.",
+      "composite_score": 0.672520325203252
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.06,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Dominant market position, high composite score (0.617), bullish sentiment.",
+      "composite_score": 0.6169369369369369
+    },
+    {
+      "ticker": "COIN",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": "Regulatory Evolution in Financial Markets",
+      "rationale": "Positive analyst outlook, high composite score (0.596), bullish sentiment.",
+      "composite_score": 0.5962121212121212
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong dividend potential, high composite score (0.584), bullish sentiment.",
+      "composite_score": 0.5844444444444444
+    },
+    {
+      "ticker": "V",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Innovative partnerships, high composite score (0.577), bullish sentiment.",
+      "composite_score": 0.5771428571428571
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong AI integration, high composite score (0.565), bullish sentiment.",
+      "composite_score": 0.565
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong AI and cloud focus, high composite score (0.559), bullish sentiment.",
+      "composite_score": 0.5586363636363636
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong AI advancements, high composite score (0.542), neutral sentiment.",
+      "composite_score": 0.5416666666666666
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong dividend option, high composite score (0.541), bullish sentiment.",
+      "composite_score": 0.541
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.05,
+      "sector": "Biotechnology",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Strong pipeline, high composite score (0.525), bullish sentiment.",
+      "composite_score": 0.5248717948717949
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.05,
+      "sector": "Pharmaceuticals",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Expanding oncology portfolio, high composite score (0.524), bullish sentiment.",
+      "composite_score": 0.5240740740740741
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong sales and market share, high composite score (0.506), bullish sentiment.",
+      "composite_score": 0.506219512195122
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Acquisition to enhance security, high composite score (0.504), bullish sentiment.",
+      "composite_score": 0.5038888888888888
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong earnings and partnerships, high composite score (0.501), bullish sentiment.",
+      "composite_score": 0.5008333333333332
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.02,
+      "sector": "Biotechnology",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "FDA approval boosts outlook, high composite score (0.496), neutral sentiment.",
+      "composite_score": 0.496060606060606
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.488)",
+      "composite_score": 0.48833333333333334
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.475)",
+      "composite_score": 0.475
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.2,
+    "Information Technology": 0.3,
+    "Health Care": 0.11000000000000001,
+    "Consumer Discretionary": 0.06,
+    "Financials": 0.21000000000000002,
+    "Biotechnology": 0.07,
+    "Pharmaceuticals": 0.05
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2025-12-03",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2025-12-03T07:23:34.819991"
+}

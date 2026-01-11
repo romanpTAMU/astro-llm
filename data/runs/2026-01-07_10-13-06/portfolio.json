@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "MRK",
+      "weight": 0.09,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Highest composite score (0.667), strong bullish sentiment, significant growth potential.",
+      "composite_score": 0.6665180393169882
+    },
+    {
+      "ticker": "V",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong performance and growth in the financial sector, high composite score (0.611).",
+      "composite_score": 0.6105080354664609
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Solid growth and diversification in revenue streams, high composite score (0.591).",
+      "composite_score": 0.5909551892657325
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.07,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Strong position in the solar sector, good growth prospects, composite score (0.534).",
+      "composite_score": 0.5343461787341731
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Navigating AI landscape with potential for growth, composite score (0.527).",
+      "composite_score": 0.5270617110561817
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong pipeline in oncology, composite score (0.517).",
+      "composite_score": 0.5169692441647116
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Leading position in AI chip market, strong growth potential, composite score (0.498).",
+      "composite_score": 0.49807093399862445
+    },
+    {
+      "ticker": "SPGI",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": "ETF and Passive Investment Growth",
+      "rationale": "Positive outlook in capital markets, composite score (0.499).",
+      "composite_score": 0.49932246962322147
+    },
+    {
+      "ticker": "GD",
+      "weight": 0.05,
+      "sector": "Industrials",
+      "theme": "Defense and Aerospace Expansion",
+      "rationale": "Strong momentum in defense sector, composite score (0.486).",
+      "composite_score": 0.4859329002033088
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strategic partnerships enhancing semiconductor capabilities, composite score (0.486).",
+      "composite_score": 0.48589676322834735
+    },
+    {
+      "ticker": "EBAY",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "Consumer Behavior Shift to Digital",
+      "rationale": "Resilient performance despite challenges, composite score (0.438).",
+      "composite_score": 0.4379230404147348
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Recent regulatory approvals enhancing growth prospects, composite score (0.437).",
+      "composite_score": 0.43690266516549636
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.04,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong brand and market position, potential for recovery, composite score (0.435).",
+      "composite_score": 0.43499493784191284
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.04,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Potential rebound after recent sell-off, composite score (0.410).",
+      "composite_score": 0.41012318681499377
+    },
+    {
+      "ticker": "RTX",
+      "weight": 0.04,
+      "sector": "Industrials",
+      "theme": "Defense and Aerospace Expansion",
+      "rationale": "Strong performance and growth in defense sector, composite score (0.397).",
+      "composite_score": 0.3965418611757231
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Benefiting from consumer spending shifts towards home improvement, composite score (0.392).",
+      "composite_score": 0.3916239426905434
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong engagement in AI sector, potential for growth, composite score (0.422).",
+      "composite_score": 0.4220501270082806
+    },
+    {
+      "ticker": "SCHW",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": "ETF and Passive Investment Growth",
+      "rationale": "Expected to outperform earnings estimates, composite score (0.371).",
+      "composite_score": 0.3706548226031065
+    },
+    {
+      "ticker": "INTU",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": "Labor Market Resilience",
+      "rationale": "Strong cash flow and growth potential in generative AI, composite score (0.369).",
+      "composite_score": 0.3687283545874406
+    },
+    {
+      "ticker": "MSCI",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": "ETF and Passive Investment Growth",
+      "rationale": "Added as top remaining candidate (composite score: 0.566)",
+      "composite_score": 0.5663692641767701
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Health Care": 0.19,
+    "Financials": 0.26,
+    "Utilities": 0.07,
+    "Communication Services": 0.1,
+    "Information Technology": 0.17,
+    "Industrials": 0.09,
+    "Consumer Discretionary": 0.08,
+    "Consumer Staples": 0.04
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-07",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-07T10:13:36.909903"
+}

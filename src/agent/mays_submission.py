@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 import json
+import os
 import time
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
 import typer
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+from dotenv import load_dotenv
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError, sync_playwright
 
 from .models import Portfolio
 
@@ -130,10 +132,101 @@ def generate_portfolio_overview(portfolio: Portfolio) -> str:
     return " ".join(overview_parts)
 
 
+def compute_integer_weights(holdings: list) -> list[int]:
+    """Convert fractional weights to whole percentages (2-10%) summing to 100."""
+    raw = [holding.weight * 100 for holding in holdings]
+    ints: list[int] = []
+    for value in raw:
+        rounded = int(round(value))
+        if rounded < 2:
+            rounded = 2
+        elif rounded > 10:
+            rounded = 10
+        ints.append(rounded)
+
+    total = sum(ints)
+
+    def adjust_one(increase: bool) -> bool:
+        indices = range(len(ints))
+        best_idx = None
+        best_score = None
+        for idx in indices:
+            if increase:
+                if ints[idx] >= 10:
+                    continue
+                score = raw[idx] - ints[idx]
+            else:
+                if ints[idx] <= 2:
+                    continue
+                score = raw[idx] - ints[idx]
+            if best_idx is None:
+                best_idx = idx
+                best_score = score
+            else:
+                if increase and score > best_score:
+                    best_idx = idx
+                    best_score = score
+                elif not increase and score < best_score:
+                    best_idx = idx
+                    best_score = score
+        if best_idx is None:
+            return False
+        ints[best_idx] += 1 if increase else -1
+        return True
+
+    while total < 100:
+        if adjust_one(True):
+            total += 1
+            continue
+        idx = next((i for i, v in enumerate(ints) if v < 10), None)
+        if idx is None:
+            break
+        ints[idx] += 1
+        total += 1
+
+    while total > 100:
+        if adjust_one(False):
+            total -= 1
+            continue
+        idx = next((i for i, v in enumerate(ints) if v > 2), None)
+        if idx is None:
+            break
+        ints[idx] -= 1
+        total -= 1
+
+    if total != 100:
+        # Final safeguard: adjust the highest-weight position within bounds
+        diff = 100 - total
+        step = 1 if diff > 0 else -1
+        while total != 100:
+            if diff > 0:
+                idx = next((i for i, v in enumerate(ints) if v < 10), None)
+            else:
+                idx = next((i for i, v in enumerate(ints) if v > 2), None)
+            if idx is None:
+                break
+            ints[idx] += step
+            total += step
+            diff = 100 - total
+
+    return ints
+
+
+def _get_submission_rows(page) -> list[str]:
+    """Capture submission history rows as text snapshots."""
+    rows = page.locator('#submissionHistory table tbody tr')
+    row_texts: list[str] = []
+    count = rows.count()
+    for i in range(count):
+        row_texts.append(rows.nth(i).inner_text().strip())
+    return row_texts
+
+
 def submit_portfolio(
     portfolio_file: Path,
     team_name: str = "ASTRO",
     team_leader_email: str = "romanp@tamu.edu",
+    team_password: Optional[str] = None,
     system_prompt: Optional[str] = None,
     user_prompt: Optional[str] = None,
     llm_response: Optional[dict] = None,
@@ -182,6 +275,10 @@ def submit_portfolio(
     typer.echo(f"Team: {team_name}")
     typer.echo(f"Email: {team_leader_email}")
     typer.echo(f"Portfolio: {portfolio_file}")
+    if team_password:
+        typer.echo("Password: [PROVIDED]")
+    else:
+        typer.echo("[WARN] No password provided - login may fail")
     typer.echo("")
     
     with sync_playwright() as p:
@@ -189,6 +286,13 @@ def submit_portfolio(
         browser = p.chromium.launch(headless=headless)
         context = browser.new_context()
         page = context.new_page()
+        dialog_acknowledged = {"value": False}
+
+        def on_dialog(dialog):
+            dialog.accept()
+            dialog_acknowledged["value"] = True
+
+        page.on("dialog", on_dialog)
         
         try:
             # Navigate to login page
@@ -200,26 +304,90 @@ def submit_portfolio(
             typer.echo("Filling login form...")
             team_input = page.locator('#loginTeamName')
             email_input = page.locator('#loginEmail')
+            password_input = page.locator('#loginPassword')
             
             team_input.fill(team_name)
             time.sleep(0.5)
             email_input.fill(team_leader_email)
             time.sleep(0.5)
             
+            if password_input.count() > 0:
+                if team_password:
+                    password_input.fill(team_password)
+                else:
+                    typer.echo("[WARN] Password field detected but no password supplied")
+                time.sleep(0.5)
+            else:
+                typer.echo("[WARN] Password input (#loginPassword) not found on page")
+            
             # Click login button
             typer.echo("Clicking login button...")
             login_form = page.locator('#loginForm')
             login_form.locator('button[type="submit"]').click()
-            time.sleep(3)  # Wait for navigation
+            time.sleep(1.5)
+
+            # Handle success modal or alert - wait longer and try multiple selectors
+            login_success_acknowledged = False
+            try:
+                # Wait for the OK button with a longer timeout - try multiple selectors
+                ok_button = None
+                selectors = [
+                    "button:has-text('OK')",
+                    ".swal-button--confirm",
+                    "#loginSuccess button",
+                    "button.swal-button",
+                    "button:has-text('Ok')",  # Case variation
+                ]
+                for selector in selectors:
+                    try:
+                        ok_button = page.wait_for_selector(selector, timeout=3000)
+                        if ok_button:
+                            break
+                    except PlaywrightTimeoutError:
+                        continue
+                
+                if ok_button:
+                    ok_button.click()
+                    typer.echo("Login success dialog acknowledged.")
+                    login_success_acknowledged = True
+                    time.sleep(2)  # Wait for dialog to close
+                else:
+                    typer.echo("[INFO] OK button not found with any selector")
+            except Exception as e:
+                typer.echo(f"[INFO] Error handling login dialog: {e}")
             
-            # Check if we're on dashboard
+            if not login_success_acknowledged:
+                if dialog_acknowledged["value"]:
+                    typer.echo("Login success dialog accepted via browser alert.")
+                    login_success_acknowledged = True
+                else:
+                    typer.echo("[INFO] No login success dialog detected - may have auto-closed or already dismissed")
+                    # Continue anyway - the button check below will confirm if we're logged in
+            
+            # Wait for page to fully render after login
+            time.sleep(2)
+            
+            # Check current URL (for logging, but don't fail on it)
             current_url = page.url
             typer.echo(f"Current URL: {current_url}")
+            
+            # Verify we're logged in by checking for the "Submit Daily Stocks" button
+            # Don't rely on URL hash since it may not update immediately
+            typer.echo("Verifying login by looking for 'Submit Daily Stocks' button...")
+            submit_button = page.locator('a:has-text("Submit Daily Stocks"), a[href="#submit"]').first
+            
+            # Wait for button to exist and be visible (this confirms we're logged in)
+            try:
+                submit_button.wait_for(state="visible", timeout=wait_timeout)
+                typer.echo("Login verified - 'Submit Daily Stocks' button found")
+            except PlaywrightTimeoutError:
+                typer.echo(f"[ERROR] 'Submit Daily Stocks' button not found or not visible after {wait_timeout/1000}s")
+                typer.echo("This may indicate login failed or page structure changed")
+                return False
             
             # Navigate to submission page by clicking "Submit Daily Stocks" button
             # This is necessary because the site uses client-side routing
             typer.echo("Clicking 'Submit Daily Stocks' button to navigate to submission page...")
-            submit_button = page.locator('a:has-text("Submit Daily Stocks"), a[href="#submit"]').first
             submit_button.click()
             time.sleep(2)  # Wait for page transition
             
@@ -236,6 +404,10 @@ def submit_portfolio(
             portfolio_type_select.select_option(value="A", timeout=wait_timeout)
             time.sleep(1)
             
+            # Prepare integer weights (2-10%) summing to 100%
+            weight_percentages = compute_integer_weights(portfolio.holdings)
+            typer.echo(f"  Weight plan (sum={sum(weight_percentages)}): {weight_percentages}")
+
             # Fill in stock tickers and weights
             typer.echo("  Filling stock selections...")
             
@@ -263,8 +435,8 @@ def submit_portfolio(
                     typer.echo(f"      [WARN] Could not find ticker input for stock {i}")
                 
                 if i <= len(weight_inputs):
-                    weight_pct = holding.weight * 100
-                    weight_inputs[i-1].fill(str(weight_pct))
+                    weight_pct = weight_percentages[i-1]
+                    weight_inputs[i-1].fill(f"{weight_pct}")
                     time.sleep(0.2)
                 else:
                     typer.echo(f"      [WARN] Could not find weight input for stock {i}")
@@ -285,25 +457,65 @@ def submit_portfolio(
             query_textarea.fill(query_thread)
             time.sleep(0.5)
             
+            # Get initial count of submissions from dashboard before submitting
+            typer.echo("  Checking initial submission history...")
+            page.goto("https://joshdrobert.github.io/Mays-AI/#dashboard", wait_until="networkidle")
+            time.sleep(2)
+            initial_rows = _get_submission_rows(page)
+            initial_count = len(initial_rows)
+            typer.echo(f"  Initial submission count: {initial_count}")
+            
+            # Navigate back to submit page
+            typer.echo("  Navigating to submission page...")
+            page.goto("https://joshdrobert.github.io/Mays-AI/#submit", wait_until="networkidle")
+            time.sleep(2)
+            
             # Submit form using exact form ID
             typer.echo("  Submitting portfolio...")
-            submit_form = page.locator('#submitForm')
-            submit_form.locator('button[type="submit"]').click()
-            time.sleep(3)
-            
-            # Check for success message
-            success_indicator = page.locator('text=/success/i, text=/submitted/i, .success, [class*="success"]')
-            if success_indicator.count() > 0:
-                typer.echo("")
-                typer.echo("=" * 80)
-                typer.echo("✓ PORTFOLIO SUBMITTED SUCCESSFULLY")
-                typer.echo("=" * 80)
-                return True
+            submit_button = page.locator('button:has-text("Submit Portfolio")').first
+            if submit_button.count() > 0:
+                submit_button.click()
+                typer.echo("  Clicked 'Submit Portfolio' button.")
             else:
-                typer.echo("")
-                typer.echo("[WARN] Submission completed, but success message not detected")
-                typer.echo("Please verify submission manually on the website")
-                return True  # Assume success if no error
+                submit_form = page.locator('#submitForm')
+                submit_form.locator('button[type="submit"]').click()
+                typer.echo("  Submit button not found by text, used form submit.")
+            
+            # Wait for submission to process (page grays out with overlay)
+            typer.echo("  Waiting for submission to process...")
+            time.sleep(5)  # Wait for submission to complete
+            
+            # Navigate back to dashboard to check submission history
+            typer.echo("  Navigating back to dashboard to verify submission...")
+            page.goto("https://joshdrobert.github.io/Mays-AI/#dashboard", wait_until="networkidle")
+            time.sleep(3)  # Wait for dashboard to load
+            
+            # Check submission history table for new row
+            final_rows = _get_submission_rows(page)
+            final_count = len(final_rows)
+            typer.echo(f"  Final submission count: {final_count}")
+            
+            typer.echo("")
+            if final_count > initial_count:
+                typer.echo("=" * 80)
+                typer.echo("[SUCCESS] PORTFOLIO SUBMITTED SUCCESSFULLY")
+                typer.echo("=" * 80)
+                typer.echo(f"  New submission detected: {final_count - initial_count} new row(s) added")
+                return True
+            if final_count == initial_count and final_rows != initial_rows:
+                typer.echo("=" * 80)
+                typer.echo("[SUCCESS] PORTFOLIO SUBMITTED SUCCESSFULLY")
+                typer.echo("=" * 80)
+                typer.echo("  Submission history updated (existing row replaced).")
+                return True
+
+            if final_count == initial_count:
+                typer.echo("[WARN] Submission count unchanged - submission may have failed")
+                typer.echo("  Please verify submission manually on the website")
+                return False
+            else:
+                typer.echo(f"[ERROR] Unexpected: submission count decreased from {initial_count} to {final_count}")
+                return False
             
         except PlaywrightTimeoutError as e:
             typer.echo(f"[ERROR] Timeout error: {e}")
@@ -340,6 +552,9 @@ def main(
     team_leader_email: str = typer.Option(
         "romanp@tamu.edu", help="Team leader email for login"
     ),
+    team_password: Optional[str] = typer.Option(
+        None, help="Password for login (defaults to MAYS_PASSWORD env var if not provided)"
+    ),
     prompts_file: Optional[Path] = typer.Option(
         None, help="JSON file containing system_prompt, user_prompt, and llm_response (auto-detected if in same folder as portfolio)"
     ),
@@ -348,6 +563,7 @@ def main(
     ),
 ):
     """Submit portfolio to MAYS AI competition website."""
+    load_dotenv(override=False)
     if ctx.invoked_subcommand is not None:
         return
     
@@ -369,10 +585,15 @@ def main(
         llm_response = prompts_data.get("llm_response")
         typer.echo(f"Loaded prompts and response from {prompts_file}")
     
+    password = team_password or os.getenv("MAYS_PASSWORD")
+    if not password:
+        typer.echo("[WARN] MAYS_PASSWORD not provided. Set env var or pass --team-password.")
+    
     success = submit_portfolio(
         portfolio_file=portfolio_file,
         team_name=team_name,
         team_leader_email=team_leader_email,
+        team_password=password,
         system_prompt=system_prompt,
         user_prompt=user_prompt,
         llm_response=llm_response,

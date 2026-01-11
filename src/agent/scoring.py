@@ -22,52 +22,74 @@ from .models import (
 
 app = typer.Typer(add_completion=False)
 
+TICKER_NORMALIZATION_MAP = {
+    "FB": "META",
+}
+
+
+def normalize_ticker(ticker: str) -> str:
+    return TICKER_NORMALIZATION_MAP.get(ticker, ticker)
+
 
 def calculate_value_score(fundamentals) -> Optional[float]:
-    """Calculate value factor score from EV/EBITDA, FCF yield, P/E."""
+    """Calculate value factor score from EV/EBITDA, FCF margin, P/E."""
     if not fundamentals:
         return None
     
     scores = []
     
-    # EV/EBITDA (lower is better for value)
-    if fundamentals.ev_ebitda is not None:
-        # Inverse: lower EV/EBITDA = higher value score
-        # Normalize: assume 10-20 is typical, <10 is good value, >20 is expensive
-        if fundamentals.ev_ebitda < 10:
+    # EV/EBITDA (lower is better). Use smoother buckets to avoid cliff effects.
+    ev = fundamentals.ev_ebitda
+    if ev is not None and ev > 0:
+        if ev <= 8:
             scores.append(1.0)
-        elif fundamentals.ev_ebitda < 15:
-            scores.append(0.5)
-        elif fundamentals.ev_ebitda < 20:
+        elif ev <= 12:
+            scores.append(0.7)
+        elif ev <= 16:
+            scores.append(0.4)
+        elif ev <= 20:
             scores.append(0.0)
-        else:
-            scores.append(-0.5)
-    
-    # P/E ratio (lower is better for value)
-    if fundamentals.pe_ratio is not None and fundamentals.pe_ratio > 0:
-        # Inverse: lower P/E = higher value score
-        if fundamentals.pe_ratio < 15:
-            scores.append(1.0)
-        elif fundamentals.pe_ratio < 20:
-            scores.append(0.5)
-        elif fundamentals.pe_ratio < 30:
-            scores.append(0.0)
-        else:
-            scores.append(-0.5)
-    
-    # FCF yield (higher is better for value)
-    if fundamentals.fcf_margin_ttm is not None:
-        # Higher FCF margin = better value
-        if fundamentals.fcf_margin_ttm > 15:
-            scores.append(1.0)
-        elif fundamentals.fcf_margin_ttm > 10:
-            scores.append(0.5)
-        elif fundamentals.fcf_margin_ttm > 5:
-            scores.append(0.0)
-        else:
+        elif ev <= 25:
             scores.append(-0.3)
+        else:
+            scores.append(-0.6)
     
-    return statistics.mean(scores) if scores else None
+    # P/E ratio (lower is better)
+    pe = fundamentals.pe_ratio
+    if pe is not None and pe > 0:
+        if pe <= 12:
+            scores.append(1.0)
+        elif pe <= 18:
+            scores.append(0.7)
+        elif pe <= 24:
+            scores.append(0.4)
+        elif pe <= 30:
+            scores.append(0.0)
+        elif pe <= 40:
+            scores.append(-0.3)
+        else:
+            scores.append(-0.6)
+    
+    # FCF margin (higher is better proxy for FCF yield)
+    fcf = fundamentals.fcf_margin_ttm
+    if fcf is not None:
+        if fcf >= 20:
+            scores.append(1.0)
+        elif fcf >= 15:
+            scores.append(0.7)
+        elif fcf >= 10:
+            scores.append(0.4)
+        elif fcf >= 5:
+            scores.append(0.0)
+        elif fcf >= 0:
+            scores.append(-0.3)
+        else:
+            scores.append(-0.6)
+    
+    if not scores:
+        return None
+    
+    return max(-1.0, min(1.0, statistics.mean(scores)))
 
 
 def calculate_quality_score(fundamentals) -> Optional[float]:
@@ -129,20 +151,33 @@ def calculate_growth_score(fundamentals) -> Optional[float]:
 
 
 def calculate_stability_score(price_data) -> Optional[float]:
-    """Calculate stability factor score (placeholder - would need historical volatility data)."""
-    # For now, we'll use a simple heuristic based on price change
-    if not price_data or price_data.price_change_pct is None:
+    """Calculate stability factor score using beta if available; fall back to short-term volatility."""
+    if not price_data:
         return None
     
-    # Lower absolute price change = more stable (but this is simplistic)
-    abs_change = abs(price_data.price_change_pct)
+    if price_data.beta is not None:
+        beta = price_data.beta
+        if beta < 0.8:
+            return 0.7  # lower beta = more stable
+        elif beta < 1.0:
+            return 0.4
+        elif beta < 1.2:
+            return 0.1
+        elif beta < 1.5:
+            return -0.2
+        else:
+            return -0.5
     
+    # Fallback: 1d absolute price change as a crude proxy
+    if price_data.price_change_pct is None:
+        return None
+    abs_change = abs(price_data.price_change_pct)
     if abs_change < 2:
-        return 0.5  # Stable
+        return 0.5
     elif abs_change < 5:
-        return 0.0  # Moderate volatility
+        return 0.0
     else:
-        return -0.3  # High volatility
+        return -0.3
 
 
 def calculate_revisions_score(analyst_recs) -> Optional[float]:
@@ -190,6 +225,28 @@ def calculate_revisions_score(analyst_recs) -> Optional[float]:
         score += 0.1
     
     return max(-1.0, min(1.0, score))  # Clamp to [-1, 1]
+
+
+def calculate_momentum_score(price_data) -> Optional[float]:
+    """Light-touch momentum score using short/medium horizon returns.
+    
+    Preference order: ~20-day, then ~5-day, then 1-day.
+    Scales to [-1, 1] with soft caps to avoid overpowering long-term factors.
+    """
+    if not price_data:
+        return None
+    
+    horizons = [
+        ("20d", getattr(price_data, "price_change_pct_20d", None), 20.0),
+        ("5d", getattr(price_data, "price_change_pct_5d", None), 12.0),
+        ("1d", getattr(price_data, "price_change_pct", None), 10.0),
+    ]
+    
+    for _, pct, scale in horizons:
+        if pct is not None:
+            return max(-1.0, min(1.0, pct / scale))
+    
+    return None
 
 
 def summarize_news(
@@ -271,6 +328,21 @@ def synthesize_sentiment(
     model_cutoff: Optional[date] = None,
 ) -> SentimentAnalysis:
     """Synthesize sentiment from analyst recs and news using LLM."""
+    # Normalize legacy tickers (e.g., FB -> META) to avoid stale data artifacts
+    if ticker == "FB":
+        ticker = "META"
+    
+    def normalize_price_target(target: Optional[float], current_price: Optional[float]) -> Optional[float]:
+        """Adjust obviously unadjusted targets (e.g., pre-split values)."""
+        if not target or not current_price or current_price <= 0:
+            return target
+        
+        ratio = target / current_price
+        # Detect common split ratios (2x, 3x, 4x, 5x, 10x) with tolerance
+        for split in (10, 5, 4, 3, 2):
+            if 0.6 * split <= ratio <= 1.4 * split:
+                return target / split
+        return target
     
     typer.echo(f"    [DEBUG] Starting sentiment synthesis for {ticker}")
     typer.echo(f"    [DEBUG] Analyst recs available: {analyst_recs is not None}")
@@ -331,10 +403,22 @@ Do not use any knowledge of events that occurred after {as_of_date.strftime('%Y-
 Output JSON only."""
     
     date_context = f" (as of {as_of_date.strftime('%Y-%m-%d')})" if as_of_date else ""
+    technicals_lines = []
+    if price_data:
+        if getattr(price_data, "sma_20", None) is not None and getattr(price_data, "sma_50", None) is not None:
+            technicals_lines.append(f"SMA20: {price_data.sma_20:.2f}, SMA50: {price_data.sma_50:.2f}")
+        elif getattr(price_data, "sma_20", None) is not None:
+            technicals_lines.append(f"SMA20: {price_data.sma_20:.2f}")
+        if getattr(price_data, "rsi_14", None) is not None:
+            technicals_lines.append(f"RSI14: {price_data.rsi_14:.1f}")
+    technicals_block = "\n".join(technicals_lines) if technicals_lines else "No technical indicators available"
     user = f"""Ticker: {ticker}{date_context}
     
 Analyst Information:
 {chr(10).join(analyst_info) if analyst_info else 'No analyst data available'}
+
+Technical Indicators:
+{technicals_block}
 
 News Sentiment Summary:
 - Bullish: {bullish_count}
@@ -375,8 +459,20 @@ Output JSON:
         price_target_upside = None
         if analyst_recs and analyst_recs.price_target and price_data:
             current_price = price_data.price
-            if current_price > 0:
-                price_target_upside = ((analyst_recs.price_target - current_price) / current_price) * 100
+            adjusted_target = normalize_price_target(analyst_recs.price_target, current_price)
+            if adjusted_target != analyst_recs.price_target:
+                typer.echo(
+                    f"    [WARN] Adjusted price target for {ticker} from "
+                    f"{analyst_recs.price_target} to {adjusted_target} (possible split)"
+                )
+            if current_price > 0 and adjusted_target and adjusted_target > 0:
+                price_target_upside = ((adjusted_target - current_price) / current_price) * 100
+                # Cap extreme upside to avoid runaway scores from bad targets
+                if price_target_upside > 400:
+                    typer.echo(
+                        f"    [WARN] Price target upside {price_target_upside:.1f}% for {ticker} exceeds cap; capping to 400%"
+                    )
+                    price_target_upside = 400.0
         
         return SentimentAnalysis(
             overall_sentiment=result.get("overall_sentiment", "neutral"),
@@ -408,18 +504,8 @@ def apply_risk_screens(
     """Apply hard risk screens."""
     failed_checks = []
     
-    # Liquidity check
+    # Liquidity check disabled (FMP often returns zero volume placeholders)
     liquidity_ok = True
-    if price_data:
-        # Check if volume meets minimum dollar volume
-        if price_data.volume and price_data.price:
-            dollar_volume = price_data.volume * price_data.price
-            if dollar_volume < cfg.min_avg_dollar_volume:
-                liquidity_ok = False
-                failed_checks.append(f"Low liquidity (${dollar_volume:,.0f} < ${cfg.min_avg_dollar_volume:,})")
-    else:
-        liquidity_ok = False
-        failed_checks.append("No price data available")
     
     # Price check
     price_ok = True
@@ -473,6 +559,7 @@ def calculate_composite_score(
         "growth": 0.20,
         "stability": 0.10,
         "revisions": 0.10,
+        "momentum": 0.05,
         "sentiment": 0.15,
     }
     
@@ -500,9 +587,20 @@ def calculate_composite_score(
         score += factor_scores.revisions * weights["revisions"]
         weight_sum += weights["revisions"]
     
+    if getattr(factor_scores, "momentum", None) is not None:
+        score += factor_scores.momentum * weights["momentum"]
+        weight_sum += weights["momentum"]
+    
     # Add sentiment score
     score += sentiment.sentiment_score * weights["sentiment"]
     weight_sum += weights["sentiment"]
+
+    # Penalty for negative price target upside to avoid over-allocating to names
+    # that are trading above consensus targets. Doubled from previous version.
+    if sentiment.price_target_upside is not None and sentiment.price_target_upside < 0:
+        # Scale penalty: -5% upside -> -0.10 (doubled), capped at -0.20
+        pt_penalty = max(-0.20, (sentiment.price_target_upside / 100.0) * 2)
+        score += pt_penalty
     
     # Normalize by actual weight sum (in case some factors are missing)
     if weight_sum > 0:
@@ -576,7 +674,10 @@ def score(
                 candidates_json = json.loads(candidates_text)
                 from .models import CandidateResponse
                 candidates_resp = CandidateResponse.model_validate(candidates_json)
-                candidates_map = {c.ticker: c for c in candidates_resp.candidates}
+                candidates_map = {}
+                for c in candidates_resp.candidates:
+                    candidates_map[c.ticker] = c
+                    candidates_map[normalize_ticker(c.ticker)] = c
             except Exception as e:
                 typer.echo(f"  [WARN] Could not load candidates file: {e}")
                 typer.echo("  Continuing without sector/theme info...")
@@ -590,16 +691,46 @@ def score(
     start_time = time.time()
     
     for i, stock_data in enumerate(stock_data_resp.data):
-        ticker = stock_data.ticker
+        ticker_raw = stock_data.ticker
+        ticker = normalize_ticker(ticker_raw)
+        ticker_out = ticker
         ticker_start = time.time()
-        typer.echo(f"[{i+1}/{len(stock_data_resp.data)}] Scoring {ticker}...")
+        typer.echo(f"[{i+1}/{len(stock_data_resp.data)}] Scoring {ticker_raw} (as {ticker})...")
+        
+        # Drop nonexistent/delisted or obviously bad data (all key metrics zero)
+        if ticker in {"TWTR"}:
+            typer.echo(f"  [WARN] Dropping {ticker_raw} (delisted/nonexistent)")
+            continue
+        bad_metrics = False
+        fund = stock_data.fundamentals
+        if fund:
+            # Check if all main metrics are zero (indicating bad/nonexistent data)
+            metrics = [
+                fund.revenue_ttm,
+                fund.pe_ratio,
+                fund.ev_ebitda,
+                fund.fcf_margin_ttm,
+                fund.operating_margin_ttm,
+            ]
+            # Filter out None values, then check if all remaining are zero
+            non_none_metrics = [m for m in metrics if m is not None]
+            if non_none_metrics and all(m == 0 for m in non_none_metrics):
+                bad_metrics = True
+        if bad_metrics:
+            typer.echo(f"  [WARN] Dropping {ticker_raw} (all main metrics zero)")
+            continue
         
         # Get sector/theme from candidates
         typer.echo(f"  -> Getting sector/theme info...")
-        candidate = candidates_map.get(ticker)
+        candidate = candidates_map.get(ticker) or candidates_map.get(ticker_raw)
         sector = candidate.sector if candidate else None
         theme = candidate.theme if candidate else None
         
+        # Guard: if market cap missing, drop ticker (likely bad/nonexistent data)
+        if not stock_data.price_data or stock_data.price_data.market_cap is None:
+            typer.echo("  [WARN] Missing market_cap or price data; dropping ticker")
+            continue
+
         # Calculate factor scores
         typer.echo(f"  -> Calculating factor scores...")
         factor_scores = FactorScores(
@@ -608,11 +739,13 @@ def score(
             growth=calculate_growth_score(stock_data.fundamentals),
             stability=calculate_stability_score(stock_data.price_data),
             revisions=calculate_revisions_score(stock_data.analyst_recommendations),
+            momentum=calculate_momentum_score(stock_data.price_data),
         )
         value_str = f"{factor_scores.value:.2f}" if factor_scores.value is not None else 'N/A'
         quality_str = f"{factor_scores.quality:.2f}" if factor_scores.quality is not None else 'N/A'
         growth_str = f"{factor_scores.growth:.2f}" if factor_scores.growth is not None else 'N/A'
-        typer.echo(f"  [OK] Factor scores: value={value_str}, quality={quality_str}, growth={growth_str}")
+        momentum_str = f"{factor_scores.momentum:.2f}" if factor_scores.momentum is not None else 'N/A'
+        typer.echo(f"  [OK] Factor scores: value={value_str}, quality={quality_str}, growth={growth_str}, momentum={momentum_str}")
         
         # Synthesize sentiment
         typer.echo(f"  -> Synthesizing sentiment (LLM call - this may take a moment)...")
@@ -659,7 +792,7 @@ def score(
                 typer.echo(f"  [WARN] Could not generate news summary")
         
         scored_stock = ScoredStock(
-            ticker=ticker,
+            ticker=ticker_out,
             sector=sector,
             theme=theme,
             factor_scores=factor_scores,

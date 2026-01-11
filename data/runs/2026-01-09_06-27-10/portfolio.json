@@ -1,0 +1,178 @@
+{
+  "holdings": [
+    {
+      "ticker": "GOOGL",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "rationale": "Highest composite score (0.626), strong bullish sentiment, leading tech player.",
+      "composite_score": 0.6256431304210766
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.08,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong growth potential with recent acquisition discussions, high score (0.613).",
+      "composite_score": 0.6126071295366374
+    },
+    {
+      "ticker": "V",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "rationale": "Solid performance and bullish sentiment, high score (0.577).",
+      "composite_score": 0.5769766365101542
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.07,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong market interest and growth potential, score (0.572).",
+      "composite_score": 0.5719965426068285
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Innovative advancements in AI, solid score (0.541).",
+      "composite_score": 0.5408889450690094
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.07,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Strategic collaborations and strong pipeline, score (0.518).",
+      "composite_score": 0.5176791823378168
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.06,
+      "sector": "Utilities",
+      "theme": "Energy Transition and Sustainability",
+      "rationale": "Despite recent challenges, strong long-term performance, score (0.510).",
+      "composite_score": 0.5096491266532992
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Positive market sentiment and strong pipeline, score (0.493).",
+      "composite_score": 0.49276700067747614
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "rationale": "Strong market position and positive outlook, score (0.467).",
+      "composite_score": 0.4673676397578405
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Positive earnings outlook and growth potential, score (0.490).",
+      "composite_score": 0.4896401847106334
+    },
+    {
+      "ticker": "ISRG",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong demand for surgical systems, score (0.454).",
+      "composite_score": 0.4543861832229655
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Positive pipeline updates and market position, score (0.454).",
+      "composite_score": 0.45435346377602953
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "rationale": "Strong AI strategy and market position, score (0.433).",
+      "composite_score": 0.43334735269843705
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.03,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Stable dividend stock with strong market positioning, score (0.379).",
+      "composite_score": 0.3791082167566219
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": "Labor Market Dynamics and Wage Growth",
+      "rationale": "Benefiting from home renovation trends, score (0.374).",
+      "composite_score": 0.37383795909141526
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.02,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Navigating challenges but potential for recovery, score (0.327).",
+      "composite_score": 0.32708454126969483
+    },
+    {
+      "ticker": "AMZN",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": "Labor Market Dynamics and Wage Growth",
+      "rationale": "Positive momentum in AI and market position, score (0.250).",
+      "composite_score": 0.2504055245412146
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.461)",
+      "composite_score": 0.46079896500444234
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Added as top remaining candidate (composite score: 0.442)",
+      "composite_score": 0.4421484662543358
+    },
+    {
+      "ticker": "SYK",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.437)",
+      "composite_score": 0.43745370577361925
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Communication Services": 0.11,
+    "Health Care": 0.33,
+    "Financials": 0.2,
+    "Information Technology": 0.21999999999999997,
+    "Utilities": 0.06,
+    "Consumer Staples": 0.03,
+    "Consumer Discretionary": 0.05
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-09",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-09T06:27:33.046582"
+}
