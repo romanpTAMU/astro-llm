@@ -1,0 +1,280 @@
+{
+  "analysis_date": "2026-01-19T07:21:35.928914",
+  "portfolio_file": "data\\runs\\2026-01-16_06-23-10\\portfolio.json",
+  "construction_date": "2026-01-16",
+  "current_date": "2026-01-19",
+  "days_held": 3,
+  "portfolio_metrics": {
+    "weighted_return": -0.0027408645488527323,
+    "simple_avg_return": -0.00468518293978516,
+    "median_return": 0.0,
+    "min_return": -0.06712130161628095,
+    "max_return": 0.0,
+    "winners_count": 0,
+    "losers_count": 3,
+    "total_holdings": 20,
+    "sp500_return": 0.0,
+    "outperformance": -0.0027408645488527323,
+    "portfolio_beta": 0.8682199999999997,
+    "portfolio_alpha": -0.0027408645488527323
+  },
+  "sp500_comparison": {
+    "construction_price": 691.6599731445312,
+    "current_price": 691.6599731445312,
+    "return_pct": 0.0
+  },
+  "holdings": [
+    {
+      "ticker": "TSM",
+      "weight": 0.1,
+      "construction_price": 342.4,
+      "current_price": 342.4,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.274,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience"
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.1,
+      "construction_price": 222.96,
+      "current_price": 222.96,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.779,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience"
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.09,
+      "construction_price": 108.83,
+      "current_price": 108.83,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.298,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "construction_price": 330.0,
+      "current_price": 330.0,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.08,
+      "construction_price": 330.41,
+      "current_price": 330.41,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.45,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.06,
+      "construction_price": 100.98,
+      "current_price": 100.973,
+      "return_pct": -0.006932065755600121,
+      "contribution": -0.00041592394533600724,
+      "beta": 1.019,
+      "sector": "Financials",
+      "theme": "Energy Transition and Sustainability"
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.06,
+      "construction_price": 25.65,
+      "current_price": 25.65,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.433,
+      "sector": "Health Care",
+      "theme": "Healthcare and Biotech Innovation"
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "construction_price": 75.19,
+      "current_price": 75.19,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.863,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "construction_price": 70.44,
+      "current_price": 70.44,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.387,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.05,
+      "construction_price": 300.25,
+      "current_price": 300.191,
+      "return_pct": -0.01965029142382212,
+      "contribution": -0.000982514571191106,
+      "beta": 1.032,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "construction_price": 127.31,
+      "current_price": 127.31,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.979,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "construction_price": 186.23,
+      "current_price": 186.105,
+      "return_pct": -0.06712130161628095,
+      "contribution": -0.001342426032325619,
+      "beta": 2.314,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.04,
+      "construction_price": 144.53,
+      "current_price": 144.53,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.388,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.04,
+      "construction_price": 96.76,
+      "current_price": 96.76,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.729,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PEP",
+      "weight": 0.03,
+      "construction_price": 146.32,
+      "current_price": 146.32,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.421,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics"
+    },
+    {
+      "ticker": "XOM",
+      "weight": 0.03,
+      "construction_price": 129.89,
+      "current_price": 129.89,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.365,
+      "sector": "Energy",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.02,
+      "construction_price": 218.66,
+      "current_price": 218.66,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.333,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "TMO",
+      "weight": 0.02,
+      "construction_price": 618.72,
+      "current_price": 618.72,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.91,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.02,
+      "construction_price": 328.3,
+      "current_price": 328.3,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.815,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.02,
+      "construction_price": 539.49,
+      "current_price": 539.49,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.857,
+      "sector": "Financials",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Information Technology": {
+      "avg_return": -0.014461932173350511,
+      "contribution": -0.002324940603516725,
+      "count": 6
+    },
+    "Health Care": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 6
+    },
+    "Communication Services": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": -0.0023106885852000403,
+      "contribution": -0.00041592394533600724,
+      "count": 3
+    },
+    "Consumer Staples": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 3
+    },
+    "Energy": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "HHC",
+      "weight": 0.1,
+      "sector": "Real Estate",
+      "theme": "Regulatory Changes in Housing and Finance",
+      "rationale": "Highest composite score (0.652), bullish sentiment, strong growth potential in housing.",
+      "composite_score": 0.6522005614724696
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.09,
+      "sector": "Healthcare",
+      "theme": "Healthcare and Biotech Innovation",
+      "rationale": "Strong developments in drug innovation, high composite score (0.575), bullish sentiment.",
+      "composite_score": 0.5745088330184925
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Solid growth potential in AI, high composite score (0.571), bullish sentiment.",
+      "composite_score": 0.5707874120623485
+    },
+    {
+      "ticker": "AON",
+      "weight": 0.07,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Expanding insurance programs, high composite score (0.540), bullish sentiment.",
+      "composite_score": 0.5397685109771769
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong position in semiconductor industry, high composite score (0.536), bullish sentiment.",
+      "composite_score": 0.5363182218108209
+    },
+    {
+      "ticker": "PHM",
+      "weight": 0.06,
+      "sector": "Consumer Discretionary",
+      "theme": "Regulatory Changes in Housing and Finance",
+      "rationale": "Strong balance sheet and growth metrics, composite score (0.534), bullish sentiment.",
+      "composite_score": 0.534095978280369
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.06,
+      "sector": "Healthcare",
+      "theme": null,
+      "rationale": "Strong long-term performance, composite score (0.530), neutral sentiment.",
+      "composite_score": 0.5301400371562318
+    },
+    {
+      "ticker": "CL",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Resilient player in household products, composite score (0.507), bullish sentiment.",
+      "composite_score": 0.5068689560589412
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive momentum in AI and security, composite score (0.460), bullish sentiment.",
+      "composite_score": 0.4602108954030989
+    },
+    {
+      "ticker": "LULU",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "rationale": "Strong international growth potential, composite score (0.460), bullish sentiment.",
+      "composite_score": 0.45993504641590116
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.04,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Stable share price and strong dividend appeal, composite score (0.448), bullish sentiment.",
+      "composite_score": 0.4484460936879033
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive trading trend in semiconductor sector, composite score (0.436), bullish sentiment.",
+      "composite_score": 0.4359943871135041
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.04,
+      "sector": "Healthcare",
+      "theme": "Healthcare and Biotech Innovation",
+      "rationale": "Focus on in-house innovation, composite score (0.433), bullish sentiment.",
+      "composite_score": 0.4328294432744876
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Trade Policy",
+      "rationale": "Strong AI strategy and market position, composite score (0.428), bullish sentiment.",
+      "composite_score": 0.427824592161254
+    },
+    {
+      "ticker": "SYK",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Mixed performance but potential for recovery, composite score (0.420), bullish sentiment.",
+      "composite_score": 0.42038484959201067
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Key player in AI and semiconductor market, composite score (0.408), bullish sentiment.",
+      "composite_score": 0.4077196694173082
+    },
+    {
+      "ticker": "SPGI",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong historical performance and dividend growth, composite score (0.398), bullish sentiment.",
+      "composite_score": 0.39767358420161314
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Long-term growth potential despite near-term headwinds, composite score (0.398), bullish sentiment.",
+      "composite_score": 0.3975451675733763
+    },
+    {
+      "ticker": "PEP",
+      "weight": 0.02,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.391)",
+      "composite_score": 0.39113544473776046
+    },
+    {
+      "ticker": "MDLZ",
+      "weight": 0.02,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.391)",
+      "composite_score": 0.39053101498493886
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Real Estate": 0.1,
+    "Healthcare": 0.19,
+    "Communication Services": 0.08,
+    "Financials": 0.1,
+    "Information Technology": 0.26,
+    "Consumer Discretionary": 0.11,
+    "Consumer Staples": 0.13,
+    "Health Care": 0.03
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-19",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-19T06:24:36.189040"
+}

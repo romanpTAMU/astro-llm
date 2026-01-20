@@ -1,0 +1,3115 @@
+{
+  "candidates": [
+    {
+      "ticker": "MRK",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.7999999999999999,
+        "quality": 0.85,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 0.6555555555555556,
+        "momentum": 0.18492940454266504
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.5,
+        "key_drivers": [
+          "Strong analyst consensus with 55.6% Buy recommendations",
+          "Positive recent news highlighting market gains",
+          "Technical indicators showing upward momentum (RSI at 68.5)"
+        ],
+        "key_risks": [
+          "Potential market volatility affecting stock performance",
+          "Dependence on Keytruda's continued success",
+          "Neutral news indicating uncertainty in broader healthcare strategies"
+        ],
+        "price_target_upside": 6.999369426177818
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.6307638340787511,
+      "news_summary": "Merck (MRK) recently closed at $111.01, reflecting a 2.54% increase amid a broader market dip. The company's reliance on Keytruda, which accounts for over half of its pharmaceutical revenues, is under scrutiny as investors await Q4 earnings following softer Q3 sales. Additionally, Merck has raised its long-term revenue target to $70 billion by 2035, driven by new drug developments. The evolving landscape of PD-1 therapies, including anticipated biosimilar uptake, may impact Merck's competitive positioning in oncology.",
+      "price": 111.01,
+      "market_cap": 278990857521.0,
+      "scored_at": "2026-01-15T06:20:49.205948"
+    },
+    {
+      "ticker": "GOOGL",
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.1,
+        "revisions": 0.903921568627451,
+        "momentum": 0.35871793279085545
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.75,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 80.4% recommending 'Buy'",
+          "Positive news sentiment with multiple bullish headlines",
+          "Technical indicators showing strong momentum (RSI at 73.4)"
+        ],
+        "key_risks": [
+          "Bearish news regarding AI bonds potentially impacting credit markets",
+          "High current price compared to historical averages may limit upside",
+          "Market volatility could affect stock performance"
+        ],
+        "price_target_upside": -4.255002382086698
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.5610107992322735,
+      "news_summary": "Alphabet (GOOGL) has emerged as a strong performer among the 'Magnificent Seven' stocks, benefiting from significant momentum in the AI sector, which is expected to drive long-term investment returns. Recent partnerships, such as with Walmart for the Google Gemini initiative, have contributed to its valuation premium. Additionally, Alphabet's contributions to performance in Q4 2025 highlight its ongoing relevance in the tech landscape, particularly as AI investments continue to shape market dynamics. Analysts are comparing GOOGL's growth potential against competitors like Nvidia, indicating a competitive landscape in AI growth stocks.",
+      "price": 335.84,
+      "market_cap": 4052793189667.0005,
+      "scored_at": "2026-01-15T06:18:59.569162"
+    },
+    {
+      "ticker": "REGN",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.7,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 0.676923076923077,
+        "momentum": -0.596373947907305
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 61.5% Buy recommendations",
+          "Positive news regarding M&A strategy and potential value",
+          "Recent bullish headlines indicating growth potential in gene therapy and weight loss drugs"
+        ],
+        "key_risks": [
+          "Recent share price volatility may concern investors",
+          "Patent expiries for lead assets could impact future revenue",
+          "Market competition and pricing pressures from competitors like AbbVie"
+        ],
+        "price_target_upside": 6.545203808311456
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.49321296218756433,
+      "news_summary": "Regeneron Pharmaceuticals (REGN) has experienced mixed stock performance recently, with a slight decline of 2.3% over the past week, but a notable 10.5% gain over the past year. The company is focusing on in-house innovation rather than pursuing large M&A deals, especially in light of impending patent expirations for its lead assets. Additionally, Regeneron's Chief Scientific Officer discussed advancements in gene therapy for hearing loss and plans for weight loss drugs at the recent JP Morgan healthcare conference, indicating ongoing commitment to innovation in its product pipeline.",
+      "price": 754.14,
+      "market_cap": 77889327297.0,
+      "scored_at": "2026-01-15T06:24:41.977668"
+    },
+    {
+      "ticker": "PG",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.2333333333333333,
+        "quality": 0.85,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.6555555555555556,
+        "momentum": 0.5016661837148654
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 55.6% Buy recommendations",
+          "Positive news from TD Cowen indicating bullish outlook",
+          "Potential wealth boost for CEO from stock incentives"
+        ],
+        "key_risks": [
+          "Bearish news regarding rejection of mini-tender offer",
+          "Concerns over Zefiro subsidiary's project approval",
+          "Market volatility affecting consumer goods sector"
+        ],
+        "price_target_upside": 10.911451216179282
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4855290775313957,
+      "news_summary": "Procter & Gamble (NYSE: PG) has appointed Shailesh Jejurikar as its new CEO, who is incentivized with stock options to drive company performance amid a restructuring plan that includes cutting 7,000 jobs. The company has recommended that shareholders reject an unsolicited mini-tender offer from Potemkin Limited, which significantly undervalues its shares. Additionally, TD Cowen remains bullish on PG, despite lowering its price target from $168 to $150, while the company faces challenges related to tariff costs that could impact its 4% organic sales growth target. P&G has also declared a quarterly dividend of $1.0568 per share, reflecting its commitment to returning value to shareholders.",
+      "price": 146.36,
+      "market_cap": 342004322232.0,
+      "scored_at": "2026-01-15T06:19:32.158831"
+    },
+    {
+      "ticker": "KO",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.7,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.9461538461538461,
+        "momentum": 0.48119632810186447
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 84.6% Buy recommendations",
+          "Positive news regarding digital strategy and new initiatives",
+          "Coca-Cola's reputation as a solid dividend stock"
+        ],
+        "key_risks": [
+          "Bearish sentiment from some analysts regarding broader market conditions",
+          "Potential challenges in maintaining growth amidst competition",
+          "Economic factors affecting consumer spending"
+        ],
+        "price_target_upside": 10.582306830907058
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4717541597020424,
+      "news_summary": "Coca-Cola has made significant leadership changes, including the appointment of its first chief digital officer, Sedef Salingan Sahin, to enhance technology adoption and drive future growth. The company also launched the inaugural Coke Studio Bharat LIVE in India, showcasing its commitment to cultural engagement. Additionally, Coca-Cola has abandoned plans to sell Costa Coffee after bids fell short of expectations, and Bank of America downgraded Coca-Cola European Partners due to muted top-line growth limiting valuation potential. Overall, these developments reflect Coca-Cola's strategic focus on digital transformation and community engagement amidst mixed market conditions.",
+      "price": 71.44,
+      "market_cap": 307453258152.0,
+      "scored_at": "2026-01-15T06:20:14.160805"
+    },
+    {
+      "ticker": "JNJ",
+      "sector": "Healthcare",
+      "theme": "Broadening Market Leadership Beyond Tech",
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": 0.7,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.5615384615384615,
+        "momentum": 0.4441981139653317
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Positive earnings growth expectations from Wall Street",
+          "Strong performance of TECVAYLI® in clinical trials",
+          "Inclusion in lists of solid dividend stocks for passive income"
+        ],
+        "key_risks": [
+          "Current price is above the analyst price target",
+          "High RSI indicating potential overbought conditions",
+          "Market volatility affecting overall stock performance"
+        ],
+        "price_target_upside": -2.4754060855639555
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4497037747373019,
+      "news_summary": "Johnson & Johnson (JNJ) recently announced positive results from the Phase 3 MajesTEC-9 study for its multiple myeloma therapy, TECVAYLI®, showing significant improvements in patient survival rates. Despite this positive news, Wall Street anticipates challenges for JNJ in its upcoming earnings report, with concerns about the company's ability to meet expectations. Additionally, the healthcare sector has seen a slight decline, which may impact JNJ's stock performance. Investors are closely monitoring these developments as they could influence JNJ's market prospects.",
+      "price": 218.55,
+      "market_cap": 526551444542.0,
+      "scored_at": "2026-01-15T06:19:20.929499"
+    },
+    {
+      "ticker": "AAPL",
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": 1.0,
+        "growth": 0.2,
+        "stability": 0.1,
+        "revisions": 0.5871794871794872,
+        "momentum": -0.011843941663785855
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 53.8% Buy recommendations",
+          "Positive news regarding TSMC's earnings and investment expansion",
+          "General bullish sentiment in the tech sector and economic growth indicators"
+        ],
+        "key_risks": [
+          "Current RSI indicates potential oversold conditions at 30.8",
+          "Recent price is significantly below technical moving averages (SMA20 and SMA50)",
+          "Market volatility and economic uncertainties could impact performance"
+        ],
+        "price_target_upside": 15.048468995230039
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4474213507632629,
+      "news_summary": "Taiwan Semiconductor Manufacturing Company (TSMC) reported a significant 35% increase in net profit for the fourth quarter, driven by strong demand in the artificial intelligence sector, which is crucial for companies like Apple. TSMC's revenue rose to over $33 billion, exceeding analyst expectations, and the company forecasts continued growth of nearly 30% in 2026. This positive outlook for TSMC, a key supplier for Apple, suggests robust demand for chips essential for AI technologies, potentially benefiting Apple's future product offerings.",
+      "price": 259.96,
+      "market_cap": 3841260530130.0,
+      "scored_at": "2026-01-15T06:18:43.451083"
+    },
+    {
+      "ticker": "PFE",
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "factor_scores": {
+        "value": 0.6,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 0.4703703703703703,
+        "momentum": 0.09889240506329018
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.4,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Positive business development outlook from 3SBio",
+          "Pfizer's stock performance amidst market decline",
+          "BioNTech's future oncology product pipeline"
+        ],
+        "key_risks": [
+          "Significant market cap decline over the past month",
+          "General market volatility affecting stock performance"
+        ],
+        "price_target_upside": 10.007818608287735
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4447444355144777,
+      "news_summary": "Pfizer (PFE) recently closed at $25.56, reflecting a 1.63% increase despite a nearly 5% decline over the past month due to weak 2026 guidance, resulting in a market cap drop of over $7 billion. The company's CEO discussed its ambitions in the obesity market at the JPMorgan Healthcare Conference, indicating a strategic focus on expanding its product offerings. Meanwhile, 3SBio's CFO highlighted a significant licensing deal with Pfizer, suggesting ongoing collaboration in the biopharmaceutical sector. Investors are currently weighing the potential for a rebound against the backdrop of recent performance trends.",
+      "price": 25.58,
+      "market_cap": 145440399180.0,
+      "scored_at": "2026-01-15T06:20:55.905543"
+    },
+    {
+      "ticker": "HON",
+      "sector": "Industrials",
+      "theme": "Infrastructure Spending Surge",
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.4,
+        "revisions": 0.6161290322580645,
+        "momentum": 0.5651345797203148
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.85,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.75,
+        "news_sentiment": "bullish",
+        "news_score": 0.9,
+        "key_drivers": [
+          "Strong analyst consensus with 54.8% Buy recommendations",
+          "Positive news coverage highlighting growth in quantum computing and market resilience",
+          "Technical indicators showing strong momentum with high RSI"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Potential competition in the quantum computing space",
+          "Economic factors affecting overall market sentiment"
+        ],
+        "price_target_upside": 11.058956064588811
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.42765361797951323,
+      "news_summary": "Honeywell International Inc. (HON) is preparing for the initial public offering (IPO) of its majority-owned quantum computing unit, Quantinuum, which could be valued at $10 billion, potentially unlocking over $5 billion in value for the company. Following the announcement, Honeywell's stock saw a slight increase, closing at $213.04, reflecting a 1.31% gain. However, insider selling of approximately $1.5 million in shares has raised some concerns about the company's outlook. Overall, the market is closely watching Honeywell's strategic moves in the quantum computing sector amidst a broader trend of increasing interest in quantum technologies.",
+      "price": 213.04,
+      "market_cap": 135256370792.0,
+      "scored_at": "2026-01-15T06:25:30.378575"
+    },
+    {
+      "ticker": "SPGI",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": 0.5,
+        "growth": 0.5,
+        "stability": -0.2,
+        "revisions": 0.975,
+        "momentum": 0.11627906976744186
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.85,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 87.5% recommending Buy",
+          "Positive news regarding dividend increase and earnings potential",
+          "Technical indicators showing upward momentum with SMA20 above SMA50"
+        ],
+        "key_risks": [
+          "High RSI indicating potential overbought conditions",
+          "Market volatility affecting overall stock performance",
+          "Dependence on macroeconomic factors impacting financial services"
+        ],
+        "price_target_upside": 10.948623853211002
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.4142672572905131,
+      "news_summary": "S&P Global (NYSE: SPGI) has announced a 1.0% increase in its quarterly cash dividend to $0.97, reflecting confidence ahead of the planned spin-off of its Mobility division in 2026. The company is also expected to report a double-digit rise in its fourth-quarter earnings, with analysts predicting it may beat estimates based on its strong earnings surprise history. Additionally, S&P Global has completed the sale of its EDM and thinkFolio businesses to a private equity firm, indicating a strategic shift in its operations.",
+      "price": 545.0,
+      "market_cap": 165026000000.0,
+      "scored_at": "2026-01-15T06:22:19.538481"
+    },
+    {
+      "ticker": "HD",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.7,
+        "growth": 0.0,
+        "stability": 0.1,
+        "revisions": 0.6714285714285714,
+        "momentum": 0.641962222349548
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.75,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 57.1% Buy recommendations",
+          "Positive news regarding advancements in customer experience and strategic partnerships",
+          "Technical indicators showing a strong RSI of 66.1"
+        ],
+        "key_risks": [
+          "Market volatility could impact stock performance",
+          "Potential challenges in the retail sector due to economic conditions",
+          "Dependence on consumer spending trends"
+        ],
+        "price_target_upside": 7.955845192179818
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.403245366597144,
+      "news_summary": "Home Depot (HD) has shown resilience in the market, with a recent increase of 1.28% despite broader market fluctuations. The company is enhancing its customer experience through a partnership with Rilla, which will implement AI-powered coaching tools for its sales teams. Additionally, Jim Cramer highlighted HD as a key stock in the housing sector amidst ongoing market rotations, suggesting optimism for its performance. Investors are also evaluating HD's valuation in light of recent market conditions, indicating a potential opportunity for investment.",
+      "price": 375.95,
+      "market_cap": 374172458399.0,
+      "scored_at": "2026-01-15T06:19:52.436338"
+    },
+    {
+      "ticker": "REGI",
+      "sector": "Energy",
+      "theme": "Energy Transition and Sustainability",
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": 0.0,
+        "growth": 1.0,
+        "stability": 0.7,
+        "revisions": 0.5,
+        "momentum": 0.0
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst support with 40% Buy recommendations",
+          "Current price is close to the technical indicators (SMA20 and SMA50)",
+          "RSI indicates the stock is not overbought"
+        ],
+        "key_risks": [
+          "Majority of analysts recommend Hold, indicating limited upside",
+          "No recent news to drive sentiment positively",
+          "Current price is slightly below the price target"
+        ],
+        "price_target_upside": 1.3495934959349567
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.39365079365079364,
+      "news_summary": null,
+      "price": 61.5,
+      "market_cap": 3106199012.0,
+      "scored_at": "2026-01-15T06:24:57.236753"
+    },
+    {
+      "ticker": "MDT",
+      "sector": "Healthcare",
+      "theme": "Broadening Market Leadership Beyond Tech",
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.5193548387096774,
+        "momentum": -0.08603120510507511
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong market opportunity for Altaviva and other products",
+          "Positive partnerships and collaborations in innovative technologies",
+          "Favorable product mix shifts benefiting Medtronic"
+        ],
+        "key_risks": [
+          "Current consensus is a Hold, indicating caution among analysts",
+          "Potential market volatility affecting stock performance",
+          "Limited sell recommendations may indicate lack of strong bullish sentiment"
+        ],
+        "price_target_upside": 13.09499696171765
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.39060373677687044,
+      "news_summary": "Medtronic has highlighted a significant market opportunity for its Altaviva urinary incontinence implant, with 500 physicians trained since its FDA approval in September 2025. The company is also focusing on lucrative markets such as PFA and renal denervation, which are expected to drive growth. Additionally, Medtronic has partnered with Precision Neuroscience to develop advanced brain surgery imaging systems, indicating a strategic move towards integrating innovative technologies in its product offerings. Overall, these developments reflect a trend towards higher-margin products enhancing Medtronic's earnings potential in the MedTech sector.",
+      "price": 98.74,
+      "market_cap": 126645510061.0,
+      "scored_at": "2026-01-15T06:25:41.566109"
+    },
+    {
+      "ticker": "NOW",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.06666666666666665,
+        "quality": 0.2,
+        "growth": 1.0,
+        "stability": 0.4,
+        "revisions": 0.9333333333333333,
+        "momentum": -0.8996023856858842
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.5,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 86.1% recommending 'Buy'",
+          "Recent executive appointments aimed at driving growth",
+          "Potential for rebound as identified in oversold stock analysis"
+        ],
+        "key_risks": [
+          "Current RSI indicates oversold conditions (23.6)",
+          "Recent dip in stock price more than the broader market",
+          "Only 2.8% of analysts recommend 'Sell', indicating some caution"
+        ],
+        "price_target_upside": 10.384072505757379
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.38097131496733894,
+      "news_summary": "ServiceNow (NYSE: NOW) has been highlighted as a key player in the AI workflow automation sector, alongside competitors like Microsoft and Accenture, as enterprises increasingly invest in AI-driven solutions. However, the stock recently experienced a decline, settling at $138.19, down 3.12% from its previous close, reflecting broader market trends. Additionally, ServiceNow's executive, Paul Fipps, has joined NetApp's Board of Directors, indicating ongoing strategic movements within the company. Analysts remain optimistic about ServiceNow's potential in the evolving enterprise AI landscape, despite current market fluctuations.",
+      "price": 134.61,
+      "market_cap": 139695950112.0,
+      "scored_at": "2026-01-15T06:23:24.284263"
+    },
+    {
+      "ticker": "VZ",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.8,
+        "quality": 0.5,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.43333333333333335,
+        "momentum": -0.062297533017693384
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bearish",
+        "news_score": -0.5,
+        "key_drivers": [
+          "Analyst consensus is predominantly Hold with a significant number of Buy recommendations.",
+          "Price target suggests potential upside from current price."
+        ],
+        "key_risks": [
+          "Recent news highlights multiple outages affecting customer satisfaction.",
+          "Approval for making it harder for customers to leave may lead to negative sentiment."
+        ],
+        "price_target_upside": 18.001506402209394
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3763985301737607,
+      "news_summary": "Verizon Communications is facing challenges with widespread service outages affecting over a million users across major cities, prompting the company to offer account credits. As it prepares for its upcoming earnings report under new CEO Dan Schulman, the company has also faced criticism for making it more difficult for customers to switch carriers. Despite these issues, Verizon remains a reliable dividend stock, and its initiatives in digital healthcare may help enhance market share. Investors should monitor these developments closely as they could impact the company's performance and stock valuation.",
+      "price": 39.83,
+      "market_cap": 167940227227.0,
+      "scored_at": "2026-01-15T06:19:47.467399"
+    },
+    {
+      "ticker": "CMCSA",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.8,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.4,
+        "revisions": 0.3857142857142857,
+        "momentum": 0.1553166069295111
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.4,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "BofA upgrades Comcast to Buy with a $37 price target on media consolidation trends",
+          "Comcast's investment in broadband infrastructure in public and affordable housing",
+          "Positive market sentiment around Netflix's bidding war, indicating competitive media landscape"
+        ],
+        "key_risks": [
+          "Overall analyst consensus remains a Hold, indicating caution",
+          "Recent bearish news related to Netflix could impact market perception",
+          "Long-term share price weakness may deter some investors"
+        ],
+        "price_target_upside": 16.783954961294846
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3750831037313373,
+      "news_summary": "Comcast (CMCSA) has recently seen a price upgrade from Bank of America, which raised its rating to 'Buy' with a target price of $37, citing favorable media consolidation trends. Despite a challenging year with a 3.8% decline year-to-date and significant drops over the past three to five years, the company is actively enhancing its broadband infrastructure, particularly in public and affordable housing across Massachusetts and expanding services in Mississippi. These initiatives reflect Comcast's commitment to improving connectivity and adapting to industry changes, which could position it favorably for future growth.",
+      "price": 28.42,
+      "market_cap": 103562520868.0,
+      "scored_at": "2026-01-15T06:20:02.762278"
+    },
+    {
+      "ticker": "NVDA",
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": 1.0,
+        "growth": 1.0,
+        "stability": -0.5,
+        "revisions": 0.9085106382978723,
+        "momentum": -0.26307440114219355
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong performance of TSMC positively impacting chip stocks including NVIDIA",
+          "Major firms like Goldman Sachs and Morgan Stanley reporting earnings, indicating sector strength",
+          "Overall bullish sentiment in the semiconductor sector"
+        ],
+        "key_risks": [
+          "Concerns over supply chain issues affecting major clients like Apple and Qualcomm",
+          "Current RSI indicates potential for price stagnation",
+          "Market volatility affecting tech stocks"
+        ],
+        "price_target_upside": -27.831167412908158
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.37082286708508977,
+      "news_summary": "NVIDIA's stock is experiencing upward momentum following strong earnings results from Taiwan Semiconductor Manufacturing Company (TSMC), which exceeded expectations and boosted the broader semiconductor sector. This positive outlook for TSMC is seen as a favorable indicator for AI-related stocks, including NVIDIA, as the tech sector rallies. However, there are concerns about high valuations in the tech space and potential supply chain bottlenecks affecting companies like Apple and Qualcomm. Overall, while NVIDIA remains a key player in the market, investors are also eyeing diversification into other sectors amid evolving market dynamics.",
+      "price": 183.14,
+      "market_cap": 4458909532017.0,
+      "scored_at": "2026-01-15T06:19:37.500766"
+    },
+    {
+      "ticker": "CSCO",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3333333333333333,
+        "quality": 0.7,
+        "growth": 0.2,
+        "stability": 0.4,
+        "revisions": 0.6416666666666666,
+        "momentum": -0.03457351891506092
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 54.2% recommending 'Buy'",
+          "Positive developments in cybersecurity capabilities",
+          "Recent bullish news about growth potential"
+        ],
+        "key_risks": [
+          "Recent bearish news indicating a larger fall than the market",
+          "Concerns from analysts about avoiding certain growth stocks",
+          "Technical indicators showing a low RSI"
+        ],
+        "price_target_upside": 11.100658513640647
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3658139594167431,
+      "news_summary": "Cisco Systems (CSCO) recently closed at $74.4, reflecting a decline of 1.41%, which is notable as the stock has faced pressure from flat sales and legal challenges related to alleged human rights abuses. The company is also pivoting towards AI infrastructure, with increasing orders in this sector, indicating a potential growth opportunity. However, investor sentiment remains cautious due to concerns about operational performance and reputational risks. Overall, Cisco's strategic focus on AI and technology for social good may shape its future trajectory amidst current market challenges.",
+      "price": 74.41,
+      "market_cap": 294000946433.0,
+      "scored_at": "2026-01-15T06:20:25.900406"
+    },
+    {
+      "ticker": "TROW",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.9,
+        "quality": 0.7,
+        "growth": 0.2,
+        "stability": -0.5,
+        "revisions": -0.2529411764705882,
+        "momentum": 0.006289308176100495
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.4,
+        "analyst_consensus": "Hold",
+        "analyst_score": -0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.5,
+        "key_drivers": [
+          "Strong growth potential highlighted in recent news",
+          "Introduction of innovative retirement income tool",
+          "Positive sentiment from multiple bullish news articles"
+        ],
+        "key_risks": [
+          "High percentage of sell recommendations from analysts",
+          "Recent bearish news regarding assets under management",
+          "Market headwinds affecting the industry"
+        ],
+        "price_target_upside": 8.40874811463047
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.36192414072547263,
+      "news_summary": "T. Rowe Price (TROW) recently launched an innovative retirement income tool, Income Solver®, aimed at enhancing financial advisors' retirement planning capabilities. Despite this positive development, the firm reported preliminary net outflows of $11.6 billion for December 2025, contributing to a total of $56.9 billion for the year, raising concerns about its asset management performance. The stock has shown a slight decline of 1.16% recently, closing at $107.31, while its year-to-date return stands at 2.1%. Investors are currently assessing whether the stock is attractively priced amid these challenges and recent industry headwinds.",
+      "price": 106.08,
+      "market_cap": 23443474523.0,
+      "scored_at": "2026-01-15T06:24:23.733467"
+    },
+    {
+      "ticker": "V",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.4,
+        "revisions": 0.9235294117647058,
+        "momentum": -0.6254449065227975
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 82.4% recommending 'Buy'",
+          "Positive news regarding credit card stocks and crypto initiatives",
+          "Significant price target upside potential"
+        ],
+        "key_risks": [
+          "Current RSI indicates potential oversold conditions",
+          "Market volatility and external economic factors",
+          "Dependence on regulatory environment for crypto initiatives"
+        ],
+        "price_target_upside": -38.44366133001185
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3454736785876166,
+      "news_summary": "Visa is actively integrating stablecoins into its payment systems, anticipating growth in transaction volumes as these digital currencies gain acceptance, despite current limitations in mainstream merchant adoption. Analysts remain optimistic about credit card stocks, including Visa, in light of proposed interest rate caps by President Trump, suggesting that the long-term impact on the sector will be minimal. However, uncertainty surrounding these proposals has led to a recent dip in Visa's stock, prompting discussions about whether this presents a buying opportunity. Overall, Visa's outlook for 2026 indicates steady growth amidst evolving market dynamics and spending patterns.",
+      "price": 329.17,
+      "market_cap": 638730959288.0,
+      "scored_at": "2026-01-15T06:19:26.431461"
+    },
+    {
+      "ticker": "QCOM",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.3666666666666667,
+        "quality": 0.7,
+        "growth": 0.5,
+        "stability": -0.2,
+        "revisions": 0.5324324324324324,
+        "momentum": -0.7237730543685372
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.3,
+        "key_drivers": [
+          "TSMC's strong earnings and outlook support AI market growth",
+          "Positive sentiment surrounding AI chip demand"
+        ],
+        "key_risks": [
+          "Imposition of tariffs on AI chip imports could impact costs",
+          "Current RSI indicates potential for further price decline"
+        ],
+        "price_target_upside": 12.86617235930474
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3432265941506188,
+      "news_summary": "Qualcomm (QCOM) shares have recently faced downward pressure amid reports of potential supply issues, alongside Apple, as the AI supply chain encounters new challenges. Despite this, analysts suggest Qualcomm remains a strong investment choice for 2026, citing its favorable valuation and diversified chip demand, particularly in the AI sector. Additionally, the imposition of a 25% tariff on certain AI chips by the Trump administration has affected the semiconductor market, leading to a slight decline in QCOM's stock during after-hours trading. Overall, the ongoing AI boom and TSMC's positive earnings outlook may provide a backdrop for Qualcomm's growth prospects.",
+      "price": 164.54,
+      "market_cap": 176222340000.0,
+      "scored_at": "2026-01-15T06:23:41.336232"
+    },
+    {
+      "ticker": "TMO",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.4,
+        "revisions": 0.9260869565217391,
+        "momentum": 0.06319371303572961
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst buy recommendations (82.6%)",
+          "Positive news on strategic M&A and contract wins",
+          "Technical indicators showing upward momentum (RSI 64.9)"
+        ],
+        "key_risks": [
+          "Recent bearish news questioning portfolio holding",
+          "Market volatility affecting healthcare sector",
+          "Potential regulatory changes impacting operations"
+        ],
+        "price_target_upside": 2.6132544264509594
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3380333790196448,
+      "news_summary": "Thermo Fisher Scientific (TMO) is focusing on strategic acquisitions and product launches to drive growth, despite facing challenges from heavy debt and currency fluctuations. The company anticipates revenue growth of 3-6% for 2026 and 2027, with expectations of 7% or more in subsequent years. Additionally, TMO has secured contracts in its pharmaceutical services sector as companies shift production to the U.S., and it has announced a collaboration with NVIDIA to enhance laboratory automation through AI technology. Overall, the healthcare sector remains a promising investment area, with TMO positioned to benefit from ongoing innovations in life sciences.",
+      "price": 621.83,
+      "market_cap": 235674412580.0,
+      "scored_at": "2026-01-15T06:21:02.139100"
+    },
+    {
+      "ticker": "MSFT",
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": 0.1,
+        "revisions": 0.9809523809523809,
+        "momentum": -0.4152274184540928
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 88.1% recommending Buy",
+          "Recent bullish news regarding AI and carbon removal initiatives",
+          "Positive outlook on data center investments in Japan"
+        ],
+        "key_risks": [
+          "Recent bearish sentiment in AI market affecting overall perception",
+          "Current RSI indicates potential oversold conditions",
+          "Market volatility impacting tech stocks"
+        ],
+        "price_target_upside": -30.06116940223779
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.33714336556114305,
+      "news_summary": "Microsoft has made significant strides in sustainability by purchasing over 2.85 million soil carbon credits from Indigo Carbon, marking one of the largest deals in this sector. Additionally, the company is acquiring 100,000 tons of carbon dioxide removal credits from India's Varaha over the next three years. In the tech landscape, Microsoft has partnered with Wikipedia to enhance AI content training, reflecting the growing reliance on its extensive database for generative AI models. These developments highlight Microsoft's commitment to environmental initiatives and its strategic positioning in the AI market.",
+      "price": 459.38,
+      "market_cap": 3414576037330.0,
+      "scored_at": "2026-01-15T06:18:49.226487"
+    },
+    {
+      "ticker": "PEP",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.26666666666666666,
+        "quality": 0.55,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.4076923076923077,
+        "momentum": 0.5419312458944602
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst support with a majority holding recommendations",
+          "Current price is below the price target, indicating potential upside",
+          "Positive sentiment from some news articles highlighting investment opportunities"
+        ],
+        "key_risks": [
+          "Bearish news articles indicating concerns about the company's direction",
+          "Potential impact of weight loss drugs on beverage sales",
+          "Mixed technical indicators with RSI suggesting a neutral stance"
+        ],
+        "price_target_upside": 8.278508771929834
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.32733250133074965,
+      "news_summary": "PepsiCo (PEP) is currently facing challenges with stalled volume growth and thin margins as price hikes lose effectiveness, prompting analysts to reassess its long-term viability despite a 4% dividend yield. Recent collaborations with Siemens and NVIDIA are seen as potential growth avenues, but concerns remain about the company's M&A missteps and competition from weight loss drugs impacting consumer preferences. The stock has been upgraded to 'Hold' as it reaches a 10-year low in valuation, with Citi raising its price target from $165 to $170, indicating some optimism amidst the struggles.",
+      "price": 145.92,
+      "market_cap": 199528441413.0,
+      "scored_at": "2026-01-15T06:20:08.186424"
+    },
+    {
+      "ticker": "ZTS",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.23333333333333334,
+        "quality": 1.0,
+        "growth": 0.2,
+        "stability": 0.4,
+        "revisions": 0.7111111111111111,
+        "momentum": 0.011272910532877226
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 61.1% Buy recommendations",
+          "Positive news regarding institutional interest and vaccine approvals",
+          "CEO insights on growth in animal health and vaccine sectors"
+        ],
+        "key_risks": [
+          "Recent stock dip despite overall market gains",
+          "Potential volatility in beef prices affecting revenue",
+          "Market competition in the animal health sector"
+        ],
+        "price_target_upside": -37.1543229497775
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3222299269565921,
+      "news_summary": "Zoetis (ZTS) has seen increased institutional interest, particularly from Fundsmith Equity Fund, as the company reported third-quarter revenue growth and addressed safety concerns regarding its Librela treatment. CEO Kristin Peck highlighted a rising demand for livestock vaccines driven by higher protein consumption, alongside a diverse pipeline targeting various health issues in animals. Despite these positive developments, ZTS stock dipped by 1.45% to close at $125.32, reflecting broader market trends. The company continues to present at major healthcare conferences, emphasizing its strategic focus on growth in the veterinary health sector.",
+      "price": 125.84,
+      "market_cap": 55456834050.0,
+      "scored_at": "2026-01-15T06:24:29.630038"
+    },
+    {
+      "ticker": "XOM",
+      "sector": "Energy",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5666666666666667,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.5615384615384615,
+        "momentum": 0.8235575435339125
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bearish",
+        "news_score": -0.5,
+        "key_drivers": [
+          "Analyst consensus is predominantly Hold with a significant number of Buy recommendations.",
+          "Current price is below the price target, indicating potential upside."
+        ],
+        "key_risks": [
+          "Recent news indicates bearish sentiment with multiple negative headlines.",
+          "Oil prices have fallen, which may impact profitability."
+        ],
+        "price_target_upside": 9.190019193857966
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.314919101584643,
+      "news_summary": "Exxon Mobil (NYSE:XOM) is advancing plans to assess its oil assets in Venezuela despite recent criticism from President Trump regarding its cautious approach. Meanwhile, oil prices have fallen over 3% following eased tensions with Iran, impacting the broader market sentiment. Additionally, Exxon and Shell have mutually scrapped the sale of strategic gas assets in the North Sea due to regulatory delays, highlighting ongoing challenges in asset management within the sector. Overall, these developments reflect a complex landscape for Exxon as it navigates geopolitical risks and regulatory hurdles.",
+      "price": 130.25,
+      "market_cap": 549285821224.0,
+      "scored_at": "2026-01-15T06:20:36.690052"
+    },
+    {
+      "ticker": "MMM",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.36666666666666664,
+        "quality": 0.7,
+        "growth": -0.5,
+        "stability": 0.1,
+        "revisions": 0.5444444444444444,
+        "momentum": 0.36216315757166595
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 50% Buy recommendations",
+          "Positive news regarding market growth in related sectors",
+          "Technical indicators showing a healthy RSI of 62.5"
+        ],
+        "key_risks": [
+          "Potential legal challenges related to PFAS RICO class action",
+          "Market uncertainty surrounding restructuring progress",
+          "Single Sell recommendation indicating some analyst caution"
+        ],
+        "price_target_upside": 4.123771986587441
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.30560565300605813,
+      "news_summary": "3M (MMM) is facing potential legal challenges following a recent ruling that allows a class-action lawsuit regarding PFAS-related health risks to proceed, which could lead to significant liabilities. As the company prepares for its Q4 earnings report, analysts are closely examining key performance metrics amidst ongoing restructuring efforts and supply chain challenges. Currently, 3M's stock has shown mixed performance, with a slight decline over the past month but a notable increase over the past year. The broader market outlook for diversified operations, including 3M, remains cautious due to manufacturing sector weaknesses.",
+      "price": 169.99,
+      "market_cap": 90303919272.0,
+      "scored_at": "2026-01-15T06:22:01.491934"
+    },
+    {
+      "ticker": "LMT",
+      "sector": "Industrials",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "factor_scores": {
+        "value": 0.26666666666666666,
+        "quality": 0.2,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 0.3173913043478261,
+        "momentum": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.9,
+        "key_drivers": [
+          "Strong bullish news sentiment with multiple positive headlines",
+          "High RSI indicating strong momentum",
+          "Analyst price target suggests significant upside potential"
+        ],
+        "key_risks": [
+          "Majority of analysts recommend holding rather than buying",
+          "Current price is above the analyst price target",
+          "Market volatility due to global tensions"
+        ],
+        "price_target_upside": -4.81753099353938
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.3035446132355507,
+      "news_summary": "Lockheed Martin (LMT) is positioned to benefit from a proposed increase in the U.S. defense budget to $1.5 trillion by 2027, which could enhance funding for various military programs. The stock has recently seen an upgrade in its Relative Strength Rating, indicating improved technical performance. Additionally, the broader defense sector is experiencing trends towards deconsolidation, which may impact LMT's strategic positioning in the market. Overall, these developments suggest a bullish outlook for LMT amid rising defense spending and geopolitical tensions.",
+      "price": 572.7,
+      "market_cap": 134026017850.0,
+      "scored_at": "2026-01-15T06:21:17.009958"
+    },
+    {
+      "ticker": "BK",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.04999999999999999,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.1,
+        "revisions": 0.719047619047619,
+        "momentum": 0.286425902864259
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong earnings performance and higher margin targets",
+          "Positive analyst recommendations with a majority rating Buy",
+          "Technical indicators showing upward momentum (RSI14 at 72.4)"
+        ],
+        "key_risks": [
+          "Sector ETFs under pressure could impact overall market sentiment",
+          "Potential market volatility as indicated by recent news",
+          "Neutral news headlines may indicate uncertainty"
+        ],
+        "price_target_upside": 4.542900714343042
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.28450100671235695,
+      "news_summary": "The Bank of New York Mellon (BK) reported a record net income of $1.46 billion and earnings per share of $2.02 for Q4 2025, exceeding analyst expectations. The company also announced a dividend of $0.53 per share and completed a significant share repurchase program totaling $4.16 billion. Management raised medium-term profitability targets, emphasizing efficiency and AI-driven operations, which strengthens the bullish outlook for the stock. Additionally, BNY's collaboration with a majority of Fortune 100 companies highlights its robust market position.",
+      "price": 124.59,
+      "market_cap": 86882721753.0,
+      "scored_at": "2026-01-15T06:22:36.579836"
+    },
+    {
+      "ticker": "NEE",
+      "sector": "Utilities",
+      "theme": "Energy Transition and Sustainability",
+      "factor_scores": {
+        "value": 0.36666666666666664,
+        "quality": 0.25,
+        "growth": -0.5,
+        "stability": 0.7,
+        "revisions": 0.6833333333333333,
+        "momentum": 0.38386287269788605
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 62.5% Buy recommendations",
+          "Positive news coverage highlighting investor interest and market outlook",
+          "Current price is below the price target, indicating potential for upside"
+        ],
+        "key_risks": [
+          "Market volatility due to global tensions",
+          "Potential for regulatory changes in the energy sector",
+          "Economic factors that could impact energy demand"
+        ],
+        "price_target_upside": 9.416930958770429
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2841522002872009,
+      "news_summary": "NextEra Energy (NEE) is gaining investor attention as it prepares to release its fourth-quarter and full-year 2025 financial results on January 27, 2026. The company is positioned to benefit from increased investments in power and grid infrastructure amid global energy transitions. Analysts have slightly adjusted NEE's fair value estimate to $90.83, reflecting stable long-term revenue growth projections of 11.69%. Additionally, a potential 10% dividend hike is anticipated, further enhancing its appeal to investors.",
+      "price": 81.98,
+      "market_cap": 170744063723.0,
+      "scored_at": "2026-01-15T06:25:07.832445"
+    },
+    {
+      "ticker": "ADBE",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.6,
+        "quality": 1.0,
+        "growth": 0.5,
+        "stability": -0.5,
+        "revisions": 0.56875,
+        "momentum": -0.8296362023070104
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.4,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 56.2% Buy recommendations",
+          "Recent news highlighting Adobe's trading at a significant discount",
+          "Positive sentiment from news regarding Apple's market strategy"
+        ],
+        "key_risks": [
+          "Goldman Sachs' bearish coverage with a Sell rating and lower price target",
+          "Low RSI indicating potential oversold conditions",
+          "Market volatility affecting software sector performance"
+        ],
+        "price_target_upside": -34.387728288004205
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.28132684750918996,
+      "news_summary": "Adobe Inc. (NASDAQ:ADBE) is currently facing downward pressure, with shares dropping 5.4% following a downgrade from Oppenheimer, which raised concerns about the impact of Artificial Intelligence on its business. Goldman Sachs has also initiated coverage with a Sell rating and a price target of $290, indicating a bearish outlook. Despite a projected fair value of $518 based on free cash flow analysis, the stock is perceived as trading at a significant discount, highlighting a potential investment opportunity amidst a broader software selloff.",
+      "price": 304.44,
+      "market_cap": 127438584000.0,
+      "scored_at": "2026-01-15T06:23:11.881798"
+    },
+    {
+      "ticker": "CVX",
+      "sector": "Energy",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5666666666666667,
+        "quality": 0.09999999999999998,
+        "growth": -0.5,
+        "stability": 0.7,
+        "revisions": 0.5800000000000001,
+        "momentum": 0.6464776632302417
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Analyst consensus is predominantly 'Buy' with a significant majority of recommendations.",
+          "Positive news regarding potential expanded Venezuela license from the US.",
+          "Strong technical indicators with RSI indicating momentum."
+        ],
+        "key_risks": [
+          "Recent drop in oil prices due to easing tensions in Iran.",
+          "Only one sell recommendation indicates some analyst caution.",
+          "Market volatility could impact stock performance."
+        ],
+        "price_target_upside": 5.005229344090842
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.27491163475699565,
+      "news_summary": "Chevron (CVX) is anticipated to receive an expanded license from the U.S. government for operations in Venezuela, which could enhance its market position in the region. This development comes amid a backdrop of fluctuating oil prices, which recently fell over 3% due to easing tensions between the U.S. and Iran. Industry experts have noted that revitalizing Venezuela's oil sector will be a lengthy and costly endeavor, indicating potential challenges ahead for Chevron's operations there. Overall, these factors suggest a complex landscape for Chevron as it navigates both geopolitical and market dynamics.",
+      "price": 167.325,
+      "market_cap": 334541840618.0,
+      "scored_at": "2026-01-15T06:20:42.690223"
+    },
+    {
+      "ticker": "META",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": 1.0,
+        "growth": 1.0,
+        "stability": -0.2,
+        "revisions": 0.6,
+        "momentum": -0.42611519626734995
+      },
+      "sentiment": {
+        "overall_sentiment": "bearish",
+        "sentiment_score": -0.5,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bearish",
+        "news_score": -1.0,
+        "key_drivers": [
+          "Analyst consensus remains a 'Buy' despite mixed recommendations.",
+          "Price target of $350 indicates potential upside from current price."
+        ],
+        "key_risks": [
+          "Recent downgrade by Goldman Sachs raises concerns.",
+          "Negative news regarding employee dissatisfaction could impact morale and performance.",
+          "Technical indicators show RSI at 34, indicating potential overselling."
+        ],
+        "price_target_upside": -43.13750974785547
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2733595938285388,
+      "news_summary": "Recent reports indicate that Alexandr Wang, Meta's highest-paid employee, is feeling 'suffocated' due to the micromanagement style of CEO Mark Zuckerberg. This dissatisfaction may raise concerns about employee morale and retention within the company, potentially impacting productivity and innovation. Investors should monitor how this internal dynamic could affect Meta's operational effectiveness and overall business strategy moving forward.",
+      "price": 615.52,
+      "market_cap": 1551470550600.0,
+      "scored_at": "2026-01-15T06:19:04.340473"
+    },
+    {
+      "ticker": "WMT",
+      "sector": "Consumer Staples",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.39999999999999997,
+        "quality": 0.05000000000000002,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 1.0,
+        "momentum": 0.5411639460610368
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.8,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 93.9% recommending Buy",
+          "Positive technical indicators with high RSI and SMA trends",
+          "Recent bullish news highlighting Walmart's strategic partnerships"
+        ],
+        "key_risks": [
+          "Bearish news regarding the Alphabet partnership affecting valuation",
+          "Ongoing legal issues in India could pose operational risks",
+          "Market volatility affecting retail sector performance"
+        ],
+        "price_target_upside": 4.623458847050981
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.26148399743147793,
+      "news_summary": "Walmart's stock has reached record highs, driven by its partnership with Google Gemini and its recent entry into the Nasdaq-100, trading at a premium valuation of 46x PE and 62x FCF. The company is recognized for its effective adoption of technology, which is enhancing productivity and margins. Additionally, a significant legal case regarding a past investment deal with Tiger Global is set to be ruled on by India's top court, which could have implications for Walmart's operations in the region. Walmart also opened a new Supercenter in Eastvale, California, further expanding its footprint to meet community needs.",
+      "price": 120.04,
+      "market_cap": 957061074854.0,
+      "scored_at": "2026-01-15T06:22:50.075409"
+    },
+    {
+      "ticker": "ABT",
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "factor_scores": {
+        "value": 0.4666666666666666,
+        "quality": 0.55,
+        "growth": 0.0,
+        "stability": 0.7,
+        "revisions": 0.66,
+        "momentum": -0.13381612090680142
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Positive developments in Exact Sciences deal and legal wins",
+          "Strong interest from investors",
+          "Recent FDA clearances for innovative health products"
+        ],
+        "key_risks": [
+          "Current RSI indicates potential for price stagnation",
+          "Market competition in infant formula and medical devices",
+          "General market volatility affecting stock performance"
+        ],
+        "price_target_upside": -39.900000000000006
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2525166926552317,
+      "news_summary": "Abbott Laboratories (ABT) has seen a slight increase in its fair value estimate to approximately $144.75, reflecting a generally positive outlook despite a recent 1.02% decline in stock price to $124.64. The company is gaining attention for its innovative digital diabetes management tool, Libre Assist, which enhances its continuous glucose monitoring offerings. Institutional investors hold a significant 80% stake in Abbott, indicating strong confidence in the company's long-term prospects. Additionally, Abbott's involvement in the infant formula market and recent FDA clearances for its medical devices further underscore its strategic positioning in the healthcare sector.",
+      "price": 125.0,
+      "market_cap": 217570160875.0,
+      "scored_at": "2026-01-15T06:21:07.370002"
+    },
+    {
+      "ticker": "ZM",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.35,
+        "growth": 0.0,
+        "stability": 0.4,
+        "revisions": 0.475,
+        "momentum": -0.3722728846819799
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.5,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Support for Zoom Phone announced by DataParser",
+          "RPO acceleration and buybacks picking up steam",
+          "Increased investor attention towards Zoom"
+        ],
+        "key_risks": [
+          "Analyst consensus leaning towards Hold",
+          "RSI indicates potential for oversold conditions",
+          "Recent price performance may not sustain upward momentum"
+        ],
+        "price_target_upside": 13.363943934267747
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.24576478326911205,
+      "news_summary": "Zoom Communications (ZM) has recently gained investor attention due to its robust buyback program, rising earnings per share (EPS), and a strategic shift towards AI-driven solutions, which has contributed to a 14.2% stock price increase over the past month. The company is also expanding its offerings with the introduction of Zoom for Defense, a secure platform tailored for U.S. government compliance. Despite a challenging five-year performance, analysts maintain a neutral outlook, noting the stock's affordability and potential for growth in the AI sector. Additionally, partnerships, such as with DataParser for Zoom Phone integration, enhance its compliance capabilities, further solidifying its market position.",
+      "price": 82.76,
+      "market_cap": 25076447672.0,
+      "scored_at": "2026-01-15T06:24:01.949479"
+    },
+    {
+      "ticker": "NTRS",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.2,
+        "quality": 0.35,
+        "growth": 1.0,
+        "stability": -0.2,
+        "revisions": -0.005263157894736831,
+        "momentum": 0.15951479455896728
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Northern Trust secures expanded mandate with Swedish pension provider AMF Tjänstepension AB",
+          "Northern Trust broadens UHNW direct indexing access via Envestnet"
+        ],
+        "key_risks": [
+          "Majority of analysts recommend holding, indicating caution",
+          "Recent price momentum may lead to overvaluation concerns"
+        ],
+        "price_target_upside": -3.6807705538355653
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.24412763129691745,
+      "news_summary": "Northern Trust (NTRS) has recently secured an expanded mandate with Swedish pension provider AMF Tjänstepension AB, enhancing its asset management capabilities. The stock has shown strong performance, with a recent price of $146.17 reflecting a 5.52% increase over the past month and a 47.78% total shareholder return over the last year. Analysts have adjusted the fair value estimate for NTRS to between $134.64 and $137.93, indicating mixed sentiments about its growth prospects amid fee pressures. Additionally, the company has broadened its ultra-high-net-worth direct indexing offerings through a partnership with Envestnet, further positioning itself in the competitive wealth management landscape.",
+      "price": 145.35,
+      "market_cap": 27488209584.0,
+      "scored_at": "2026-01-15T06:24:17.368462"
+    },
+    {
+      "ticker": "VRTX",
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "factor_scores": {
+        "value": -0.6,
+        "quality": 0.19999999999999998,
+        "growth": 0.5,
+        "stability": 0.7,
+        "revisions": 0.6862068965517241,
+        "momentum": -0.595889703604255
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 58.6% recommending 'Buy'",
+          "Positive news coverage highlighting potential in new therapeutic areas",
+          "Upcoming earnings report expected to provide further insights"
+        ],
+        "key_risks": [
+          "Current RSI indicates a neutral momentum at 47.0",
+          "Market volatility may impact stock performance",
+          "Dependence on successful outcomes in new therapeutic developments"
+        ],
+        "price_target_upside": 8.580072520187763
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2322154328332949,
+      "news_summary": "Vertex Pharmaceuticals (VRTX) is poised for significant growth with plans to launch five products across various disease areas, including pain and kidney diseases, over the next five years. The company is expected to report strong fourth-quarter earnings, with analysts predicting double-digit growth, supported by a history of earnings surprises. Recent updates from the 44th Annual J.P. Morgan Healthcare Conference highlighted Vertex's pipeline advancements and business strategies, reinforcing investor confidence in its future performance.",
+      "price": 449.53,
+      "market_cap": 115359651779.0,
+      "scored_at": "2026-01-15T06:24:48.694353"
+    },
+    {
+      "ticker": "NFLX",
+      "sector": "Communication Services",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "factor_scores": {
+        "value": 0.16666666666666666,
+        "quality": 1.0,
+        "growth": 0.7,
+        "stability": -0.5,
+        "revisions": 0.6945945945945945,
+        "momentum": -0.20022778206400005
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bearish",
+        "news_score": -0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 62.2% recommending 'Buy'",
+          "Potential boost from acquisition news regarding Warner Bros. Discovery"
+        ],
+        "key_risks": [
+          "Negative news sentiment with 3 bearish headlines",
+          "Low RSI indicating potential oversold conditions"
+        ],
+        "price_target_upside": -27.814793901750416
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.22169657494246936,
+      "news_summary": "Netflix (NFLX) is currently engaged in a competitive acquisition battle for Warner Bros. Discovery, with reports indicating the possibility of an all-cash offer to secure the deal. The company's stock has faced pressure amid this acquisition struggle, particularly as former President Trump publicly opposes the merger, which could influence investor sentiment. On a positive note, Netflix's ad-supported tier is experiencing significant growth, boasting 190 million monthly viewers and plans to double ad revenues by 2025, indicating a strong potential for revenue diversification.",
+      "price": 88.55,
+      "market_cap": 375136279491.0,
+      "scored_at": "2026-01-15T06:19:57.055582"
+    },
+    {
+      "ticker": "DE",
+      "sector": "Industrials",
+      "theme": "Broadening Market Leadership Beyond Tech",
+      "factor_scores": {
+        "value": 0.13333333333333333,
+        "quality": 0.35,
+        "growth": -0.5,
+        "stability": 0.1,
+        "revisions": 0.6555555555555556,
+        "momentum": 0.6470959595959601
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 55.6% Buy recommendations",
+          "Positive news regarding market growth in precision forestry and equipment demand",
+          "Technical indicators showing upward momentum with RSI at 66.3"
+        ],
+        "key_risks": [
+          "Concerns over the US farm economy showing signs of distress",
+          "Potential impact of rising costs and job losses in agriculture",
+          "Market volatility affecting overall investor sentiment"
+        ],
+        "price_target_upside": 3.3977738722905637
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.2162638287638288,
+      "news_summary": "Deere & Company (DE) has attracted renewed institutional interest, particularly from ARK Invest, as it focuses on automation and precision agriculture despite facing a 14.5% decline in annual sales over the past two years. Recent trading saw DE's stock close at $499.52, reflecting a 1.79% increase, indicating some resilience amid broader market challenges. The U.S. farm economy is showing signs of strain, with rising costs and job losses, which could impact demand for agricultural equipment. However, the Italian tractor market is projected to grow, with Deere being a key player, suggesting potential opportunities in international markets.",
+      "price": 512.1,
+      "market_cap": 138494884500.0,
+      "scored_at": "2026-01-15T06:25:36.277800"
+    },
+    {
+      "ticker": "COST",
+      "sector": "Consumer Staples",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "factor_scores": {
+        "value": -0.5,
+        "quality": 0.19999999999999998,
+        "growth": 0.2,
+        "stability": 0.1,
+        "revisions": 0.5666666666666667,
+        "momentum": 0.6458338054340681
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 50% Buy recommendations",
+          "Recent bullish news regarding retail sector performance",
+          "Current price is significantly below the price target"
+        ],
+        "key_risks": [
+          "Recent stock selling by Costco executives",
+          "Bearish news headlines indicating potential concerns",
+          "High RSI indicating overbought conditions"
+        ],
+        "price_target_upside": 7.791961976066784
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.17043653041749532,
+      "news_summary": "Recent insider selling at Costco, with executives offloading $3.7 million in stock, raises concerns about the company's outlook following a challenging 2025. In response to customer preferences, Costco has removed self-checkout options from most stores, aligning with broader retail trends aimed at reducing theft. Despite these developments, some analysts suggest that Costco may not stand out as a top investment choice compared to other options in the market. Additionally, the retail sector is experiencing momentum, as evidenced by the Retail ETF reaching a new 52-week high, indicating positive sentiment in the industry.",
+      "price": 950.98,
+      "market_cap": 422110932473.0,
+      "scored_at": "2026-01-15T06:22:58.511166"
+    },
+    {
+      "ticker": "AMZN",
+      "sector": "Consumer Discretionary",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "factor_scores": {
+        "value": -0.09999999999999999,
+        "quality": 0.4,
+        "growth": 0.5,
+        "stability": -0.2,
+        "revisions": 1.0,
+        "momentum": -0.16938510790969796
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 92.9% Buy recommendations",
+          "Positive news regarding AI developments and partnerships",
+          "Stable technical indicators with RSI at 52.0 indicating neutrality"
+        ],
+        "key_risks": [
+          "Recent bearish news about AI selloff",
+          "Market volatility affecting tech stocks",
+          "Potential competition from other tech companies"
+        ],
+        "price_target_upside": -37.19628142826959
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.13479118533763346,
+      "news_summary": "Amazon continues to strengthen its position in the cloud market with the launch of the AWS European Sovereign Cloud, aimed at providing independent cloud services within the EU. The company's profitability remains heavily reliant on AWS, which is the largest IaaS provider in the industry. Additionally, Amazon's involvement in AI partnerships, including collaborations with Wikipedia, highlights its commitment to enhancing AI capabilities, although the broader market is facing volatility with a recent selloff in tech stocks. Analysts are mixed on the stock's attractiveness, with some suggesting it remains a long-term investment opportunity despite current market challenges.",
+      "price": 236.65,
+      "market_cap": 2529700364204.0,
+      "scored_at": "2026-01-15T06:18:54.028131"
+    },
+    {
+      "ticker": "T",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.7999999999999999,
+        "quality": 0.35,
+        "growth": -0.5,
+        "stability": 0.7,
+        "revisions": 0.5583333333333333,
+        "momentum": -0.125156445556946
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.4,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 50% Buy recommendations",
+          "Positive news regarding potential growth from digital healthcare initiatives",
+          "Recent bullish trends in related sectors (AI data centers)"
+        ],
+        "key_risks": [
+          "Recent Verizon outage impacting user experience",
+          "Low RSI indicating potential oversold conditions",
+          "Single Sell recommendation could indicate caution among some analysts"
+        ],
+        "price_target_upside": -38.725386406944736
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.12102429624331998,
+      "news_summary": "AT&T (T) is highlighted among high-yield dividend stocks in the S&P 500, offering attractive payouts supported by free cash flow. The company is actively expanding its wireless and broadband services, positioning itself competitively against other connectivity providers. Additionally, AT&T's recent spectrum license sale to Array for over $1 billion indicates a strategic move to enhance its market position. Overall, these developments suggest a focus on growth and shareholder returns amidst a competitive telecommunications landscape.",
+      "price": 23.615,
+      "market_cap": 167417349824.0,
+      "scored_at": "2026-01-15T06:20:30.963271"
+    },
+    {
+      "ticker": "MS",
+      "sector": "Financials",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "factor_scores": {
+        "value": -0.06666666666666667,
+        "quality": 0.09999999999999998,
+        "growth": 0.7,
+        "stability": 0.1,
+        "revisions": 0.48461538461538467,
+        "momentum": -0.1808359038187488
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Analyst recommendations show a majority hold with some buy interest.",
+          "Recent bullish news regarding stock movements and upgrades."
+        ],
+        "key_risks": [
+          "Bearish news regarding bank earnings and valuations.",
+          "Concerns about overall market sentiment affecting financial stocks."
+        ],
+        "price_target_upside": -5.271600840800974
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.10538513630595067,
+      "news_summary": "Morgan Stanley (MS) is set to report its fourth-quarter earnings alongside Goldman Sachs and BlackRock, following a recent sell-off in bank stocks attributed to valuation concerns rather than earnings performance. The financial sector has faced pressure after earnings reports from major banks like Wells Fargo and Citigroup, which have influenced investor sentiment. Analysts are closely watching MS's results for insights into fee growth and market dynamics, particularly in light of the broader banking sector's challenges.",
+      "price": 180.78,
+      "market_cap": 287315543874.0,
+      "scored_at": "2026-01-15T06:22:24.198390"
+    },
+    {
+      "ticker": "DIS",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": -0.2,
+        "revisions": 0.7296296296296295,
+        "momentum": 0.04575915921235236
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Strong analyst consensus with 66.7% Buy recommendations",
+          "Positive news regarding centralized marketing efforts",
+          "Recent bullish sentiment around competitors like Netflix"
+        ],
+        "key_risks": [
+          "Market volatility affecting stock performance",
+          "Potential challenges in executing new marketing strategies",
+          "Bearish sentiment from some news regarding competitors"
+        ],
+        "price_target_upside": -38.19150810429879
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.10500087707007673,
+      "news_summary": "The Walt Disney Company has announced the formation of a new centralized marketing unit, led by Asad Ayaz as Chief Marketing and Brand Officer, aimed at enhancing consumer engagement across its diverse businesses. Disney's stock has seen a 4.4% increase over the past year, attributed to innovations in advertising, including AI-driven tools and vertical video strategies. These developments suggest a potential for further growth as the company seeks to leverage its marketing capabilities to boost returns in a competitive landscape.",
+      "price": 113.52,
+      "market_cap": 204790144820.0,
+      "scored_at": "2026-01-15T06:19:42.653844"
+    },
+    {
+      "ticker": "FISV",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.23333333333333334,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": 0.7,
+        "revisions": 0.35,
+        "momentum": -0.1467520496773873
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Recognition for excellence in integrated payments and software platforms",
+          "Positive outlook from Oakmark Equity and Income Fund"
+        ],
+        "key_risks": [
+          "Weak earnings report impacting stock performance",
+          "Negative sentiment in the financial sector"
+        ],
+        "price_target_upside": -17.488888888888887
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.10412291826933072,
+      "news_summary": "Fiserv (FISV) has faced challenges following a weak earnings report, contributing to its inclusion among the worst-performing financial stocks for 2026. However, the company is executing a turnaround strategy, highlighted by a recent strategic collaboration with Microsoft to enhance AI integration in its platforms. Additionally, Fiserv's Clover system is expanding its capabilities through a partnership with Synchrony, allowing health and wellness providers to accept CareCredit payments. Despite these developments, analysts suggest that the stock is currently fairly valued, indicating a cautious outlook for investors.",
+      "price": 67.5,
+      "market_cap": 36692536883.0,
+      "scored_at": "2026-01-15T06:24:11.602319"
+    },
+    {
+      "ticker": "VMC",
+      "sector": "Materials",
+      "theme": "Infrastructure Spending Surge",
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": 0.35,
+        "growth": -0.5,
+        "stability": 0.1,
+        "revisions": 0.65,
+        "momentum": 0.1814322881007809
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 55% Buy recommendations",
+          "Current price is above both SMA20 and SMA50, indicating potential upward momentum"
+        ],
+        "key_risks": [
+          "Recent downgrades from analysts indicating potential concerns",
+          "Bearish news regarding returns on capital"
+        ],
+        "price_target_upside": 7.879924953095678
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.088798362925434,
+      "news_summary": "Vulcan Materials Company (NYSE: VMC) has recently faced a downgrade from DA Davidson, indicating potential concerns among analysts regarding its performance. The company is set to announce its fourth quarter 2025 earnings on February 17, 2026, which could provide further insights into its financial health. Additionally, there are indications that returns on capital have stagnated, raising questions about future growth potential. Investors are advised to monitor these developments closely as they could impact VMC's market position and investment attractiveness.",
+      "price": 298.48,
+      "market_cap": 39438432524.0,
+      "scored_at": "2026-01-15T06:25:18.890381"
+    },
+    {
+      "ticker": "CAT",
+      "sector": "Industrials",
+      "theme": "Broadening Market Leadership Beyond Tech",
+      "factor_scores": {
+        "value": 0.5,
+        "quality": 0.7,
+        "growth": -0.5,
+        "stability": -0.5,
+        "revisions": 0.42000000000000004,
+        "momentum": 0.5899494847895576
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Positive news on leadership transition and market cap growth",
+          "Bullish sentiment in industrial sector investments",
+          "Strong price performance with current price above moving averages"
+        ],
+        "key_risks": [
+          "Bearish sentiment from some analysts regarding market conditions",
+          "Potential volatility in oil prices affecting demand",
+          "Concerns over AI impact on traditional industries"
+        ],
+        "price_target_upside": -10.136986301369863
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.08237854689474085,
+      "news_summary": "Caterpillar Inc. (NYSE: CAT) has announced a leadership transition, with Tony Fassino set to retire in May 2026, and Rod Shurman appointed as the new group president of Construction Industries. The company's stock recently crossed a market capitalization of $300 billion, driven by strong demand for power-generation equipment amid an AI-driven market rally. Caterpillar's shares have surged 77% over the past year, making it the top-performing stock in the Dow Jones Industrial Average. This growth reflects the company's ability to capitalize on data-center-driven demand and a robust backlog in its operations.",
+      "price": 638.75,
+      "market_cap": 299240914621.0,
+      "scored_at": "2026-01-15T06:21:54.849899"
+    },
+    {
+      "ticker": "C",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.03333333333333335,
+        "quality": -0.25,
+        "growth": 0.2,
+        "stability": 0.1,
+        "revisions": 0.8727272727272727,
+        "momentum": -0.6151987036884463
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bearish",
+        "news_score": -0.4,
+        "key_drivers": [
+          "Strong revenue growth and strategic investments highlighted in earnings call",
+          "Positive start to Q4 earnings season"
+        ],
+        "key_risks": [
+          "Recent bearish performance of major banks including Citigroup",
+          "Overall market decline affecting financial sector"
+        ],
+        "price_target_upside": 11.039943065563559
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.06255186548092537,
+      "news_summary": "Citigroup Inc (C) reported strong revenue growth in its Q4 2025 earnings call, but its stock fell 3.3% following the earnings release, marking its largest decline since October 2025. Despite solid credit quality and positive executive commentary, the broader market saw a sell-off in bank stocks, attributed to valuation concerns rather than poor earnings performance. Additionally, Citi's wealth division experienced a decline in net new investment assets, which tempered overall growth despite revenue gains. The financial sector's struggles were reflected in the performance of major U.S. equity indexes, which closed lower amid disappointing earnings from several banks.",
+      "price": 112.41,
+      "market_cap": 209160167734.0,
+      "scored_at": "2026-01-15T06:22:42.054237"
+    },
+    {
+      "ticker": "SBUX",
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.3,
+        "quality": 0.0,
+        "growth": 0.0,
+        "stability": 0.4,
+        "revisions": 0.4235294117647058,
+        "momentum": 0.4287307263429085
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst support with 41.2% Buy recommendations",
+          "Positive technical indicators with RSI at 63.1",
+          "Recent bullish news highlighting Starbucks as a stock to consider"
+        ],
+        "key_risks": [
+          "Bearish news sentiment with two negative headlines",
+          "Consensus leaning towards Hold with a significant number of Hold recommendations",
+          "Current price below the analyst price target indicating potential market skepticism"
+        ],
+        "price_target_upside": 17.388919363686224
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.05598997856534859,
+      "news_summary": "Starbucks Corporation (SBUX) is set to release its Q1 fiscal year 2026 financial results on January 28, 2026, with a conference call to follow, indicating ongoing investor interest. Despite this, the stock has been underperforming, showing a 4.9% loss since July 2025, lagging behind the S&P 500's gains. Institutional ownership remains high at 83%, suggesting significant influence over the company's direction. Analysts are mixed on the stock's prospects, with some highlighting risks while others continue to monitor its performance closely.",
+      "price": 91.15,
+      "market_cap": 103646131773.0,
+      "scored_at": "2026-01-15T06:23:05.645926"
+    },
+    {
+      "ticker": "BRK.B",
+      "sector": "Financials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": 0.09999999999999998,
+        "growth": -0.5,
+        "stability": 0.5,
+        "revisions": -0.2857142857142857,
+        "momentum": -0.042201760762459246
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Positive news articles highlighting Berkshire's investment strategies and potential growth.",
+          "Bullish sentiment from some analysts indicating confidence in long-term performance."
+        ],
+        "key_risks": [
+          "Mixed analyst recommendations with a significant portion suggesting 'Sell'.",
+          "Current economic uncertainties affecting market performance."
+        ],
+        "price_target_upside": null
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.03585887307026838,
+      "news_summary": "Warren Buffett has recently stepped down as CEO of Berkshire Hathaway, passing the leadership to Greg Abel, while continuing to seek significant acquisition opportunities. Despite Berkshire's historical performance, concerns have been raised about its ability to consistently outperform the S&P 500, as it lagged behind for 17 years. Investment advisors are still recommending BRK.B as a solid choice for 2026, indicating confidence in its long-term potential despite recent challenges. Overall, the transition in leadership and ongoing investment strategies will be crucial for the company's future performance.",
+      "price": 493.15,
+      "market_cap": 1069742.769612716,
+      "scored_at": "2026-01-15T06:19:16.041808"
+    },
+    {
+      "ticker": "FDX",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.36666666666666664,
+        "quality": 0.0,
+        "growth": 0.0,
+        "stability": -0.2,
+        "revisions": 0.5444444444444444,
+        "momentum": 0.16865692686471725
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong analyst consensus with 51.9% Buy recommendations",
+          "Positive news regarding the importance of transportation stocks for economic insights",
+          "Recent bullish news on new ownership providing shipping services"
+        ],
+        "key_risks": [
+          "Bearish news on rising shipping rates due to parcel delivery surcharges",
+          "UPS' ongoing revenue struggles may impact market sentiment",
+          "High RSI indicating potential overbought conditions"
+        ],
+        "price_target_upside": -8.442034763195672
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.035590408435333544,
+      "news_summary": "FedEx (FDX) has recently faced a downgrade from BNP Paribas, reflecting concerns about its performance compared to competitors like Expeditors, which has shown stronger price performance and dividend growth. Additionally, the overall parcel delivery market is experiencing rising shipping rates due to the proliferation of surcharges, which could impact FedEx's pricing strategy. Analysts suggest that transportation stocks, including FedEx, may provide a clearer picture of economic trends as the Dow Jones Transportation Average reaches record highs. Despite these challenges, Jim Cramer remains optimistic about FedEx's potential in the logistics sector.",
+      "price": 313.55,
+      "market_cap": 73983827898.0,
+      "scored_at": "2026-01-15T06:22:12.502222"
+    },
+    {
+      "ticker": "SNAP",
+      "sector": "Communication Services",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.3,
+        "quality": -0.4,
+        "growth": 0.7,
+        "stability": 0.4,
+        "revisions": 0.23043478260869568,
+        "momentum": -0.6960556844547553
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bullish",
+        "news_score": 0.3,
+        "key_drivers": [
+          "Bullish news regarding partnerships and potential turnarounds",
+          "Acquisition activity in the sector indicating interest in growth",
+          "Stable technical indicators with SMA close to current price"
+        ],
+        "key_risks": [
+          "Majority of analysts recommend holding, indicating caution",
+          "Low RSI suggests potential for further price decline",
+          "Limited bullish news with only a few positive headlines"
+        ],
+        "price_target_upside": 7.594936708860754
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.022133994322030275,
+      "news_summary": "Snap (SNAP) has seen a significant decline, with shares down over 30% in 2024, despite some improvement in revenue and earnings trends. Analysts maintain a neutral outlook, with Guggenheim recently reiterating its recommendation. The stock is currently viewed as undervalued at 2x forward sales, with potential growth from partnerships like Perplexity. Additionally, Snap has been included in new leveraged ETFs, which may attract more investor interest as the market looks for turnaround opportunities in 2026.",
+      "price": 7.9,
+      "market_cap": 13329706380.0,
+      "scored_at": "2026-01-15T06:23:55.274215"
+    },
+    {
+      "ticker": "UPS",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.36666666666666664,
+        "quality": 0.2,
+        "growth": 0.0,
+        "stability": 0.1,
+        "revisions": 0.26,
+        "momentum": 0.15732220219460594
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bearish",
+        "news_score": -0.5,
+        "key_drivers": [
+          "Analyst consensus is predominantly Hold with some Buy recommendations.",
+          "Current price is above the SMA50, indicating potential short-term strength."
+        ],
+        "key_risks": [
+          "Recent news highlights concerns about rising shipping rates and ongoing investigations.",
+          "Bearish news sentiment outweighs bullish headlines."
+        ],
+        "price_target_upside": -7.3943006146395955
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.018393743952639718,
+      "news_summary": "United Parcel Service (UPS) continues to face significant challenges, with ongoing revenue and volume declines attributed to softening demand and intensified competition from Amazon. Recent downgrades from analysts, including BNP Paribas, highlight concerns over the company's near-term headwinds, prompting discussions about whether the stock, currently below $193, presents a buying opportunity. Additionally, the proliferation of parcel delivery surcharges is contributing to rising shipping rates, further complicating UPS's operational landscape.",
+      "price": 107.38,
+      "market_cap": 91098989099.0,
+      "scored_at": "2026-01-15T06:22:06.670158"
+    },
+    {
+      "ticker": "NKE",
+      "sector": "Consumer Discretionary",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "factor_scores": {
+        "value": -0.09999999999999999,
+        "quality": 0.0,
+        "growth": -0.5,
+        "stability": -0.2,
+        "revisions": 0.50625,
+        "momentum": 0.3097648423494667
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.6,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 46.9% recommending Buy",
+          "Recent bullish news indicating positive market sentiment",
+          "Current RSI of 55 suggests potential for upward momentum"
+        ],
+        "key_risks": [
+          "Bearish news regarding margin headwinds and tariff impacts",
+          "Recent price is below moving averages (SMA20 and SMA50)",
+          "Only 6.2% of analysts recommend Sell, indicating some caution"
+        ],
+        "price_target_upside": 16.272685679426573
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.015345944873784116,
+      "news_summary": "Nike (NKE) is currently facing significant margin pressure due to tariff impacts, with its Q2 gross margin declining by 300 basis points, prompting the company to implement pricing adjustments and cost controls. Despite a challenging year, the stock has shown a recovery of 15% since mid-December, although it remains down 8% over the past year. Notably, Apple CEO Tim Cook's recent investment in Nike has sparked interest among investors, suggesting potential confidence in the company's turnaround strategy. Analysts are divided on whether the stock is reasonably priced, indicating a cautious outlook for potential buyers.",
+      "price": 65.57,
+      "market_cap": 96900852733.0,
+      "scored_at": "2026-01-15T06:21:11.478675"
+    },
+    {
+      "ticker": "GS",
+      "sector": "Financials",
+      "theme": "Regulatory Changes Impacting Technology and Finance",
+      "factor_scores": {
+        "value": -0.16666666666666666,
+        "quality": -0.04999999999999999,
+        "growth": 0.7,
+        "stability": -0.2,
+        "revisions": 0.38,
+        "momentum": -0.07394458495391547
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.7,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong bullish sentiment in recent news articles",
+          "Positive analyst recommendations with a majority holding",
+          "Current price above both SMA20 and SMA50 indicating upward momentum"
+        ],
+        "key_risks": [
+          "High concentration of Hold recommendations may indicate caution",
+          "Market volatility could impact stock performance",
+          "Potential geopolitical risks affecting market sentiment"
+        ],
+        "price_target_upside": -11.946347582746306
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.012828035637115104,
+      "news_summary": "Goldman Sachs (GS) is set to report its earnings alongside other major financial institutions, including Morgan Stanley and BlackRock, amid a mixed market backdrop influenced by TSMC's strong earnings report. Analysts are closely watching the bank's performance as it navigates recent market volatility and geopolitical issues. Additionally, Goldman Sachs' Senior Asia Economist expressed optimism regarding the fundamentals of the Korean equity market, despite the weak Korean won. Overall, the financial sector's performance will be pivotal in shaping investor sentiment in the coming days.",
+      "price": 932.67,
+      "market_cap": 292597252919.0,
+      "scored_at": "2026-01-15T06:22:30.200333"
+    },
+    {
+      "ticker": "CRM",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.06666666666666665,
+        "quality": 0.35,
+        "growth": 0.2,
+        "stability": -0.2,
+        "revisions": 0.7976744186046512,
+        "momentum": -0.8313918532992638
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.5,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong consensus among analysts with 69.8% recommending a buy",
+          "Positive news regarding tech spending and coverage by Goldman Sachs",
+          "Potential for growth in AI-related earnings as highlighted by HSBC"
+        ],
+        "key_risks": [
+          "Concerns about the overall software sector performance",
+          "Bearish sentiment from notable figures like Jim Cramer",
+          "Low RSI indicating potential oversold conditions"
+        ],
+        "price_target_upside": -32.34336519597612
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": 0.007013824630636737,
+      "news_summary": "Goldman Sachs recently initiated coverage of Salesforce (CRM) with a 'Buy' rating and a price target of $330, highlighting its strong fundamentals amidst a recovering IT spending landscape. Despite concerns over AI tools potentially diminishing the competitive edge of software providers, analysts see significant upside potential for Salesforce and similar large-cap stocks. Additionally, Salesforce's recent partnerships, such as with Tata Consultancy Services, aim to enhance its market position in digital transformation. The stock is currently trading at attractive multiples following a 20% pullback, suggesting potential for future growth.",
+      "price": 239.57,
+      "market_cap": 229026725539.0,
+      "scored_at": "2026-01-15T06:23:34.692211"
+    },
+    {
+      "ticker": "FLR",
+      "sector": "Industrials",
+      "theme": "Infrastructure Spending Surge",
+      "factor_scores": {
+        "value": 0.4666666666666667,
+        "quality": -0.4,
+        "growth": 0.2,
+        "stability": -0.2,
+        "revisions": 0.6454545454545454,
+        "momentum": -0.018768768768769036
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong analyst consensus with 54.5% Buy recommendations",
+          "Positive news regarding industrial benefits from rising CapEx",
+          "Technical indicators showing RSI at 57.0, indicating upward momentum"
+        ],
+        "key_risks": [
+          "Bearish news regarding NuScale Power's significant decline",
+          "Market volatility indicated by mixed news sentiment",
+          "Current price below the analyst price target may indicate market skepticism"
+        ],
+        "price_target_upside": -36.79458239277652
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.03148538148538152,
+      "news_summary": "Fluor (FLR) has recently gained attention with an 11% increase in share price over the past week, although it still reflects a year-to-date return of only 7.6% and a decline of 11.2% over the past year. The company achieved mechanical completion on BASF’s new Verbund site project in South China, indicating ongoing project momentum. Analysts are also adjusting their valuations, with a focus on Fluor's potential to monetize contracts amid rising capital expenditures in infrastructure and energy sectors. Overall, Fluor's stock performance suggests a mixed outlook as it navigates market fluctuations and project execution challenges.",
+      "price": 44.3,
+      "market_cap": 7140385060.0,
+      "scored_at": "2026-01-15T06:25:24.677846"
+    },
+    {
+      "ticker": "AMD",
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "factor_scores": {
+        "value": -0.39999999999999997,
+        "quality": -0.25,
+        "growth": 0.5,
+        "stability": -0.5,
+        "revisions": 0.7904761904761904,
+        "momentum": 0.5388375710249811
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.8,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.7,
+        "news_sentiment": "bullish",
+        "news_score": 0.8,
+        "key_drivers": [
+          "Strong analyst consensus with 69% Buy recommendations",
+          "Positive news surrounding TSMC's earnings boosting chip stocks",
+          "Recent technical indicators showing upward momentum with RSI at 57"
+        ],
+        "key_risks": [
+          "Potential market volatility due to geopolitical concerns",
+          "Dependence on semiconductor market performance",
+          "Possible overvaluation if growth expectations are not met"
+        ],
+        "price_target_upside": -35.47406082289803
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.06334333562012565,
+      "news_summary": "AMD shares have been positively impacted by Taiwan Semiconductor Manufacturing Company's (TSMC) strong fourth-quarter earnings, which exceeded expectations and indicated a robust outlook for the semiconductor industry, particularly in AI. However, AMD faces challenges as the U.S. government has imposed a 25% tariff on certain AI chips, including those from AMD, which could affect its competitiveness and pricing. Despite these hurdles, the overall sentiment in the tech sector remains optimistic due to TSMC's projected revenue growth and the ongoing demand for AI infrastructure.",
+      "price": 223.6,
+      "market_cap": 362906673199.0,
+      "scored_at": "2026-01-15T06:23:48.172691"
+    },
+    {
+      "ticker": "DOCU",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.26666666666666666,
+        "quality": 0.2,
+        "growth": 0.2,
+        "stability": 0.4,
+        "revisions": 0.36086956521739133,
+        "momentum": -0.9223324229792532
+      },
+      "sentiment": {
+        "overall_sentiment": "bearish",
+        "sentiment_score": -0.4,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bearish",
+        "news_score": -0.4,
+        "key_drivers": [
+          "Introduction of AI-powered contract tools may enhance value proposition",
+          "Potential for recovery in valuation after significant price decline"
+        ],
+        "key_risks": [
+          "Overall bearish news sentiment with multiple negative headlines",
+          "Weak technical indicators with low RSI suggesting oversold conditions",
+          "Majority of analysts recommending a Hold position"
+        ],
+        "price_target_upside": -37.885889768870214
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.08256793456560972,
+      "news_summary": "DocuSign (DOCU) has recently launched new AI-powered eSignature tools aimed at simplifying contract management, which may enhance its value proposition amid ongoing competitive pressures in the enterprise software sector. Despite this innovation, the stock has faced significant declines, with a 74.9% drop over the past five years and a recent 5.6% decline attributed to broader market anxieties following a downgrade of Adobe. Analysts are assessing whether the current share price reflects its true value, as the company continues to navigate a challenging market environment.",
+      "price": 61.87,
+      "market_cap": 12390890510.0,
+      "scored_at": "2026-01-15T06:24:06.912637"
+    },
+    {
+      "ticker": "ORCL",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.39999999999999997,
+        "quality": 0.5,
+        "growth": 0.2,
+        "stability": -0.5,
+        "revisions": 0.6555555555555556,
+        "momentum": 0.03327456267717668
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.5,
+        "news_sentiment": "bearish",
+        "news_score": -0.5,
+        "key_drivers": [
+          "Strong analyst consensus with 61.1% recommending a buy",
+          "Positive outlook on tech spending with Oracle positioned as a potential winner"
+        ],
+        "key_risks": [
+          "Recent bearish news indicating concerns over AI market performance",
+          "Stock price has dropped recently, reflecting market volatility"
+        ],
+        "price_target_upside": -18.880107443566306
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.09312449172436725,
+      "news_summary": "Oracle's stock faced pressure recently due to a new lawsuit, contributing to a broader decline in tech stocks amid a selloff related to artificial intelligence. Despite this, there are signs of optimism as some analysts believe the recent selling pressure on Oracle was overdone, particularly following positive developments like a deal with TikTok. Overall, the tech sector is experiencing volatility, with significant fluctuations in individual stocks, which may impact investor sentiment moving forward.",
+      "price": 193.59,
+      "market_cap": 546704023841.0,
+      "scored_at": "2026-01-15T06:23:18.118318"
+    },
+    {
+      "ticker": "BA",
+      "sector": "Industrials",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.6,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": 0.1,
+        "revisions": 0.85,
+        "momentum": 0.5293266701735931
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Buy",
+        "analyst_score": 0.75,
+        "news_sentiment": "mixed",
+        "news_score": 0.2,
+        "key_drivers": [
+          "Analyst consensus is strong with 75% Buy recommendations.",
+          "Boeing reaches tentative settlements in related 737 MAX crash lawsuits, indicating progress.",
+          "Bernstein lists Boeing as its best idea for 2026, highlighting long-term potential."
+        ],
+        "key_risks": [
+          "Weiss Ratings urges investors to sell, indicating potential negative sentiment.",
+          "Concerns over UPS crash probe related to jet parts with past problems.",
+          "Bearish news articles may affect investor confidence."
+        ],
+        "price_target_upside": 2.716293639998341
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.1033653966584003,
+      "news_summary": "Boeing (BA) has received mixed signals from analysts, with Weiss Ratings issuing a 'Sell' recommendation, while Bernstein named it a top pick for 2026, citing a positive outlook on its recovery. The company is also facing scrutiny from federal investigators regarding past component failures linked to a recent UPS crash. Additionally, Boeing has reached tentative settlements related to the 737 MAX crash lawsuits, which may impact its financial standing. Notably, Boeing outperformed Airbus in aircraft orders for the first time in seven years, indicating a potential resurgence in demand.",
+      "price": 242.61,
+      "market_cap": 182581497287.0,
+      "scored_at": "2026-01-15T06:21:23.552083"
+    },
+    {
+      "ticker": "ENPH",
+      "sector": "Energy",
+      "theme": "Energy Transition and Sustainability",
+      "factor_scores": {
+        "value": -0.06666666666666665,
+        "quality": 0.0,
+        "growth": -0.5,
+        "stability": -0.2,
+        "revisions": 0.07142857142857145,
+        "momentum": 0.3459210147016443
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.0,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "neutral",
+        "news_score": 0.0,
+        "key_drivers": [
+          "Strong cash position and inventory discipline",
+          "Positive market outlook despite headwinds"
+        ],
+        "key_risks": [
+          "Recent bearish news impacting stock perception",
+          "Stock performance declining more steeply than the broader market"
+        ],
+        "price_target_upside": 4.373097149183499
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.10370897662418475,
+      "news_summary": "Enphase Energy (ENPH) has faced significant near-term challenges, including a recent decline in stock price, closing at $32.18, down 2.87% in the latest trading session. However, the company is focusing on operational discipline by tightening inventory and emphasizing cash generation, which may position it for a rebound by late 2026. Despite a mixed sentiment in the solar market, ENPH has seen a 24% share price rebound over the past month, indicating a potential reassessment of its long-term growth prospects. Investors are advised to monitor these developments closely as Enphase navigates its strategic shifts amidst a changing market landscape.",
+      "price": 36.13,
+      "market_cap": 4727943402.0,
+      "scored_at": "2026-01-15T06:25:02.015715"
+    },
+    {
+      "ticker": "ILMN",
+      "sector": "Health Care",
+      "theme": null,
+      "factor_scores": {
+        "value": 0.7,
+        "quality": 0.05000000000000002,
+        "growth": -0.5,
+        "stability": -0.2,
+        "revisions": 0.3222222222222222,
+        "momentum": -0.34245815017095094
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.3,
+        "key_drivers": [
+          "CEO highlights significant growth opportunities in China",
+          "Introduction of Billion Cell Atlas for AI-driven drug discovery"
+        ],
+        "key_risks": [
+          "Majority of analysts recommend holding rather than buying",
+          "Current price is above the price target, indicating potential overvaluation"
+        ],
+        "price_target_upside": -15.95471278738626
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.13085779551078605,
+      "news_summary": "Illumina, Inc. (ILMN) recently presented at the J.P. Morgan Healthcare Conference, highlighting significant growth opportunities in the Chinese market and unveiling the Billion Cell Atlas, a groundbreaking initiative aimed at enhancing AI-driven drug discovery. The company also announced preliminary financial results for Q4 and FY 2025, with a notable 56.51% increase in share price over the past 90 days, despite a weaker long-term performance. Additionally, Illumina introduced a new cloud software platform, Illumina Connected Multiomics, and appointed a new Chief Medical Officer, further positioning itself for growth in the genomics sector.",
+      "price": 143.97,
+      "market_cap": 21998616000.0,
+      "scored_at": "2026-01-15T06:24:35.004093"
+    },
+    {
+      "ticker": "TSLA",
+      "sector": "Consumer Discretionary",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "factor_scores": {
+        "value": -0.5,
+        "quality": -0.25,
+        "growth": 0.0,
+        "stability": -0.5,
+        "revisions": 0.32000000000000006,
+        "momentum": 0.15047557234803635
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.0,
+        "news_sentiment": "bullish",
+        "news_score": 0.2,
+        "key_drivers": [
+          "Positive news on energy transition and EV market potential",
+          "Strong analyst price target indicating potential upside"
+        ],
+        "key_risks": [
+          "Concerns about competition leading to potential stock declines",
+          "Current RSI indicating stock may be oversold"
+        ],
+        "price_target_upside": 5.913023679417129
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.15045354417390305,
+      "news_summary": "Tesla (TSLA) experienced a decline of 1.8% in its stock price, closing at $439.15, amid a broader market downturn that saw major indexes, including the Nasdaq, fall significantly. The company is shifting its Full Self-Driving product to a subscription-only model, which may impact revenue streams. Despite these challenges, analysts remain optimistic about Tesla's potential for profitability in 2026, suggesting that the stock could rebound as revenue turns positive. Overall, the EV market is facing headwinds, but Tesla continues to be viewed as a strong player in the industry.",
+      "price": 439.2,
+      "market_cap": 1414352052274.0,
+      "scored_at": "2026-01-15T06:19:10.990751"
+    },
+    {
+      "ticker": "SEDG",
+      "sector": "Energy",
+      "theme": "Energy Transition and Sustainability",
+      "factor_scores": {
+        "value": -0.6,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": -0.5,
+        "revisions": -0.07857142857142857,
+        "momentum": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.1,
+        "analyst_consensus": "Hold",
+        "analyst_score": -0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.3,
+        "key_drivers": [
+          "Recent bullish news articles indicating positive market sentiment",
+          "Current RSI suggests stock is not overbought",
+          "Analyst price target indicates potential for upside"
+        ],
+        "key_risks": [
+          "High percentage of Hold and Sell recommendations from analysts",
+          "Recent bearish news indicating potential market concerns",
+          "Current price is close to the 20-day SMA, suggesting limited short-term momentum"
+        ],
+        "price_target_upside": 0.23001725129384215
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.29795918367346935,
+      "news_summary": "SolarEdge Technologies (SEDG) has seen a positive shift in its stock performance, with shares rising 5.8% following an upgrade from TD Cowen, which raised its price target to $38. Analysts attribute the stock's upward momentum to improved margins, market share growth, and innovation in U.S. manufacturing. Despite recent fluctuations, including a slight decline in early January, the stock has shown a significant 103.6% gain over the past year, indicating strong recovery potential in the renewable energy sector.",
+      "price": 34.78,
+      "market_cap": 2079845774.0,
+      "scored_at": "2026-01-15T06:25:13.892811"
+    },
+    {
+      "ticker": "MRNA",
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "factor_scores": {
+        "value": -0.6,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": 0.1,
+        "revisions": 0.1,
+        "momentum": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.2,
+        "news_sentiment": "bullish",
+        "news_score": 0.4,
+        "key_drivers": [
+          "Strong preliminary FY25 results leading to a 17% price increase",
+          "Recent price increase despite overall market decline"
+        ],
+        "key_risks": [
+          "High percentage of Hold recommendations from analysts",
+          "Market volatility impacting overall sentiment"
+        ],
+        "price_target_upside": -24.27304090685066
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.3428571428571428,
+      "news_summary": "Moderna (MRNA) experienced a significant surge of 17.02% on January 13, closing at $39.60, driven by strong preliminary earnings results for FY25. Despite a broader market decline influenced by inflation data and bank earnings, Moderna's stock showed resilience, with an upgrade in its Relative Strength Rating indicating improved technical performance. The company's positive guidance and market interest suggest a favorable outlook for investors amidst a volatile market environment.",
+      "price": 40.58,
+      "market_cap": 15853267388.0,
+      "scored_at": "2026-01-15T06:24:53.939221"
+    },
+    {
+      "ticker": "INTC",
+      "sector": "Information Technology",
+      "theme": null,
+      "factor_scores": {
+        "value": -0.6,
+        "quality": -0.4,
+        "growth": -0.5,
+        "stability": -0.2,
+        "revisions": 0.054545454545454564,
+        "momentum": 1.0
+      },
+      "sentiment": {
+        "overall_sentiment": "bullish",
+        "sentiment_score": 0.6,
+        "analyst_consensus": "Hold",
+        "analyst_score": 0.1,
+        "news_sentiment": "bullish",
+        "news_score": 0.6,
+        "key_drivers": [
+          "Intel's sold-out 2026 server CPU capacity indicates strong demand.",
+          "Improving Q4 outlook driven by PC and server demand.",
+          "Stock hitting highest level in nearly 2 years reflects positive market sentiment."
+        ],
+        "key_risks": [
+          "Downgrade due to hidden cyclical risks in U.S. Capex boom.",
+          "High RSI indicates potential overbought conditions.",
+          "Majority of analysts recommend holding, indicating caution."
+        ],
+        "price_target_upside": -15.065681444991782
+      },
+      "risk_flags": {
+        "passed_all_checks": true,
+        "failed_checks": [],
+        "liquidity_ok": true,
+        "price_ok": true,
+        "no_trading_halts": true,
+        "no_pending_ma": true,
+        "earnings_clear": true
+      },
+      "composite_score": -0.37575757575757585,
+      "news_summary": "Intel (INTC) has seen a significant stock rally in early 2026, with shares up 28% year-to-date, driven by strong demand for AI chips and a government investment that has boosted investor confidence. The company is experiencing a surge in server and PC demand, leading to an improved outlook for Q4 results. However, concerns remain regarding a potential capex-fueled valuation bubble, as Intel Foundry reported a substantial operating loss in 2024. Overall, the market is optimistic about Intel's turnaround efforts, particularly with its new Core Ultra Series 3 products.",
+      "price": 48.72,
+      "market_cap": 232406037503.0,
+      "scored_at": "2026-01-15T06:20:19.658155"
+    }
+  ],
+  "scored_at": "2026-01-15T06:25:41.568113",
+  "stats": {
+    "total_scored": 68,
+    "passed_risk_screens": 68,
+    "avg_composite_score": 0.20083188064179405,
+    "top_10_scores": [
+      0.6307638340787511,
+      0.5610107992322735,
+      0.49321296218756433,
+      0.4855290775313957,
+      0.4717541597020424,
+      0.4497037747373019,
+      0.4474213507632629,
+      0.4447444355144777,
+      0.42765361797951323,
+      0.4142672572905131
+    ]
+  }
+}

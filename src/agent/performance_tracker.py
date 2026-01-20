@@ -20,6 +20,47 @@ from .run_manager import find_all_portfolios
 app = typer.Typer()
 
 
+def calculate_portfolio_beta(performance_data: list[dict]) -> Optional[float]:
+    """Calculate portfolio beta as weighted average of individual stock betas."""
+    valid_betas = []
+    total_weight = 0
+
+    for p in performance_data:
+        beta = p.get("beta")
+        weight = p.get("weight", 0)
+
+        if beta is not None and isinstance(beta, (int, float)) and weight > 0:
+            valid_betas.append((beta, weight))
+            total_weight += weight
+
+    if not valid_betas or total_weight == 0:
+        return None
+
+    # Calculate weighted average beta
+    portfolio_beta = sum(beta * weight for beta, weight in valid_betas) / total_weight
+    return portfolio_beta
+
+
+def calculate_portfolio_alpha(portfolio_return: float, portfolio_beta: Optional[float],
+                             market_return: Optional[float]) -> Optional[float]:
+    """Calculate portfolio alpha: Alpha = Portfolio Return - (Beta × Market Return)"""
+    if portfolio_beta is None or market_return is None:
+        return None
+
+    alpha = portfolio_return - (portfolio_beta * market_return)
+    return alpha
+
+
+def calculate_stock_alpha(stock_return: float, stock_beta: Optional[float],
+                         market_return: Optional[float]) -> Optional[float]:
+    """Calculate individual stock alpha: Alpha = Stock Return - (Beta × Market Return)"""
+    if stock_beta is None or market_return is None:
+        return None
+
+    alpha = stock_return - (stock_beta * market_return)
+    return alpha
+
+
 def fetch_historical_price(ticker: str, target_date: date, fmp_api_key: Optional[str]) -> Optional[float]:
     """Fetch historical price for a specific date using FMP API."""
     if not fmp_api_key:
@@ -239,6 +280,7 @@ def track_performance(
             holding.ticker, cfg.finnhub_api_key, cfg.fmp_api_key
         )
         current_price = current_price_data.price if current_price_data else None
+        beta = current_price_data.beta if current_price_data else None
         
         # Validate prices are positive numbers before calculating returns
         if construction_price and current_price:
@@ -251,6 +293,7 @@ def track_performance(
                     "current_price": current_price,
                     "return_pct": None,
                     "contribution": None,
+                    "beta": beta,
                     "sector": holding.sector,
                     "theme": holding.theme,
                 })
@@ -264,6 +307,7 @@ def track_performance(
                 "current_price": current_price,
                 "return_pct": return_pct,
                 "contribution": contribution,
+                "beta": beta,
                 "sector": holding.sector,
                 "theme": holding.theme,
             })
@@ -276,6 +320,7 @@ def track_performance(
                 "current_price": current_price,
                 "return_pct": None,
                 "contribution": None,
+                "beta": beta,
                 "sector": holding.sector,
                 "theme": holding.theme,
             })
@@ -315,7 +360,14 @@ def track_performance(
     typer.echo("")
     typer.echo("Fetching S&P 500 performance for comparison...")
     sp500_perf = fetch_sp500_performance(construction_date, date.today())
-    
+
+    # Calculate portfolio beta and alpha
+    portfolio_beta = calculate_portfolio_beta(valid_performances)
+    portfolio_alpha = None
+    if sp500_perf and portfolio_beta is not None:
+        sp500_return = sp500_perf["return_pct"]
+        portfolio_alpha = calculate_portfolio_alpha(portfolio_return, portfolio_beta, sp500_return)
+
     # Print report
     typer.echo("")
     typer.echo("=" * 80)
@@ -331,7 +383,7 @@ def track_performance(
     typer.echo(f"  Min Return: {min(returns_list):+.2f}%")
     typer.echo(f"  Max Return: {max(returns_list):+.2f}%")
     typer.echo("")
-    
+
     # S&P 500 comparison
     if sp500_perf:
         sp500_return = sp500_perf["return_pct"]
@@ -339,6 +391,14 @@ def track_performance(
         typer.echo("Benchmark Comparison (S&P 500):")
         typer.echo(f"  S&P 500 Return: {sp500_return:+.2f}%")
         typer.echo(f"  Portfolio Outperformance: {outperformance:+.2f}%")
+        if portfolio_beta is not None:
+            typer.echo(f"  Portfolio Beta: {portfolio_beta:.2f}")
+        else:
+            typer.echo("  Portfolio Beta: N/A (insufficient beta data)")
+        if portfolio_alpha is not None:
+            typer.echo(f"  Portfolio Alpha: {portfolio_alpha:+.2f}%")
+        else:
+            typer.echo("  Portfolio Alpha: N/A (requires beta and market data)")
         if outperformance > 0:
             typer.echo(f"  Portfolio beat S&P 500 by {outperformance:.2f} percentage points")
         else:
@@ -406,6 +466,12 @@ def track_performance(
         if sp500_perf:
             report["portfolio_metrics"]["sp500_return"] = sp500_perf["return_pct"]
             report["portfolio_metrics"]["outperformance"] = portfolio_return - sp500_perf["return_pct"]
+
+        # Add beta and alpha calculations
+        if portfolio_beta is not None:
+            report["portfolio_metrics"]["portfolio_beta"] = portfolio_beta
+        if portfolio_alpha is not None:
+            report["portfolio_metrics"]["portfolio_alpha"] = portfolio_alpha
         
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(report, indent=2), encoding='utf-8')

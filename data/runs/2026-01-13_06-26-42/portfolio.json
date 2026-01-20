@@ -1,0 +1,180 @@
+{
+  "holdings": [
+    {
+      "ticker": "MRK",
+      "weight": 0.1,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Highest composite score (0.664), strong analyst confidence and positive sentiment.",
+      "composite_score": 0.6641355135584472
+    },
+    {
+      "ticker": "O",
+      "weight": 0.09,
+      "sector": "Real Estate",
+      "theme": null,
+      "rationale": "Strong fundamentals and strategic partnerships, good score (0.613).",
+      "composite_score": 0.6127505453348151
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Solid score (0.570) and bullish sentiment with significant partnerships.",
+      "composite_score": 0.5695411347704915
+    },
+    {
+      "ticker": "SLB",
+      "weight": 0.07,
+      "sector": "Energy",
+      "theme": null,
+      "rationale": "Good score (0.560) and bullish sentiment despite sector challenges.",
+      "composite_score": 0.559849967384214
+    },
+    {
+      "ticker": "V",
+      "weight": 0.07,
+      "sector": "Information Technology",
+      "theme": "Emerging Market Opportunities",
+      "rationale": "Strong score (0.511) and potential for growth in emerging markets.",
+      "composite_score": 0.5109867576199502
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.06,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Resilient performance and strong dividend history, score (0.485).",
+      "composite_score": 0.48466134286822465
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Good score (0.480) and focus on sustainable energy.",
+      "composite_score": 0.48000858000858
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "Emerging Market Opportunities",
+      "rationale": "Strong international market presence, score (0.474).",
+      "composite_score": 0.47448977442606044
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong brand and dividend stock, score (0.464).",
+      "composite_score": 0.4637925512815121
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Focus on AI infrastructure, score (0.445).",
+      "composite_score": 0.44493147175073605
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong growth potential in AI software, score (0.439).",
+      "composite_score": 0.43904589839549185
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": "Healthcare Sector Transformation",
+      "rationale": "Challenges with patent expirations but potential for growth, score (0.432).",
+      "composite_score": 0.43208804468240297
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "sector": "Financials",
+      "theme": "Monetary Policy and Interest Rate Dynamics",
+      "rationale": "Strong performance in financial advisory, score (0.431).",
+      "composite_score": 0.43087722599517586
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.04,
+      "sector": "Real Estate",
+      "theme": "Monetary Policy and Interest Rate Dynamics",
+      "rationale": "Positive momentum and refinancing strategy, score (0.420).",
+      "composite_score": 0.4201296008788772
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Positive momentum from housing initiatives, score (0.408).",
+      "composite_score": 0.40825382261364546
+    },
+    {
+      "ticker": "LULU",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Strong holiday sales and positive outlook, score (0.407).",
+      "composite_score": 0.40674583120826496
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong market contributor with strategic initiatives, score (0.400).",
+      "composite_score": 0.4004954763312161
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Facing regulatory pressures but expanding services, score (0.397).",
+      "composite_score": 0.3973435258026425
+    },
+    {
+      "ticker": "PSA",
+      "weight": 0.02,
+      "sector": "Real Estate",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.434)",
+      "composite_score": 0.4341832606301752
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.02,
+      "sector": "Industrials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.394)",
+      "composite_score": 0.39413390060524467
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Health Care": 0.17,
+    "Real Estate": 0.15,
+    "Communication Services": 0.08,
+    "Energy": 0.07,
+    "Information Technology": 0.22999999999999998,
+    "Consumer Staples": 0.11,
+    "Consumer Discretionary": 0.11,
+    "Financials": 0.06,
+    "Industrials": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-13",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-13T06:27:06.063859"
+}

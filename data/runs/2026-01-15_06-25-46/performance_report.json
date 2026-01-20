@@ -1,0 +1,290 @@
+{
+  "analysis_date": "2026-01-19T07:20:13.753633",
+  "portfolio_file": "data\\runs\\2026-01-15_06-25-46\\portfolio.json",
+  "construction_date": "2026-01-15",
+  "current_date": "2026-01-19",
+  "days_held": 4,
+  "portfolio_metrics": {
+    "weighted_return": -0.7294857748078141,
+    "simple_avg_return": -0.7048776293429935,
+    "median_return": -0.77338799850913,
+    "min_return": -2.942746054738115,
+    "max_return": 2.067249558180631,
+    "winners_count": 4,
+    "losers_count": 15,
+    "total_holdings": 19,
+    "sp500_return": -0.08378844014015585,
+    "outperformance": -0.6456973346676582,
+    "portfolio_beta": 0.7468265306122446,
+    "portfolio_alpha": -0.6669103447525297
+  },
+  "sp500_comparison": {
+    "construction_price": 692.239990234375,
+    "current_price": 691.6599731445312,
+    "return_pct": -0.08378844014015585
+  },
+  "holdings": [
+    {
+      "ticker": "MRK",
+      "weight": 0.1,
+      "construction_price": 110.97,
+      "current_price": 108.83,
+      "return_pct": -1.9284491303956028,
+      "contribution": -0.1928449130395603,
+      "beta": 0.298,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.1,
+      "construction_price": 332.78,
+      "current_price": 330.0,
+      "return_pct": -0.835386741991698,
+      "contribution": -0.08353867419916981,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.09,
+      "construction_price": 741.92,
+      "current_price": 733.04,
+      "return_pct": -1.1968945438861327,
+      "contribution": -0.10772050894975194,
+      "beta": 0.389,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.08,
+      "construction_price": 144.63,
+      "current_price": 144.53,
+      "return_pct": -0.06914194842010254,
+      "contribution": -0.005531355873608204,
+      "beta": 0.388,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.06,
+      "construction_price": 70.48,
+      "current_price": 70.44,
+      "return_pct": -0.0567536889897932,
+      "contribution": -0.003405221339387592,
+      "beta": 0.387,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.06,
+      "construction_price": 219.57,
+      "current_price": 218.66,
+      "return_pct": -0.4144464179988143,
+      "contribution": -0.024866785079928858,
+      "beta": 0.333,
+      "sector": "Health Care",
+      "theme": "Broadening Market Leadership Beyond Tech"
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.06,
+      "construction_price": 258.21,
+      "current_price": 255.517,
+      "return_pct": -1.0429495371983983,
+      "contribution": -0.0625769722319039,
+      "beta": 1.093,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes Impacting Technology and Finance"
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.05,
+      "construction_price": 25.89,
+      "current_price": 25.65,
+      "return_pct": -0.926998841251456,
+      "contribution": -0.046349942062572806,
+      "beta": 0.433,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements"
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.05,
+      "construction_price": 215.02,
+      "current_price": 219.465,
+      "return_pct": 2.067249558180631,
+      "contribution": 0.10336247790903155,
+      "beta": 0.942,
+      "sector": "Industrials",
+      "theme": "Infrastructure Spending Surge"
+    },
+    {
+      "ticker": "SPGI",
+      "weight": 0.05,
+      "construction_price": 545.43,
+      "current_price": 546.35,
+      "return_pct": 0.1686742570082454,
+      "contribution": 0.00843371285041227,
+      "beta": 1.207,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.05,
+      "construction_price": 379.16,
+      "current_price": 380.17,
+      "return_pct": 0.26637830994830436,
+      "contribution": 0.013318915497415219,
+      "beta": 1.072,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.04,
+      "construction_price": 99.0,
+      "current_price": 96.76,
+      "return_pct": -2.262626262626257,
+      "contribution": -0.0905050505050503,
+      "beta": 0.729,
+      "sector": "Healthcare",
+      "theme": "Broadening Market Leadership Beyond Tech"
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "construction_price": 131.17,
+      "current_price": 127.31,
+      "return_pct": -2.942746054738115,
+      "contribution": -0.1177098421895246,
+      "beta": 0.979,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.03,
+      "construction_price": 39.36,
+      "current_price": 38.91,
+      "return_pct": -1.1432926829268366,
+      "contribution": -0.034298780487805096,
+      "beta": 0.327,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "CMCSA",
+      "weight": 0.03,
+      "construction_price": 28.35,
+      "current_price": 27.82,
+      "return_pct": -1.8694885361552067,
+      "contribution": -0.0560846560846562,
+      "beta": 0.807,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.03,
+      "construction_price": 187.05,
+      "current_price": 186.105,
+      "return_pct": -0.5052125100240693,
+      "contribution": -0.015156375300722079,
+      "beta": 2.314,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.02,
+      "construction_price": 75.25,
+      "current_price": 75.19,
+      "return_pct": -0.07973421926910601,
+      "contribution": -0.0015946843853821202,
+      "beta": 0.863,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "TROW",
+      "weight": 0.02,
+      "construction_price": 107.32,
+      "current_price": 106.49,
+      "return_pct": -0.77338799850913,
+      "contribution": -0.0154677599701826,
+      "beta": 1.532,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "REGI",
+      "weight": 0.02,
+      "construction_price": null,
+      "current_price": 61.5,
+      "return_pct": null,
+      "contribution": null,
+      "beta": 0.0,
+      "sector": "Energy",
+      "theme": "Energy Transition and Sustainability"
+    },
+    {
+      "ticker": "V",
+      "weight": 0.02,
+      "construction_price": 327.8,
+      "current_price": 328.3,
+      "return_pct": 0.15253203172666258,
+      "contribution": 0.0030506406345332518,
+      "beta": 0.815,
+      "sector": "Information Technology",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Health Care": {
+      "avg_return": -1.1166972333830014,
+      "contribution": -0.3717821491318139,
+      "count": 4
+    },
+    "Communication Services": {
+      "avg_return": -1.2827226536912473,
+      "contribution": -0.1739221107716311,
+      "count": 3
+    },
+    "Consumer Staples": {
+      "avg_return": -0.06294781870494787,
+      "contribution": -0.008936577212995796,
+      "count": 2
+    },
+    "Information Technology": {
+      "avg_return": -0.8836220579006053,
+      "contribution": -0.19398723347299945,
+      "count": 5
+    },
+    "Industrials": {
+      "avg_return": 2.067249558180631,
+      "contribution": 0.10336247790903155,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": -0.30235687075044226,
+      "contribution": -0.007034047119770331,
+      "count": 2
+    },
+    "Consumer Discretionary": {
+      "avg_return": 0.26637830994830436,
+      "contribution": 0.013318915497415219,
+      "count": 1
+    },
+    "Healthcare": {
+      "avg_return": -2.262626262626257,
+      "contribution": -0.0905050505050503,
+      "count": 1
+    }
+  }
+}

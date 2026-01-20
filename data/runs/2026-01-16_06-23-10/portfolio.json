@@ -1,0 +1,177 @@
+{
+  "holdings": [
+    {
+      "ticker": "TSM",
+      "weight": 0.1,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "rationale": "Highest composite score (0.737), strong earnings and growth outlook.",
+      "composite_score": 0.7374229521583378
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.1,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "rationale": "Strong momentum in semiconductor sector, high composite score (0.613).",
+      "composite_score": 0.612764731122439
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.09,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Solid performance despite challenges, composite score (0.608).",
+      "composite_score": 0.6076004511584293
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong position in AI, good growth potential, composite score (0.577).",
+      "composite_score": 0.5767914162005376
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.08,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Promising drug developments, composite score (0.569).",
+      "composite_score": 0.5691679012238824
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": "Energy Transition and Sustainability",
+      "rationale": "Strong earnings expectations, composite score (0.520).",
+      "composite_score": 0.520461285242658
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": "Healthcare and Biotech Innovation",
+      "rationale": "Potential value play, composite score (0.478).",
+      "composite_score": 0.4780213021019664
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive outlook in AI and security, composite score (0.474).",
+      "composite_score": 0.47438169066076036
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics",
+      "rationale": "Stable investment with growth potential, composite score (0.469).",
+      "composite_score": 0.4694754271084096
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong performance in semiconductor sector, composite score (0.441).",
+      "composite_score": 0.44079088662266386
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Cautious optimism for long-term growth, composite score (0.412).",
+      "composite_score": 0.4116099183819274
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong demand for AI infrastructure, composite score (0.402).",
+      "composite_score": 0.40194645611277785
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.04,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics",
+      "rationale": "Resilient brand, composite score (0.399).",
+      "composite_score": 0.3989034986879966
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong product pipeline, composite score (0.396).",
+      "composite_score": 0.39594694854877444
+    },
+    {
+      "ticker": "PEP",
+      "weight": 0.03,
+      "sector": "Consumer Staples",
+      "theme": "Inflationary Pressures and Monetary Policy Dynamics",
+      "rationale": "Stable growth potential, composite score (0.379).",
+      "composite_score": 0.3791695238025151
+    },
+    {
+      "ticker": "XOM",
+      "weight": 0.03,
+      "sector": "Energy",
+      "theme": null,
+      "rationale": "Resilient amidst market fluctuations, composite score (0.367).",
+      "composite_score": 0.367212446563191
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Solid fundamentals, composite score (0.361).",
+      "composite_score": 0.36086209286237764
+    },
+    {
+      "ticker": "TMO",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.347)",
+      "composite_score": 0.34689947355455075
+    },
+    {
+      "ticker": "V",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added during sector rebalance (score 0.333)",
+      "composite_score": 0.3334480035472535
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added during sector rebalance (score 0.326)",
+      "composite_score": 0.32572376094364813
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Information Technology": 0.36,
+    "Health Care": 0.31,
+    "Communication Services": 0.08,
+    "Financials": 0.1,
+    "Consumer Staples": 0.12,
+    "Energy": 0.03
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-16",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-16T06:23:32.629433"
+}

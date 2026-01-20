@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "MRK",
+      "weight": 0.09,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Highest composite score (0.680), strong bullish sentiment, potential acquisition enhancing growth.",
+      "composite_score": 0.6800242804704993
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.08,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong growth potential in biotech, solid score (0.567), bullish sentiment.",
+      "composite_score": 0.5673988784720075
+    },
+    {
+      "ticker": "V",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Stable dividend stock, good score (0.570), bullish sentiment.",
+      "composite_score": 0.569501014444106
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong performance in digital payments, solid score (0.565), bullish sentiment.",
+      "composite_score": 0.5648297117105385
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "High growth potential in AI, good score (0.564), bullish sentiment.",
+      "composite_score": 0.5642966863516873
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.07,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Positive analyst upgrades, good score (0.532), bullish sentiment.",
+      "composite_score": 0.5319577767079411
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong momentum in semiconductor industry, good score (0.512), bullish sentiment.",
+      "composite_score": 0.5120181405895692
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong growth expectations, good score (0.539), bullish sentiment.",
+      "composite_score": 0.5388861165543534
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Positive trial results, decent score (0.492), bullish sentiment.",
+      "composite_score": 0.49238218512775034
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong dividend stock, good score (0.457), bullish sentiment.",
+      "composite_score": 0.45682018919866135
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Diversified portfolio, solid score (0.456), bullish sentiment.",
+      "composite_score": 0.4557515281653212
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong long-term performance, decent score (0.451), bullish sentiment.",
+      "composite_score": 0.451461081776443
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "sector": "Financials",
+      "theme": "Regulatory Scrutiny of Financial Sector",
+      "rationale": "High expectations for earnings, decent score (0.447), bullish sentiment.",
+      "composite_score": 0.44674545628336954
+    },
+    {
+      "ticker": "BK",
+      "weight": 0.03,
+      "sector": "Financial Services",
+      "theme": "Demographic Trends in Workforce and Retirement",
+      "rationale": "Strong performance, decent score (0.436), bullish sentiment.",
+      "composite_score": 0.43557920775965886
+    },
+    {
+      "ticker": "CME",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Record volume growth, decent score (0.434), bullish sentiment.",
+      "composite_score": 0.43399247467206
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong market position, decent score (0.417), bullish sentiment.",
+      "composite_score": 0.41665580646430056
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.03,
+      "sector": "Industrials",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "rationale": "Positive developments in LNG solutions, decent score (0.403), bullish sentiment.",
+      "composite_score": 0.40261126256699586
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Steady performance, decent score (0.399), neutral sentiment.",
+      "composite_score": 0.39925583099739725
+    },
+    {
+      "ticker": "PHM",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": "Demographic Trends in Workforce and Retirement",
+      "rationale": "Added as top remaining candidate (composite score: 0.570)",
+      "composite_score": 0.5698962981480202
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.460)",
+      "composite_score": 0.4601320065419962
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Health Care": 0.33999999999999997,
+    "Financials": 0.29000000000000004,
+    "Communication Services": 0.07,
+    "Information Technology": 0.15,
+    "Consumer Staples": 0.05,
+    "Financial Services": 0.03,
+    "Industrials": 0.03,
+    "Consumer Discretionary": 0.04
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-12",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-12T06:33:18.112951"
+}

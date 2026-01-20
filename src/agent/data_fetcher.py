@@ -138,7 +138,13 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
                 as_of=datetime.combine(as_of_date, datetime.min.time()),
             )
     
-    # Tier 1: Try Finnhub API (free, reliable)
+    # Tier 1: Try FMP API (has beta data)
+    if fmp_key:
+        result = fetch_price_data_fmp(ticker, fmp_key)
+        if result:
+            return result
+
+    # Tier 2: Try Finnhub API (fallback, no beta)
     if finnhub_key:
         result = fetch_price_data_finnhub(ticker, finnhub_key)
         if result:
@@ -156,7 +162,7 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
                             volumes = [day.get("volume", 0) for day in hist_data["historical"] if day.get("volume")]
                             if volumes:
                                 result.avg_volume_30d = int(sum(volumes) / len(volumes))
-                    
+
                     closes = [day.get("close") for day in hist_data["historical"] if day.get("close") is not None]
                     if closes:
                         try:
@@ -171,12 +177,6 @@ def fetch_price_data(ticker: str, finnhub_key: Optional[str] = None, fmp_key: Op
                             pass
                 except Exception:
                     pass  # avg_volume_30d is optional
-            return result
-    
-    # Tier 2: Try FMP Quote API
-    if fmp_key:
-        result = fetch_price_data_fmp(ticker, fmp_key)
-        if result:
             return result
     
     # Tier 3: Fallback to yfinance (may be blocked, but try anyway)

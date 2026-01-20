@@ -1,0 +1,295 @@
+{
+  "analysis_date": "2026-01-19T07:17:26.333532",
+  "portfolio_file": "data\\runs\\2026-01-13_06-26-42\\portfolio.json",
+  "construction_date": "2026-01-13",
+  "current_date": "2026-01-19",
+  "days_held": 6,
+  "portfolio_metrics": {
+    "weighted_return": 0.1598015177165335,
+    "simple_avg_return": 0.22218293289980964,
+    "median_return": 0.29287341360233865,
+    "min_return": -7.873218033142772,
+    "max_return": 5.024479148054177,
+    "winners_count": 13,
+    "losers_count": 7,
+    "total_holdings": 20,
+    "sp500_return": -0.30414205389624877,
+    "outperformance": 0.46394357161278227,
+    "portfolio_beta": 0.7984599999999997,
+    "portfolio_alpha": 0.40264678207053217
+  },
+  "sp500_comparison": {
+    "construction_price": 693.77001953125,
+    "current_price": 691.6599731445312,
+    "return_pct": -0.30414205389624877
+  },
+  "holdings": [
+    {
+      "ticker": "MRK",
+      "weight": 0.1,
+      "construction_price": 108.26,
+      "current_price": 108.83,
+      "return_pct": 0.526510253094396,
+      "contribution": 0.0526510253094396,
+      "beta": 0.298,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "O",
+      "weight": 0.09,
+      "construction_price": 59.23,
+      "current_price": 61.42,
+      "return_pct": 3.697450616241778,
+      "contribution": 0.33277055546176,
+      "beta": 0.807,
+      "sector": "Real Estate",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "construction_price": 335.97,
+      "current_price": 330.0,
+      "return_pct": -1.7769443700330467,
+      "contribution": -0.14215554960264373,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "SLB",
+      "weight": 0.07,
+      "construction_price": 45.9,
+      "current_price": 46.73,
+      "return_pct": 1.808278867102393,
+      "contribution": 0.12657952069716752,
+      "beta": 0.723,
+      "sector": "Energy",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.07,
+      "construction_price": 327.88,
+      "current_price": 328.3,
+      "return_pct": 0.12809564474808344,
+      "contribution": 0.00896669513236584,
+      "beta": 0.815,
+      "sector": "Information Technology",
+      "theme": "Emerging Market Opportunities"
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.06,
+      "construction_price": 144.24,
+      "current_price": 144.53,
+      "return_pct": 0.20105379922351085,
+      "contribution": 0.01206322795341065,
+      "beta": 0.388,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.06,
+      "construction_price": 241.36,
+      "current_price": 243.73,
+      "return_pct": 0.98193569771295,
+      "contribution": 0.058916141862776994,
+      "beta": 1.597,
+      "sector": "Information Technology",
+      "theme": "Sustainable Energy Transition"
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.05,
+      "construction_price": 309.44,
+      "current_price": 307.43,
+      "return_pct": -0.6495604963805555,
+      "contribution": -0.03247802481902778,
+      "beta": 0.531,
+      "sector": "Consumer Discretionary",
+      "theme": "Emerging Market Opportunities"
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "construction_price": 71.24,
+      "current_price": 70.44,
+      "return_pct": -1.1229646266142579,
+      "contribution": -0.056148231330712894,
+      "beta": 0.387,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "construction_price": 75.47,
+      "current_price": 75.19,
+      "return_pct": -0.37100834768782454,
+      "contribution": -0.018550417384391227,
+      "beta": 0.863,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.05,
+      "construction_price": 138.19,
+      "current_price": 127.31,
+      "return_pct": -7.873218033142772,
+      "contribution": -0.39366090165713863,
+      "beta": 0.979,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.04,
+      "construction_price": 25.15,
+      "current_price": 25.65,
+      "return_pct": 1.9880715705765408,
+      "contribution": 0.07952286282306163,
+      "beta": 0.433,
+      "sector": "Health Care",
+      "theme": "Healthcare Sector Transformation"
+    },
+    {
+      "ticker": "JPM",
+      "weight": 0.04,
+      "construction_price": 310.9,
+      "current_price": 312.47,
+      "return_pct": 0.504985525892586,
+      "contribution": 0.020199421035703442,
+      "beta": 1.066,
+      "sector": "Financials",
+      "theme": "Monetary Policy and Interest Rate Dynamics"
+    },
+    {
+      "ticker": "SPG",
+      "weight": 0.04,
+      "construction_price": 184.38,
+      "current_price": 184.92,
+      "return_pct": 0.29287341360233865,
+      "contribution": 0.011714936544093547,
+      "beta": 1.4,
+      "sector": "Real Estate",
+      "theme": "Monetary Policy and Interest Rate Dynamics"
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.03,
+      "construction_price": 379.74,
+      "current_price": 380.17,
+      "return_pct": 0.11323537157002339,
+      "contribution": 0.0033970611471007017,
+      "beta": 1.072,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "LULU",
+      "weight": 0.03,
+      "construction_price": 211.9,
+      "current_price": 201.87,
+      "return_pct": -4.733364794714488,
+      "contribution": -0.14200094384143463,
+      "beta": 1.016,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.03,
+      "construction_price": 213.65,
+      "current_price": 218.66,
+      "return_pct": 2.344956704891173,
+      "contribution": 0.07034870114673518,
+      "beta": 0.333,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.02,
+      "construction_price": 544.99,
+      "current_price": 539.49,
+      "return_pct": -1.0091928292262244,
+      "contribution": -0.020183856584524488,
+      "beta": 0.857,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "PSA",
+      "weight": 0.02,
+      "construction_price": 279.83,
+      "current_price": 293.89,
+      "return_pct": 5.024479148054177,
+      "contribution": 0.10048958296108355,
+      "beta": 0.991,
+      "sector": "Real Estate",
+      "theme": null
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.02,
+      "construction_price": 210.28,
+      "current_price": 219.465,
+      "return_pct": 4.367985543085411,
+      "contribution": 0.08735971086170823,
+      "beta": 0.942,
+      "sector": "Industrials",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Health Care": {
+      "avg_return": 1.6198461761873697,
+      "contribution": 0.20252258927923644,
+      "count": 3
+    },
+    "Real Estate": {
+      "avg_return": 3.0049343926327645,
+      "contribution": 0.4449750749669371,
+      "count": 3
+    },
+    "Communication Services": {
+      "avg_return": -1.7769443700330467,
+      "contribution": -0.14215554960264373,
+      "count": 1
+    },
+    "Energy": {
+      "avg_return": 1.808278867102393,
+      "contribution": 0.12657952069716752,
+      "count": 1
+    },
+    "Information Technology": {
+      "avg_return": -1.7835487595923907,
+      "contribution": -0.344328482046387,
+      "count": 4
+    },
+    "Consumer Staples": {
+      "avg_return": -0.4609554136953735,
+      "contribution": -0.04408500337730224,
+      "count": 2
+    },
+    "Consumer Discretionary": {
+      "avg_return": -1.7565633065083401,
+      "contribution": -0.17108190751336172,
+      "count": 3
+    },
+    "Financials": {
+      "avg_return": -0.2521036516668192,
+      "contribution": 1.556445117895447e-05,
+      "count": 2
+    },
+    "Industrials": {
+      "avg_return": 4.367985543085411,
+      "contribution": 0.08735971086170823,
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,1498 @@
+2026-01-16 05:57:48 [INFO] ================================================================================
+2026-01-16 05:57:48 [INFO] DATA FETCHING STARTED
+2026-01-16 05:57:48 [INFO] ================================================================================
+2026-01-16 05:57:48 [INFO] Timestamp: 2026-01-16T05:57:48.776666
+2026-01-16 05:57:48 [INFO] Candidates file: C:\Users\Roman\Documents\ASTRO\astro-llm\data\merged_candidates.json
+2026-01-16 05:57:48 [INFO] Output file: data\stock_data.json
+2026-01-16 05:57:48 [INFO] Skip news: False
+2026-01-16 05:57:48 [INFO] Skip analyst: False
+2026-01-16 05:57:48 [INFO] Delay: 0.5s
+2026-01-16 05:57:48 [INFO] Resume mode: False
+2026-01-16 05:57:48 [INFO] 
+2026-01-16 05:57:49 [INFO] Fetching data for 77 tickers...
+2026-01-16 05:57:49 [INFO] 
+2026-01-16 05:57:49 [INFO] [1/77] Processing AAPL...
+2026-01-16 05:57:49 [DEBUG] ⏱️  Started: AAPL:price_data
+2026-01-16 05:57:52 [DEBUG] ✅ Completed: AAPL:price_data (took 3.43s)
+2026-01-16 05:57:52 [DEBUG]   Price data: ✓ (3.43s)
+2026-01-16 05:57:52 [DEBUG] ⏱️  Started: AAPL:fundamentals
+2026-01-16 05:57:52 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:57:56 [DEBUG] ✅ Completed: AAPL:fundamentals (took 3.31s)
+2026-01-16 05:57:56 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 05:57:56 [DEBUG] ⏱️  Started: AAPL:analyst
+2026-01-16 05:57:58 [DEBUG] ✅ Completed: AAPL:analyst (took 1.84s)
+2026-01-16 05:57:58 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 05:57:59 [DEBUG] ⏱️  Started: AAPL:news
+2026-01-16 05:57:59 [DEBUG] ✅ Completed: AAPL:news (took 0.50s)
+2026-01-16 05:57:59 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 05:57:59 [DEBUG] ⏱️  Started: AAPL:sentiment
+2026-01-16 05:58:01 [DEBUG] ✅ Completed: AAPL:sentiment (took 1.58s)
+2026-01-16 05:58:01 [DEBUG]   Sentiment: 10 items classified (1.58s)
+2026-01-16 05:58:02 [INFO]   Total time for AAPL: 13.17s
+2026-01-16 05:58:02 [INFO] 
+2026-01-16 05:58:02 [INFO] [2/77] Processing MSFT...
+2026-01-16 05:58:02 [DEBUG] ⏱️  Started: MSFT:price_data
+2026-01-16 05:58:05 [DEBUG] ✅ Completed: MSFT:price_data (took 3.17s)
+2026-01-16 05:58:05 [DEBUG]   Price data: ✓ (3.17s)
+2026-01-16 05:58:05 [DEBUG] ⏱️  Started: MSFT:fundamentals
+2026-01-16 05:58:05 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:58:09 [DEBUG] ✅ Completed: MSFT:fundamentals (took 3.26s)
+2026-01-16 05:58:09 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 05:58:09 [DEBUG] ⏱️  Started: MSFT:analyst
+2026-01-16 05:58:11 [DEBUG] ✅ Completed: MSFT:analyst (took 1.75s)
+2026-01-16 05:58:11 [DEBUG]   Analyst recs: ✓ (1.75s)
+2026-01-16 05:58:11 [DEBUG] ⏱️  Started: MSFT:news
+2026-01-16 05:58:12 [DEBUG] ✅ Completed: MSFT:news (took 0.49s)
+2026-01-16 05:58:12 [DEBUG]   News: 10 items (0.49s)
+2026-01-16 05:58:12 [DEBUG] ⏱️  Started: MSFT:sentiment
+2026-01-16 05:58:13 [DEBUG] ✅ Completed: MSFT:sentiment (took 1.38s)
+2026-01-16 05:58:13 [DEBUG]   Sentiment: 10 items classified (1.38s)
+2026-01-16 05:58:14 [INFO]   Total time for MSFT: 12.56s
+2026-01-16 05:58:14 [INFO] 
+2026-01-16 05:58:14 [INFO] [3/77] Processing AMZN...
+2026-01-16 05:58:14 [DEBUG] ⏱️  Started: AMZN:price_data
+2026-01-16 05:58:17 [DEBUG] ✅ Completed: AMZN:price_data (took 3.14s)
+2026-01-16 05:58:17 [DEBUG]   Price data: ✓ (3.14s)
+2026-01-16 05:58:18 [DEBUG] ⏱️  Started: AMZN:fundamentals
+2026-01-16 05:58:18 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:58:21 [DEBUG] ✅ Completed: AMZN:fundamentals (took 3.37s)
+2026-01-16 05:58:21 [DEBUG]   Fundamentals: ✓ (3.37s)
+2026-01-16 05:58:22 [DEBUG] ⏱️  Started: AMZN:analyst
+2026-01-16 05:58:24 [DEBUG] ✅ Completed: AMZN:analyst (took 1.97s)
+2026-01-16 05:58:24 [DEBUG]   Analyst recs: ✓ (1.97s)
+2026-01-16 05:58:24 [DEBUG] ⏱️  Started: AMZN:news
+2026-01-16 05:58:25 [DEBUG] ✅ Completed: AMZN:news (took 0.45s)
+2026-01-16 05:58:25 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 05:58:25 [DEBUG] ⏱️  Started: AMZN:sentiment
+2026-01-16 05:58:26 [DEBUG] ✅ Completed: AMZN:sentiment (took 1.29s)
+2026-01-16 05:58:26 [DEBUG]   Sentiment: 10 items classified (1.29s)
+2026-01-16 05:58:27 [INFO]   Total time for AMZN: 12.73s
+2026-01-16 05:58:27 [INFO] 
+2026-01-16 05:58:27 [INFO] [4/77] Processing GOOGL...
+2026-01-16 05:58:27 [DEBUG] ⏱️  Started: GOOGL:price_data
+2026-01-16 05:58:30 [DEBUG] ✅ Completed: GOOGL:price_data (took 3.05s)
+2026-01-16 05:58:30 [DEBUG]   Price data: ✓ (3.05s)
+2026-01-16 05:58:31 [DEBUG] ⏱️  Started: GOOGL:fundamentals
+2026-01-16 05:58:31 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:58:34 [DEBUG] ✅ Completed: GOOGL:fundamentals (took 3.23s)
+2026-01-16 05:58:34 [DEBUG]   Fundamentals: ✓ (3.23s)
+2026-01-16 05:58:34 [DEBUG] ⏱️  Started: GOOGL:analyst
+2026-01-16 05:58:36 [DEBUG] ✅ Completed: GOOGL:analyst (took 1.91s)
+2026-01-16 05:58:36 [DEBUG]   Analyst recs: ✓ (1.91s)
+2026-01-16 05:58:37 [DEBUG] ⏱️  Started: GOOGL:news
+2026-01-16 05:58:37 [DEBUG] ✅ Completed: GOOGL:news (took 0.45s)
+2026-01-16 05:58:37 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 05:58:37 [DEBUG] ⏱️  Started: GOOGL:sentiment
+2026-01-16 05:58:39 [DEBUG] ✅ Completed: GOOGL:sentiment (took 1.81s)
+2026-01-16 05:58:39 [DEBUG]   Sentiment: 10 items classified (1.81s)
+2026-01-16 05:58:40 [INFO]   Total time for GOOGL: 12.95s
+2026-01-16 05:58:40 [INFO] 
+2026-01-16 05:58:40 [INFO] [5/77] Processing FB...
+2026-01-16 05:58:40 [DEBUG] ⏱️  Started: FB:price_data
+2026-01-16 05:58:43 [DEBUG] ✅ Completed: FB:price_data (took 3.06s)
+2026-01-16 05:58:43 [DEBUG]   Price data: ✓ (3.06s)
+2026-01-16 05:58:44 [DEBUG] ⏱️  Started: FB:fundamentals
+2026-01-16 05:58:44 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:58:47 [DEBUG] ✅ Completed: FB:fundamentals (took 3.26s)
+2026-01-16 05:58:47 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 05:58:47 [DEBUG] ⏱️  Started: FB:analyst
+2026-01-16 05:58:51 [DEBUG] ✅ Completed: FB:analyst (took 3.41s)
+2026-01-16 05:58:51 [DEBUG]   Analyst recs: ✓ (3.41s)
+2026-01-16 05:58:51 [DEBUG] ⏱️  Started: FB:news
+2026-01-16 05:58:53 [DEBUG] ✅ Completed: FB:news (took 2.22s)
+2026-01-16 05:58:53 [DEBUG]   News: 1 items (2.22s)
+2026-01-16 05:58:53 [DEBUG] ⏱️  Started: FB:sentiment
+2026-01-16 05:58:55 [DEBUG] ✅ Completed: FB:sentiment (took 1.18s)
+2026-01-16 05:58:55 [DEBUG]   Sentiment: 1 items classified (1.18s)
+2026-01-16 05:58:56 [INFO]   Total time for FB: 15.64s
+2026-01-16 05:58:56 [INFO] 
+2026-01-16 05:58:56 [INFO] [6/77] Processing TSLA...
+2026-01-16 05:58:56 [DEBUG] ⏱️  Started: TSLA:price_data
+2026-01-16 05:58:59 [DEBUG] ✅ Completed: TSLA:price_data (took 3.21s)
+2026-01-16 05:58:59 [DEBUG]   Price data: ✓ (3.21s)
+2026-01-16 05:58:59 [DEBUG] ⏱️  Started: TSLA:fundamentals
+2026-01-16 05:58:59 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:59:03 [DEBUG] ✅ Completed: TSLA:fundamentals (took 3.41s)
+2026-01-16 05:59:03 [DEBUG]   Fundamentals: ✓ (3.41s)
+2026-01-16 05:59:03 [DEBUG] ⏱️  Started: TSLA:analyst
+2026-01-16 05:59:05 [DEBUG] ✅ Completed: TSLA:analyst (took 2.23s)
+2026-01-16 05:59:05 [DEBUG]   Analyst recs: ✓ (2.23s)
+2026-01-16 05:59:06 [DEBUG] ⏱️  Started: TSLA:news
+2026-01-16 05:59:06 [DEBUG] ✅ Completed: TSLA:news (took 0.45s)
+2026-01-16 05:59:06 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 05:59:06 [DEBUG] ⏱️  Started: TSLA:sentiment
+2026-01-16 05:59:08 [DEBUG] ✅ Completed: TSLA:sentiment (took 1.27s)
+2026-01-16 05:59:08 [DEBUG]   Sentiment: 10 items classified (1.27s)
+2026-01-16 05:59:09 [INFO]   Total time for TSLA: 13.08s
+2026-01-16 05:59:09 [INFO] 
+2026-01-16 05:59:09 [INFO] [7/77] Processing NVDA...
+2026-01-16 05:59:09 [DEBUG] ⏱️  Started: NVDA:price_data
+2026-01-16 05:59:12 [DEBUG] ✅ Completed: NVDA:price_data (took 3.30s)
+2026-01-16 05:59:12 [DEBUG]   Price data: ✓ (3.30s)
+2026-01-16 05:59:12 [DEBUG] ⏱️  Started: NVDA:fundamentals
+2026-01-16 05:59:12 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:59:16 [DEBUG] ✅ Completed: NVDA:fundamentals (took 3.56s)
+2026-01-16 05:59:16 [DEBUG]   Fundamentals: ✓ (3.56s)
+2026-01-16 05:59:17 [DEBUG] ⏱️  Started: NVDA:analyst
+2026-01-16 05:59:18 [DEBUG] ✅ Completed: NVDA:analyst (took 1.94s)
+2026-01-16 05:59:18 [DEBUG]   Analyst recs: ✓ (1.94s)
+2026-01-16 05:59:19 [DEBUG] ⏱️  Started: NVDA:news
+2026-01-16 05:59:19 [DEBUG] ✅ Completed: NVDA:news (took 0.45s)
+2026-01-16 05:59:19 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 05:59:19 [DEBUG] ⏱️  Started: NVDA:sentiment
+2026-01-16 05:59:21 [DEBUG] ✅ Completed: NVDA:sentiment (took 1.10s)
+2026-01-16 05:59:21 [DEBUG]   Sentiment: 10 items classified (1.10s)
+2026-01-16 05:59:22 [INFO]   Total time for NVDA: 12.86s
+2026-01-16 05:59:22 [INFO] 
+2026-01-16 05:59:22 [INFO] [8/77] Processing BRK.B...
+2026-01-16 05:59:22 [DEBUG] ⏱️  Started: BRK.B:price_data
+2026-01-16 05:59:24 [DEBUG] ✅ Completed: BRK.B:price_data (took 2.12s)
+2026-01-16 05:59:24 [DEBUG]   Price data: ✓ (2.12s)
+2026-01-16 05:59:24 [DEBUG] ⏱️  Started: BRK.B:fundamentals
+2026-01-16 05:59:24 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:59:27 [DEBUG] ✅ Completed: BRK.B:fundamentals (took 3.29s)
+2026-01-16 05:59:27 [DEBUG]   Fundamentals: ✓ (3.29s)
+2026-01-16 05:59:28 [DEBUG] ⏱️  Started: BRK.B:analyst
+2026-01-16 05:59:30 [DEBUG] ✅ Completed: BRK.B:analyst (took 1.74s)
+2026-01-16 05:59:30 [DEBUG]   Analyst recs: ✓ (1.74s)
+2026-01-16 05:59:30 [DEBUG] ⏱️  Started: BRK.B:news
+2026-01-16 05:59:31 [DEBUG] ✅ Completed: BRK.B:news (took 0.41s)
+2026-01-16 05:59:31 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 05:59:31 [DEBUG] ⏱️  Started: BRK.B:sentiment
+2026-01-16 05:59:32 [DEBUG] ✅ Completed: BRK.B:sentiment (took 1.22s)
+2026-01-16 05:59:32 [DEBUG]   Sentiment: 10 items classified (1.22s)
+2026-01-16 05:59:33 [INFO]   Total time for BRK.B: 11.30s
+2026-01-16 05:59:33 [INFO] 
+2026-01-16 05:59:33 [INFO] [9/77] Processing JPM...
+2026-01-16 05:59:33 [DEBUG] ⏱️  Started: JPM:price_data
+2026-01-16 05:59:36 [DEBUG] ✅ Completed: JPM:price_data (took 3.08s)
+2026-01-16 05:59:36 [DEBUG]   Price data: ✓ (3.08s)
+2026-01-16 05:59:36 [DEBUG] ⏱️  Started: JPM:fundamentals
+2026-01-16 05:59:36 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:59:40 [DEBUG] ✅ Completed: JPM:fundamentals (took 3.38s)
+2026-01-16 05:59:40 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 05:59:40 [DEBUG] ⏱️  Started: JPM:analyst
+2026-01-16 05:59:42 [DEBUG] ✅ Completed: JPM:analyst (took 1.83s)
+2026-01-16 05:59:42 [DEBUG]   Analyst recs: ✓ (1.83s)
+2026-01-16 05:59:43 [DEBUG] ⏱️  Started: JPM:news
+2026-01-16 05:59:43 [DEBUG] ✅ Completed: JPM:news (took 0.46s)
+2026-01-16 05:59:43 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 05:59:43 [DEBUG] ⏱️  Started: JPM:sentiment
+2026-01-16 05:59:44 [DEBUG] ✅ Completed: JPM:sentiment (took 1.21s)
+2026-01-16 05:59:44 [DEBUG]   Sentiment: 10 items classified (1.21s)
+2026-01-16 05:59:45 [INFO]   Total time for JPM: 12.47s
+2026-01-16 05:59:45 [INFO] 
+2026-01-16 05:59:45 [INFO] [10/77] Processing V...
+2026-01-16 05:59:45 [DEBUG] ⏱️  Started: V:price_data
+2026-01-16 05:59:49 [DEBUG] ✅ Completed: V:price_data (took 3.22s)
+2026-01-16 05:59:49 [DEBUG]   Price data: ✓ (3.22s)
+2026-01-16 05:59:49 [DEBUG] ⏱️  Started: V:fundamentals
+2026-01-16 05:59:49 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 05:59:52 [DEBUG] ✅ Completed: V:fundamentals (took 3.32s)
+2026-01-16 05:59:52 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 05:59:53 [DEBUG] ⏱️  Started: V:analyst
+2026-01-16 05:59:55 [DEBUG] ✅ Completed: V:analyst (took 1.93s)
+2026-01-16 05:59:55 [DEBUG]   Analyst recs: ✓ (1.93s)
+2026-01-16 05:59:55 [DEBUG] ⏱️  Started: V:news
+2026-01-16 05:59:56 [DEBUG] ✅ Completed: V:news (took 0.41s)
+2026-01-16 05:59:56 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 05:59:56 [DEBUG] ⏱️  Started: V:sentiment
+2026-01-16 05:59:57 [DEBUG] ✅ Completed: V:sentiment (took 1.73s)
+2026-01-16 05:59:57 [DEBUG]   Sentiment: 10 items classified (1.73s)
+2026-01-16 05:59:58 [INFO]   Total time for V: 13.12s
+2026-01-16 05:59:58 [INFO] 
+2026-01-16 05:59:58 [INFO] [11/77] Processing MA...
+2026-01-16 05:59:58 [DEBUG] ⏱️  Started: MA:price_data
+2026-01-16 06:00:05 [DEBUG] ✅ Completed: MA:price_data (took 6.72s)
+2026-01-16 06:00:05 [DEBUG]   Price data: ✓ (6.72s)
+2026-01-16 06:00:06 [DEBUG] ⏱️  Started: MA:fundamentals
+2026-01-16 06:00:06 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:00:09 [DEBUG] ✅ Completed: MA:fundamentals (took 3.41s)
+2026-01-16 06:00:09 [DEBUG]   Fundamentals: ✓ (3.41s)
+2026-01-16 06:00:10 [DEBUG] ⏱️  Started: MA:analyst
+2026-01-16 06:00:12 [DEBUG] ✅ Completed: MA:analyst (took 2.52s)
+2026-01-16 06:00:12 [DEBUG]   Analyst recs: ✓ (2.52s)
+2026-01-16 06:00:13 [DEBUG] ⏱️  Started: MA:news
+2026-01-16 06:00:13 [DEBUG] ✅ Completed: MA:news (took 0.50s)
+2026-01-16 06:00:13 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 06:00:13 [DEBUG] ⏱️  Started: MA:sentiment
+2026-01-16 06:00:14 [DEBUG] ✅ Completed: MA:sentiment (took 1.30s)
+2026-01-16 06:00:14 [DEBUG]   Sentiment: 10 items classified (1.30s)
+2026-01-16 06:00:15 [INFO]   Total time for MA: 16.95s
+2026-01-16 06:00:15 [INFO] 
+2026-01-16 06:00:15 [INFO] [12/77] Processing DIS...
+2026-01-16 06:00:15 [DEBUG] ⏱️  Started: DIS:price_data
+2026-01-16 06:00:19 [DEBUG] ✅ Completed: DIS:price_data (took 3.22s)
+2026-01-16 06:00:19 [DEBUG]   Price data: ✓ (3.22s)
+2026-01-16 06:00:19 [DEBUG] ⏱️  Started: DIS:fundamentals
+2026-01-16 06:00:19 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:00:22 [DEBUG] ✅ Completed: DIS:fundamentals (took 3.38s)
+2026-01-16 06:00:22 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:00:23 [DEBUG] ⏱️  Started: DIS:analyst
+2026-01-16 06:00:25 [DEBUG] ✅ Completed: DIS:analyst (took 1.81s)
+2026-01-16 06:00:25 [DEBUG]   Analyst recs: ✓ (1.81s)
+2026-01-16 06:00:25 [DEBUG] ⏱️  Started: DIS:news
+2026-01-16 06:00:26 [DEBUG] ✅ Completed: DIS:news (took 0.53s)
+2026-01-16 06:00:26 [DEBUG]   News: 10 items (0.53s)
+2026-01-16 06:00:26 [DEBUG] ⏱️  Started: DIS:sentiment
+2026-01-16 06:00:29 [DEBUG] ✅ Completed: DIS:sentiment (took 2.96s)
+2026-01-16 06:00:29 [DEBUG]   Sentiment: 10 items classified (2.96s)
+2026-01-16 06:00:30 [INFO]   Total time for DIS: 14.41s
+2026-01-16 06:00:30 [INFO] 
+2026-01-16 06:00:30 [INFO] [13/77] Processing NFLX...
+2026-01-16 06:00:30 [DEBUG] ⏱️  Started: NFLX:price_data
+2026-01-16 06:00:33 [DEBUG] ✅ Completed: NFLX:price_data (took 3.35s)
+2026-01-16 06:00:33 [DEBUG]   Price data: ✓ (3.35s)
+2026-01-16 06:00:34 [DEBUG] ⏱️  Started: NFLX:fundamentals
+2026-01-16 06:00:34 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:00:37 [DEBUG] ✅ Completed: NFLX:fundamentals (took 3.26s)
+2026-01-16 06:00:37 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 06:00:37 [DEBUG] ⏱️  Started: NFLX:analyst
+2026-01-16 06:00:39 [DEBUG] ✅ Completed: NFLX:analyst (took 2.04s)
+2026-01-16 06:00:39 [DEBUG]   Analyst recs: ✓ (2.04s)
+2026-01-16 06:00:40 [DEBUG] ⏱️  Started: NFLX:news
+2026-01-16 06:00:40 [DEBUG] ✅ Completed: NFLX:news (took 0.48s)
+2026-01-16 06:00:40 [DEBUG]   News: 10 items (0.48s)
+2026-01-16 06:00:40 [DEBUG] ⏱️  Started: NFLX:sentiment
+2026-01-16 06:00:42 [DEBUG] ✅ Completed: NFLX:sentiment (took 1.20s)
+2026-01-16 06:00:42 [DEBUG]   Sentiment: 10 items classified (1.20s)
+2026-01-16 06:00:43 [INFO]   Total time for NFLX: 12.83s
+2026-01-16 06:00:43 [INFO] 
+2026-01-16 06:00:43 [INFO] [14/77] Processing PYPL...
+2026-01-16 06:00:43 [DEBUG] ⏱️  Started: PYPL:price_data
+2026-01-16 06:00:46 [DEBUG] ✅ Completed: PYPL:price_data (took 3.08s)
+2026-01-16 06:00:46 [DEBUG]   Price data: ✓ (3.08s)
+2026-01-16 06:00:46 [DEBUG] ⏱️  Started: PYPL:fundamentals
+2026-01-16 06:00:46 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:00:50 [DEBUG] ✅ Completed: PYPL:fundamentals (took 3.32s)
+2026-01-16 06:00:50 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 06:00:50 [DEBUG] ⏱️  Started: PYPL:analyst
+2026-01-16 06:00:52 [DEBUG] ✅ Completed: PYPL:analyst (took 1.89s)
+2026-01-16 06:00:52 [DEBUG]   Analyst recs: ✓ (1.89s)
+2026-01-16 06:00:52 [DEBUG] ⏱️  Started: PYPL:news
+2026-01-16 06:00:53 [DEBUG] ✅ Completed: PYPL:news (took 0.50s)
+2026-01-16 06:00:53 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 06:00:53 [DEBUG] ⏱️  Started: PYPL:sentiment
+2026-01-16 06:00:54 [DEBUG] ✅ Completed: PYPL:sentiment (took 1.31s)
+2026-01-16 06:00:54 [DEBUG]   Sentiment: 10 items classified (1.31s)
+2026-01-16 06:00:55 [INFO]   Total time for PYPL: 12.61s
+2026-01-16 06:00:55 [INFO] 
+2026-01-16 06:00:55 [INFO] [15/77] Processing CSCO...
+2026-01-16 06:00:55 [DEBUG] ⏱️  Started: CSCO:price_data
+2026-01-16 06:00:58 [DEBUG] ✅ Completed: CSCO:price_data (took 3.08s)
+2026-01-16 06:00:58 [DEBUG]   Price data: ✓ (3.08s)
+2026-01-16 06:00:59 [DEBUG] ⏱️  Started: CSCO:fundamentals
+2026-01-16 06:00:59 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:01:03 [DEBUG] ✅ Completed: CSCO:fundamentals (took 4.00s)
+2026-01-16 06:01:03 [DEBUG]   Fundamentals: ✓ (4.00s)
+2026-01-16 06:01:03 [DEBUG] ⏱️  Started: CSCO:analyst
+2026-01-16 06:01:05 [DEBUG] ✅ Completed: CSCO:analyst (took 1.88s)
+2026-01-16 06:01:05 [DEBUG]   Analyst recs: ✓ (1.88s)
+2026-01-16 06:01:06 [DEBUG] ⏱️  Started: CSCO:news
+2026-01-16 06:01:06 [DEBUG] ✅ Completed: CSCO:news (took 0.39s)
+2026-01-16 06:01:06 [DEBUG]   News: 10 items (0.39s)
+2026-01-16 06:01:06 [DEBUG] ⏱️  Started: CSCO:sentiment
+2026-01-16 06:01:08 [DEBUG] ✅ Completed: CSCO:sentiment (took 1.50s)
+2026-01-16 06:01:08 [DEBUG]   Sentiment: 10 items classified (1.50s)
+2026-01-16 06:01:09 [INFO]   Total time for CSCO: 13.36s
+2026-01-16 06:01:09 [INFO] 
+2026-01-16 06:01:09 [INFO] [16/77] Processing PEP...
+2026-01-16 06:01:09 [DEBUG] ⏱️  Started: PEP:price_data
+2026-01-16 06:01:12 [DEBUG] ✅ Completed: PEP:price_data (took 3.13s)
+2026-01-16 06:01:12 [DEBUG]   Price data: ✓ (3.13s)
+2026-01-16 06:01:12 [DEBUG] ⏱️  Started: PEP:fundamentals
+2026-01-16 06:01:12 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:01:16 [DEBUG] ✅ Completed: PEP:fundamentals (took 3.28s)
+2026-01-16 06:01:16 [DEBUG]   Fundamentals: ✓ (3.28s)
+2026-01-16 06:01:16 [DEBUG] ⏱️  Started: PEP:analyst
+2026-01-16 06:01:18 [DEBUG] ✅ Completed: PEP:analyst (took 1.81s)
+2026-01-16 06:01:18 [DEBUG]   Analyst recs: ✓ (1.81s)
+2026-01-16 06:01:18 [DEBUG] ⏱️  Started: PEP:news
+2026-01-16 06:01:19 [DEBUG] ✅ Completed: PEP:news (took 0.41s)
+2026-01-16 06:01:19 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 06:01:19 [DEBUG] ⏱️  Started: PEP:sentiment
+2026-01-16 06:01:20 [DEBUG] ✅ Completed: PEP:sentiment (took 1.36s)
+2026-01-16 06:01:20 [DEBUG]   Sentiment: 10 items classified (1.36s)
+2026-01-16 06:01:21 [INFO]   Total time for PEP: 12.51s
+2026-01-16 06:01:21 [INFO] 
+2026-01-16 06:01:21 [INFO] [17/77] Processing KO...
+2026-01-16 06:01:21 [DEBUG] ⏱️  Started: KO:price_data
+2026-01-16 06:01:24 [DEBUG] ✅ Completed: KO:price_data (took 2.96s)
+2026-01-16 06:01:24 [DEBUG]   Price data: ✓ (2.96s)
+2026-01-16 06:01:25 [DEBUG] ⏱️  Started: KO:fundamentals
+2026-01-16 06:01:25 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:01:28 [DEBUG] ✅ Completed: KO:fundamentals (took 3.72s)
+2026-01-16 06:01:28 [DEBUG]   Fundamentals: ✓ (3.72s)
+2026-01-16 06:01:29 [DEBUG] ⏱️  Started: KO:analyst
+2026-01-16 06:01:31 [DEBUG] ✅ Completed: KO:analyst (took 1.75s)
+2026-01-16 06:01:31 [DEBUG]   Analyst recs: ✓ (1.75s)
+2026-01-16 06:01:31 [DEBUG] ⏱️  Started: KO:news
+2026-01-16 06:01:35 [DEBUG] ✅ Completed: KO:news (took 3.65s)
+2026-01-16 06:01:35 [DEBUG]   News: 10 items (3.65s)
+2026-01-16 06:01:35 [DEBUG] ⏱️  Started: KO:sentiment
+2026-01-16 06:01:38 [DEBUG] ✅ Completed: KO:sentiment (took 3.03s)
+2026-01-16 06:01:38 [DEBUG]   Sentiment: 10 items classified (3.03s)
+2026-01-16 06:01:39 [INFO]   Total time for KO: 17.62s
+2026-01-16 06:01:39 [INFO] 
+2026-01-16 06:01:39 [INFO] [18/77] Processing NKE...
+2026-01-16 06:01:39 [DEBUG] ⏱️  Started: NKE:price_data
+2026-01-16 06:01:42 [DEBUG] ✅ Completed: NKE:price_data (took 3.05s)
+2026-01-16 06:01:42 [DEBUG]   Price data: ✓ (3.05s)
+2026-01-16 06:01:42 [DEBUG] ⏱️  Started: NKE:fundamentals
+2026-01-16 06:01:42 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:01:46 [DEBUG] ✅ Completed: NKE:fundamentals (took 3.26s)
+2026-01-16 06:01:46 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 06:01:46 [DEBUG] ⏱️  Started: NKE:analyst
+2026-01-16 06:01:48 [DEBUG] ✅ Completed: NKE:analyst (took 1.82s)
+2026-01-16 06:01:48 [DEBUG]   Analyst recs: ✓ (1.82s)
+2026-01-16 06:01:48 [DEBUG] ⏱️  Started: NKE:news
+2026-01-16 06:01:49 [DEBUG] ✅ Completed: NKE:news (took 0.47s)
+2026-01-16 06:01:49 [DEBUG]   News: 10 items (0.47s)
+2026-01-16 06:01:49 [DEBUG] ⏱️  Started: NKE:sentiment
+2026-01-16 06:01:50 [DEBUG] ✅ Completed: NKE:sentiment (took 1.08s)
+2026-01-16 06:01:50 [DEBUG]   Sentiment: 10 items classified (1.08s)
+2026-01-16 06:01:51 [INFO]   Total time for NKE: 12.18s
+2026-01-16 06:01:51 [INFO] 
+2026-01-16 06:01:51 [INFO] [19/77] Processing ADBE...
+2026-01-16 06:01:51 [DEBUG] ⏱️  Started: ADBE:price_data
+2026-01-16 06:01:54 [DEBUG] ✅ Completed: ADBE:price_data (took 3.53s)
+2026-01-16 06:01:54 [DEBUG]   Price data: ✓ (3.53s)
+2026-01-16 06:01:55 [DEBUG] ⏱️  Started: ADBE:fundamentals
+2026-01-16 06:01:55 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:01:58 [DEBUG] ✅ Completed: ADBE:fundamentals (took 3.31s)
+2026-01-16 06:01:58 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:01:59 [DEBUG] ⏱️  Started: ADBE:analyst
+2026-01-16 06:02:01 [DEBUG] ✅ Completed: ADBE:analyst (took 1.99s)
+2026-01-16 06:02:01 [DEBUG]   Analyst recs: ✓ (1.99s)
+2026-01-16 06:02:01 [DEBUG] ⏱️  Started: ADBE:news
+2026-01-16 06:02:02 [DEBUG] ✅ Completed: ADBE:news (took 0.47s)
+2026-01-16 06:02:02 [DEBUG]   News: 10 items (0.47s)
+2026-01-16 06:02:02 [DEBUG] ⏱️  Started: ADBE:sentiment
+2026-01-16 06:02:04 [DEBUG] ✅ Completed: ADBE:sentiment (took 2.06s)
+2026-01-16 06:02:04 [DEBUG]   Sentiment: 10 items classified (2.06s)
+2026-01-16 06:02:05 [INFO]   Total time for ADBE: 13.87s
+2026-01-16 06:02:05 [INFO] 
+2026-01-16 06:02:05 [INFO] [20/77] Processing INTC...
+2026-01-16 06:02:05 [DEBUG] ⏱️  Started: INTC:price_data
+2026-01-16 06:02:08 [DEBUG] ✅ Completed: INTC:price_data (took 3.31s)
+2026-01-16 06:02:08 [DEBUG]   Price data: ✓ (3.31s)
+2026-01-16 06:02:09 [DEBUG] ⏱️  Started: INTC:fundamentals
+2026-01-16 06:02:09 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:02:13 [DEBUG] ✅ Completed: INTC:fundamentals (took 4.70s)
+2026-01-16 06:02:13 [DEBUG]   Fundamentals: ✓ (4.70s)
+2026-01-16 06:02:14 [DEBUG] ⏱️  Started: INTC:analyst
+2026-01-16 06:02:16 [DEBUG] ✅ Completed: INTC:analyst (took 1.84s)
+2026-01-16 06:02:16 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 06:02:16 [DEBUG] ⏱️  Started: INTC:news
+2026-01-16 06:02:17 [DEBUG] ✅ Completed: INTC:news (took 0.43s)
+2026-01-16 06:02:17 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:02:17 [DEBUG] ⏱️  Started: INTC:sentiment
+2026-01-16 06:02:18 [DEBUG] ✅ Completed: INTC:sentiment (took 1.43s)
+2026-01-16 06:02:18 [DEBUG]   Sentiment: 10 items classified (1.43s)
+2026-01-16 06:02:19 [INFO]   Total time for INTC: 14.23s
+2026-01-16 06:02:19 [INFO] 
+2026-01-16 06:02:19 [INFO] [21/77] Processing T...
+2026-01-16 06:02:19 [DEBUG] ⏱️  Started: T:price_data
+2026-01-16 06:02:22 [DEBUG] ✅ Completed: T:price_data (took 3.09s)
+2026-01-16 06:02:22 [DEBUG]   Price data: ✓ (3.09s)
+2026-01-16 06:02:23 [DEBUG] ⏱️  Started: T:fundamentals
+2026-01-16 06:02:23 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:02:26 [DEBUG] ✅ Completed: T:fundamentals (took 3.28s)
+2026-01-16 06:02:26 [DEBUG]   Fundamentals: ✓ (3.28s)
+2026-01-16 06:02:26 [DEBUG] ⏱️  Started: T:analyst
+2026-01-16 06:02:28 [DEBUG] ✅ Completed: T:analyst (took 1.69s)
+2026-01-16 06:02:28 [DEBUG]   Analyst recs: ✓ (1.69s)
+2026-01-16 06:02:29 [DEBUG] ⏱️  Started: T:news
+2026-01-16 06:02:29 [DEBUG] ✅ Completed: T:news (took 0.42s)
+2026-01-16 06:02:29 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:02:29 [DEBUG] ⏱️  Started: T:sentiment
+2026-01-16 06:02:31 [DEBUG] ✅ Completed: T:sentiment (took 1.74s)
+2026-01-16 06:02:31 [DEBUG]   Sentiment: 10 items classified (1.74s)
+2026-01-16 06:02:32 [INFO]   Total time for T: 12.72s
+2026-01-16 06:02:32 [INFO] 
+2026-01-16 06:02:32 [INFO] [22/77] Processing VZ...
+2026-01-16 06:02:32 [DEBUG] ⏱️  Started: VZ:price_data
+2026-01-16 06:02:35 [DEBUG] ✅ Completed: VZ:price_data (took 3.01s)
+2026-01-16 06:02:35 [DEBUG]   Price data: ✓ (3.01s)
+2026-01-16 06:02:35 [DEBUG] ⏱️  Started: VZ:fundamentals
+2026-01-16 06:02:35 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:02:39 [DEBUG] ✅ Completed: VZ:fundamentals (took 3.33s)
+2026-01-16 06:02:39 [DEBUG]   Fundamentals: ✓ (3.33s)
+2026-01-16 06:02:39 [DEBUG] ⏱️  Started: VZ:analyst
+2026-01-16 06:02:41 [DEBUG] ✅ Completed: VZ:analyst (took 1.93s)
+2026-01-16 06:02:41 [DEBUG]   Analyst recs: ✓ (1.93s)
+2026-01-16 06:02:42 [DEBUG] ⏱️  Started: VZ:news
+2026-01-16 06:02:42 [DEBUG] ✅ Completed: VZ:news (took 0.42s)
+2026-01-16 06:02:42 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:02:42 [DEBUG] ⏱️  Started: VZ:sentiment
+2026-01-16 06:02:43 [DEBUG] ✅ Completed: VZ:sentiment (took 1.37s)
+2026-01-16 06:02:43 [DEBUG]   Sentiment: 10 items classified (1.37s)
+2026-01-16 06:02:44 [INFO]   Total time for VZ: 12.57s
+2026-01-16 06:02:44 [INFO] 
+2026-01-16 06:02:44 [INFO] [23/77] Processing XOM...
+2026-01-16 06:02:44 [DEBUG] ⏱️  Started: XOM:price_data
+2026-01-16 06:02:47 [DEBUG] ✅ Completed: XOM:price_data (took 3.14s)
+2026-01-16 06:02:47 [DEBUG]   Price data: ✓ (3.14s)
+2026-01-16 06:02:48 [DEBUG] ⏱️  Started: XOM:fundamentals
+2026-01-16 06:02:48 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:02:51 [DEBUG] ✅ Completed: XOM:fundamentals (took 3.31s)
+2026-01-16 06:02:51 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:02:52 [DEBUG] ⏱️  Started: XOM:analyst
+2026-01-16 06:02:54 [DEBUG] ✅ Completed: XOM:analyst (took 1.84s)
+2026-01-16 06:02:54 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 06:02:54 [DEBUG] ⏱️  Started: XOM:news
+2026-01-16 06:02:55 [DEBUG] ✅ Completed: XOM:news (took 0.59s)
+2026-01-16 06:02:55 [DEBUG]   News: 10 items (0.59s)
+2026-01-16 06:02:55 [DEBUG] ⏱️  Started: XOM:sentiment
+2026-01-16 06:02:56 [DEBUG] ✅ Completed: XOM:sentiment (took 1.34s)
+2026-01-16 06:02:56 [DEBUG]   Sentiment: 10 items classified (1.34s)
+2026-01-16 06:02:57 [INFO]   Total time for XOM: 12.72s
+2026-01-16 06:02:57 [INFO] 
+2026-01-16 06:02:57 [INFO] [24/77] Processing CVX...
+2026-01-16 06:02:57 [DEBUG] ⏱️  Started: CVX:price_data
+2026-01-16 06:03:01 [DEBUG] ✅ Completed: CVX:price_data (took 3.72s)
+2026-01-16 06:03:01 [DEBUG]   Price data: ✓ (3.72s)
+2026-01-16 06:03:01 [DEBUG] ⏱️  Started: CVX:fundamentals
+2026-01-16 06:03:01 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:03:05 [DEBUG] ✅ Completed: CVX:fundamentals (took 3.27s)
+2026-01-16 06:03:05 [DEBUG]   Fundamentals: ✓ (3.27s)
+2026-01-16 06:03:05 [DEBUG] ⏱️  Started: CVX:analyst
+2026-01-16 06:03:09 [DEBUG] ✅ Completed: CVX:analyst (took 3.90s)
+2026-01-16 06:03:09 [DEBUG]   Analyst recs: ✓ (3.90s)
+2026-01-16 06:03:09 [DEBUG] ⏱️  Started: CVX:news
+2026-01-16 06:03:10 [DEBUG] ✅ Completed: CVX:news (took 0.45s)
+2026-01-16 06:03:10 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:03:10 [DEBUG] ⏱️  Started: CVX:sentiment
+2026-01-16 06:03:12 [DEBUG] ✅ Completed: CVX:sentiment (took 2.32s)
+2026-01-16 06:03:12 [DEBUG]   Sentiment: 10 items classified (2.32s)
+2026-01-16 06:03:13 [INFO]   Total time for CVX: 16.16s
+2026-01-16 06:03:13 [INFO] 
+2026-01-16 06:03:13 [INFO] [25/77] Processing WMT...
+2026-01-16 06:03:13 [DEBUG] ⏱️  Started: WMT:price_data
+2026-01-16 06:03:17 [DEBUG] ✅ Completed: WMT:price_data (took 3.73s)
+2026-01-16 06:03:17 [DEBUG]   Price data: ✓ (3.73s)
+2026-01-16 06:03:17 [DEBUG] ⏱️  Started: WMT:fundamentals
+2026-01-16 06:03:17 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:03:21 [DEBUG] ✅ Completed: WMT:fundamentals (took 3.52s)
+2026-01-16 06:03:21 [DEBUG]   Fundamentals: ✓ (3.52s)
+2026-01-16 06:03:21 [DEBUG] ⏱️  Started: WMT:analyst
+2026-01-16 06:03:23 [DEBUG] ✅ Completed: WMT:analyst (took 1.77s)
+2026-01-16 06:03:23 [DEBUG]   Analyst recs: ✓ (1.77s)
+2026-01-16 06:03:24 [DEBUG] ⏱️  Started: WMT:news
+2026-01-16 06:03:24 [DEBUG] ✅ Completed: WMT:news (took 0.45s)
+2026-01-16 06:03:24 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:03:24 [DEBUG] ⏱️  Started: WMT:sentiment
+2026-01-16 06:03:26 [DEBUG] ✅ Completed: WMT:sentiment (took 2.02s)
+2026-01-16 06:03:26 [DEBUG]   Sentiment: 10 items classified (2.02s)
+2026-01-16 06:03:27 [INFO]   Total time for WMT: 13.99s
+2026-01-16 06:03:27 [INFO] 
+2026-01-16 06:03:27 [INFO] [26/77] Processing COST...
+2026-01-16 06:03:27 [DEBUG] ⏱️  Started: COST:price_data
+2026-01-16 06:03:30 [DEBUG] ✅ Completed: COST:price_data (took 3.08s)
+2026-01-16 06:03:30 [DEBUG]   Price data: ✓ (3.08s)
+2026-01-16 06:03:31 [DEBUG] ⏱️  Started: COST:fundamentals
+2026-01-16 06:03:31 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:03:34 [DEBUG] ✅ Completed: COST:fundamentals (took 3.47s)
+2026-01-16 06:03:34 [DEBUG]   Fundamentals: ✓ (3.47s)
+2026-01-16 06:03:35 [DEBUG] ⏱️  Started: COST:analyst
+2026-01-16 06:03:37 [DEBUG] ✅ Completed: COST:analyst (took 2.32s)
+2026-01-16 06:03:37 [DEBUG]   Analyst recs: ✓ (2.32s)
+2026-01-16 06:03:38 [DEBUG] ⏱️  Started: COST:news
+2026-01-16 06:03:38 [DEBUG] ✅ Completed: COST:news (took 0.45s)
+2026-01-16 06:03:38 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:03:38 [DEBUG] ⏱️  Started: COST:sentiment
+2026-01-16 06:03:45 [DEBUG] ✅ Completed: COST:sentiment (took 6.81s)
+2026-01-16 06:03:45 [DEBUG]   Sentiment: 10 items classified (6.81s)
+2026-01-16 06:03:46 [INFO]   Total time for COST: 18.64s
+2026-01-16 06:03:46 [INFO] 
+2026-01-16 06:03:46 [INFO] [27/77] Processing MDT...
+2026-01-16 06:03:46 [DEBUG] ⏱️  Started: MDT:price_data
+2026-01-16 06:03:49 [DEBUG] ✅ Completed: MDT:price_data (took 3.20s)
+2026-01-16 06:03:49 [DEBUG]   Price data: ✓ (3.20s)
+2026-01-16 06:03:50 [DEBUG] ⏱️  Started: MDT:fundamentals
+2026-01-16 06:03:50 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:03:53 [DEBUG] ✅ Completed: MDT:fundamentals (took 3.91s)
+2026-01-16 06:03:53 [DEBUG]   Fundamentals: ✓ (3.91s)
+2026-01-16 06:03:54 [DEBUG] ⏱️  Started: MDT:analyst
+2026-01-16 06:03:56 [DEBUG] ✅ Completed: MDT:analyst (took 1.97s)
+2026-01-16 06:03:56 [DEBUG]   Analyst recs: ✓ (1.97s)
+2026-01-16 06:03:56 [DEBUG] ⏱️  Started: MDT:news
+2026-01-16 06:03:57 [DEBUG] ✅ Completed: MDT:news (took 0.44s)
+2026-01-16 06:03:57 [DEBUG]   News: 10 items (0.44s)
+2026-01-16 06:03:57 [DEBUG] ⏱️  Started: MDT:sentiment
+2026-01-16 06:03:58 [DEBUG] ✅ Completed: MDT:sentiment (took 1.49s)
+2026-01-16 06:03:58 [DEBUG]   Sentiment: 10 items classified (1.49s)
+2026-01-16 06:03:59 [INFO]   Total time for MDT: 13.51s
+2026-01-16 06:03:59 [INFO] 
+2026-01-16 06:03:59 [INFO] [28/77] Processing JNJ...
+2026-01-16 06:03:59 [DEBUG] ⏱️  Started: JNJ:price_data
+2026-01-16 06:04:04 [DEBUG] ✅ Completed: JNJ:price_data (took 4.52s)
+2026-01-16 06:04:04 [DEBUG]   Price data: ✓ (4.52s)
+2026-01-16 06:04:04 [DEBUG] ⏱️  Started: JNJ:fundamentals
+2026-01-16 06:04:04 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:04:08 [DEBUG] ✅ Completed: JNJ:fundamentals (took 3.29s)
+2026-01-16 06:04:08 [DEBUG]   Fundamentals: ✓ (3.29s)
+2026-01-16 06:04:08 [DEBUG] ⏱️  Started: JNJ:analyst
+2026-01-16 06:04:10 [DEBUG] ✅ Completed: JNJ:analyst (took 1.98s)
+2026-01-16 06:04:10 [DEBUG]   Analyst recs: ✓ (1.98s)
+2026-01-16 06:04:11 [DEBUG] ⏱️  Started: JNJ:news
+2026-01-16 06:04:11 [DEBUG] ✅ Completed: JNJ:news (took 0.44s)
+2026-01-16 06:04:11 [DEBUG]   News: 10 items (0.44s)
+2026-01-16 06:04:11 [DEBUG] ⏱️  Started: JNJ:sentiment
+2026-01-16 06:04:12 [DEBUG] ✅ Completed: JNJ:sentiment (took 1.33s)
+2026-01-16 06:04:12 [DEBUG]   Sentiment: 10 items classified (1.33s)
+2026-01-16 06:04:13 [INFO]   Total time for JNJ: 14.06s
+2026-01-16 06:04:13 [INFO] 
+2026-01-16 06:04:13 [INFO] [29/77] Processing PFE...
+2026-01-16 06:04:13 [DEBUG] ⏱️  Started: PFE:price_data
+2026-01-16 06:04:17 [DEBUG] ✅ Completed: PFE:price_data (took 3.42s)
+2026-01-16 06:04:17 [DEBUG]   Price data: ✓ (3.42s)
+2026-01-16 06:04:17 [DEBUG] ⏱️  Started: PFE:fundamentals
+2026-01-16 06:04:17 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:04:21 [DEBUG] ✅ Completed: PFE:fundamentals (took 3.31s)
+2026-01-16 06:04:21 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:04:21 [DEBUG] ⏱️  Started: PFE:analyst
+2026-01-16 06:04:23 [DEBUG] ✅ Completed: PFE:analyst (took 2.08s)
+2026-01-16 06:04:23 [DEBUG]   Analyst recs: ✓ (2.08s)
+2026-01-16 06:04:24 [DEBUG] ⏱️  Started: PFE:news
+2026-01-16 06:04:24 [DEBUG] ✅ Completed: PFE:news (took 0.45s)
+2026-01-16 06:04:24 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:04:24 [DEBUG] ⏱️  Started: PFE:sentiment
+2026-01-16 06:04:26 [DEBUG] ✅ Completed: PFE:sentiment (took 1.78s)
+2026-01-16 06:04:26 [DEBUG]   Sentiment: 10 items classified (1.78s)
+2026-01-16 06:04:27 [INFO]   Total time for PFE: 13.55s
+2026-01-16 06:04:27 [INFO] 
+2026-01-16 06:04:27 [INFO] [30/77] Processing MRK...
+2026-01-16 06:04:27 [DEBUG] ⏱️  Started: MRK:price_data
+2026-01-16 06:04:30 [DEBUG] ✅ Completed: MRK:price_data (took 3.17s)
+2026-01-16 06:04:30 [DEBUG]   Price data: ✓ (3.17s)
+2026-01-16 06:04:31 [DEBUG] ⏱️  Started: MRK:fundamentals
+2026-01-16 06:04:31 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:04:34 [DEBUG] ✅ Completed: MRK:fundamentals (took 3.32s)
+2026-01-16 06:04:34 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 06:04:34 [DEBUG] ⏱️  Started: MRK:analyst
+2026-01-16 06:04:36 [DEBUG] ✅ Completed: MRK:analyst (took 1.83s)
+2026-01-16 06:04:36 [DEBUG]   Analyst recs: ✓ (1.83s)
+2026-01-16 06:04:37 [DEBUG] ⏱️  Started: MRK:news
+2026-01-16 06:04:37 [DEBUG] ✅ Completed: MRK:news (took 0.46s)
+2026-01-16 06:04:37 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:04:37 [DEBUG] ⏱️  Started: MRK:sentiment
+2026-01-16 06:04:39 [DEBUG] ✅ Completed: MRK:sentiment (took 1.33s)
+2026-01-16 06:04:39 [DEBUG]   Sentiment: 10 items classified (1.33s)
+2026-01-16 06:04:40 [INFO]   Total time for MRK: 12.62s
+2026-01-16 06:04:40 [INFO] 
+2026-01-16 06:04:40 [INFO] [31/77] Processing ABBV...
+2026-01-16 06:04:40 [DEBUG] ⏱️  Started: ABBV:price_data
+2026-01-16 06:04:43 [DEBUG] ✅ Completed: ABBV:price_data (took 3.66s)
+2026-01-16 06:04:43 [DEBUG]   Price data: ✓ (3.66s)
+2026-01-16 06:04:44 [DEBUG] ⏱️  Started: ABBV:fundamentals
+2026-01-16 06:04:44 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:04:47 [DEBUG] ✅ Completed: ABBV:fundamentals (took 3.55s)
+2026-01-16 06:04:47 [DEBUG]   Fundamentals: ✓ (3.55s)
+2026-01-16 06:04:48 [DEBUG] ⏱️  Started: ABBV:analyst
+2026-01-16 06:04:50 [DEBUG] ✅ Completed: ABBV:analyst (took 1.83s)
+2026-01-16 06:04:50 [DEBUG]   Analyst recs: ✓ (1.83s)
+2026-01-16 06:04:50 [DEBUG] ⏱️  Started: ABBV:news
+2026-01-16 06:04:51 [DEBUG] ✅ Completed: ABBV:news (took 0.43s)
+2026-01-16 06:04:51 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:04:51 [DEBUG] ⏱️  Started: ABBV:sentiment
+2026-01-16 06:04:52 [DEBUG] ✅ Completed: ABBV:sentiment (took 1.52s)
+2026-01-16 06:04:52 [DEBUG]   Sentiment: 10 items classified (1.52s)
+2026-01-16 06:04:53 [INFO]   Total time for ABBV: 13.50s
+2026-01-16 06:04:53 [INFO] 
+2026-01-16 06:04:53 [INFO] [32/77] Processing TMO...
+2026-01-16 06:04:53 [DEBUG] ⏱️  Started: TMO:price_data
+2026-01-16 06:04:56 [DEBUG] ✅ Completed: TMO:price_data (took 3.14s)
+2026-01-16 06:04:56 [DEBUG]   Price data: ✓ (3.14s)
+2026-01-16 06:04:57 [DEBUG] ⏱️  Started: TMO:fundamentals
+2026-01-16 06:04:57 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:05:00 [DEBUG] ✅ Completed: TMO:fundamentals (took 3.48s)
+2026-01-16 06:05:00 [DEBUG]   Fundamentals: ✓ (3.48s)
+2026-01-16 06:05:01 [DEBUG] ⏱️  Started: TMO:analyst
+2026-01-16 06:05:03 [DEBUG] ✅ Completed: TMO:analyst (took 2.44s)
+2026-01-16 06:05:03 [DEBUG]   Analyst recs: ✓ (2.44s)
+2026-01-16 06:05:04 [DEBUG] ⏱️  Started: TMO:news
+2026-01-16 06:05:04 [DEBUG] ✅ Completed: TMO:news (took 0.45s)
+2026-01-16 06:05:04 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:05:04 [DEBUG] ⏱️  Started: TMO:sentiment
+2026-01-16 06:05:05 [DEBUG] ✅ Completed: TMO:sentiment (took 1.20s)
+2026-01-16 06:05:05 [DEBUG]   Sentiment: 10 items classified (1.20s)
+2026-01-16 06:05:06 [INFO]   Total time for TMO: 13.21s
+2026-01-16 06:05:06 [INFO] 
+2026-01-16 06:05:06 [INFO] [33/77] Processing AMGN...
+2026-01-16 06:05:06 [DEBUG] ⏱️  Started: AMGN:price_data
+2026-01-16 06:05:10 [DEBUG] ✅ Completed: AMGN:price_data (took 3.31s)
+2026-01-16 06:05:10 [DEBUG]   Price data: ✓ (3.31s)
+2026-01-16 06:05:10 [DEBUG] ⏱️  Started: AMGN:fundamentals
+2026-01-16 06:05:10 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:05:14 [DEBUG] ✅ Completed: AMGN:fundamentals (took 3.79s)
+2026-01-16 06:05:14 [DEBUG]   Fundamentals: ✓ (3.79s)
+2026-01-16 06:05:14 [DEBUG] ⏱️  Started: AMGN:analyst
+2026-01-16 06:05:17 [DEBUG] ✅ Completed: AMGN:analyst (took 2.87s)
+2026-01-16 06:05:17 [DEBUG]   Analyst recs: ✓ (2.87s)
+2026-01-16 06:05:18 [DEBUG] ⏱️  Started: AMGN:news
+2026-01-16 06:05:18 [DEBUG] ✅ Completed: AMGN:news (took 0.50s)
+2026-01-16 06:05:18 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 06:05:18 [DEBUG] ⏱️  Started: AMGN:sentiment
+2026-01-16 06:05:21 [DEBUG] ✅ Completed: AMGN:sentiment (took 2.29s)
+2026-01-16 06:05:21 [DEBUG]   Sentiment: 10 items classified (2.29s)
+2026-01-16 06:05:22 [INFO]   Total time for AMGN: 15.27s
+2026-01-16 06:05:22 [INFO] 
+2026-01-16 06:05:22 [INFO] [34/77] Processing LMT...
+2026-01-16 06:05:22 [DEBUG] ⏱️  Started: LMT:price_data
+2026-01-16 06:05:26 [DEBUG] ✅ Completed: LMT:price_data (took 3.94s)
+2026-01-16 06:05:26 [DEBUG]   Price data: ✓ (3.94s)
+2026-01-16 06:05:26 [DEBUG] ⏱️  Started: LMT:fundamentals
+2026-01-16 06:05:26 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:05:29 [DEBUG] ✅ Completed: LMT:fundamentals (took 3.48s)
+2026-01-16 06:05:29 [DEBUG]   Fundamentals: ✓ (3.48s)
+2026-01-16 06:05:30 [DEBUG] ⏱️  Started: LMT:analyst
+2026-01-16 06:05:32 [DEBUG] ✅ Completed: LMT:analyst (took 1.86s)
+2026-01-16 06:05:32 [DEBUG]   Analyst recs: ✓ (1.86s)
+2026-01-16 06:05:32 [DEBUG] ⏱️  Started: LMT:news
+2026-01-16 06:05:33 [DEBUG] ✅ Completed: LMT:news (took 0.40s)
+2026-01-16 06:05:33 [DEBUG]   News: 10 items (0.40s)
+2026-01-16 06:05:33 [DEBUG] ⏱️  Started: LMT:sentiment
+2026-01-16 06:05:34 [DEBUG] ✅ Completed: LMT:sentiment (took 1.46s)
+2026-01-16 06:05:34 [DEBUG]   Sentiment: 10 items classified (1.46s)
+2026-01-16 06:05:35 [INFO]   Total time for LMT: 13.65s
+2026-01-16 06:05:35 [INFO] 
+2026-01-16 06:05:35 [INFO] [35/77] Processing BA...
+2026-01-16 06:05:35 [DEBUG] ⏱️  Started: BA:price_data
+2026-01-16 06:05:38 [DEBUG] ✅ Completed: BA:price_data (took 3.00s)
+2026-01-16 06:05:38 [DEBUG]   Price data: ✓ (3.00s)
+2026-01-16 06:05:39 [DEBUG] ⏱️  Started: BA:fundamentals
+2026-01-16 06:05:39 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:05:42 [DEBUG] ✅ Completed: BA:fundamentals (took 3.38s)
+2026-01-16 06:05:42 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:05:43 [DEBUG] ⏱️  Started: BA:analyst
+2026-01-16 06:05:45 [DEBUG] ✅ Completed: BA:analyst (took 2.19s)
+2026-01-16 06:05:45 [DEBUG]   Analyst recs: ✓ (2.19s)
+2026-01-16 06:05:45 [DEBUG] ⏱️  Started: BA:news
+2026-01-16 06:05:46 [DEBUG] ✅ Completed: BA:news (took 0.48s)
+2026-01-16 06:05:46 [DEBUG]   News: 10 items (0.48s)
+2026-01-16 06:05:46 [DEBUG] ⏱️  Started: BA:sentiment
+2026-01-16 06:05:48 [DEBUG] ✅ Completed: BA:sentiment (took 2.51s)
+2026-01-16 06:05:48 [DEBUG]   Sentiment: 10 items classified (2.51s)
+2026-01-16 06:05:49 [INFO]   Total time for BA: 14.06s
+2026-01-16 06:05:49 [INFO] 
+2026-01-16 06:05:49 [INFO] [36/77] Processing CAT...
+2026-01-16 06:05:49 [DEBUG] ⏱️  Started: CAT:price_data
+2026-01-16 06:05:52 [DEBUG] ✅ Completed: CAT:price_data (took 3.11s)
+2026-01-16 06:05:52 [DEBUG]   Price data: ✓ (3.11s)
+2026-01-16 06:05:53 [DEBUG] ⏱️  Started: CAT:fundamentals
+2026-01-16 06:05:53 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:05:57 [DEBUG] ✅ Completed: CAT:fundamentals (took 3.63s)
+2026-01-16 06:05:57 [DEBUG]   Fundamentals: ✓ (3.63s)
+2026-01-16 06:05:57 [DEBUG] ⏱️  Started: CAT:analyst
+2026-01-16 06:05:59 [DEBUG] ✅ Completed: CAT:analyst (took 1.79s)
+2026-01-16 06:05:59 [DEBUG]   Analyst recs: ✓ (1.79s)
+2026-01-16 06:05:59 [DEBUG] ⏱️  Started: CAT:news
+2026-01-16 06:06:00 [DEBUG] ✅ Completed: CAT:news (took 0.41s)
+2026-01-16 06:06:00 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 06:06:00 [DEBUG] ⏱️  Started: CAT:sentiment
+2026-01-16 06:06:02 [DEBUG] ✅ Completed: CAT:sentiment (took 2.53s)
+2026-01-16 06:06:02 [DEBUG]   Sentiment: 10 items classified (2.53s)
+2026-01-16 06:06:03 [INFO]   Total time for CAT: 13.98s
+2026-01-16 06:06:03 [INFO] 
+2026-01-16 06:06:03 [INFO] [37/77] Processing DE...
+2026-01-16 06:06:03 [DEBUG] ⏱️  Started: DE:price_data
+2026-01-16 06:06:07 [DEBUG] ✅ Completed: DE:price_data (took 3.27s)
+2026-01-16 06:06:07 [DEBUG]   Price data: ✓ (3.27s)
+2026-01-16 06:06:07 [DEBUG] ⏱️  Started: DE:fundamentals
+2026-01-16 06:06:07 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:06:10 [DEBUG] ✅ Completed: DE:fundamentals (took 3.38s)
+2026-01-16 06:06:10 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:06:11 [DEBUG] ⏱️  Started: DE:analyst
+2026-01-16 06:06:13 [DEBUG] ✅ Completed: DE:analyst (took 1.84s)
+2026-01-16 06:06:13 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 06:06:13 [DEBUG] ⏱️  Started: DE:news
+2026-01-16 06:06:14 [DEBUG] ✅ Completed: DE:news (took 0.42s)
+2026-01-16 06:06:14 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:06:14 [DEBUG] ⏱️  Started: DE:sentiment
+2026-01-16 06:06:15 [DEBUG] ✅ Completed: DE:sentiment (took 1.33s)
+2026-01-16 06:06:15 [DEBUG]   Sentiment: 10 items classified (1.33s)
+2026-01-16 06:06:16 [INFO]   Total time for DE: 12.75s
+2026-01-16 06:06:16 [INFO] 
+2026-01-16 06:06:16 [INFO] [38/77] Processing UPS...
+2026-01-16 06:06:16 [DEBUG] ⏱️  Started: UPS:price_data
+2026-01-16 06:06:19 [DEBUG] ✅ Completed: UPS:price_data (took 3.10s)
+2026-01-16 06:06:19 [DEBUG]   Price data: ✓ (3.10s)
+2026-01-16 06:06:20 [DEBUG] ⏱️  Started: UPS:fundamentals
+2026-01-16 06:06:20 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:06:23 [DEBUG] ✅ Completed: UPS:fundamentals (took 3.33s)
+2026-01-16 06:06:23 [DEBUG]   Fundamentals: ✓ (3.33s)
+2026-01-16 06:06:23 [DEBUG] ⏱️  Started: UPS:analyst
+2026-01-16 06:06:25 [DEBUG] ✅ Completed: UPS:analyst (took 1.80s)
+2026-01-16 06:06:25 [DEBUG]   Analyst recs: ✓ (1.80s)
+2026-01-16 06:06:26 [DEBUG] ⏱️  Started: UPS:news
+2026-01-16 06:06:26 [DEBUG] ✅ Completed: UPS:news (took 0.45s)
+2026-01-16 06:06:26 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:06:26 [DEBUG] ⏱️  Started: UPS:sentiment
+2026-01-16 06:06:28 [DEBUG] ✅ Completed: UPS:sentiment (took 1.74s)
+2026-01-16 06:06:28 [DEBUG]   Sentiment: 10 items classified (1.74s)
+2026-01-16 06:06:29 [INFO]   Total time for UPS: 12.92s
+2026-01-16 06:06:29 [INFO] 
+2026-01-16 06:06:29 [INFO] [39/77] Processing FDX...
+2026-01-16 06:06:29 [DEBUG] ⏱️  Started: FDX:price_data
+2026-01-16 06:06:32 [DEBUG] ✅ Completed: FDX:price_data (took 3.13s)
+2026-01-16 06:06:32 [DEBUG]   Price data: ✓ (3.13s)
+2026-01-16 06:06:33 [DEBUG] ⏱️  Started: FDX:fundamentals
+2026-01-16 06:06:33 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:06:36 [DEBUG] ✅ Completed: FDX:fundamentals (took 3.31s)
+2026-01-16 06:06:36 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:06:36 [DEBUG] ⏱️  Started: FDX:analyst
+2026-01-16 06:06:38 [DEBUG] ✅ Completed: FDX:analyst (took 1.98s)
+2026-01-16 06:06:38 [DEBUG]   Analyst recs: ✓ (1.98s)
+2026-01-16 06:06:39 [DEBUG] ⏱️  Started: FDX:news
+2026-01-16 06:06:39 [DEBUG] ✅ Completed: FDX:news (took 0.48s)
+2026-01-16 06:06:39 [DEBUG]   News: 10 items (0.48s)
+2026-01-16 06:06:39 [DEBUG] ⏱️  Started: FDX:sentiment
+2026-01-16 06:06:41 [DEBUG] ✅ Completed: FDX:sentiment (took 1.70s)
+2026-01-16 06:06:41 [DEBUG]   Sentiment: 10 items classified (1.70s)
+2026-01-16 06:06:42 [INFO]   Total time for FDX: 13.10s
+2026-01-16 06:06:42 [INFO] 
+2026-01-16 06:06:42 [INFO] [40/77] Processing IBM...
+2026-01-16 06:06:42 [DEBUG] ⏱️  Started: IBM:price_data
+2026-01-16 06:06:45 [DEBUG] ✅ Completed: IBM:price_data (took 3.34s)
+2026-01-16 06:06:45 [DEBUG]   Price data: ✓ (3.34s)
+2026-01-16 06:06:46 [DEBUG] ⏱️  Started: IBM:fundamentals
+2026-01-16 06:06:46 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:06:49 [DEBUG] ✅ Completed: IBM:fundamentals (took 3.32s)
+2026-01-16 06:06:49 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 06:06:50 [DEBUG] ⏱️  Started: IBM:analyst
+2026-01-16 06:06:51 [DEBUG] ✅ Completed: IBM:analyst (took 1.76s)
+2026-01-16 06:06:51 [DEBUG]   Analyst recs: ✓ (1.76s)
+2026-01-16 06:06:52 [DEBUG] ⏱️  Started: IBM:news
+2026-01-16 06:06:52 [DEBUG] ✅ Completed: IBM:news (took 0.44s)
+2026-01-16 06:06:52 [DEBUG]   News: 10 items (0.44s)
+2026-01-16 06:06:52 [DEBUG] ⏱️  Started: IBM:sentiment
+2026-01-16 06:06:54 [DEBUG] ✅ Completed: IBM:sentiment (took 1.76s)
+2026-01-16 06:06:54 [DEBUG]   Sentiment: 10 items classified (1.76s)
+2026-01-16 06:06:55 [INFO]   Total time for IBM: 13.14s
+2026-01-16 06:06:55 [INFO] 
+2026-01-16 06:06:55 [INFO] [41/77] Processing ORCL...
+2026-01-16 06:06:55 [DEBUG] ⏱️  Started: ORCL:price_data
+2026-01-16 06:06:58 [DEBUG] ✅ Completed: ORCL:price_data (took 3.10s)
+2026-01-16 06:06:58 [DEBUG]   Price data: ✓ (3.10s)
+2026-01-16 06:06:59 [DEBUG] ⏱️  Started: ORCL:fundamentals
+2026-01-16 06:06:59 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:07:02 [DEBUG] ✅ Completed: ORCL:fundamentals (took 3.38s)
+2026-01-16 06:07:02 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:07:03 [DEBUG] ⏱️  Started: ORCL:analyst
+2026-01-16 06:07:05 [DEBUG] ✅ Completed: ORCL:analyst (took 1.92s)
+2026-01-16 06:07:05 [DEBUG]   Analyst recs: ✓ (1.92s)
+2026-01-16 06:07:05 [DEBUG] ⏱️  Started: ORCL:news
+2026-01-16 06:07:06 [DEBUG] ✅ Completed: ORCL:news (took 0.51s)
+2026-01-16 06:07:06 [DEBUG]   News: 10 items (0.51s)
+2026-01-16 06:07:06 [DEBUG] ⏱️  Started: ORCL:sentiment
+2026-01-16 06:07:07 [DEBUG] ✅ Completed: ORCL:sentiment (took 1.19s)
+2026-01-16 06:07:07 [DEBUG]   Sentiment: 10 items classified (1.19s)
+2026-01-16 06:07:08 [INFO]   Total time for ORCL: 12.61s
+2026-01-16 06:07:08 [INFO] 
+2026-01-16 06:07:08 [INFO] [42/77] Processing NOW...
+2026-01-16 06:07:08 [DEBUG] ⏱️  Started: NOW:price_data
+2026-01-16 06:07:11 [DEBUG] ✅ Completed: NOW:price_data (took 3.11s)
+2026-01-16 06:07:11 [DEBUG]   Price data: ✓ (3.11s)
+2026-01-16 06:07:11 [DEBUG] ⏱️  Started: NOW:fundamentals
+2026-01-16 06:07:11 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:07:15 [DEBUG] ✅ Completed: NOW:fundamentals (took 3.30s)
+2026-01-16 06:07:15 [DEBUG]   Fundamentals: ✓ (3.30s)
+2026-01-16 06:07:15 [DEBUG] ⏱️  Started: NOW:analyst
+2026-01-16 06:07:17 [DEBUG] ✅ Completed: NOW:analyst (took 1.98s)
+2026-01-16 06:07:17 [DEBUG]   Analyst recs: ✓ (1.98s)
+2026-01-16 06:07:18 [DEBUG] ⏱️  Started: NOW:news
+2026-01-16 06:07:18 [DEBUG] ✅ Completed: NOW:news (took 0.45s)
+2026-01-16 06:07:18 [DEBUG]   News: 10 items (0.45s)
+2026-01-16 06:07:18 [DEBUG] ⏱️  Started: NOW:sentiment
+2026-01-16 06:07:22 [DEBUG] ✅ Completed: NOW:sentiment (took 3.53s)
+2026-01-16 06:07:22 [DEBUG]   Sentiment: 10 items classified (3.53s)
+2026-01-16 06:07:23 [INFO]   Total time for NOW: 14.88s
+2026-01-16 06:07:23 [INFO] 
+2026-01-16 06:07:23 [INFO] [43/77] Processing CRM...
+2026-01-16 06:07:23 [DEBUG] ⏱️  Started: CRM:price_data
+2026-01-16 06:07:26 [DEBUG] ✅ Completed: CRM:price_data (took 3.05s)
+2026-01-16 06:07:26 [DEBUG]   Price data: ✓ (3.05s)
+2026-01-16 06:07:26 [DEBUG] ⏱️  Started: CRM:fundamentals
+2026-01-16 06:07:26 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:07:29 [DEBUG] ✅ Completed: CRM:fundamentals (took 3.28s)
+2026-01-16 06:07:29 [DEBUG]   Fundamentals: ✓ (3.28s)
+2026-01-16 06:07:30 [DEBUG] ⏱️  Started: CRM:analyst
+2026-01-16 06:07:32 [DEBUG] ✅ Completed: CRM:analyst (took 1.79s)
+2026-01-16 06:07:32 [DEBUG]   Analyst recs: ✓ (1.79s)
+2026-01-16 06:07:32 [DEBUG] ⏱️  Started: CRM:news
+2026-01-16 06:07:33 [DEBUG] ✅ Completed: CRM:news (took 0.43s)
+2026-01-16 06:07:33 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:07:33 [DEBUG] ⏱️  Started: CRM:sentiment
+2026-01-16 06:07:34 [DEBUG] ✅ Completed: CRM:sentiment (took 1.26s)
+2026-01-16 06:07:34 [DEBUG]   Sentiment: 10 items classified (1.26s)
+2026-01-16 06:07:35 [INFO]   Total time for CRM: 12.32s
+2026-01-16 06:07:35 [INFO] 
+2026-01-16 06:07:35 [INFO] [44/77] Processing SNAP...
+2026-01-16 06:07:35 [DEBUG] ⏱️  Started: SNAP:price_data
+2026-01-16 06:07:38 [DEBUG] ✅ Completed: SNAP:price_data (took 3.12s)
+2026-01-16 06:07:38 [DEBUG]   Price data: ✓ (3.12s)
+2026-01-16 06:07:39 [DEBUG] ⏱️  Started: SNAP:fundamentals
+2026-01-16 06:07:39 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:07:42 [DEBUG] ✅ Completed: SNAP:fundamentals (took 3.38s)
+2026-01-16 06:07:42 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:07:42 [DEBUG] ⏱️  Started: SNAP:analyst
+2026-01-16 06:07:44 [DEBUG] ✅ Completed: SNAP:analyst (took 1.84s)
+2026-01-16 06:07:44 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 06:07:45 [DEBUG] ⏱️  Started: SNAP:news
+2026-01-16 06:07:46 [DEBUG] ✅ Completed: SNAP:news (took 0.92s)
+2026-01-16 06:07:46 [DEBUG]   News: 10 items (0.92s)
+2026-01-16 06:07:46 [DEBUG] ⏱️  Started: SNAP:sentiment
+2026-01-16 06:07:47 [DEBUG] ✅ Completed: SNAP:sentiment (took 1.16s)
+2026-01-16 06:07:47 [DEBUG]   Sentiment: 10 items classified (1.16s)
+2026-01-16 06:07:48 [INFO]   Total time for SNAP: 12.93s
+2026-01-16 06:07:48 [INFO] 
+2026-01-16 06:07:48 [INFO] [45/77] Processing TWTR...
+2026-01-16 06:07:48 [DEBUG] ⏱️  Started: TWTR:price_data
+2026-01-16 06:07:51 [DEBUG] ✅ Completed: TWTR:price_data (took 2.93s)
+2026-01-16 06:07:51 [DEBUG]   Price data: ✓ (2.93s)
+2026-01-16 06:07:51 [DEBUG] ⏱️  Started: TWTR:fundamentals
+2026-01-16 06:07:51 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:07:55 [DEBUG] ✅ Completed: TWTR:fundamentals (took 3.73s)
+2026-01-16 06:07:55 [DEBUG]   Fundamentals: ✓ (3.73s)
+2026-01-16 06:07:56 [DEBUG] ⏱️  Started: TWTR:analyst
+2026-01-16 06:07:57 [DEBUG] ✅ Completed: TWTR:analyst (took 1.77s)
+2026-01-16 06:07:57 [DEBUG]   Analyst recs: ✓ (1.77s)
+2026-01-16 06:07:58 [DEBUG] ⏱️  Started: TWTR:news
+2026-01-16 06:08:00 [DEBUG] ✅ Completed: TWTR:news (took 2.30s)
+2026-01-16 06:08:00 [DEBUG]   News: 0 items (2.30s)
+2026-01-16 06:08:01 [INFO]   Total time for TWTR: 12.73s
+2026-01-16 06:08:01 [INFO] 
+2026-01-16 06:08:01 [INFO] [46/77] Processing SQ...
+2026-01-16 06:08:01 [DEBUG] ⏱️  Started: SQ:price_data
+2026-01-16 06:08:04 [DEBUG] ✅ Completed: SQ:price_data (took 3.00s)
+2026-01-16 06:08:04 [DEBUG]   Price data: ✓ (3.00s)
+2026-01-16 06:08:04 [DEBUG] ⏱️  Started: SQ:fundamentals
+2026-01-16 06:08:04 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:08:07 [DEBUG] ✅ Completed: SQ:fundamentals (took 3.32s)
+2026-01-16 06:08:07 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 06:08:08 [DEBUG] ⏱️  Started: SQ:analyst
+2026-01-16 06:08:12 [DEBUG] ✅ Completed: SQ:analyst (took 4.07s)
+2026-01-16 06:08:12 [DEBUG]   Analyst recs: ✓ (4.07s)
+2026-01-16 06:08:13 [DEBUG] ⏱️  Started: SQ:news
+2026-01-16 06:08:13 [DEBUG] ✅ Completed: SQ:news (took 0.93s)
+2026-01-16 06:08:13 [DEBUG]   News: 10 items (0.93s)
+2026-01-16 06:08:13 [DEBUG] ⏱️  Started: SQ:sentiment
+2026-01-16 06:08:15 [DEBUG] ✅ Completed: SQ:sentiment (took 1.07s)
+2026-01-16 06:08:15 [DEBUG]   Sentiment: 10 items classified (1.07s)
+2026-01-16 06:08:16 [INFO]   Total time for SQ: 14.91s
+2026-01-16 06:08:16 [INFO] 
+2026-01-16 06:08:16 [INFO] [47/77] Processing ZM...
+2026-01-16 06:08:16 [DEBUG] ⏱️  Started: ZM:price_data
+2026-01-16 06:08:19 [DEBUG] ✅ Completed: ZM:price_data (took 3.48s)
+2026-01-16 06:08:19 [DEBUG]   Price data: ✓ (3.48s)
+2026-01-16 06:08:20 [DEBUG] ⏱️  Started: ZM:fundamentals
+2026-01-16 06:08:20 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:08:23 [DEBUG] ✅ Completed: ZM:fundamentals (took 3.27s)
+2026-01-16 06:08:23 [DEBUG]   Fundamentals: ✓ (3.27s)
+2026-01-16 06:08:23 [DEBUG] ⏱️  Started: ZM:analyst
+2026-01-16 06:08:25 [DEBUG] ✅ Completed: ZM:analyst (took 1.81s)
+2026-01-16 06:08:25 [DEBUG]   Analyst recs: ✓ (1.81s)
+2026-01-16 06:08:26 [DEBUG] ⏱️  Started: ZM:news
+2026-01-16 06:08:26 [DEBUG] ✅ Completed: ZM:news (took 0.87s)
+2026-01-16 06:08:26 [DEBUG]   News: 10 items (0.87s)
+2026-01-16 06:08:26 [DEBUG] ⏱️  Started: ZM:sentiment
+2026-01-16 06:08:28 [DEBUG] ✅ Completed: ZM:sentiment (took 1.35s)
+2026-01-16 06:08:28 [DEBUG]   Sentiment: 10 items classified (1.35s)
+2026-01-16 06:08:29 [INFO]   Total time for ZM: 13.28s
+2026-01-16 06:08:29 [INFO] 
+2026-01-16 06:08:29 [INFO] [48/77] Processing DOCU...
+2026-01-16 06:08:29 [DEBUG] ⏱️  Started: DOCU:price_data
+2026-01-16 06:08:32 [DEBUG] ✅ Completed: DOCU:price_data (took 3.13s)
+2026-01-16 06:08:32 [DEBUG]   Price data: ✓ (3.13s)
+2026-01-16 06:08:32 [DEBUG] ⏱️  Started: DOCU:fundamentals
+2026-01-16 06:08:32 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:08:36 [DEBUG] ✅ Completed: DOCU:fundamentals (took 3.53s)
+2026-01-16 06:08:36 [DEBUG]   Fundamentals: ✓ (3.53s)
+2026-01-16 06:08:36 [DEBUG] ⏱️  Started: DOCU:analyst
+2026-01-16 06:08:38 [DEBUG] ✅ Completed: DOCU:analyst (took 1.86s)
+2026-01-16 06:08:38 [DEBUG]   Analyst recs: ✓ (1.86s)
+2026-01-16 06:08:39 [DEBUG] ⏱️  Started: DOCU:news
+2026-01-16 06:08:39 [DEBUG] ✅ Completed: DOCU:news (took 0.41s)
+2026-01-16 06:08:39 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 06:08:39 [DEBUG] ⏱️  Started: DOCU:sentiment
+2026-01-16 06:08:41 [DEBUG] ✅ Completed: DOCU:sentiment (took 1.36s)
+2026-01-16 06:08:41 [DEBUG]   Sentiment: 10 items classified (1.36s)
+2026-01-16 06:08:42 [INFO]   Total time for DOCU: 12.80s
+2026-01-16 06:08:42 [INFO] 
+2026-01-16 06:08:42 [INFO] [49/77] Processing FISV...
+2026-01-16 06:08:42 [DEBUG] ⏱️  Started: FISV:price_data
+2026-01-16 06:08:45 [DEBUG] ✅ Completed: FISV:price_data (took 3.26s)
+2026-01-16 06:08:45 [DEBUG]   Price data: ✓ (3.26s)
+2026-01-16 06:08:45 [DEBUG] ⏱️  Started: FISV:fundamentals
+2026-01-16 06:08:45 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:08:49 [DEBUG] ✅ Completed: FISV:fundamentals (took 3.38s)
+2026-01-16 06:08:49 [DEBUG]   Fundamentals: ✓ (3.38s)
+2026-01-16 06:08:49 [DEBUG] ⏱️  Started: FISV:analyst
+2026-01-16 06:08:51 [DEBUG] ✅ Completed: FISV:analyst (took 1.84s)
+2026-01-16 06:08:51 [DEBUG]   Analyst recs: ✓ (1.84s)
+2026-01-16 06:08:52 [DEBUG] ⏱️  Started: FISV:news
+2026-01-16 06:08:52 [DEBUG] ✅ Completed: FISV:news (took 0.46s)
+2026-01-16 06:08:52 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:08:52 [DEBUG] ⏱️  Started: FISV:sentiment
+2026-01-16 06:08:53 [DEBUG] ✅ Completed: FISV:sentiment (took 1.38s)
+2026-01-16 06:08:53 [DEBUG]   Sentiment: 10 items classified (1.38s)
+2026-01-16 06:08:54 [INFO]   Total time for FISV: 12.83s
+2026-01-16 06:08:54 [INFO] 
+2026-01-16 06:08:54 [INFO] [50/77] Processing ATVI...
+2026-01-16 06:08:54 [DEBUG] ⏱️  Started: ATVI:price_data
+2026-01-16 06:08:57 [DEBUG] ✅ Completed: ATVI:price_data (took 3.02s)
+2026-01-16 06:08:57 [DEBUG]   Price data: ✓ (3.02s)
+2026-01-16 06:08:58 [DEBUG] ⏱️  Started: ATVI:fundamentals
+2026-01-16 06:08:58 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:09:02 [DEBUG] ✅ Completed: ATVI:fundamentals (took 3.67s)
+2026-01-16 06:09:02 [DEBUG]   Fundamentals: ✓ (3.67s)
+2026-01-16 06:09:02 [DEBUG] ⏱️  Started: ATVI:analyst
+2026-01-16 06:09:04 [DEBUG] ✅ Completed: ATVI:analyst (took 1.92s)
+2026-01-16 06:09:04 [DEBUG]   Analyst recs: ✓ (1.92s)
+2026-01-16 06:09:05 [DEBUG] ⏱️  Started: ATVI:news
+2026-01-16 06:09:07 [DEBUG] ✅ Completed: ATVI:news (took 2.32s)
+2026-01-16 06:09:07 [DEBUG]   News: 0 items (2.32s)
+2026-01-16 06:09:07 [INFO]   Total time for ATVI: 12.93s
+2026-01-16 06:09:07 [INFO] 
+2026-01-16 06:09:07 [INFO] [51/77] Processing EA...
+2026-01-16 06:09:07 [DEBUG] ⏱️  Started: EA:price_data
+2026-01-16 06:09:12 [DEBUG] ✅ Completed: EA:price_data (took 4.21s)
+2026-01-16 06:09:12 [DEBUG]   Price data: ✓ (4.21s)
+2026-01-16 06:09:12 [DEBUG] ⏱️  Started: EA:fundamentals
+2026-01-16 06:09:12 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:09:15 [DEBUG] ✅ Completed: EA:fundamentals (took 3.29s)
+2026-01-16 06:09:15 [DEBUG]   Fundamentals: ✓ (3.29s)
+2026-01-16 06:09:16 [DEBUG] ⏱️  Started: EA:analyst
+2026-01-16 06:09:18 [DEBUG] ✅ Completed: EA:analyst (took 1.88s)
+2026-01-16 06:09:18 [DEBUG]   Analyst recs: ✓ (1.88s)
+2026-01-16 06:09:18 [DEBUG] ⏱️  Started: EA:news
+2026-01-16 06:09:19 [DEBUG] ✅ Completed: EA:news (took 0.43s)
+2026-01-16 06:09:19 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:09:19 [DEBUG] ⏱️  Started: EA:sentiment
+2026-01-16 06:09:20 [DEBUG] ✅ Completed: EA:sentiment (took 1.06s)
+2026-01-16 06:09:20 [DEBUG]   Sentiment: 10 items classified (1.06s)
+2026-01-16 06:09:21 [INFO]   Total time for EA: 13.37s
+2026-01-16 06:09:21 [INFO] 
+2026-01-16 06:09:21 [INFO] [52/77] Processing TTWO...
+2026-01-16 06:09:21 [DEBUG] ⏱️  Started: TTWO:price_data
+2026-01-16 06:09:24 [DEBUG] ✅ Completed: TTWO:price_data (took 2.99s)
+2026-01-16 06:09:24 [DEBUG]   Price data: ✓ (2.99s)
+2026-01-16 06:09:24 [DEBUG] ⏱️  Started: TTWO:fundamentals
+2026-01-16 06:09:24 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:09:28 [DEBUG] ✅ Completed: TTWO:fundamentals (took 3.26s)
+2026-01-16 06:09:28 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 06:09:28 [DEBUG] ⏱️  Started: TTWO:analyst
+2026-01-16 06:09:30 [DEBUG] ✅ Completed: TTWO:analyst (took 1.92s)
+2026-01-16 06:09:30 [DEBUG]   Analyst recs: ✓ (1.92s)
+2026-01-16 06:09:30 [DEBUG] ⏱️  Started: TTWO:news
+2026-01-16 06:09:31 [DEBUG] ✅ Completed: TTWO:news (took 0.47s)
+2026-01-16 06:09:31 [DEBUG]   News: 10 items (0.47s)
+2026-01-16 06:09:31 [DEBUG] ⏱️  Started: TTWO:sentiment
+2026-01-16 06:09:33 [DEBUG] ✅ Completed: TTWO:sentiment (took 1.60s)
+2026-01-16 06:09:33 [DEBUG]   Sentiment: 10 items classified (1.60s)
+2026-01-16 06:09:34 [INFO]   Total time for TTWO: 12.75s
+2026-01-16 06:09:34 [INFO] 
+2026-01-16 06:09:34 [INFO] [53/77] Processing LRCX...
+2026-01-16 06:09:34 [DEBUG] ⏱️  Started: LRCX:price_data
+2026-01-16 06:09:37 [DEBUG] ✅ Completed: LRCX:price_data (took 3.24s)
+2026-01-16 06:09:37 [DEBUG]   Price data: ✓ (3.24s)
+2026-01-16 06:09:37 [DEBUG] ⏱️  Started: LRCX:fundamentals
+2026-01-16 06:09:37 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:09:41 [DEBUG] ✅ Completed: LRCX:fundamentals (took 3.29s)
+2026-01-16 06:09:41 [DEBUG]   Fundamentals: ✓ (3.29s)
+2026-01-16 06:09:41 [DEBUG] ⏱️  Started: LRCX:analyst
+2026-01-16 06:09:44 [DEBUG] ✅ Completed: LRCX:analyst (took 2.63s)
+2026-01-16 06:09:44 [DEBUG]   Analyst recs: ✓ (2.63s)
+2026-01-16 06:09:44 [DEBUG] ⏱️  Started: LRCX:news
+2026-01-16 06:09:45 [DEBUG] ✅ Completed: LRCX:news (took 0.39s)
+2026-01-16 06:09:45 [DEBUG]   News: 10 items (0.39s)
+2026-01-16 06:09:45 [DEBUG] ⏱️  Started: LRCX:sentiment
+2026-01-16 06:09:46 [DEBUG] ✅ Completed: LRCX:sentiment (took 1.49s)
+2026-01-16 06:09:46 [DEBUG]   Sentiment: 10 items classified (1.49s)
+2026-01-16 06:09:47 [INFO]   Total time for LRCX: 13.55s
+2026-01-16 06:09:47 [INFO] 
+2026-01-16 06:09:47 [INFO] [54/77] Processing ADI...
+2026-01-16 06:09:47 [DEBUG] ⏱️  Started: ADI:price_data
+2026-01-16 06:09:50 [DEBUG] ✅ Completed: ADI:price_data (took 3.30s)
+2026-01-16 06:09:50 [DEBUG]   Price data: ✓ (3.30s)
+2026-01-16 06:09:51 [DEBUG] ⏱️  Started: ADI:fundamentals
+2026-01-16 06:09:51 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:09:55 [DEBUG] ✅ Completed: ADI:fundamentals (took 3.65s)
+2026-01-16 06:09:55 [DEBUG]   Fundamentals: ✓ (3.65s)
+2026-01-16 06:09:55 [DEBUG] ⏱️  Started: ADI:analyst
+2026-01-16 06:09:57 [DEBUG] ✅ Completed: ADI:analyst (took 1.99s)
+2026-01-16 06:09:57 [DEBUG]   Analyst recs: ✓ (1.99s)
+2026-01-16 06:09:58 [DEBUG] ⏱️  Started: ADI:news
+2026-01-16 06:09:58 [DEBUG] ✅ Completed: ADI:news (took 0.42s)
+2026-01-16 06:09:58 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:09:58 [DEBUG] ⏱️  Started: ADI:sentiment
+2026-01-16 06:09:59 [DEBUG] ✅ Completed: ADI:sentiment (took 1.45s)
+2026-01-16 06:09:59 [DEBUG]   Sentiment: 10 items classified (1.45s)
+2026-01-16 06:10:00 [INFO]   Total time for ADI: 13.32s
+2026-01-16 06:10:00 [INFO] 
+2026-01-16 06:10:00 [INFO] [55/77] Processing TXN...
+2026-01-16 06:10:00 [DEBUG] ⏱️  Started: TXN:price_data
+2026-01-16 06:10:04 [DEBUG] ✅ Completed: TXN:price_data (took 3.44s)
+2026-01-16 06:10:04 [DEBUG]   Price data: ✓ (3.44s)
+2026-01-16 06:10:04 [DEBUG] ⏱️  Started: TXN:fundamentals
+2026-01-16 06:10:04 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:10:08 [DEBUG] ✅ Completed: TXN:fundamentals (took 3.30s)
+2026-01-16 06:10:08 [DEBUG]   Fundamentals: ✓ (3.30s)
+2026-01-16 06:10:08 [DEBUG] ⏱️  Started: TXN:analyst
+2026-01-16 06:10:10 [DEBUG] ✅ Completed: TXN:analyst (took 2.07s)
+2026-01-16 06:10:10 [DEBUG]   Analyst recs: ✓ (2.07s)
+2026-01-16 06:10:11 [DEBUG] ⏱️  Started: TXN:news
+2026-01-16 06:10:11 [DEBUG] ✅ Completed: TXN:news (took 0.43s)
+2026-01-16 06:10:11 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:10:11 [DEBUG] ⏱️  Started: TXN:sentiment
+2026-01-16 06:10:13 [DEBUG] ✅ Completed: TXN:sentiment (took 2.12s)
+2026-01-16 06:10:13 [DEBUG]   Sentiment: 10 items classified (2.12s)
+2026-01-16 06:10:14 [INFO]   Total time for TXN: 13.85s
+2026-01-16 06:10:14 [INFO] 
+2026-01-16 06:10:14 [INFO] [56/77] Processing QCOM...
+2026-01-16 06:10:14 [DEBUG] ⏱️  Started: QCOM:price_data
+2026-01-16 06:10:18 [DEBUG] ✅ Completed: QCOM:price_data (took 3.58s)
+2026-01-16 06:10:18 [DEBUG]   Price data: ✓ (3.58s)
+2026-01-16 06:10:18 [DEBUG] ⏱️  Started: QCOM:fundamentals
+2026-01-16 06:10:18 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:10:22 [DEBUG] ✅ Completed: QCOM:fundamentals (took 3.78s)
+2026-01-16 06:10:22 [DEBUG]   Fundamentals: ✓ (3.78s)
+2026-01-16 06:10:23 [DEBUG] ⏱️  Started: QCOM:analyst
+2026-01-16 06:10:24 [DEBUG] ✅ Completed: QCOM:analyst (took 1.86s)
+2026-01-16 06:10:24 [DEBUG]   Analyst recs: ✓ (1.86s)
+2026-01-16 06:10:25 [DEBUG] ⏱️  Started: QCOM:news
+2026-01-16 06:10:25 [DEBUG] ✅ Completed: QCOM:news (took 0.42s)
+2026-01-16 06:10:25 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:10:25 [DEBUG] ⏱️  Started: QCOM:sentiment
+2026-01-16 06:10:27 [DEBUG] ✅ Completed: QCOM:sentiment (took 1.26s)
+2026-01-16 06:10:27 [DEBUG]   Sentiment: 10 items classified (1.26s)
+2026-01-16 06:10:28 [INFO]   Total time for QCOM: 13.40s
+2026-01-16 06:10:28 [INFO] 
+2026-01-16 06:10:28 [INFO] [57/77] Processing AMD...
+2026-01-16 06:10:28 [DEBUG] ⏱️  Started: AMD:price_data
+2026-01-16 06:10:31 [DEBUG] ✅ Completed: AMD:price_data (took 3.59s)
+2026-01-16 06:10:31 [DEBUG]   Price data: ✓ (3.59s)
+2026-01-16 06:10:32 [DEBUG] ⏱️  Started: AMD:fundamentals
+2026-01-16 06:10:32 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:10:35 [DEBUG] ✅ Completed: AMD:fundamentals (took 3.25s)
+2026-01-16 06:10:35 [DEBUG]   Fundamentals: ✓ (3.25s)
+2026-01-16 06:10:35 [DEBUG] ⏱️  Started: AMD:analyst
+2026-01-16 06:10:37 [DEBUG] ✅ Completed: AMD:analyst (took 1.78s)
+2026-01-16 06:10:37 [DEBUG]   Analyst recs: ✓ (1.78s)
+2026-01-16 06:10:38 [DEBUG] ⏱️  Started: AMD:news
+2026-01-16 06:10:38 [DEBUG] ✅ Completed: AMD:news (took 0.46s)
+2026-01-16 06:10:38 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:10:38 [DEBUG] ⏱️  Started: AMD:sentiment
+2026-01-16 06:10:40 [DEBUG] ✅ Completed: AMD:sentiment (took 1.33s)
+2026-01-16 06:10:40 [DEBUG]   Sentiment: 10 items classified (1.33s)
+2026-01-16 06:10:41 [INFO]   Total time for AMD: 12.93s
+2026-01-16 06:10:41 [INFO] 
+2026-01-16 06:10:41 [INFO] [58/77] Processing TSM...
+2026-01-16 06:10:41 [DEBUG] ⏱️  Started: TSM:price_data
+2026-01-16 06:10:44 [DEBUG] ✅ Completed: TSM:price_data (took 3.28s)
+2026-01-16 06:10:44 [DEBUG]   Price data: ✓ (3.28s)
+2026-01-16 06:10:44 [DEBUG] ⏱️  Started: TSM:fundamentals
+2026-01-16 06:10:44 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:10:48 [DEBUG] ✅ Completed: TSM:fundamentals (took 3.23s)
+2026-01-16 06:10:48 [DEBUG]   Fundamentals: ✓ (3.23s)
+2026-01-16 06:10:48 [DEBUG] ⏱️  Started: TSM:analyst
+2026-01-16 06:10:50 [DEBUG] ✅ Completed: TSM:analyst (took 1.89s)
+2026-01-16 06:10:50 [DEBUG]   Analyst recs: ✓ (1.89s)
+2026-01-16 06:10:50 [DEBUG] ⏱️  Started: TSM:news
+2026-01-16 06:10:51 [DEBUG] ✅ Completed: TSM:news (took 0.39s)
+2026-01-16 06:10:51 [DEBUG]   News: 10 items (0.39s)
+2026-01-16 06:10:51 [DEBUG] ⏱️  Started: TSM:sentiment
+2026-01-16 06:10:52 [DEBUG] ✅ Completed: TSM:sentiment (took 1.19s)
+2026-01-16 06:10:52 [DEBUG]   Sentiment: 10 items classified (1.19s)
+2026-01-16 06:10:53 [INFO]   Total time for TSM: 12.49s
+2026-01-16 06:10:53 [INFO] 
+2026-01-16 06:10:53 [INFO] [59/77] Processing AVGO...
+2026-01-16 06:10:53 [DEBUG] ⏱️  Started: AVGO:price_data
+2026-01-16 06:10:58 [DEBUG] ✅ Completed: AVGO:price_data (took 4.56s)
+2026-01-16 06:10:58 [DEBUG]   Price data: ✓ (4.56s)
+2026-01-16 06:10:58 [DEBUG] ⏱️  Started: AVGO:fundamentals
+2026-01-16 06:10:58 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:11:02 [DEBUG] ✅ Completed: AVGO:fundamentals (took 3.47s)
+2026-01-16 06:11:02 [DEBUG]   Fundamentals: ✓ (3.47s)
+2026-01-16 06:11:02 [DEBUG] ⏱️  Started: AVGO:analyst
+2026-01-16 06:11:04 [DEBUG] ✅ Completed: AVGO:analyst (took 2.39s)
+2026-01-16 06:11:04 [DEBUG]   Analyst recs: ✓ (2.39s)
+2026-01-16 06:11:05 [DEBUG] ⏱️  Started: AVGO:news
+2026-01-16 06:11:06 [DEBUG] ✅ Completed: AVGO:news (took 0.55s)
+2026-01-16 06:11:06 [DEBUG]   News: 10 items (0.55s)
+2026-01-16 06:11:06 [DEBUG] ⏱️  Started: AVGO:sentiment
+2026-01-16 06:11:07 [DEBUG] ✅ Completed: AVGO:sentiment (took 1.60s)
+2026-01-16 06:11:07 [DEBUG]   Sentiment: 10 items classified (1.60s)
+2026-01-16 06:11:08 [INFO]   Total time for AVGO: 15.06s
+2026-01-16 06:11:08 [INFO] 
+2026-01-16 06:11:08 [INFO] [60/77] Processing ON...
+2026-01-16 06:11:08 [DEBUG] ⏱️  Started: ON:price_data
+2026-01-16 06:11:11 [DEBUG] ✅ Completed: ON:price_data (took 3.05s)
+2026-01-16 06:11:11 [DEBUG]   Price data: ✓ (3.05s)
+2026-01-16 06:11:12 [DEBUG] ⏱️  Started: ON:fundamentals
+2026-01-16 06:11:12 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:11:15 [DEBUG] ✅ Completed: ON:fundamentals (took 3.36s)
+2026-01-16 06:11:15 [DEBUG]   Fundamentals: ✓ (3.36s)
+2026-01-16 06:11:16 [DEBUG] ⏱️  Started: ON:analyst
+2026-01-16 06:11:18 [DEBUG] ✅ Completed: ON:analyst (took 2.06s)
+2026-01-16 06:11:18 [DEBUG]   Analyst recs: ✓ (2.06s)
+2026-01-16 06:11:18 [DEBUG] ⏱️  Started: ON:news
+2026-01-16 06:11:19 [DEBUG] ✅ Completed: ON:news (took 0.41s)
+2026-01-16 06:11:19 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 06:11:19 [DEBUG] ⏱️  Started: ON:sentiment
+2026-01-16 06:11:20 [DEBUG] ✅ Completed: ON:sentiment (took 1.26s)
+2026-01-16 06:11:20 [DEBUG]   Sentiment: 10 items classified (1.26s)
+2026-01-16 06:11:21 [INFO]   Total time for ON: 12.65s
+2026-01-16 06:11:21 [INFO] 
+2026-01-16 06:11:21 [INFO] [61/77] Processing NEE...
+2026-01-16 06:11:21 [DEBUG] ⏱️  Started: NEE:price_data
+2026-01-16 06:11:24 [DEBUG] ✅ Completed: NEE:price_data (took 3.04s)
+2026-01-16 06:11:24 [DEBUG]   Price data: ✓ (3.04s)
+2026-01-16 06:11:24 [DEBUG] ⏱️  Started: NEE:fundamentals
+2026-01-16 06:11:24 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:11:28 [DEBUG] ✅ Completed: NEE:fundamentals (took 3.32s)
+2026-01-16 06:11:28 [DEBUG]   Fundamentals: ✓ (3.32s)
+2026-01-16 06:11:28 [DEBUG] ⏱️  Started: NEE:analyst
+2026-01-16 06:11:30 [DEBUG] ✅ Completed: NEE:analyst (took 2.33s)
+2026-01-16 06:11:30 [DEBUG]   Analyst recs: ✓ (2.33s)
+2026-01-16 06:11:31 [DEBUG] ⏱️  Started: NEE:news
+2026-01-16 06:11:31 [DEBUG] ✅ Completed: NEE:news (took 0.40s)
+2026-01-16 06:11:31 [DEBUG]   News: 10 items (0.40s)
+2026-01-16 06:11:31 [DEBUG] ⏱️  Started: NEE:sentiment
+2026-01-16 06:11:33 [DEBUG] ✅ Completed: NEE:sentiment (took 1.51s)
+2026-01-16 06:11:33 [DEBUG]   Sentiment: 10 items classified (1.51s)
+2026-01-16 06:11:34 [INFO]   Total time for NEE: 13.11s
+2026-01-16 06:11:34 [INFO] 
+2026-01-16 06:11:34 [INFO] [62/77] Processing ENPH...
+2026-01-16 06:11:34 [DEBUG] ⏱️  Started: ENPH:price_data
+2026-01-16 06:11:37 [DEBUG] ✅ Completed: ENPH:price_data (took 3.26s)
+2026-01-16 06:11:37 [DEBUG]   Price data: ✓ (3.26s)
+2026-01-16 06:11:38 [DEBUG] ⏱️  Started: ENPH:fundamentals
+2026-01-16 06:11:38 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:11:41 [DEBUG] ✅ Completed: ENPH:fundamentals (took 3.52s)
+2026-01-16 06:11:41 [DEBUG]   Fundamentals: ✓ (3.52s)
+2026-01-16 06:11:42 [DEBUG] ⏱️  Started: ENPH:analyst
+2026-01-16 06:11:44 [DEBUG] ✅ Completed: ENPH:analyst (took 2.20s)
+2026-01-16 06:11:44 [DEBUG]   Analyst recs: ✓ (2.20s)
+2026-01-16 06:11:44 [DEBUG] ⏱️  Started: ENPH:news
+2026-01-16 06:11:45 [DEBUG] ✅ Completed: ENPH:news (took 0.49s)
+2026-01-16 06:11:45 [DEBUG]   News: 10 items (0.49s)
+2026-01-16 06:11:45 [DEBUG] ⏱️  Started: ENPH:sentiment
+2026-01-16 06:11:46 [DEBUG] ✅ Completed: ENPH:sentiment (took 1.16s)
+2026-01-16 06:11:46 [DEBUG]   Sentiment: 10 items classified (1.16s)
+2026-01-16 06:11:47 [INFO]   Total time for ENPH: 13.13s
+2026-01-16 06:11:47 [INFO] 
+2026-01-16 06:11:47 [INFO] [63/77] Processing SEDG...
+2026-01-16 06:11:47 [DEBUG] ⏱️  Started: SEDG:price_data
+2026-01-16 06:11:50 [DEBUG] ✅ Completed: SEDG:price_data (took 3.13s)
+2026-01-16 06:11:50 [DEBUG]   Price data: ✓ (3.13s)
+2026-01-16 06:11:51 [DEBUG] ⏱️  Started: SEDG:fundamentals
+2026-01-16 06:11:51 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:11:54 [DEBUG] ✅ Completed: SEDG:fundamentals (took 3.31s)
+2026-01-16 06:11:54 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:11:54 [DEBUG] ⏱️  Started: SEDG:analyst
+2026-01-16 06:11:57 [DEBUG] ✅ Completed: SEDG:analyst (took 2.48s)
+2026-01-16 06:11:57 [DEBUG]   Analyst recs: ✓ (2.48s)
+2026-01-16 06:11:57 [DEBUG] ⏱️  Started: SEDG:news
+2026-01-16 06:11:58 [DEBUG] ✅ Completed: SEDG:news (took 0.46s)
+2026-01-16 06:11:58 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:11:58 [DEBUG] ⏱️  Started: SEDG:sentiment
+2026-01-16 06:11:59 [DEBUG] ✅ Completed: SEDG:sentiment (took 1.19s)
+2026-01-16 06:11:59 [DEBUG]   Sentiment: 10 items classified (1.19s)
+2026-01-16 06:12:00 [INFO]   Total time for SEDG: 13.06s
+2026-01-16 06:12:00 [INFO] 
+2026-01-16 06:12:00 [INFO] [64/77] Processing DTE...
+2026-01-16 06:12:00 [DEBUG] ⏱️  Started: DTE:price_data
+2026-01-16 06:12:04 [DEBUG] ✅ Completed: DTE:price_data (took 3.56s)
+2026-01-16 06:12:04 [DEBUG]   Price data: ✓ (3.56s)
+2026-01-16 06:12:04 [DEBUG] ⏱️  Started: DTE:fundamentals
+2026-01-16 06:12:04 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:12:08 [DEBUG] ✅ Completed: DTE:fundamentals (took 3.37s)
+2026-01-16 06:12:08 [DEBUG]   Fundamentals: ✓ (3.37s)
+2026-01-16 06:12:08 [DEBUG] ⏱️  Started: DTE:analyst
+2026-01-16 06:12:10 [DEBUG] ✅ Completed: DTE:analyst (took 1.95s)
+2026-01-16 06:12:10 [DEBUG]   Analyst recs: ✓ (1.95s)
+2026-01-16 06:12:10 [DEBUG] ⏱️  Started: DTE:news
+2026-01-16 06:12:11 [DEBUG] ✅ Completed: DTE:news (took 0.47s)
+2026-01-16 06:12:11 [DEBUG]   News: 10 items (0.47s)
+2026-01-16 06:12:11 [DEBUG] ⏱️  Started: DTE:sentiment
+2026-01-16 06:12:13 [DEBUG] ✅ Completed: DTE:sentiment (took 2.20s)
+2026-01-16 06:12:13 [DEBUG]   Sentiment: 10 items classified (2.20s)
+2026-01-16 06:12:14 [INFO]   Total time for DTE: 14.05s
+2026-01-16 06:12:14 [INFO] 
+2026-01-16 06:12:14 [INFO] [65/77] Processing NDAQ...
+2026-01-16 06:12:14 [DEBUG] ⏱️  Started: NDAQ:price_data
+2026-01-16 06:12:17 [DEBUG] ✅ Completed: NDAQ:price_data (took 3.17s)
+2026-01-16 06:12:17 [DEBUG]   Price data: ✓ (3.17s)
+2026-01-16 06:12:18 [DEBUG] ⏱️  Started: NDAQ:fundamentals
+2026-01-16 06:12:18 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:12:21 [DEBUG] ✅ Completed: NDAQ:fundamentals (took 3.31s)
+2026-01-16 06:12:21 [DEBUG]   Fundamentals: ✓ (3.31s)
+2026-01-16 06:12:22 [DEBUG] ⏱️  Started: NDAQ:analyst
+2026-01-16 06:12:24 [DEBUG] ✅ Completed: NDAQ:analyst (took 2.06s)
+2026-01-16 06:12:24 [DEBUG]   Analyst recs: ✓ (2.06s)
+2026-01-16 06:12:24 [DEBUG] ⏱️  Started: NDAQ:news
+2026-01-16 06:12:25 [DEBUG] ✅ Completed: NDAQ:news (took 0.39s)
+2026-01-16 06:12:25 [DEBUG]   News: 10 items (0.39s)
+2026-01-16 06:12:25 [DEBUG] ⏱️  Started: NDAQ:sentiment
+2026-01-16 06:12:26 [DEBUG] ✅ Completed: NDAQ:sentiment (took 1.16s)
+2026-01-16 06:12:26 [DEBUG]   Sentiment: 10 items classified (1.16s)
+2026-01-16 06:12:27 [INFO]   Total time for NDAQ: 12.61s
+2026-01-16 06:12:27 [INFO] 
+2026-01-16 06:12:27 [INFO] [66/77] Processing SHOP...
+2026-01-16 06:12:27 [DEBUG] ⏱️  Started: SHOP:price_data
+2026-01-16 06:12:30 [DEBUG] ✅ Completed: SHOP:price_data (took 3.18s)
+2026-01-16 06:12:30 [DEBUG]   Price data: ✓ (3.18s)
+2026-01-16 06:12:30 [DEBUG] ⏱️  Started: SHOP:fundamentals
+2026-01-16 06:12:30 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:12:34 [DEBUG] ✅ Completed: SHOP:fundamentals (took 3.44s)
+2026-01-16 06:12:34 [DEBUG]   Fundamentals: ✓ (3.44s)
+2026-01-16 06:12:34 [DEBUG] ⏱️  Started: SHOP:analyst
+2026-01-16 06:12:37 [DEBUG] ✅ Completed: SHOP:analyst (took 2.26s)
+2026-01-16 06:12:37 [DEBUG]   Analyst recs: ✓ (2.26s)
+2026-01-16 06:12:37 [DEBUG] ⏱️  Started: SHOP:news
+2026-01-16 06:12:38 [DEBUG] ✅ Completed: SHOP:news (took 0.43s)
+2026-01-16 06:12:38 [DEBUG]   News: 10 items (0.43s)
+2026-01-16 06:12:38 [DEBUG] ⏱️  Started: SHOP:sentiment
+2026-01-16 06:12:39 [DEBUG] ✅ Completed: SHOP:sentiment (took 1.13s)
+2026-01-16 06:12:39 [DEBUG]   Sentiment: 10 items classified (1.13s)
+2026-01-16 06:12:40 [INFO]   Total time for SHOP: 12.94s
+2026-01-16 06:12:40 [INFO] 
+2026-01-16 06:12:40 [INFO] [67/77] Processing BAC...
+2026-01-16 06:12:40 [DEBUG] ⏱️  Started: BAC:price_data
+2026-01-16 06:12:43 [DEBUG] ✅ Completed: BAC:price_data (took 3.63s)
+2026-01-16 06:12:43 [DEBUG]   Price data: ✓ (3.63s)
+2026-01-16 06:12:44 [DEBUG] ⏱️  Started: BAC:fundamentals
+2026-01-16 06:12:44 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:12:48 [DEBUG] ✅ Completed: BAC:fundamentals (took 3.69s)
+2026-01-16 06:12:48 [DEBUG]   Fundamentals: ✓ (3.69s)
+2026-01-16 06:12:48 [DEBUG] ⏱️  Started: BAC:analyst
+2026-01-16 06:12:50 [DEBUG] ✅ Completed: BAC:analyst (took 1.96s)
+2026-01-16 06:12:50 [DEBUG]   Analyst recs: ✓ (1.96s)
+2026-01-16 06:12:50 [DEBUG] ⏱️  Started: BAC:news
+2026-01-16 06:12:51 [DEBUG] ✅ Completed: BAC:news (took 0.46s)
+2026-01-16 06:12:51 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:12:51 [DEBUG] ⏱️  Started: BAC:sentiment
+2026-01-16 06:12:52 [DEBUG] ✅ Completed: BAC:sentiment (took 0.89s)
+2026-01-16 06:12:52 [DEBUG]   Sentiment: 10 items classified (0.89s)
+2026-01-16 06:12:53 [INFO]   Total time for BAC: 13.14s
+2026-01-16 06:12:53 [INFO] 
+2026-01-16 06:12:53 [INFO] [68/77] Processing WFC...
+2026-01-16 06:12:53 [DEBUG] ⏱️  Started: WFC:price_data
+2026-01-16 06:12:56 [DEBUG] ✅ Completed: WFC:price_data (took 3.27s)
+2026-01-16 06:12:56 [DEBUG]   Price data: ✓ (3.27s)
+2026-01-16 06:12:57 [DEBUG] ⏱️  Started: WFC:fundamentals
+2026-01-16 06:12:57 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:13:01 [DEBUG] ✅ Completed: WFC:fundamentals (took 4.29s)
+2026-01-16 06:13:01 [DEBUG]   Fundamentals: ✓ (4.29s)
+2026-01-16 06:13:01 [DEBUG] ⏱️  Started: WFC:analyst
+2026-01-16 06:13:03 [DEBUG] ✅ Completed: WFC:analyst (took 1.92s)
+2026-01-16 06:13:03 [DEBUG]   Analyst recs: ✓ (1.92s)
+2026-01-16 06:13:04 [DEBUG] ⏱️  Started: WFC:news
+2026-01-16 06:13:04 [DEBUG] ✅ Completed: WFC:news (took 0.46s)
+2026-01-16 06:13:04 [DEBUG]   News: 10 items (0.46s)
+2026-01-16 06:13:04 [DEBUG] ⏱️  Started: WFC:sentiment
+2026-01-16 06:13:08 [DEBUG] ✅ Completed: WFC:sentiment (took 3.79s)
+2026-01-16 06:13:08 [DEBUG]   Sentiment: 10 items classified (3.79s)
+2026-01-16 06:13:09 [INFO]   Total time for WFC: 16.23s
+2026-01-16 06:13:09 [INFO] 
+2026-01-16 06:13:09 [INFO] [69/77] Processing MS...
+2026-01-16 06:13:09 [DEBUG] ⏱️  Started: MS:price_data
+2026-01-16 06:13:12 [DEBUG] ✅ Completed: MS:price_data (took 3.39s)
+2026-01-16 06:13:12 [DEBUG]   Price data: ✓ (3.39s)
+2026-01-16 06:13:13 [DEBUG] ⏱️  Started: MS:fundamentals
+2026-01-16 06:13:13 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:13:17 [DEBUG] ✅ Completed: MS:fundamentals (took 3.74s)
+2026-01-16 06:13:17 [DEBUG]   Fundamentals: ✓ (3.74s)
+2026-01-16 06:13:17 [DEBUG] ⏱️  Started: MS:analyst
+2026-01-16 06:13:20 [DEBUG] ✅ Completed: MS:analyst (took 2.60s)
+2026-01-16 06:13:20 [DEBUG]   Analyst recs: ✓ (2.60s)
+2026-01-16 06:13:20 [DEBUG] ⏱️  Started: MS:news
+2026-01-16 06:13:21 [DEBUG] ✅ Completed: MS:news (took 0.51s)
+2026-01-16 06:13:21 [DEBUG]   News: 10 items (0.51s)
+2026-01-16 06:13:21 [DEBUG] ⏱️  Started: MS:sentiment
+2026-01-16 06:13:22 [DEBUG] ✅ Completed: MS:sentiment (took 1.63s)
+2026-01-16 06:13:22 [DEBUG]   Sentiment: 10 items classified (1.63s)
+2026-01-16 06:13:23 [INFO]   Total time for MS: 14.38s
+2026-01-16 06:13:23 [INFO] 
+2026-01-16 06:13:23 [INFO] [70/77] Processing MRNA...
+2026-01-16 06:13:23 [DEBUG] ⏱️  Started: MRNA:price_data
+2026-01-16 06:13:27 [DEBUG] ✅ Completed: MRNA:price_data (took 3.10s)
+2026-01-16 06:13:27 [DEBUG]   Price data: ✓ (3.10s)
+2026-01-16 06:13:27 [DEBUG] ⏱️  Started: MRNA:fundamentals
+2026-01-16 06:13:27 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:13:30 [DEBUG] ✅ Completed: MRNA:fundamentals (took 3.26s)
+2026-01-16 06:13:30 [DEBUG]   Fundamentals: ✓ (3.26s)
+2026-01-16 06:13:31 [DEBUG] ⏱️  Started: MRNA:analyst
+2026-01-16 06:13:33 [DEBUG] ✅ Completed: MRNA:analyst (took 2.03s)
+2026-01-16 06:13:33 [DEBUG]   Analyst recs: ✓ (2.03s)
+2026-01-16 06:13:33 [DEBUG] ⏱️  Started: MRNA:news
+2026-01-16 06:13:34 [DEBUG] ✅ Completed: MRNA:news (took 0.42s)
+2026-01-16 06:13:34 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:13:34 [DEBUG] ⏱️  Started: MRNA:sentiment
+2026-01-16 06:13:35 [DEBUG] ✅ Completed: MRNA:sentiment (took 1.71s)
+2026-01-16 06:13:35 [DEBUG]   Sentiment: 10 items classified (1.71s)
+2026-01-16 06:13:36 [INFO]   Total time for MRNA: 13.02s
+2026-01-16 06:13:36 [INFO] 
+2026-01-16 06:13:36 [INFO] [71/77] Processing ABT...
+2026-01-16 06:13:36 [DEBUG] ⏱️  Started: ABT:price_data
+2026-01-16 06:13:40 [DEBUG] ✅ Completed: ABT:price_data (took 3.62s)
+2026-01-16 06:13:40 [DEBUG]   Price data: ✓ (3.62s)
+2026-01-16 06:13:41 [DEBUG] ⏱️  Started: ABT:fundamentals
+2026-01-16 06:13:41 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:13:44 [DEBUG] ✅ Completed: ABT:fundamentals (took 3.34s)
+2026-01-16 06:13:44 [DEBUG]   Fundamentals: ✓ (3.34s)
+2026-01-16 06:13:44 [DEBUG] ⏱️  Started: ABT:analyst
+2026-01-16 06:13:46 [DEBUG] ✅ Completed: ABT:analyst (took 1.80s)
+2026-01-16 06:13:46 [DEBUG]   Analyst recs: ✓ (1.80s)
+2026-01-16 06:13:47 [DEBUG] ⏱️  Started: ABT:news
+2026-01-16 06:13:47 [DEBUG] ✅ Completed: ABT:news (took 0.50s)
+2026-01-16 06:13:47 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 06:13:47 [DEBUG] ⏱️  Started: ABT:sentiment
+2026-01-16 06:13:48 [DEBUG] ✅ Completed: ABT:sentiment (took 1.19s)
+2026-01-16 06:13:48 [DEBUG]   Sentiment: 10 items classified (1.19s)
+2026-01-16 06:13:49 [INFO]   Total time for ABT: 12.97s
+2026-01-16 06:13:49 [INFO] 
+2026-01-16 06:13:49 [INFO] [72/77] Processing ISRG...
+2026-01-16 06:13:49 [DEBUG] ⏱️  Started: ISRG:price_data
+2026-01-16 06:13:53 [DEBUG] ✅ Completed: ISRG:price_data (took 3.32s)
+2026-01-16 06:13:53 [DEBUG]   Price data: ✓ (3.32s)
+2026-01-16 06:13:53 [DEBUG] ⏱️  Started: ISRG:fundamentals
+2026-01-16 06:13:53 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:13:57 [DEBUG] ✅ Completed: ISRG:fundamentals (took 3.27s)
+2026-01-16 06:13:57 [DEBUG]   Fundamentals: ✓ (3.27s)
+2026-01-16 06:13:57 [DEBUG] ⏱️  Started: ISRG:analyst
+2026-01-16 06:13:59 [DEBUG] ✅ Completed: ISRG:analyst (took 2.07s)
+2026-01-16 06:13:59 [DEBUG]   Analyst recs: ✓ (2.07s)
+2026-01-16 06:14:00 [DEBUG] ⏱️  Started: ISRG:news
+2026-01-16 06:14:00 [DEBUG] ✅ Completed: ISRG:news (took 0.42s)
+2026-01-16 06:14:00 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:14:00 [DEBUG] ⏱️  Started: ISRG:sentiment
+2026-01-16 06:14:01 [DEBUG] ✅ Completed: ISRG:sentiment (took 1.07s)
+2026-01-16 06:14:01 [DEBUG]   Sentiment: 10 items classified (1.07s)
+2026-01-16 06:14:02 [INFO]   Total time for ISRG: 12.66s
+2026-01-16 06:14:02 [INFO] 
+2026-01-16 06:14:02 [INFO] [73/77] Processing FLR...
+2026-01-16 06:14:02 [DEBUG] ⏱️  Started: FLR:price_data
+2026-01-16 06:14:06 [DEBUG] ✅ Completed: FLR:price_data (took 3.66s)
+2026-01-16 06:14:06 [DEBUG]   Price data: ✓ (3.66s)
+2026-01-16 06:14:06 [DEBUG] ⏱️  Started: FLR:fundamentals
+2026-01-16 06:14:06 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:14:10 [DEBUG] ✅ Completed: FLR:fundamentals (took 3.49s)
+2026-01-16 06:14:10 [DEBUG]   Fundamentals: ✓ (3.49s)
+2026-01-16 06:14:10 [DEBUG] ⏱️  Started: FLR:analyst
+2026-01-16 06:14:12 [DEBUG] ✅ Completed: FLR:analyst (took 1.87s)
+2026-01-16 06:14:12 [DEBUG]   Analyst recs: ✓ (1.87s)
+2026-01-16 06:14:13 [DEBUG] ⏱️  Started: FLR:news
+2026-01-16 06:14:13 [DEBUG] ✅ Completed: FLR:news (took 0.47s)
+2026-01-16 06:14:13 [DEBUG]   News: 10 items (0.47s)
+2026-01-16 06:14:13 [DEBUG] ⏱️  Started: FLR:sentiment
+2026-01-16 06:14:15 [DEBUG] ✅ Completed: FLR:sentiment (took 1.57s)
+2026-01-16 06:14:15 [DEBUG]   Sentiment: 10 items classified (1.57s)
+2026-01-16 06:14:16 [INFO]   Total time for FLR: 13.57s
+2026-01-16 06:14:16 [INFO] 
+2026-01-16 06:14:16 [INFO] [74/77] Processing VMC...
+2026-01-16 06:14:16 [DEBUG] ⏱️  Started: VMC:price_data
+2026-01-16 06:14:19 [DEBUG] ✅ Completed: VMC:price_data (took 3.12s)
+2026-01-16 06:14:19 [DEBUG]   Price data: ✓ (3.12s)
+2026-01-16 06:14:19 [DEBUG] ⏱️  Started: VMC:fundamentals
+2026-01-16 06:14:19 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:14:23 [DEBUG] ✅ Completed: VMC:fundamentals (took 3.63s)
+2026-01-16 06:14:23 [DEBUG]   Fundamentals: ✓ (3.63s)
+2026-01-16 06:14:23 [DEBUG] ⏱️  Started: VMC:analyst
+2026-01-16 06:14:25 [DEBUG] ✅ Completed: VMC:analyst (took 2.01s)
+2026-01-16 06:14:25 [DEBUG]   Analyst recs: ✓ (2.01s)
+2026-01-16 06:14:26 [DEBUG] ⏱️  Started: VMC:news
+2026-01-16 06:14:26 [DEBUG] ✅ Completed: VMC:news (took 0.41s)
+2026-01-16 06:14:26 [DEBUG]   News: 10 items (0.41s)
+2026-01-16 06:14:26 [DEBUG] ⏱️  Started: VMC:sentiment
+2026-01-16 06:14:28 [DEBUG] ✅ Completed: VMC:sentiment (took 1.61s)
+2026-01-16 06:14:28 [DEBUG]   Sentiment: 10 items classified (1.61s)
+2026-01-16 06:14:29 [INFO]   Total time for VMC: 13.28s
+2026-01-16 06:14:29 [INFO] 
+2026-01-16 06:14:29 [INFO] [75/77] Processing CSX...
+2026-01-16 06:14:29 [DEBUG] ⏱️  Started: CSX:price_data
+2026-01-16 06:14:32 [DEBUG] ✅ Completed: CSX:price_data (took 3.27s)
+2026-01-16 06:14:32 [DEBUG]   Price data: ✓ (3.27s)
+2026-01-16 06:14:33 [DEBUG] ⏱️  Started: CSX:fundamentals
+2026-01-16 06:14:33 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:14:36 [DEBUG] ✅ Completed: CSX:fundamentals (took 3.43s)
+2026-01-16 06:14:36 [DEBUG]   Fundamentals: ✓ (3.43s)
+2026-01-16 06:14:37 [DEBUG] ⏱️  Started: CSX:analyst
+2026-01-16 06:14:39 [DEBUG] ✅ Completed: CSX:analyst (took 1.93s)
+2026-01-16 06:14:39 [DEBUG]   Analyst recs: ✓ (1.93s)
+2026-01-16 06:14:39 [DEBUG] ⏱️  Started: CSX:news
+2026-01-16 06:14:40 [DEBUG] ✅ Completed: CSX:news (took 0.42s)
+2026-01-16 06:14:40 [DEBUG]   News: 10 items (0.42s)
+2026-01-16 06:14:40 [DEBUG] ⏱️  Started: CSX:sentiment
+2026-01-16 06:14:41 [DEBUG] ✅ Completed: CSX:sentiment (took 1.45s)
+2026-01-16 06:14:41 [DEBUG]   Sentiment: 10 items classified (1.45s)
+2026-01-16 06:14:42 [INFO]   Total time for CSX: 13.00s
+2026-01-16 06:14:42 [INFO] 
+2026-01-16 06:14:42 [INFO] [76/77] Processing AMT...
+2026-01-16 06:14:42 [DEBUG] ⏱️  Started: AMT:price_data
+2026-01-16 06:14:46 [DEBUG] ✅ Completed: AMT:price_data (took 3.58s)
+2026-01-16 06:14:46 [DEBUG]   Price data: ✓ (3.58s)
+2026-01-16 06:14:46 [DEBUG] ⏱️  Started: AMT:fundamentals
+2026-01-16 06:14:46 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:14:50 [DEBUG] ✅ Completed: AMT:fundamentals (took 3.44s)
+2026-01-16 06:14:50 [DEBUG]   Fundamentals: ✓ (3.44s)
+2026-01-16 06:14:50 [DEBUG] ⏱️  Started: AMT:analyst
+2026-01-16 06:14:52 [DEBUG] ✅ Completed: AMT:analyst (took 2.01s)
+2026-01-16 06:14:52 [DEBUG]   Analyst recs: ✓ (2.01s)
+2026-01-16 06:14:53 [DEBUG] ⏱️  Started: AMT:news
+2026-01-16 06:14:53 [DEBUG] ✅ Completed: AMT:news (took 0.50s)
+2026-01-16 06:14:53 [DEBUG]   News: 10 items (0.50s)
+2026-01-16 06:14:53 [DEBUG] ⏱️  Started: AMT:sentiment
+2026-01-16 06:14:55 [DEBUG] ✅ Completed: AMT:sentiment (took 1.60s)
+2026-01-16 06:14:55 [DEBUG]   Sentiment: 10 items classified (1.60s)
+2026-01-16 06:14:56 [INFO]   Total time for AMT: 13.64s
+2026-01-16 06:14:56 [INFO] 
+2026-01-16 06:14:56 [INFO] [77/77] Processing PG...
+2026-01-16 06:14:56 [DEBUG] ⏱️  Started: PG:price_data
+2026-01-16 06:14:59 [DEBUG] ✅ Completed: PG:price_data (took 3.24s)
+2026-01-16 06:14:59 [DEBUG]   Price data: ✓ (3.24s)
+2026-01-16 06:14:59 [DEBUG] ⏱️  Started: PG:fundamentals
+2026-01-16 06:14:59 [DEBUG]   -> Fetching fundamentals from FMP API...
+2026-01-16 06:15:03 [DEBUG] ✅ Completed: PG:fundamentals (took 4.11s)
+2026-01-16 06:15:03 [DEBUG]   Fundamentals: ✓ (4.11s)
+2026-01-16 06:15:04 [DEBUG] ⏱️  Started: PG:analyst
+2026-01-16 06:15:06 [DEBUG] ✅ Completed: PG:analyst (took 2.03s)
+2026-01-16 06:15:06 [DEBUG]   Analyst recs: ✓ (2.03s)
+2026-01-16 06:15:07 [DEBUG] ⏱️  Started: PG:news
+2026-01-16 06:15:07 [DEBUG] ✅ Completed: PG:news (took 0.48s)
+2026-01-16 06:15:07 [DEBUG]   News: 10 items (0.48s)
+2026-01-16 06:15:07 [DEBUG] ⏱️  Started: PG:sentiment
+2026-01-16 06:15:08 [DEBUG] ✅ Completed: PG:sentiment (took 1.46s)
+2026-01-16 06:15:08 [DEBUG]   Sentiment: 10 items classified (1.46s)
+2026-01-16 06:15:09 [INFO]   Total time for PG: 13.83s
+2026-01-16 06:15:09 [INFO] 
+2026-01-16 06:15:09 [INFO] ================================================================================
+2026-01-16 06:15:09 [INFO] DATA FETCHING SUMMARY
+2026-01-16 06:15:09 [INFO] ================================================================================
+2026-01-16 06:15:09 [INFO] Total tickers processed: 77
+2026-01-16 06:15:09 [INFO] Total time: 1041.17s (17.4 minutes)
+2026-01-16 06:15:09 [INFO] Average time per ticker: 13.52s
+2026-01-16 06:15:09 [INFO] 
+2026-01-16 06:15:09 [INFO] Slowest tickers:
+2026-01-16 06:15:09 [INFO]   COST: 18.64s
+2026-01-16 06:15:09 [INFO]   KO: 17.62s
+2026-01-16 06:15:09 [INFO]   MA: 16.95s
+2026-01-16 06:15:09 [INFO]   WFC: 16.23s
+2026-01-16 06:15:09 [INFO]   CVX: 16.16s
+2026-01-16 06:15:09 [INFO]   FB: 15.64s
+2026-01-16 06:15:09 [INFO]   AMGN: 15.27s
+2026-01-16 06:15:09 [INFO]   AVGO: 15.06s
+2026-01-16 06:15:09 [INFO]   SQ: 14.91s
+2026-01-16 06:15:09 [INFO]   NOW: 14.88s
+2026-01-16 06:15:09 [INFO] ================================================================================
+2026-01-16 06:15:09 [DEBUG] ⏱️  Started: write_output_file
+2026-01-16 06:15:09 [DEBUG] ✅ Completed: write_output_file (took 0.01s)
+2026-01-16 06:15:09 [INFO] 
+2026-01-16 06:15:09 [INFO] ✓ Fetched data for 77 tickers -> data\stock_data.json
+2026-01-16 06:15:09 [INFO]   File write time: 0.01s
+2026-01-16 06:15:09 [INFO] 
+2026-01-16 06:15:09 [INFO] ================================================================================
+2026-01-16 06:15:09 [INFO] DATA FETCHING COMPLETED
+2026-01-16 06:15:09 [INFO] ================================================================================
