@@ -464,6 +464,53 @@ def fetch_news_alpha_vantage(
         return []
 
 
+def fetch_historical_daily_series(
+    ticker: str,
+    from_date: date,
+    to_date: date,
+    fmp_api_key: str,
+) -> list[Tuple[date, float]]:
+    """Fetch daily close prices for a ticker over a date range using FMP API.
+
+    Returns:
+        List of (date, close_price) sorted by date ascending. Dates are trading days only.
+    """
+    if not fmp_api_key or from_date > to_date:
+        return []
+    try:
+        url = f"https://financialmodelingprep.com/api/v3/historical-price-full/{ticker}"
+        params = {
+            "apikey": fmp_api_key,
+            "from": from_date.strftime("%Y-%m-%d"),
+            "to": to_date.strftime("%Y-%m-%d"),
+        }
+        resp = requests.get(url, params=params, timeout=(5, 30))
+        if resp.status_code != 200:
+            return []
+        data = resp.json()
+        if not isinstance(data, dict):
+            return []
+        historical = data.get("historical", [])
+        if not historical:
+            return []
+        out = []
+        for day in historical:
+            day_str = day.get("date")
+            close = day.get("close")
+            if not day_str or close is None:
+                continue
+            try:
+                d = datetime.strptime(day_str.split()[0], "%Y-%m-%d").date()
+                if from_date <= d <= to_date:
+                    out.append((d, float(close)))
+            except (ValueError, TypeError):
+                continue
+        out.sort(key=lambda x: x[0])
+        return out
+    except Exception:
+        return []
+
+
 def fetch_price_data_finnhub(ticker: str, api_key: str) -> Optional[PriceData]:
     """Fetch price and volume data from Finnhub API."""
     try:

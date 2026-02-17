@@ -1,0 +1,178 @@
+{
+  "holdings": [
+    {
+      "ticker": "KLAC",
+      "weight": 0.1,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Highest composite score (0.612), strong market position in semiconductor inspection.",
+      "composite_score": 0.6116448134709335
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.1,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong growth potential in AI and cloud computing, high composite score (0.571).",
+      "composite_score": 0.5709968151707605
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.1,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Solid performance in semiconductor technologies, composite score (0.563).",
+      "composite_score": 0.5628591119923013
+    },
+    {
+      "ticker": "VRTX",
+      "weight": 0.08,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong partnership and pipeline diversification, composite score (0.547).",
+      "composite_score": 0.5465241723541578
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.07,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Promising data for new therapies, strong analyst support, composite score (0.513).",
+      "composite_score": 0.5127310353217089
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.06,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Positive sentiment and strategic shifts in menu offerings, composite score (0.492).",
+      "composite_score": 0.492294076515864
+    },
+    {
+      "ticker": "AMAT",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Resolves regulatory issues and focuses on growth, composite score (0.484).",
+      "composite_score": 0.4840217176392799
+    },
+    {
+      "ticker": "T",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong ROE and resilience in telecom market, composite score (0.481).",
+      "composite_score": 0.4813892545591772
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Demographic Shifts and Consumer Behavior",
+      "rationale": "Resilience in challenging market, potential recovery, composite score (0.471).",
+      "composite_score": 0.47111503468333693
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Demographic Shifts and Consumer Behavior",
+      "rationale": "Leadership transition and strategic pivot towards healthier products, composite score (0.457).",
+      "composite_score": 0.45691168884260114
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.05,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong financial results and expanding rare disease portfolio, composite score (0.449).",
+      "composite_score": 0.44851575565912727
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "Demographic Shifts and Consumer Behavior",
+      "rationale": "Strong long-term gains despite recent pullback, composite score (0.401).",
+      "composite_score": 0.40066466684473295
+    },
+    {
+      "ticker": "V",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Expanding services and partnerships, strong market presence, composite score (0.398).",
+      "composite_score": 0.39765060818544995
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.03,
+      "sector": "Communication Services",
+      "theme": "Value Stock Resurgence",
+      "rationale": "Stability as a dividend stock amidst market fluctuations, composite score (0.390).",
+      "composite_score": 0.3895102182292592
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "Digital Transformation Acceleration",
+      "rationale": "Strengthening position in AI sector, potential buying opportunity, composite score (0.373).",
+      "composite_score": 0.37319393696219744
+    },
+    {
+      "ticker": "HD",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Positive trends in sales and technical patterns, composite score (0.369).",
+      "composite_score": 0.3688906433662651
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.02,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Engaged in competitive bidding, monitoring market developments, composite score (0.328).",
+      "composite_score": 0.3278196505050136
+    },
+    {
+      "ticker": "NEE",
+      "weight": 0.02,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Added as top remaining candidate (composite score: 0.364)",
+      "composite_score": 0.36351725707412597
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.02,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Added during sector rebalance (score 0.352)",
+      "composite_score": 0.3517097005332813
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Added during sector rebalance (score 0.351)",
+      "composite_score": 0.35148224521225413
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Information Technology": 0.36,
+    "Communication Services": 0.2,
+    "Healthcare": 0.2,
+    "Consumer Discretionary": 0.1,
+    "Consumer Staples": 0.1,
+    "Utilities": 0.02,
+    "Health Care": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-02-16",
+  "horizon_end": "2027-05-15",
+  "constructed_at": "2026-02-16T08:27:50.522773"
+}

@@ -1,0 +1,178 @@
+{
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.09,
+      "sector": "Materials",
+      "theme": null,
+      "rationale": "Highest composite score (0.794), strong performance linked to gold prices.",
+      "composite_score": 0.7943391670461685
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.08,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong growth potential in semiconductor technologies, high composite score (0.606).",
+      "composite_score": 0.6057162548494442
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.07,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong earnings and growth potential, solid composite score (0.536).",
+      "composite_score": 0.5362263198238713
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.07,
+      "sector": "Biotechnology",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Promising product pipeline and strong market position, composite score (0.506).",
+      "composite_score": 0.5055881781788517
+    },
+    {
+      "ticker": "HIG",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong performance and focus on technology investments, composite score (0.546).",
+      "composite_score": 0.546353526446119
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.07,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong growth potential in AI and infrastructure, composite score (0.557).",
+      "composite_score": 0.5567111008850463
+    },
+    {
+      "ticker": "T",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong profitability and resilience in the telecom sector, composite score (0.496).",
+      "composite_score": 0.4956749688448915
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Expansion in fiber and 5G, strong market position, composite score (0.461).",
+      "composite_score": 0.46093878965783064
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Consumer Behavior Shifts Post-Pandemic",
+      "rationale": "Solid fundamentals and defensive sector positioning, composite score (0.457).",
+      "composite_score": 0.4568293203976227
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Value Over Growth Rotation",
+      "rationale": "Strong brand and strategic leadership changes, composite score (0.450).",
+      "composite_score": 0.449768831699744
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.05,
+      "sector": "Biotechnology",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Strong financial results and pipeline, composite score (0.449).",
+      "composite_score": 0.44851575565912727
+    },
+    {
+      "ticker": "SYK",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Innovative product launches and steady growth, composite score (0.447).",
+      "composite_score": 0.44732477504477836
+    },
+    {
+      "ticker": "HCA",
+      "weight": 0.04,
+      "sector": "Health Care",
+      "theme": "Demographic Shifts and Aging Population",
+      "rationale": "Strong performance and market position, composite score (0.414).",
+      "composite_score": 0.4142365239181646
+    },
+    {
+      "ticker": "CME",
+      "weight": 0.04,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong dividend growth and market position, composite score (0.366).",
+      "composite_score": 0.36636304591862434
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong position in AI and memory markets, composite score (0.366).",
+      "composite_score": 0.3655261746282566
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong earnings and innovative products, composite score (0.297).",
+      "composite_score": 0.2967135607077298
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.03,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Engagement in competitive landscape, potential for growth, composite score (0.285).",
+      "composite_score": 0.28496250764787073
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Challenges in AI landscape but strong demand for products, composite score (0.272).",
+      "composite_score": 0.27209323827330445
+    },
+    {
+      "ticker": "QCOM",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.384)",
+      "composite_score": 0.383810188059343
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Added as top remaining candidate (composite score: 0.373)",
+      "composite_score": 0.37319393696219744
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Materials": 0.09,
+    "Information Technology": 0.17999999999999997,
+    "Health Care": 0.19,
+    "Biotechnology": 0.12000000000000001,
+    "Financials": 0.1,
+    "Communication Services": 0.22,
+    "Consumer Staples": 0.1
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-02-17",
+  "horizon_end": "2027-05-15",
+  "constructed_at": "2026-02-17T06:23:44.521440"
+}

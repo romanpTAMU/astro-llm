@@ -1,0 +1,180 @@
+{
+  "holdings": [
+    {
+      "ticker": "LRCX",
+      "weight": 0.09,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Highest composite score (0.651), strong bullish sentiment, sector leader in semiconductors.",
+      "composite_score": 0.6513513874999485
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.08,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong growth potential post-Keytruda, bullish sentiment, high composite score (0.609).",
+      "composite_score": 0.6086168665754708
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "High composite score (0.606), bullish sentiment, leading position in AI.",
+      "composite_score": 0.6060435922294749
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.07,
+      "sector": "Biotechnology",
+      "theme": "Health and Biotech Innovation",
+      "rationale": "Strong financial performance, bullish sentiment, high composite score (0.576).",
+      "composite_score": 0.5759196773818631
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.07,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Strong legal position, bullish sentiment, high composite score (0.549).",
+      "composite_score": 0.5490546306423193
+    },
+    {
+      "ticker": "ICE",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Innovative trading platform development, bullish sentiment, composite score (0.499).",
+      "composite_score": 0.4985201097983052
+    },
+    {
+      "ticker": "HIG",
+      "weight": 0.06,
+      "sector": "Financials",
+      "theme": "Demographic Shifts and Workforce Evolution",
+      "rationale": "Strong one-year return, bullish sentiment, composite score (0.481).",
+      "composite_score": 0.48110355253212395
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong dividend stock, bullish sentiment, composite score (0.470).",
+      "composite_score": 0.4701616744169935
+    },
+    {
+      "ticker": "NVR",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "Demographic Shifts and Workforce Evolution",
+      "rationale": "Cautiously optimistic outlook, neutral sentiment, composite score (0.454).",
+      "composite_score": 0.45424340645468847
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Growth in managed services, bullish sentiment, composite score (0.450).",
+      "composite_score": 0.44963582784823153
+    },
+    {
+      "ticker": "PHM",
+      "weight": 0.05,
+      "sector": "Consumer Discretionary",
+      "theme": "Demographic Shifts and Workforce Evolution",
+      "rationale": "Strong balance sheet, neutral sentiment, composite score (0.449).",
+      "composite_score": 0.4494588032616033
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Solid performance, neutral sentiment, composite score (0.439).",
+      "composite_score": 0.4386626185376585
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Potential buying opportunity, bullish sentiment, composite score (0.415).",
+      "composite_score": 0.4146522598329827
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Navigating post-COVID landscape, neutral sentiment, composite score (0.401).",
+      "composite_score": 0.4011039852485572
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.03,
+      "sector": "Industrials",
+      "theme": null,
+      "rationale": "Positive outlook with strategic changes, bullish sentiment, composite score (0.399).",
+      "composite_score": 0.3987647884440635
+    },
+    {
+      "ticker": "PEP",
+      "weight": 0.03,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong history of dividends, bullish sentiment, composite score (0.391).",
+      "composite_score": 0.39064016534305157
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Focus on value offerings, neutral sentiment, composite score (0.389).",
+      "composite_score": 0.3888850419991843
+    },
+    {
+      "ticker": "SPGI",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strategic moves in big data sector, bullish sentiment, composite score (0.362).",
+      "composite_score": 0.3616176669511962
+    },
+    {
+      "ticker": "MSCI",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.391)",
+      "composite_score": 0.39054106612037964
+    },
+    {
+      "ticker": "V",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.355)",
+      "composite_score": 0.35516112427877133
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Information Technology": 0.16,
+    "Health Care": 0.11,
+    "Communication Services": 0.13,
+    "Biotechnology": 0.07,
+    "Utilities": 0.07,
+    "Financials": 0.21999999999999997,
+    "Consumer Staples": 0.08,
+    "Consumer Discretionary": 0.13,
+    "Industrials": 0.03
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-21",
+  "horizon_end": "2026-05-15",
+  "constructed_at": "2026-01-21T06:25:37.355158"
+}

@@ -1,0 +1,180 @@
+{
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.1,
+      "sector": "Materials",
+      "theme": null,
+      "rationale": "Highest composite score (0.760), strong bullish sentiment, resilient performance.",
+      "composite_score": 0.7599679295703171
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": "Regulatory Changes in Technology and Finance",
+      "rationale": "Strong growth potential in digital ad market, good composite score (0.554).",
+      "composite_score": 0.5544592814525917
+    },
+    {
+      "ticker": "LLY",
+      "weight": 0.09,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong growth in GLP-1 market, solid acquisition strategy, composite score (0.544).",
+      "composite_score": 0.5438399867169526
+    },
+    {
+      "ticker": "V",
+      "weight": 0.08,
+      "sector": "Financials",
+      "theme": "Regulatory Changes in Technology and Finance",
+      "rationale": "Strong volume growth and service momentum, composite score (0.541).",
+      "composite_score": 0.5412506144649001
+    },
+    {
+      "ticker": "BMY",
+      "weight": 0.07,
+      "sector": "Healthcare",
+      "theme": "Healthcare and Biotech Innovation",
+      "rationale": "Positive outlook on pipeline and earnings, composite score (0.539).",
+      "composite_score": 0.5390180056380303
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong advancements in AI and sustainability, composite score (0.520).",
+      "composite_score": 0.5201462479330335
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Expected strong earnings driven by international sales, composite score (0.513).",
+      "composite_score": 0.5129864794802556
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Leadership transition and focus on value-based pricing, composite score (0.511).",
+      "composite_score": 0.5109962015549884
+    },
+    {
+      "ticker": "T",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strengthening position in fiber and cloud sectors, composite score (0.509).",
+      "composite_score": 0.5088121314237575
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong pipeline in cardiology and oncology, composite score (0.502).",
+      "composite_score": 0.5024241996438468
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience",
+      "rationale": "Strong earnings and demand for products, composite score (0.460).",
+      "composite_score": 0.45963359407163434
+    },
+    {
+      "ticker": "HWM",
+      "weight": 0.04,
+      "sector": "Industrials",
+      "theme": "Infrastructure Investment Surge",
+      "rationale": "Strong quarterly earnings and demand for aerospace components, composite score (0.439).",
+      "composite_score": 0.4392466896668577
+    },
+    {
+      "ticker": "CCJ",
+      "weight": 0.04,
+      "sector": "Energy",
+      "theme": "Sustainability and Energy Transition",
+      "rationale": "Strategic shift and positive sentiment in nuclear energy, composite score (0.436).",
+      "composite_score": 0.4357590678507843
+    },
+    {
+      "ticker": "PGR",
+      "weight": 0.03,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Potential for recovery despite recent underperformance, composite score (0.402).",
+      "composite_score": 0.4021356241910514
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.03,
+      "sector": "Industrials",
+      "theme": "Jobless Growth and Capital Expenditure",
+      "rationale": "Strengthening position in defense sector, composite score (0.401).",
+      "composite_score": 0.4005160959677136
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Focus on innovation in payments, composite score (0.382).",
+      "composite_score": 0.3824560960924597
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Positioned to benefit from AI advancements, composite score (0.377).",
+      "composite_score": 0.3765237551417773
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Recent approval for RSV prevention drug, composite score (0.369).",
+      "composite_score": 0.36861296095200297
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.02,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.365)",
+      "composite_score": 0.36468059127633595
+    },
+    {
+      "ticker": "GE",
+      "weight": 0.02,
+      "sector": "Industrials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.361)",
+      "composite_score": 0.361422088449574
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Materials": 0.1,
+    "Communication Services": 0.19,
+    "Health Care": 0.22,
+    "Financials": 0.11,
+    "Healthcare": 0.07,
+    "Information Technology": 0.16,
+    "Industrials": 0.09000000000000001,
+    "Energy": 0.04,
+    "Consumer Staples": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-02-10",
+  "horizon_end": "2027-05-15",
+  "constructed_at": "2026-02-10T11:12:30.265198"
+}

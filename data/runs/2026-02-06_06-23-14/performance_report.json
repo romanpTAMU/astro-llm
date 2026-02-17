@@ -1,0 +1,285 @@
+{
+  "analysis_date": "2026-02-17T07:40:25.292643",
+  "portfolio_file": "data\\runs\\2026-02-06_06-23-14\\portfolio.json",
+  "construction_date": "2026-02-06",
+  "current_date": "2026-02-17",
+  "days_held": 11,
+  "portfolio_metrics": {
+    "weighted_return": -0.607323850048422,
+    "simple_avg_return": -0.5880401824127047,
+    "median_return": -0.42647420651194146,
+    "min_return": -9.396368780947888,
+    "max_return": 10.046200117825816,
+    "winners_count": 9,
+    "losers_count": 11,
+    "total_holdings": 20,
+    "sp500_return": -1.2843524919492664,
+    "outperformance": 0.6770286419008443,
+    "portfolio_beta": 0.8147699999999997,
+    "portfolio_alpha": 0.4391280298170813
+  },
+  "sp500_comparison": {
+    "construction_price": 690.6199951171875,
+    "current_price": 681.75,
+    "return_pct": -1.2843524919492664
+  },
+  "holdings": [
+    {
+      "ticker": "V",
+      "weight": 0.09,
+      "construction_price": 331.58,
+      "current_price": 314.08,
+      "return_pct": -5.27776102298088,
+      "contribution": -0.4749984920682792,
+      "beta": 0.78,
+      "sector": "Financials",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "construction_price": 322.86,
+      "current_price": 305.72,
+      "return_pct": -5.308802576968342,
+      "contribution": -0.42470420615746735,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.07,
+      "construction_price": 218.73,
+      "current_price": 225.65,
+      "return_pct": 3.163717825629779,
+      "contribution": 0.22146024779408455,
+      "beta": 1.626,
+      "sector": "Information Technology",
+      "theme": "Sustainability and Energy Transition"
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.07,
+      "construction_price": 384.32,
+      "current_price": 369.19,
+      "return_pct": -3.9368234804329716,
+      "contribution": -0.275577643630308,
+      "beta": 0.472,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Advances"
+    },
+    {
+      "ticker": "T",
+      "weight": 0.07,
+      "construction_price": 27.13,
+      "current_price": 28.69,
+      "return_pct": 5.7500921489126515,
+      "contribution": 0.40250645042388566,
+      "beta": 0.608,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.07,
+      "construction_price": 239.99,
+      "current_price": 243.45,
+      "return_pct": 1.4417267386141004,
+      "contribution": 0.10092087170298704,
+      "beta": 0.347,
+      "sector": "Healthcare",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.06,
+      "construction_price": 79.03,
+      "current_price": 78.68,
+      "return_pct": -0.44286979627988654,
+      "contribution": -0.026572187776793193,
+      "beta": 0.364,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.06,
+      "construction_price": 785.51,
+      "current_price": 803.17,
+      "return_pct": 2.248220901070638,
+      "contribution": 0.13489325406423827,
+      "beta": 0.413,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Advances"
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.05,
+      "construction_price": 84.82,
+      "current_price": 76.85,
+      "return_pct": -9.396368780947888,
+      "contribution": -0.46981843904739445,
+      "beta": 0.865,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.05,
+      "construction_price": 278.12,
+      "current_price": 255.78,
+      "return_pct": -8.032503955127284,
+      "contribution": -0.40162519775636424,
+      "beta": 1.107,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.05,
+      "construction_price": 623.58,
+      "current_price": 652.58,
+      "return_pct": 4.650566086147728,
+      "contribution": 0.23252830430738639,
+      "beta": 0.23,
+      "sector": "Aerospace & Defense",
+      "theme": "Geopolitical Tensions and Supply Chain Resilience"
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.05,
+      "construction_price": 46.31,
+      "current_price": 49.01,
+      "return_pct": 5.830274238825298,
+      "contribution": 0.2915137119412649,
+      "beta": 0.316,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "AMAT",
+      "weight": 0.04,
+      "construction_price": 322.51,
+      "current_price": 354.91,
+      "return_pct": 10.046200117825816,
+      "contribution": 0.4018480047130326,
+      "beta": 1.677,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.04,
+      "construction_price": 121.93,
+      "current_price": 121.41,
+      "return_pct": -0.42647420651194146,
+      "contribution": -0.017058968260477658,
+      "beta": 0.296,
+      "sector": "Healthcare",
+      "theme": null
+    },
+    {
+      "ticker": "PNC",
+      "weight": 0.03,
+      "construction_price": 242.48,
+      "current_price": 229.32,
+      "return_pct": -5.427251732101616,
+      "contribution": -0.16281755196304848,
+      "beta": 0.968,
+      "sector": "Financials",
+      "theme": "Financial Sector Resilience"
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.03,
+      "construction_price": 548.74,
+      "current_price": 518.36,
+      "return_pct": -5.53631956846594,
+      "contribution": -0.1660895870539782,
+      "beta": 0.821,
+      "sector": "Financials",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "NEE",
+      "weight": 0.03,
+      "construction_price": 89.47,
+      "current_price": 93.8,
+      "return_pct": 4.839611042807643,
+      "contribution": 0.14518833128422928,
+      "beta": 0.761,
+      "sector": "Utilities",
+      "theme": "Sustainability and Energy Transition"
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.02,
+      "construction_price": 82.2,
+      "current_price": 76.87,
+      "return_pct": -6.484184914841847,
+      "contribution": -0.12968369829683693,
+      "beta": 1.712,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.02,
+      "construction_price": 231.01,
+      "current_price": 235.53,
+      "return_pct": 1.9566252543179994,
+      "contribution": 0.03913250508635999,
+      "beta": 1.776,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.02,
+      "construction_price": 185.41,
+      "current_price": 182.78,
+      "return_pct": -1.4184779677471524,
+      "contribution": -0.02836955935494305,
+      "beta": 2.314,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    }
+  ],
+  "sector_performance": {
+    "Financials": {
+      "avg_return": -5.413777441182812,
+      "contribution": -0.8039056310853059,
+      "count": 3
+    },
+    "Communication Services": {
+      "avg_return": -0.05315527601805958,
+      "contribution": 0.1396322579108463,
+      "count": 4
+    },
+    "Information Technology": {
+      "avg_return": -0.6134679176747885,
+      "contribution": -0.23737243856522455,
+      "count": 6
+    },
+    "Healthcare": {
+      "avg_return": -0.16833751181504367,
+      "contribution": -0.056822486123560376,
+      "count": 4
+    },
+    "Consumer Staples": {
+      "avg_return": -0.44286979627988654,
+      "contribution": -0.026572187776793193,
+      "count": 1
+    },
+    "Aerospace & Defense": {
+      "avg_return": 4.650566086147728,
+      "contribution": 0.23252830430738639,
+      "count": 1
+    },
+    "Utilities": {
+      "avg_return": 4.839611042807643,
+      "contribution": 0.14518833128422928,
+      "count": 1
+    }
+  }
+}

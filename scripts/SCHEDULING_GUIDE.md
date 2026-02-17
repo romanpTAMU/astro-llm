@@ -120,6 +120,53 @@ jobs:
         run: python scripts/daily_submit.py
 ```
 
+## Bi-weekly Run (Sundays, Every 2 Weeks)
+
+A separate mode runs **every 2 weeks on Sundays**, intended for tracking a second portfolio without submitting to MAYS:
+
+- **Output**: `data/runs_biweekly/` (separate from daily `data/runs/`)
+- **Performance**: Tracked only for biweekly runs (`performance track --runs-dir data/runs_biweekly`)
+- **No submission** to MAYS and no email
+- **$50k allocation**: Portfolio weights are applied to a **$50,000** notional by default (e.g. 5% = $2,500). Set `BIWEEKLY_NOTIONAL` in `.env` to override.
+- **Rebalance = reset to $50k**: Each rebalance brings the portfolio back to target weights on $50k; P&L since the last run is taken out (not reinvested).
+- **P&L tracking**: Each rebalance run writes `period_pnl.json` in the run folder (value before rebalance vs $50k). `data/runs_biweekly/pnl_ledger.json` keeps a history of period P&L and **cumulative_pnl** over time.
+- **Trades CSV**: Each run produces `trades.csv` with columns B/S, SYMBOL, QTY, PRICE, PRINCIPAL. First run is all **Buy**; later runs **rebalance** (Sells then Buys). Current price is fetched for **sell-only** tickers.
+- **Run mode**: Biweekly runs are marked with `run_mode.json` (`{"mode": "biweekly"}`). `performance track` shows `[biweekly]` when listing.
+- **Email**: Optional. Set **`BIWEEKLY_EMAIL_TO`** to send the biweekly report to a **distinct** list. The email contains: **trades CSV** (buys/sells in body + attached), **P&L this period**, **Total P&L since inception**, **Beta** (current portfolio), **Alpha** (current portfolio vs S&P 500), and **current portfolio** (all stocks with weights and reasons). Command: `python main.py email send-biweekly --portfolio-file <path> --email-to ...`
+
+### Schedule bi-weekly task (PowerShell as Administrator)
+
+```powershell
+.\scripts\schedule_biweekly.ps1
+```
+
+This creates a task **"ASTRO Biweekly Portfolio Run"** that runs every 2 weeks on Sunday at 8:00 AM.
+
+### Manual bi-weekly run
+
+```bash
+# Run (only on Sundays unless --force)
+python scripts/biweekly_run.py
+
+# Run on any day (e.g. testing)
+python scripts/biweekly_run.py --force
+
+# Custom notional (default $50k)
+python scripts/biweekly_run.py --notional 75000
+```
+
+Set `BIWEEKLY_NOTIONAL` in `.env` to override the default $50k.
+
+### Generate trades CSV for an existing portfolio
+
+```bash
+# Initial (all Buy) — use 50000 for biweekly $50k allocation
+python main.py report trades-csv --portfolio-file data/runs_biweekly/2026-01-12_08-00-00/portfolio.json --out data/runs_biweekly/2026-01-12_08-00-00/trades.csv --notional 50000
+
+# Rebalance vs previous run (Sells then Buys); writes period_pnl.json
+python main.py report trades-csv --portfolio-file data/runs_biweekly/2026-01-26_08-00-00/portfolio.json --out data/runs_biweekly/2026-01-26_08-00-00/trades.csv --notional 50000 --previous-run data/runs_biweekly/2026-01-12_08-00-00
+```
+
 ## Manual Testing
 
 Test the script manually:

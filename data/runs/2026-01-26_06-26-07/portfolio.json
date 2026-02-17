@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.1,
+      "sector": "Materials",
+      "theme": null,
+      "rationale": "Highest composite score (0.607), bullish sentiment, strong market position.",
+      "composite_score": 0.6065212647823627
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.09,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong growth potential in AI, high composite score (0.585).",
+      "composite_score": 0.5847220941622744
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.08,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Solid demand for AI chips, composite score (0.556).",
+      "composite_score": 0.5557329094940194
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.08,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong earnings and guidance, composite score (0.540).",
+      "composite_score": 0.5402242912012005
+    },
+    {
+      "ticker": "NDAQ",
+      "weight": 0.07,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Positive momentum in fintech, composite score (0.531).",
+      "composite_score": 0.5305246235508723
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 0.07,
+      "sector": "Utilities",
+      "theme": "Energy Transition and Sustainability",
+      "rationale": "Strong position in renewable energy, composite score (0.525).",
+      "composite_score": 0.5252008100226784
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Potential undervaluation, composite score (0.523).",
+      "composite_score": 0.5225589916681871
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.06,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strategic focus on public health, composite score (0.526).",
+      "composite_score": 0.5262664297944103
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.05,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Promising drug pipeline, composite score (0.516).",
+      "composite_score": 0.5155347065173445
+    },
+    {
+      "ticker": "HIG",
+      "weight": 0.05,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Strong long-term returns, composite score (0.493).",
+      "composite_score": 0.49332658711958516
+    },
+    {
+      "ticker": "META",
+      "weight": 0.05,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong market position, composite score (0.475).",
+      "composite_score": 0.47505829651448195
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "AI-first strategy, composite score (0.450).",
+      "composite_score": 0.4496941412223804
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.04,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Strong dividend stock, composite score (0.448).",
+      "composite_score": 0.4480671176471403
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.03,
+      "sector": "Consumer Staples",
+      "theme": "Consumer Behavior Shifts",
+      "rationale": "Resilient performance, composite score (0.405).",
+      "composite_score": 0.4053570193893778
+    },
+    {
+      "ticker": "GILD",
+      "weight": 0.03,
+      "sector": "Health Care",
+      "theme": null,
+      "rationale": "Strong performance and potential upside, composite score (0.402).",
+      "composite_score": 0.4019339046669291
+    },
+    {
+      "ticker": "MDLZ",
+      "weight": 0.02,
+      "sector": "Consumer Staples",
+      "theme": null,
+      "rationale": "Growth opportunities in emerging markets, composite score (0.397).",
+      "composite_score": 0.39694774555158496
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.02,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Potential for dividend growth, composite score (0.395).",
+      "composite_score": 0.39526390502000264
+    },
+    {
+      "ticker": "PFE",
+      "weight": 0.02,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Advancements",
+      "rationale": "Strategic shifts and growth potential, composite score (0.393).",
+      "composite_score": 0.39349956368110095
+    },
+    {
+      "ticker": "MSCI",
+      "weight": 0.02,
+      "sector": "Financials",
+      "theme": null,
+      "rationale": "Added as top remaining candidate (composite score: 0.473)",
+      "composite_score": 0.47276190369893806
+    },
+    {
+      "ticker": "HON",
+      "weight": 0.02,
+      "sector": "Industrials",
+      "theme": "Geopolitical Risk and Supply Chain Resilience",
+      "rationale": "Added as top remaining candidate (composite score: 0.391)",
+      "composite_score": 0.3911990753976946
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Materials": 0.1,
+    "Communication Services": 0.16,
+    "Information Technology": 0.12,
+    "Health Care": 0.30000000000000004,
+    "Financials": 0.14,
+    "Utilities": 0.07,
+    "Consumer Staples": 0.09000000000000001,
+    "Industrials": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-01-26",
+  "horizon_end": "2027-05-15",
+  "constructed_at": "2026-01-26T06:26:28.200185"
+}

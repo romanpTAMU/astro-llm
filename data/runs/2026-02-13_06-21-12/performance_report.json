@@ -1,0 +1,290 @@
+{
+  "analysis_date": "2026-02-17T07:44:23.311978",
+  "portfolio_file": "data\\runs\\2026-02-13_06-21-12\\portfolio.json",
+  "construction_date": "2026-02-13",
+  "current_date": "2026-02-17",
+  "days_held": 4,
+  "portfolio_metrics": {
+    "weighted_return": -0.0006564192330835542,
+    "simple_avg_return": -0.0008205240413544426,
+    "median_return": 0.0,
+    "min_return": -0.016410480827088854,
+    "max_return": 0.0,
+    "winners_count": 0,
+    "losers_count": 1,
+    "total_holdings": 20,
+    "sp500_return": 0.0,
+    "outperformance": -0.0006564192330835542,
+    "portfolio_beta": 0.7759299999999997,
+    "portfolio_alpha": -0.0006564192330835542
+  },
+  "sp500_comparison": {
+    "construction_price": 681.75,
+    "current_price": 681.75,
+    "return_pct": 0.0
+  },
+  "holdings": [
+    {
+      "ticker": "LLY",
+      "weight": 0.1,
+      "construction_price": 1040.0,
+      "current_price": 1040.0,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.394,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.1,
+      "construction_price": 314.08,
+      "current_price": 314.08,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.78,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.1,
+      "construction_price": 305.72,
+      "current_price": 305.72,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "T",
+      "weight": 0.07,
+      "construction_price": 28.69,
+      "current_price": 28.69,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.608,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "ZTS",
+      "weight": 0.07,
+      "construction_price": 126.65,
+      "current_price": 126.65,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.961,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "SYK",
+      "weight": 0.06,
+      "construction_price": 366.05,
+      "current_price": 366.05,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.869,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.06,
+      "construction_price": 243.45,
+      "current_price": 243.45,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.347,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.06,
+      "construction_price": 78.68,
+      "current_price": 78.68,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.364,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.05,
+      "construction_price": 49.01,
+      "current_price": 49.01,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.316,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "AMT",
+      "weight": 0.04,
+      "construction_price": 192.1,
+      "current_price": 192.1,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.944,
+      "sector": "Real Estate",
+      "theme": null
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.04,
+      "construction_price": 518.36,
+      "current_price": 518.36,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.821,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.04,
+      "construction_price": 182.81,
+      "current_price": 182.78,
+      "return_pct": -0.016410480827088854,
+      "contribution": -0.0006564192330835542,
+      "beta": 2.314,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.03,
+      "construction_price": 652.58,
+      "current_price": 652.58,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.23,
+      "sector": "Aerospace & Defense",
+      "theme": "Geopolitical Tensions and Multipolarity"
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.03,
+      "construction_price": 255.78,
+      "current_price": 255.78,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.107,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.03,
+      "construction_price": 121.41,
+      "current_price": 121.41,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.296,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "PEP",
+      "weight": 0.03,
+      "construction_price": 165.94,
+      "current_price": 165.94,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.416,
+      "sector": "Consumer Staples",
+      "theme": null
+    },
+    {
+      "ticker": "USB",
+      "weight": 0.03,
+      "construction_price": 57.69,
+      "current_price": 57.69,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.057,
+      "sector": "Financials",
+      "theme": null
+    },
+    {
+      "ticker": "CSX",
+      "weight": 0.02,
+      "construction_price": 40.87,
+      "current_price": 40.87,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.29,
+      "sector": "Transportation",
+      "theme": "Infrastructure Spending and Modernization"
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.02,
+      "construction_price": 401.32,
+      "current_price": 401.32,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.084,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "META",
+      "weight": 0.02,
+      "construction_price": 639.77,
+      "current_price": 639.77,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.284,
+      "sector": "Communication Services",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Health Care": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 5
+    },
+    "Information Technology": {
+      "avg_return": -0.0032820961654177706,
+      "contribution": -0.0006564192330835542,
+      "count": 5
+    },
+    "Communication Services": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 4
+    },
+    "Consumer Staples": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 2
+    },
+    "Real Estate": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    },
+    "Aerospace & Defense": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    },
+    "Financials": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    },
+    "Transportation": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    }
+  }
+}

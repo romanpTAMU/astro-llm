@@ -4,6 +4,8 @@ import json
 import os
 import smtplib
 from datetime import date, datetime
+from email import encoders
+from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -431,6 +433,179 @@ def send_daily_report(
         return False
 
 
+def build_biweekly_email_content(run_folder: Path) -> tuple[list[str], Optional[bytes], str]:
+    """Build email body for biweekly report: trades CSV summary, P&L, beta/alpha, current portfolio.
+
+    Returns:
+        (body_lines, csv_bytes for attachment or None, suggested_csv_filename)
+    """
+    body = []
+    body.append("=" * 80)
+    body.append("BIWEEKLY PORTFOLIO REPORT")
+    body.append("=" * 80)
+    body.append("")
+    body.append(f"Report Date: {date.today().strftime('%B %d, %Y')}")
+    body.append(f"Run: {run_folder.name}")
+    body.append("")
+
+    csv_bytes: Optional[bytes] = None
+    csv_path = run_folder / "trades.csv"
+    if csv_path.exists():
+        csv_bytes = csv_path.read_bytes()
+        body.append("=" * 80)
+        body.append("TRADES (BUYS / SELLS)")
+        body.append("=" * 80)
+        body.append("")
+        try:
+            csv_text = csv_path.read_text(encoding="utf-8")
+            for line in csv_text.strip().splitlines():
+                body.append(line)
+        except Exception:
+            body.append("(See attached trades.csv)")
+        body.append("")
+    else:
+        body.append("(No trades.csv for this run)")
+        body.append("")
+
+    # P&L this period and total
+    period_pnl_path = run_folder / "period_pnl.json"
+    pnl_ledger_path = run_folder.parent / "pnl_ledger.json"
+    period_pnl: Optional[float] = None
+    cumulative_pnl: Optional[float] = None
+    if period_pnl_path.exists():
+        try:
+            data = json.loads(period_pnl_path.read_text(encoding="utf-8"))
+            period_pnl = data.get("period_pnl")
+        except Exception:
+            pass
+    if pnl_ledger_path.exists():
+        try:
+            ledger = json.loads(pnl_ledger_path.read_text(encoding="utf-8"))
+            cumulative_pnl = ledger.get("cumulative_pnl", 0.0)
+        except Exception:
+            pass
+
+    body.append("=" * 80)
+    body.append("P&L")
+    body.append("=" * 80)
+    body.append("")
+    if period_pnl is not None:
+        body.append(f"  P&L this biweekly period:  ${period_pnl:+,.2f}")
+    else:
+        body.append("  P&L this biweekly period:  N/A (initial run or missing period_pnl.json)")
+    if cumulative_pnl is not None:
+        body.append(f"  Total P&L since inception: ${cumulative_pnl:+,.2f}")
+    else:
+        body.append("  Total P&L since inception: N/A")
+    body.append("")
+
+    # Beta and Alpha (current portfolio from performance report)
+    perf_path = run_folder / "performance_report.json"
+    beta_val: Optional[float] = None
+    alpha_val: Optional[float] = None
+    if perf_path.exists():
+        try:
+            report = json.loads(perf_path.read_text(encoding="utf-8"))
+            metrics = report.get("portfolio_metrics", {})
+            beta_val = metrics.get("portfolio_beta")
+            alpha_val = metrics.get("portfolio_alpha")
+        except Exception:
+            pass
+
+    body.append("=" * 80)
+    body.append("RISK (CURRENT PORTFOLIO)")
+    body.append("=" * 80)
+    body.append("")
+    body.append(f"  Beta:  {beta_val if beta_val is not None else 'N/A'}")
+    body.append(f"  Alpha: {f'{alpha_val:+.2f}%' if alpha_val is not None else 'N/A'} (vs S&P 500, since construction)")
+    body.append("")
+
+    # Current portfolio: stocks, weights, reasons
+    portfolio_path = run_folder / "portfolio.json"
+    if portfolio_path.exists():
+        body.append("=" * 80)
+        body.append("CURRENT PORTFOLIO — HOLDINGS, WEIGHTS & REASONS")
+        body.append("=" * 80)
+        body.append("")
+        try:
+            portfolio_data = json.loads(portfolio_path.read_text(encoding="utf-8"))
+            holdings = portfolio_data.get("holdings", [])
+            holdings = sorted(holdings, key=lambda h: h.get("weight", 0), reverse=True)
+            for i, h in enumerate(holdings, 1):
+                ticker = h.get("ticker", "N/A")
+                weight = h.get("weight", 0) * 100
+                rationale = h.get("rationale", "No rationale provided")
+                sector = h.get("sector", "—")
+                body.append(f"{i}. {ticker}  —  {weight:.2f}%")
+                body.append(f"   Sector: {sector}")
+                body.append(f"   Rationale: {rationale}")
+                body.append("")
+        except Exception as e:
+            body.append(f"Error reading portfolio: {e}")
+            body.append("")
+    else:
+        body.append("(No portfolio.json in run folder)")
+        body.append("")
+
+    body.append("=" * 80)
+    body.append("End of Biweekly Report")
+    body.append("=" * 80)
+
+    filename = f"trades_{run_folder.name}.csv"
+    return body, csv_bytes, filename
+
+
+def send_biweekly_report(
+    email_to: Union[str, list[str]],
+    run_folder: Path,
+    email_from: Optional[str] = None,
+    smtp_server: str = "smtp.gmail.com",
+    smtp_port: int = 587,
+    smtp_user: Optional[str] = None,
+    smtp_password: Optional[str] = None,
+) -> bool:
+    """Send biweekly report email (trades, P&L, beta/alpha, current portfolio). Attaches trades CSV."""
+    if isinstance(email_to, str):
+        email_recipients = [e.strip() for e in email_to.split(",") if e.strip()]
+    else:
+        email_recipients = email_to
+    if not email_recipients:
+        typer.echo("[ERROR] No email recipients provided")
+        return False
+    if email_from is None:
+        email_from = email_recipients[0]
+    if smtp_user is None:
+        smtp_user = email_from
+
+    body_lines, csv_bytes, csv_filename = build_biweekly_email_content(run_folder)
+    msg = MIMEMultipart()
+    msg["From"] = email_from
+    msg["To"] = ", ".join(email_recipients)
+    msg["Subject"] = f"Biweekly Portfolio Report — {date.today().strftime('%Y-%m-%d')} ({run_folder.name})"
+
+    msg.attach(MIMEText("\n".join(body_lines), "plain"))
+
+    if csv_bytes:
+        part = MIMEBase("text", "csv")
+        part.set_payload(csv_bytes)
+        encoders.encode_base64(part)
+        part.add_header("Content-Disposition", "attachment", filename=csv_filename)
+        msg.attach(part)
+
+    try:
+        typer.echo(f"Sending biweekly email to {len(email_recipients)} recipient(s)...")
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(smtp_user, smtp_password)
+        server.sendmail(email_from, email_recipients, msg.as_string())
+        server.quit()
+        typer.echo(f"[SUCCESS] Biweekly email sent to {len(email_recipients)} recipient(s)")
+        return True
+    except Exception as e:
+        typer.echo(f"[ERROR] Failed to send biweekly email: {e}")
+        return False
+
+
 @app.command()
 def send(
     email_to: Optional[str] = typer.Option(None, help="Recipient email address(es) - comma-separated for multiple (defaults to EMAIL_TO env var)"),
@@ -489,6 +664,62 @@ def send(
             smtp_password=smtp_password,
             latest_portfolio_path=latest_portfolio,
         )
+
+
+@app.command("send-biweekly")
+def send_biweekly_cmd(
+    run_folder: Optional[Path] = typer.Option(
+        None,
+        "--run-folder",
+        help="Biweekly run folder (e.g. data/runs_biweekly/2026-01-26_08-00-00). Default: infer from --portfolio-file.",
+    ),
+    portfolio_file: Optional[Path] = typer.Option(
+        None,
+        "--portfolio-file",
+        help="Path to portfolio.json; run folder is its parent (used if --run-folder not set).",
+    ),
+    email_to: Optional[str] = typer.Option(
+        None,
+        help="Recipient(s), comma-separated. Default: BIWEEKLY_EMAIL_TO env.",
+    ),
+    email_from: Optional[str] = typer.Option(None, help="Sender. Default: first email_to or BIWEEKLY_EMAIL_FROM."),
+    smtp_server: str = typer.Option("smtp.gmail.com", help="SMTP server"),
+    smtp_port: int = typer.Option(587, help="SMTP port"),
+    smtp_password: Optional[str] = typer.Option(None, help="SMTP password; default SMTP_PASSWORD env."),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print email content, do not send."),
+):
+    """Send biweekly report: trades CSV (attached + in body), period P&L, total P&L, beta, alpha, current portfolio."""
+    if run_folder is None and portfolio_file is not None and portfolio_file.exists():
+        run_folder = portfolio_file.parent
+    if run_folder is None or not run_folder.exists():
+        typer.echo("[ERROR] Need --run-folder or --portfolio-file pointing to a biweekly run.")
+        raise typer.Exit(code=1)
+    if email_to is None:
+        email_to = os.getenv("BIWEEKLY_EMAIL_TO")
+    if not email_to or not email_to.strip():
+        typer.echo("[ERROR] Set BIWEEKLY_EMAIL_TO or pass --email-to for biweekly report.")
+        raise typer.Exit(code=1)
+    if not dry_run:
+        pw = smtp_password or os.getenv("SMTP_PASSWORD")
+        if not pw:
+            typer.echo("[ERROR] SMTP_PASSWORD required. Set env or use --smtp-password")
+            raise typer.Exit(code=1)
+    body_lines, _, _ = build_biweekly_email_content(run_folder)
+    if dry_run:
+        typer.echo("=" * 80)
+        typer.echo("BIWEEKLY EMAIL PREVIEW (DRY RUN)")
+        typer.echo("=" * 80)
+        typer.echo("\n".join(body_lines))
+        return
+    email_from_val = email_from or os.getenv("BIWEEKLY_EMAIL_FROM", "").strip() or email_to.split(",")[0].strip()
+    send_biweekly_report(
+        email_to=email_to.strip(),
+        run_folder=run_folder,
+        email_from=email_from_val,
+        smtp_server=smtp_server,
+        smtp_port=smtp_port,
+        smtp_password=smtp_password or os.getenv("SMTP_PASSWORD"),
+    )
 
 
 if __name__ == "__main__":

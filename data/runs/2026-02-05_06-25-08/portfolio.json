@@ -1,0 +1,179 @@
+{
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.1,
+      "sector": "Materials",
+      "theme": null,
+      "rationale": "Highest composite score (0.764), bullish sentiment, strong fundamentals.",
+      "composite_score": 0.7642987964416533
+    },
+    {
+      "ticker": "V",
+      "weight": 0.09,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong market position and growth potential, solid composite score (0.562).",
+      "composite_score": 0.5616334813748
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.08,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Consistent performance and bullish sentiment, composite score (0.533).",
+      "composite_score": 0.5334776975000362
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.08,
+      "sector": "Healthcare",
+      "theme": null,
+      "rationale": "Strong growth prospects in oncology, solid fundamentals, composite score (0.532).",
+      "composite_score": 0.5319452590284912
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.06,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout",
+      "rationale": "Strong earnings growth, bullish sentiment, composite score (0.507).",
+      "composite_score": 0.507104113668455
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.06,
+      "sector": "Information Technology",
+      "theme": "Tech Sector Revaluation",
+      "rationale": "Positive outlook in IoT market, strong fundamentals, composite score (0.501).",
+      "composite_score": 0.5005138738556257
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Inflation and Interest Rate Dynamics",
+      "rationale": "Steady performance and innovation focus, composite score (0.491).",
+      "composite_score": 0.49050230325693117
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.05,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth",
+      "rationale": "Strong growth potential, bullish sentiment, composite score (0.490).",
+      "composite_score": 0.49020555727100146
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "sector": "Consumer Staples",
+      "theme": "Inflation and Interest Rate Dynamics",
+      "rationale": "Strong dividend history and market position, composite score (0.468).",
+      "composite_score": 0.46793118765406494
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.05,
+      "sector": "Information Technology",
+      "theme": "Tech Sector Revaluation",
+      "rationale": "Strong growth in App Store revenues, composite score (0.461).",
+      "composite_score": 0.46080851353758806
+    },
+    {
+      "ticker": "T",
+      "weight": 0.04,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong subscriber growth and acquisition, composite score (0.460).",
+      "composite_score": 0.45991835244094903
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Positive momentum and strong historical performance, composite score (0.447).",
+      "composite_score": 0.44713591028190763
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.04,
+      "sector": "Industrials",
+      "theme": null,
+      "rationale": "Strong contract wins and revenue visibility, composite score (0.439).",
+      "composite_score": 0.4392652432864244
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.04,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong growth potential in semiconductor sector, composite score (0.439).",
+      "composite_score": 0.43907190759308495
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.03,
+      "sector": "Communication Services",
+      "theme": null,
+      "rationale": "Strong earnings and dividend history, composite score (0.419).",
+      "composite_score": 0.4190082319114577
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.03,
+      "sector": "Consumer Discretionary",
+      "theme": null,
+      "rationale": "Resilient business model and dividend growth, composite score (0.410).",
+      "composite_score": 0.41039446581355243
+    },
+    {
+      "ticker": "CARR",
+      "weight": 0.03,
+      "sector": "Industrials",
+      "theme": "Infrastructure Investment Surge",
+      "rationale": "Moderately optimistic outlook despite recent underperformance, composite score (0.396).",
+      "composite_score": 0.3960030443167379
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.03,
+      "sector": "Information Technology",
+      "theme": null,
+      "rationale": "Strong revenue growth and diversified presence, composite score (0.393).",
+      "composite_score": 0.3927003017570615
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.03,
+      "sector": "Healthcare",
+      "theme": null,
+      "rationale": "Strategic acquisitions enhancing growth potential, composite score (0.384).",
+      "composite_score": 0.38404634572916124
+    },
+    {
+      "ticker": "NEE",
+      "weight": 0.02,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition",
+      "rationale": "Added as top remaining candidate (composite score: 0.382)",
+      "composite_score": 0.38175925109916475
+    }
+  ],
+  "total_weight": 1.0,
+  "sector_allocation": {
+    "Materials": 0.1,
+    "Information Technology": 0.31000000000000005,
+    "Healthcare": 0.24000000000000002,
+    "Communication Services": 0.13,
+    "Consumer Staples": 0.1,
+    "Industrials": 0.07,
+    "Consumer Discretionary": 0.03,
+    "Utilities": 0.02
+  },
+  "industry_allocation": {},
+  "portfolio_date": "2026-02-05",
+  "horizon_end": "2027-05-15",
+  "constructed_at": "2026-02-05T06:25:27.364263"
+}

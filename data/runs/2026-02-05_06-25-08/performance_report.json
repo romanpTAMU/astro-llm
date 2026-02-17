@@ -1,0 +1,290 @@
+{
+  "analysis_date": "2026-02-17T07:39:06.112570",
+  "portfolio_file": "data\\runs\\2026-02-05_06-25-08\\portfolio.json",
+  "construction_date": "2026-02-05",
+  "current_date": "2026-02-17",
+  "days_held": 12,
+  "portfolio_metrics": {
+    "weighted_return": 1.645543770022317,
+    "simple_avg_return": 1.5114734529498821,
+    "median_return": 2.3802514824004364,
+    "min_return": -7.707169811320746,
+    "max_return": 15.912650879941026,
+    "winners_count": 14,
+    "losers_count": 6,
+    "total_holdings": 20,
+    "sp500_return": 0.6094868676503942,
+    "outperformance": 1.0360569023719228,
+    "portfolio_beta": 0.6822399999999996,
+    "portfolio_alpha": 1.2297274494365122
+  },
+  "sp500_comparison": {
+    "construction_price": 677.6199951171875,
+    "current_price": 681.75,
+    "return_pct": 0.6094868676503942
+  },
+  "holdings": [
+    {
+      "ticker": "NEM",
+      "weight": 0.1,
+      "construction_price": 108.53,
+      "current_price": 125.8,
+      "return_pct": 15.912650879941026,
+      "contribution": 1.5912650879941026,
+      "beta": 0.437,
+      "sector": "Materials",
+      "theme": null
+    },
+    {
+      "ticker": "V",
+      "weight": 0.09,
+      "construction_price": 329.13,
+      "current_price": 314.08,
+      "return_pct": -4.572661258469301,
+      "contribution": -0.4115395132622371,
+      "beta": 0.78,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.08,
+      "construction_price": 367.8,
+      "current_price": 369.19,
+      "return_pct": 0.37792278412180164,
+      "contribution": 0.03023382272974413,
+      "beta": 0.472,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "JNJ",
+      "weight": 0.08,
+      "construction_price": 237.79,
+      "current_price": 243.45,
+      "return_pct": 2.3802514824004364,
+      "contribution": 0.19042011859203492,
+      "beta": 0.347,
+      "sector": "Healthcare",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.06,
+      "construction_price": 331.25,
+      "current_price": 305.72,
+      "return_pct": -7.707169811320746,
+      "contribution": -0.46243018867924474,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "CSCO",
+      "weight": 0.06,
+      "construction_price": 82.36,
+      "current_price": 76.85,
+      "return_pct": -6.690140845070429,
+      "contribution": -0.40140845070422576,
+      "beta": 0.865,
+      "sector": "Information Technology",
+      "theme": "Tech Sector Revaluation"
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.05,
+      "construction_price": 158.61,
+      "current_price": 160.07,
+      "return_pct": 0.920496816089767,
+      "contribution": 0.04602484080448835,
+      "beta": 0.38,
+      "sector": "Consumer Staples",
+      "theme": "Inflation and Interest Rate Dynamics"
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.05,
+      "construction_price": 766.63,
+      "current_price": 803.17,
+      "return_pct": 4.766314910713116,
+      "contribution": 0.23831574553565582,
+      "beta": 0.413,
+      "sector": "Healthcare",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "construction_price": 78.51,
+      "current_price": 78.68,
+      "return_pct": 0.21653292574194588,
+      "contribution": 0.010826646287097294,
+      "beta": 0.364,
+      "sector": "Consumer Staples",
+      "theme": "Inflation and Interest Rate Dynamics"
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.05,
+      "construction_price": 275.91,
+      "current_price": 255.78,
+      "return_pct": -7.295857344786351,
+      "contribution": -0.3647928672393176,
+      "beta": 1.107,
+      "sector": "Information Technology",
+      "theme": "Tech Sector Revaluation"
+    },
+    {
+      "ticker": "T",
+      "weight": 0.04,
+      "construction_price": 27.31,
+      "current_price": 28.69,
+      "return_pct": 5.053094104723554,
+      "contribution": 0.20212376418894218,
+      "beta": 0.608,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "ADI",
+      "weight": 0.04,
+      "construction_price": 322.12,
+      "current_price": 337.1,
+      "return_pct": 4.6504408295045385,
+      "contribution": 0.18601763318018155,
+      "beta": 1.031,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.04,
+      "construction_price": 609.18,
+      "current_price": 652.58,
+      "return_pct": 7.1243310679930545,
+      "contribution": 0.2849732427197222,
+      "beta": 0.23,
+      "sector": "Industrials",
+      "theme": null
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.04,
+      "construction_price": 213.31,
+      "current_price": 235.53,
+      "return_pct": 10.416764333598987,
+      "contribution": 0.4166705733439595,
+      "beta": 1.776,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.03,
+      "construction_price": 47.1,
+      "current_price": 49.01,
+      "return_pct": 4.055201698513793,
+      "contribution": 0.12165605095541378,
+      "beta": 0.316,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.03,
+      "construction_price": 323.48,
+      "current_price": 327.58,
+      "return_pct": 1.2674663039445917,
+      "contribution": 0.03802398911833775,
+      "beta": 0.528,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "CARR",
+      "weight": 0.03,
+      "construction_price": 63.1,
+      "current_price": 65.4,
+      "return_pct": 3.645007923930276,
+      "contribution": 0.10935023771790828,
+      "beta": 1.335,
+      "sector": "Industrials",
+      "theme": "Infrastructure Investment Surge"
+    },
+    {
+      "ticker": "MA",
+      "weight": 0.03,
+      "construction_price": 551.89,
+      "current_price": 518.36,
+      "return_pct": -6.075486057004109,
+      "contribution": -0.18226458171012325,
+      "beta": 0.821,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "MDT",
+      "weight": 0.03,
+      "construction_price": 102.95,
+      "current_price": 99.49,
+      "return_pct": -3.3608547838756753,
+      "contribution": -0.10082564351627026,
+      "beta": 0.718,
+      "sector": "Healthcare",
+      "theme": null
+    },
+    {
+      "ticker": "NEE",
+      "weight": 0.02,
+      "construction_price": 89.21,
+      "current_price": 93.8,
+      "return_pct": 5.145163098307369,
+      "contribution": 0.10290326196614738,
+      "beta": 0.761,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition"
+    }
+  ],
+  "sector_performance": {
+    "Materials": {
+      "avg_return": 15.912650879941026,
+      "contribution": 1.5912650879941026,
+      "count": 1
+    },
+    "Information Technology": {
+      "avg_return": -1.5944900570377776,
+      "contribution": -0.7573172063917627,
+      "count": 6
+    },
+    "Healthcare": {
+      "avg_return": 1.0409085983399198,
+      "contribution": 0.3581440433411646,
+      "count": 4
+    },
+    "Communication Services": {
+      "avg_return": 0.4670419973055336,
+      "contribution": -0.1386503735348888,
+      "count": 3
+    },
+    "Consumer Staples": {
+      "avg_return": 0.5685148709158564,
+      "contribution": 0.05685148709158564,
+      "count": 2
+    },
+    "Industrials": {
+      "avg_return": 5.384669495961665,
+      "contribution": 0.39432348043763044,
+      "count": 2
+    },
+    "Consumer Discretionary": {
+      "avg_return": 1.2674663039445917,
+      "contribution": 0.03802398911833775,
+      "count": 1
+    },
+    "Utilities": {
+      "avg_return": 5.145163098307369,
+      "contribution": 0.10290326196614738,
+      "count": 1
+    }
+  }
+}

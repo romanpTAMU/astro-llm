@@ -99,6 +99,7 @@ def user_themes(horizon_end: date, remaining_days: int, general_news: list = Non
         - Consumer behavior changes
         - Geopolitical developments affecting US markets
         - Trends evident in recent news
+        - Memory/compute gap
         
         Output JSON strictly as:
         {{

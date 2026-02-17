@@ -1,15 +1,197 @@
 from __future__ import annotations
 
+import csv
 import json
+import time
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
+from typing import Optional
 
 import typer
 
-from .models import Portfolio
+from .config import load_config
+from .data_fetcher import fetch_price_data
+from .models import Portfolio, ScoredCandidatesResponse
 
 app = typer.Typer()
+
+
+def _load_portfolio_and_prices(
+    portfolio_file: Path,
+    scored_candidates_file: Optional[Path],
+) -> tuple[Portfolio, dict[str, float]]:
+    """Load portfolio and price-by-ticker from scored candidates."""
+    if scored_candidates_file is None:
+        scored_candidates_file = portfolio_file.parent / "scored_candidates.json"
+    if not scored_candidates_file.exists():
+        typer.echo(f"Scored candidates file not found: {scored_candidates_file}")
+        raise typer.Exit(code=1)
+    portfolio_data = json.loads(portfolio_file.read_text(encoding="utf-8"))
+    portfolio = Portfolio.model_validate(portfolio_data)
+    scored_data = json.loads(scored_candidates_file.read_text(encoding="utf-8"))
+    scored_resp = ScoredCandidatesResponse.model_validate(scored_data)
+    price_by_ticker = {
+        c.ticker: c.price
+        for c in scored_resp.candidates
+        if c.price is not None and c.price > 0
+    }
+    return portfolio, price_by_ticker
+
+
+def write_trades_csv(
+    portfolio_file: Path,
+    out_csv: Path,
+    scored_candidates_file: Optional[Path] = None,
+    notional: float = 1_000_000.0,
+    side: str = "Buy",
+    previous_portfolio_file: Optional[Path] = None,
+    previous_scored_file: Optional[Path] = None,
+) -> None:
+    """Write a trades CSV with columns B/S, SYMBOL, QTY, PRICE, PRINCIPAL.
+
+    - Initial run (no previous): all rows are Buy at full target size.
+    - Rebalance (previous provided): Sell rows first (reductions/removals), then Buy rows
+      (additions/increases), so the sheet rebalances the existing portfolio to the new one.
+    """
+    if not portfolio_file.exists():
+        typer.echo(f"Portfolio file not found: {portfolio_file}")
+        raise typer.Exit(code=1)
+
+    portfolio, price_by_ticker = _load_portfolio_and_prices(
+        portfolio_file, scored_candidates_file
+    )
+
+    def _shares(weight: float, ticker: str) -> int:
+        p = price_by_ticker.get(ticker)
+        if p is None or p <= 0:
+            return 0
+        return int(round(weight * notional / p))
+
+    # Current target shares per ticker
+    current_shares = {}
+    for h in portfolio.holdings:
+        q = _shares(h.weight, h.ticker)
+        if q > 0:
+            current_shares[h.ticker] = q
+
+    if previous_portfolio_file is None or not previous_portfolio_file.exists():
+        # Initial run: all Buy at full size
+        rows = []
+        for holding in portfolio.holdings:
+            price = price_by_ticker.get(holding.ticker)
+            if price is None or price <= 0:
+                typer.echo(f"[WARN] No valid price for {holding.ticker}, skipping row")
+                continue
+            qty = current_shares.get(holding.ticker, 0)
+            if qty <= 0:
+                continue
+            principal = round(qty * price, 2)
+            rows.append({
+                "B/S": "Buy",
+                "SYMBOL": holding.ticker,
+                "QTY": qty,
+                "PRICE": round(price, 4),
+                "PRINCIPAL": principal,
+            })
+    else:
+        # Rebalance: compare to previous portfolio
+        prev_portfolio, prev_prices = _load_portfolio_and_prices(
+            previous_portfolio_file,
+            previous_scored_file or (previous_portfolio_file.parent / "scored_candidates.json"),
+        )
+
+        def _prev_shares(weight: float, ticker: str) -> int:
+            p = prev_prices.get(ticker)
+            if p is None or p <= 0:
+                return 0
+            return int(round(weight * notional / p))
+
+        prev_shares = {}
+        for h in prev_portfolio.holdings:
+            q = _prev_shares(h.weight, h.ticker)
+            if q > 0:
+                prev_shares[h.ticker] = q
+
+        # Fetch current price for sell-only tickers (not in current run's scored data)
+        sell_only_tickers = set(prev_shares) - set(price_by_ticker)
+        if sell_only_tickers:
+            cfg = load_config()
+            for ticker in sell_only_tickers:
+                typer.echo(f"  Fetching current price for sell-only {ticker}...", nl=False)
+                pd = fetch_price_data(
+                    ticker,
+                    finnhub_key=cfg.finnhub_api_key,
+                    fmp_key=cfg.fmp_api_key,
+                )
+                if pd and pd.price and pd.price > 0:
+                    price_by_ticker[ticker] = pd.price
+                    typer.echo(f" ${pd.price:.2f}")
+                else:
+                    typer.echo(" N/A (using previous run price)")
+                    if prev_prices.get(ticker):
+                        price_by_ticker[ticker] = prev_prices[ticker]
+                time.sleep(0.25)
+
+        # Portfolio value before rebalance (at current prices); P&L = value - target notional
+        portfolio_value_before_rebalance = 0.0
+        for ticker, qty in prev_shares.items():
+            price = price_by_ticker.get(ticker) or prev_prices.get(ticker)
+            if price and price > 0:
+                portfolio_value_before_rebalance += qty * price
+        period_pnl = portfolio_value_before_rebalance - notional
+
+        all_tickers = set(prev_shares) | set(current_shares)
+        sell_rows = []
+        buy_rows = []
+        for ticker in sorted(all_tickers):
+            prev_q = prev_shares.get(ticker, 0)
+            curr_q = current_shares.get(ticker, 0)
+            # Use current price (from scored data or fetched for sell-only); else previous price
+            price = price_by_ticker.get(ticker) or prev_prices.get(ticker)
+            if price is None or price <= 0:
+                if prev_q > 0:
+                    typer.echo(f"[WARN] No price for {ticker}, skipping row")
+                continue
+            if curr_q > prev_q:
+                buy_rows.append({
+                    "B/S": "Buy",
+                    "SYMBOL": ticker,
+                    "QTY": curr_q - prev_q,
+                    "PRICE": round(price, 4),
+                    "PRINCIPAL": round((curr_q - prev_q) * price, 2),
+                })
+            elif curr_q < prev_q:
+                sell_rows.append({
+                    "B/S": "Sell",
+                    "SYMBOL": ticker,
+                    "QTY": prev_q - curr_q,
+                    "PRICE": round(price, 4),
+                    "PRINCIPAL": round((prev_q - curr_q) * price, 2),
+                })
+
+        rows = sell_rows + buy_rows
+
+        # Write period P&L for this rebalance (reset to notional each time; P&L taken out)
+        pnl_file = out_csv.parent / "period_pnl.json"
+        pnl_data = {
+            "period_pnl": round(period_pnl, 2),
+            "portfolio_value_before_rebalance": round(portfolio_value_before_rebalance, 2),
+            "target_notional": notional,
+            "run_date": date.today().isoformat(),
+        }
+        pnl_file.write_text(json.dumps(pnl_data, indent=2), encoding="utf-8")
+        typer.echo(
+            f"  Period P&L: ${period_pnl:+,.2f} (value before rebalance: ${portfolio_value_before_rebalance:,.2f} → target ${notional:,.0f})"
+        )
+
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["B/S", "SYMBOL", "QTY", "PRICE", "PRINCIPAL"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    typer.echo(f"Trades CSV written to {out_csv} ({len(rows)} rows)")
 
 
 def generate_portfolio_report(
@@ -306,4 +488,48 @@ def generate(
             format = "text"
     
     generate_portfolio_report(portfolio_file, out, format)
+
+
+@app.command("trades-csv")
+def trades_csv(
+    portfolio_file: Path = typer.Option(
+        ..., help="Portfolio JSON path (e.g. run folder / portfolio.json)"
+    ),
+    out: Path = typer.Option(
+        ..., help="Output CSV path (e.g. run folder / trades.csv)"
+    ),
+    scored_candidates_file: Optional[Path] = typer.Option(
+        None, help="Scored candidates JSON (default: same dir as portfolio / scored_candidates.json)"
+    ),
+    notional: float = typer.Option(
+        1_000_000.0, help="Total notional in USD for computing QTY"
+    ),
+    side: str = typer.Option(
+        "Buy", help="B/S column value when not rebalancing (ignored if --previous-run is set)"
+    ),
+    previous_run: Optional[Path] = typer.Option(
+        None,
+        "--previous-run",
+        help="Path to previous run folder for rebalance: Sells then Buys to adjust to current portfolio",
+    ),
+):
+    """Export portfolio to a trades CSV (B/S, SYMBOL, QTY, PRICE, PRINCIPAL).
+    With --previous-run, outputs rebalance trades (sells then buys) for a single continuous portfolio.
+    """
+    prev_portfolio = prev_scored = None
+    if previous_run is not None:
+        prev_portfolio = previous_run / "portfolio.json"
+        prev_scored = previous_run / "scored_candidates.json"
+        if not prev_portfolio.exists():
+            typer.echo(f"[ERROR] Previous run portfolio not found: {prev_portfolio}")
+            raise typer.Exit(code=1)
+    write_trades_csv(
+        portfolio_file=portfolio_file,
+        out_csv=out,
+        scored_candidates_file=scored_candidates_file,
+        notional=notional,
+        side=side,
+        previous_portfolio_file=prev_portfolio,
+        previous_scored_file=prev_scored if (prev_scored and prev_scored.exists()) else None,
+    )
 

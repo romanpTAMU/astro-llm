@@ -15,7 +15,7 @@ from .config import load_config
 from .data_apis import fetch_price_data_finnhub, fetch_price_data_fmp
 from .data_fetcher import fetch_price_data
 from .models import Portfolio, PortfolioHolding
-from .run_manager import find_all_portfolios
+from .run_manager import find_all_portfolios, get_run_mode
 
 app = typer.Typer()
 
@@ -492,11 +492,14 @@ def track(
     evaluate_all: bool = typer.Option(
         True, help="Evaluate all portfolios in run folders (if portfolio_file not provided)"
     ),
+    runs_dir: Path = typer.Option(
+        Path("data/runs"), help="Base directory containing run folders (e.g. data/runs_biweekly for biweekly runs)"
+    ),
 ):
     """Track portfolio performance since construction date.
     
     If portfolio_file is not provided and evaluate_all is True, evaluates all portfolios
-    found in data/runs/ folders and saves performance reports for each.
+    found in the runs directory and saves performance reports for each.
     """
     if portfolio_file:
         # Single portfolio mode
@@ -506,9 +509,14 @@ def track(
         typer.echo("=" * 80)
         typer.echo("EVALUATING ALL PORTFOLIOS")
         typer.echo("=" * 80)
+        typer.echo(f"Runs directory: {runs_dir.absolute()}")
         typer.echo("")
         
-        portfolios = find_all_portfolios()
+        if not runs_dir.exists():
+            typer.echo(f"[ERROR] Runs directory does not exist: {runs_dir}")
+            raise typer.Exit(code=1)
+        
+        portfolios = find_all_portfolios(runs_dir=runs_dir)
         
         if not portfolios:
             typer.echo("No portfolios found in run folders.")
@@ -517,15 +525,19 @@ def track(
         
         typer.echo(f"Found {len(portfolios)} portfolio(s) to evaluate:")
         for i, (port_path, constructed_at) in enumerate(portfolios, 1):
-            typer.echo(f"  {i}. {port_path.parent.name} (constructed: {constructed_at.strftime('%Y-%m-%d %H:%M:%S')})")
+            mode = get_run_mode(port_path.parent)
+            mode_str = f" [{mode}]" if mode else ""
+            typer.echo(f"  {i}. {port_path.parent.name} (constructed: {constructed_at.strftime('%Y-%m-%d %H:%M:%S')}{mode_str})")
         typer.echo("")
         
         # Evaluate each portfolio
         results = []
         for i, (port_path, constructed_at) in enumerate(portfolios, 1):
             typer.echo("")
+            mode = get_run_mode(port_path.parent)
+            mode_str = f" [{mode}]" if mode else ""
             typer.echo("=" * 80)
-            typer.echo(f"PORTFOLIO {i}/{len(portfolios)}: {port_path.parent.name}")
+            typer.echo(f"PORTFOLIO {i}/{len(portfolios)}: {port_path.parent.name}{mode_str}")
             typer.echo("=" * 80)
             typer.echo("")
             

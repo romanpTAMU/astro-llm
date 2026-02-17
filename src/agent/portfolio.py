@@ -14,7 +14,7 @@ from .config import load_config
 from .models import Portfolio, PortfolioHolding, ScoredCandidatesResponse
 from .openai_client import chat_json, get_client
 from .prompts import system_portfolio, user_portfolio
-from .run_manager import get_run_folder
+from .run_manager import RUN_MODE_FILE, get_run_folder
 
 app = typer.Typer()
 
@@ -556,6 +556,14 @@ def construct_portfolio(
     Path(out_json).parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(portfolio.model_dump_json(indent=2), encoding='utf-8')
     typer.echo(f"Portfolio written to {out_json}")
+
+    # Mark biweekly runs so they can be distinguished from daily runs
+    run_folder = out_json.parent
+    if run_folder.parent.name == "runs_biweekly":
+        (run_folder / RUN_MODE_FILE).write_text(
+            '{"mode": "biweekly"}', encoding="utf-8"
+        )
+        typer.echo(f"  Run mode: biweekly ({RUN_MODE_FILE})")
     
     # Write Excel if requested
     if out_excel:
@@ -664,13 +672,17 @@ def build(
     use_run_folder: bool = typer.Option(
         True, help="Save to timestamped run folder (data/runs/YYYY-MM-DD_HH-MM-SS/)"
     ),
+    runs_base_dir: Optional[Path] = typer.Option(
+        None, help="Base directory for run folder (default: data/runs). Use data/runs_biweekly for biweekly mode."
+    ),
 ):
     """Construct final portfolio from scored candidates."""
     import shutil
     
     # Create run folder if enabled
     if use_run_folder and out_json is None:
-        run_folder = get_run_folder()
+        base_dir = Path("data/runs") if runs_base_dir is None else Path(runs_base_dir)
+        run_folder = get_run_folder(base_dir=base_dir)
         out_json = run_folder / "portfolio.json"
         
         # Copy intermediate files to run folder for reference

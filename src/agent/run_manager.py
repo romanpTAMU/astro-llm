@@ -1,8 +1,26 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
+
+RUN_MODE_FILE = "run_mode.json"
+
+
+def get_run_mode(run_folder: Path) -> Optional[str]:
+    """Return run mode for a run folder: 'biweekly', 'daily', or None if unset.
+
+    Biweekly runs have run_mode.json with {"mode": "biweekly"}.
+    """
+    mode_file = run_folder / RUN_MODE_FILE
+    if not mode_file.exists():
+        return None
+    try:
+        data = json.loads(mode_file.read_text(encoding="utf-8"))
+        return data.get("mode")
+    except Exception:
+        return None
 
 
 def get_run_folder(base_dir: Path = Path("data/runs"), create: bool = True) -> Path:

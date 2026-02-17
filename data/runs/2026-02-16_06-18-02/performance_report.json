@@ -1,0 +1,278 @@
+{
+  "analysis_date": "2026-02-17T07:45:42.517356",
+  "portfolio_file": "data\\runs\\2026-02-16_06-18-02\\portfolio.json",
+  "construction_date": "2026-02-16",
+  "current_date": "2026-02-17",
+  "days_held": 1,
+  "portfolio_metrics": {
+    "weighted_return": -0.0006564192330835542,
+    "simple_avg_return": -0.0008205240413544426,
+    "median_return": 0.0,
+    "min_return": -0.016410480827088854,
+    "max_return": 0.0,
+    "winners_count": 0,
+    "losers_count": 1,
+    "total_holdings": 20,
+    "portfolio_beta": 0.7706199999999997
+  },
+  "sp500_comparison": null,
+  "holdings": [
+    {
+      "ticker": "GILD",
+      "weight": 0.09,
+      "construction_price": 154.98,
+      "current_price": 154.98,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.387,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "LRCX",
+      "weight": 0.09,
+      "construction_price": 235.53,
+      "current_price": 235.53,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.776,
+      "sector": "Information Technology",
+      "theme": null
+    },
+    {
+      "ticker": "GOOGL",
+      "weight": 0.08,
+      "construction_price": 305.72,
+      "current_price": 305.72,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.086,
+      "sector": "Communication Services",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "VRTX",
+      "weight": 0.08,
+      "construction_price": 491.47,
+      "current_price": 491.47,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.319,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "MCD",
+      "weight": 0.07,
+      "construction_price": 327.58,
+      "current_price": 327.58,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.528,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "REGN",
+      "weight": 0.07,
+      "construction_price": 803.17,
+      "current_price": 803.17,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.413,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "T",
+      "weight": 0.06,
+      "construction_price": 28.69,
+      "current_price": 28.69,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.608,
+      "sector": "Communication Services",
+      "theme": null
+    },
+    {
+      "ticker": "PG",
+      "weight": 0.06,
+      "construction_price": 160.07,
+      "current_price": 160.07,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.38,
+      "sector": "Consumer Staples",
+      "theme": "Value Stock Resurgence"
+    },
+    {
+      "ticker": "VZ",
+      "weight": 0.05,
+      "construction_price": 49.01,
+      "current_price": 49.01,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.316,
+      "sector": "Communication Services",
+      "theme": "Value Stock Resurgence"
+    },
+    {
+      "ticker": "KO",
+      "weight": 0.05,
+      "construction_price": 78.68,
+      "current_price": 78.68,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.364,
+      "sector": "Consumer Staples",
+      "theme": "Value Stock Resurgence"
+    },
+    {
+      "ticker": "AMGN",
+      "weight": 0.05,
+      "construction_price": 369.19,
+      "current_price": 369.19,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.472,
+      "sector": "Health Care",
+      "theme": "Healthcare Innovation and Biotech Growth"
+    },
+    {
+      "ticker": "V",
+      "weight": 0.04,
+      "construction_price": 314.08,
+      "current_price": 314.08,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.78,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 0.04,
+      "construction_price": 182.81,
+      "current_price": 182.78,
+      "return_pct": -0.016410480827088854,
+      "contribution": -0.0006564192330835542,
+      "beta": 2.314,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "NEE",
+      "weight": 0.03,
+      "construction_price": 93.8,
+      "current_price": 93.8,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.761,
+      "sector": "Utilities",
+      "theme": "Sustainable Energy Transition"
+    },
+    {
+      "ticker": "MSFT",
+      "weight": 0.03,
+      "construction_price": 401.32,
+      "current_price": 401.32,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.084,
+      "sector": "Information Technology",
+      "theme": "AI Infrastructure Buildout"
+    },
+    {
+      "ticker": "AAPL",
+      "weight": 0.03,
+      "construction_price": 255.78,
+      "current_price": 255.78,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.107,
+      "sector": "Information Technology",
+      "theme": "Regulatory Changes in Technology and Finance"
+    },
+    {
+      "ticker": "BKNG",
+      "weight": 0.02,
+      "construction_price": 4140.6,
+      "current_price": 4140.6,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.186,
+      "sector": "Consumer Discretionary",
+      "theme": null
+    },
+    {
+      "ticker": "MRK",
+      "weight": 0.02,
+      "construction_price": 121.41,
+      "current_price": 121.41,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.296,
+      "sector": "Health Care",
+      "theme": null
+    },
+    {
+      "ticker": "LMT",
+      "weight": 0.02,
+      "construction_price": 652.58,
+      "current_price": 652.58,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 0.23,
+      "sector": "Aerospace & Defense",
+      "theme": "Geopolitical Risk and Supply Chain Resilience"
+    },
+    {
+      "ticker": "NFLX",
+      "weight": 0.02,
+      "construction_price": 76.87,
+      "current_price": 76.87,
+      "return_pct": 0.0,
+      "contribution": 0.0,
+      "beta": 1.712,
+      "sector": "Communication Services",
+      "theme": null
+    }
+  ],
+  "sector_performance": {
+    "Health Care": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 5
+    },
+    "Information Technology": {
+      "avg_return": -0.0032820961654177706,
+      "contribution": -0.0006564192330835542,
+      "count": 5
+    },
+    "Communication Services": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 4
+    },
+    "Consumer Discretionary": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 2
+    },
+    "Consumer Staples": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 2
+    },
+    "Utilities": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    },
+    "Aerospace & Defense": {
+      "avg_return": 0.0,
+      "contribution": 0.0,
+      "count": 1
+    }
+  }
+}
